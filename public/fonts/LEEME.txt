@@ -1,0 +1,5 @@
+Moghul, la tipografia secundaria del festival, no esta en Google Fonts.
+
+Deja aqui el archivo con el nombre moghul.woff2 (o moghul.otf) y entra sola:
+la declaracion @font-face ya esta en src/app/globals.css, dentro del bloque
+"Identidad del festival". Hasta entonces los titulares caen en Encode Sans.

@@ -1,26 +1,1339 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Lienzo y superficie */
+  --color-bone: #f7f6f3;
+  --color-surface: #ffffff;
+  --color-line: #eaeae7;
+
+  /* Texto */
+  --color-charcoal: #111111;
+  --color-muted: #6b6a67;
+
+  /* Acento unico: terracota desaturado */
+  --color-accent: #9a3f22;
+  --color-accent-bg: #fbede8;
+
+  /* Variantes para texto sobre fondo charcoal (portada y escena del festival).
+     Contraste medido sobre #111111: muted 7.6:1, accent 6.2:1. Ambos AA. */
+  --color-muted-inverse: #a6a4a0;
+  --color-accent-inverse: #d97a52;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-bone: var(--color-bone);
+  --color-surface: var(--color-surface);
+  --color-line: var(--color-line);
+  --color-charcoal: var(--color-charcoal);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-accent-bg: var(--color-accent-bg);
+  --color-muted-inverse: var(--color-muted-inverse);
+  --color-accent-inverse: var(--color-accent-inverse);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bone);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Titulares editoriales: serif, tracking cerrado, sin mayusculas forzadas */
+.title-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+/* Metadatos: fechas, sedes, etiquetas de seccion */
+.meta {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Foco visible uniforme en todo el sitio */
+:focus-visible {
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: 3px;
+}
+
+/* Entrada al hacer scroll. El estado final es el visible por defecto:
+   si el JS no corre o el usuario pide menos movimiento, el contenido se ve igual. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+}
+
+/* --- Escena del dia -----------------------------------------------------
+   El fondo queda fijo mientras el contenido lo atraviesa. El sol recorre el
+   cielo de este a oeste y la luz pasa de amanecer a atardecer a lo largo de
+   tres pantallas completas de scroll.
+
+   La seccion mide 400svh y el escenario pegajoso 100svh, de modo que el
+   tramo con el fondo fijo son exactamente 300svh: tres viewports. */
+
+/* Colores registrados para que el navegador pueda interpolarlos.
+   Sin @property, un custom property salta entre valores en vez de fundirse. */
+@property --cielo-alto {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #6f97c4;
+}
+@property --cielo-bajo {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #e0d3ba;
+}
+@property --luz-escena {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #d9c3a6;
+}
+@property --sol-nucleo {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #fff6e2;
+}
+@property --sol-halo {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #f0b169;
+}
+
+.escena-dia {
+  view-timeline-name: --dia;
+  view-timeline-axis: block;
+}
+
+.escena-cielo {
+  background-image: linear-gradient(
+    to bottom,
+    var(--cielo-alto) 0%,
+    var(--cielo-bajo) 72%,
+    var(--cielo-bajo) 100%
+  );
+  mix-blend-mode: overlay;
+}
+
+/* Multiplicar por blanco no altera la foto: al mediodia la imagen se ve
+   limpia, y en los extremos del dia se oscurece y se entibia. */
+.escena-luz {
+  background-color: var(--luz-escena);
+  mix-blend-mode: multiply;
+}
+
+.escena-sol {
+  width: 24vmin;
+  height: 24vmin;
+  border-radius: 9999px;
+  background-image: radial-gradient(
+    circle at center,
+    var(--sol-nucleo) 0%,
+    var(--sol-halo) 34%,
+    color-mix(in srgb, var(--sol-halo) 40%, transparent) 52%,
+    transparent 72%
+  );
+  mix-blend-mode: screen;
+  transform: translate3d(44vw, 12vh, 0);
+}
+
+@keyframes ciclo-cielo {
+  0% {
+    --cielo-alto: #1e2b47;
+    --cielo-bajo: #e07a38;
+  }
+  22% {
+    --cielo-alto: #5c86b8;
+    --cielo-bajo: #dfd0b4;
+  }
+  46% {
+    --cielo-alto: #7fa9d4;
+    --cielo-bajo: #dde9f2;
+  }
+  70% {
+    --cielo-alto: #86a2c0;
+    --cielo-bajo: #ecd7ab;
+  }
+  100% {
+    --cielo-alto: #2a2140;
+    --cielo-bajo: #e04f28;
+  }
+}
+
+@keyframes ciclo-luz {
+  0% {
+    --luz-escena: #4a3323;
+  }
+  20% {
+    --luz-escena: #c2a184;
+  }
+  44% {
+    --luz-escena: #ffffff;
+  }
+  60% {
+    --luz-escena: #fbf1e2;
+  }
+  84% {
+    --luz-escena: #a85c3c;
+  }
+  100% {
+    --luz-escena: #55291a;
+  }
+}
+
+/* Este a oeste, describiendo un arco: bajo en el horizonte al amanecer,
+   alto al mediodia y de vuelta al horizonte al atardecer. */
+@keyframes ciclo-sol {
+  0% {
+    transform: translate3d(-14vw, 54vh, 0) scale(1.2);
+    --sol-nucleo: #ffd6a2;
+    --sol-halo: #e8702c;
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate3d(44vw, 8vh, 0) scale(0.8);
+    --sol-nucleo: #fffdf6;
+    --sol-halo: #ffdd97;
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(102vw, 56vh, 0) scale(1.25);
+    --sol-nucleo: #ffc283;
+    --sol-halo: #dc3f1c;
+    opacity: 0.92;
+  }
+}
+
+/* --- Cielo nocturno -----------------------------------------------------
+   Las estrellas son degradados radiales dentro de un unico background-image
+   que se repite en mosaico. El navegador lo pinta una sola vez y despues
+   solo compone texturas: ni un nodo por estrella, ni canvas, ni JS por
+   fotograma. Tres mosaicos de tamano distinto evitan que el patron se note.
+
+   Se recortan por encima del horizonte con una mascara, para que no
+   aparezcan estrellas sobre el cerro ni sobre los girasoles. */
+
+.escena-estrellas {
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 38%,
+    transparent 56%
+  );
+  opacity: 0;
+}
+
+.capa-estrellas {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+}
+
+.capa-estrellas-lejos {
+  background-size: 520px 520px;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(circle 1px at 12% 8%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 34% 21%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 58% 6%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 77% 17%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 91% 4%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 6% 39%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 27% 47%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 45% 33%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 66% 44%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 84% 36%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 17% 63%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 39% 71%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 61% 59%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 88% 68%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 9% 86%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 31% 93%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 54% 82%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 73% 95%, #fff 0%, #fff 55%, transparent 100%),
+    radial-gradient(circle 1px at 96% 79%, #fff 0%, #fff 55%, transparent 100%);
+}
+
+.capa-estrellas-medias {
+  background-size: 730px 730px;
+  opacity: 0.75;
+  background-image:
+    radial-gradient(circle 1.3px at 21% 14%, #fdfbff 0%, #fdfbff 55%, transparent 100%),
+    radial-gradient(circle 1.3px at 49% 5%, #fff4e8 0%, #fff4e8 55%, transparent 100%),
+    radial-gradient(circle 1.3px at 82% 22%, #fdfbff 0%, #fdfbff 55%, transparent 100%),
+    radial-gradient(circle 1.3px at 11% 41%, #eaf1ff 0%, #eaf1ff 55%, transparent 100%),
+    radial-gradient(circle 1.3px at 37% 55%, #fdfbff 0%, #fdfbff 55%, transparent 100%),
+    radial-gradient(circle 1.3px at 68% 37%, #fff4e8 0%, #fff4e8 55%, transparent 100%),
+    radial-gradient(circle 1.3px at 93% 51%, #fdfbff 0%, #fdfbff 55%, transparent 100%),
+    radial-gradient(circle 1.3px at 25% 76%, #eaf1ff 0%, #eaf1ff 55%, transparent 100%),
+    radial-gradient(circle 1.3px at 57% 88%, #fdfbff 0%, #fdfbff 55%, transparent 100%),
+    radial-gradient(circle 1.3px at 79% 66%, #fff4e8 0%, #fff4e8 55%, transparent 100%),
+    radial-gradient(circle 1.3px at 4% 92%, #fdfbff 0%, #fdfbff 55%, transparent 100%),
+    radial-gradient(circle 1.3px at 44% 29%, #eaf1ff 0%, #eaf1ff 55%, transparent 100%);
+}
+
+.capa-estrellas-cerca {
+  background-size: 950px 950px;
+  background-image:
+    radial-gradient(circle 1.9px at 29% 11%, #fff 0%, #fff 45%, rgba(255, 255, 255, 0.25) 70%, transparent 100%),
+    radial-gradient(circle 1.9px at 64% 26%, #fff6e6 0%, #fff6e6 45%, rgba(255, 246, 230, 0.25) 70%, transparent 100%),
+    radial-gradient(circle 1.9px at 88% 9%, #fff 0%, #fff 45%, rgba(255, 255, 255, 0.25) 70%, transparent 100%),
+    radial-gradient(circle 1.9px at 14% 52%, #e6efff 0%, #e6efff 45%, rgba(230, 239, 255, 0.25) 70%, transparent 100%),
+    radial-gradient(circle 1.9px at 47% 68%, #fff 0%, #fff 45%, rgba(255, 255, 255, 0.25) 70%, transparent 100%),
+    radial-gradient(circle 1.9px at 76% 81%, #fff6e6 0%, #fff6e6 45%, rgba(255, 246, 230, 0.25) 70%, transparent 100%),
+    radial-gradient(circle 1.9px at 96% 43%, #fff 0%, #fff 45%, rgba(255, 255, 255, 0.25) 70%, transparent 100%);
+}
+
+/* Parpadeo: tres ritmos sin divisor comun para que las capas nunca
+   se sincronicen y el cielo no lata a la vez. */
+@keyframes titilar-a {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.26; }
+}
+@keyframes titilar-b {
+  0%, 100% { opacity: 0.75; }
+  45% { opacity: 0.45; }
+}
+@keyframes titilar-c {
+  0%, 100% { opacity: 1; }
+  60% { opacity: 0.62; }
+}
+
+/* Cometas: cabeza con estela. Solo son visibles durante un 12% de su ciclo;
+   el resto del tiempo estan aparcados y en opacidad cero. */
+.cometa {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: #fff;
+  box-shadow: 0 0 7px 2px rgba(255, 255, 255, 0.75);
+  opacity: 0;
+}
+
+.cometa::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  width: 130px;
+  height: 1px;
+  transform: translateY(-50%);
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.85),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+@keyframes cometa-vuelo {
+  0%, 6% {
+    opacity: 0;
+    transform: translate3d(-8vw, 4vh, 0) rotate(24deg);
+  }
+  9% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+  }
+  18%, 100% {
+    opacity: 0;
+    transform: translate3d(62vw, 34vh, 0) rotate(24deg);
+  }
+}
+
+/* --- Mariposas monarca --------------------------------------------------
+   Solo aparecen en el tramo central del ciclo diurno, sobre los girasoles.
+   Dos transformaciones anidadas por mariposa: el contenedor describe el
+   vuelo y el hijo hace el aleteo. Ambas se componen en GPU. */
+
+.mariposas {
+  opacity: 0;
+}
+
+.mariposa {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--tam);
+}
+
+.mariposa-ala {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 1px 2px rgba(20, 14, 6, 0.35));
+}
+
+/* El aleteo se simula estrechando la silueta: es lo que se percibe de un
+   aleteo visto de lejos, y cuesta una sola transformacion. */
+@keyframes aletear {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.32);
+  }
+}
+
+@keyframes revoloteo-a {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(5vw, -5vh, 0) rotate(9deg);
+  }
+  50% {
+    transform: translate3d(10vw, 1vh, 0) rotate(-6deg);
+  }
+  75% {
+    transform: translate3d(4vw, 4vh, 0) rotate(5deg);
+  }
+}
+
+@keyframes revoloteo-b {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  30% {
+    transform: translate3d(-6vw, -3vh, 0) rotate(-8deg);
+  }
+  60% {
+    transform: translate3d(-2vw, -7vh, 0) rotate(7deg);
+  }
+  80% {
+    transform: translate3d(3vw, -2vh, 0) rotate(-4deg);
+  }
+}
+
+@keyframes revoloteo-c {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate3d(3vw, -6vh, 0) rotate(6deg);
+  }
+  45% {
+    transform: translate3d(-4vw, -9vh, 0) rotate(-9deg);
+  }
+  70% {
+    transform: translate3d(-7vw, -2vh, 0) rotate(4deg);
+  }
+}
+
+/* Aparecen al subir el sol y se retiran antes del atardecer. */
+@keyframes dia-mariposas {
+  0%,
+  26% {
+    opacity: 0;
+  }
+  40%,
+  62% {
+    opacity: 1;
+  }
+  76%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* De noche no hay monarcas volando. */
+[data-momento="noche"] .mariposas {
+  display: none;
+}
+
+/* Sin animacion siguen visibles, posadas sobre las flores. */
+@media (prefers-reduced-motion: reduce) {
+  .mariposas {
+    opacity: 1;
+  }
+}
+
+/* Cada panel se funde al entrar y al salir para que solo uno domine la
+   pantalla. Sin esto se leen dos textos superpuestos a media transicion. */
+@keyframes panel-fundido {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  28%,
+  72% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -16px, 0);
+  }
+}
+
+/* --- Modo noche ---------------------------------------------------------
+   Se activa por hora local del visitante. El mismo elemento .escena-sol pasa
+   a ser la luna: un disco plateado mas pequeno que recorre el mismo arco. */
+
+/* La foto se desatura y se enfria, pero no se apaga: el cerro tiene que
+   seguir leyendose como silueta contra un cielo mas claro que la tierra. */
+[data-momento="noche"] .escena-imagen {
+  filter: saturate(0.3) brightness(0.92) contrast(1.08);
+}
+
+[data-momento="noche"] .escena-sol {
+  width: 13vmin;
+  height: 13vmin;
+}
+
+[data-momento="noche"] .escena-estrellas {
+  opacity: 1;
+}
+
+/* Estados base del modo noche, validos aunque no haya soporte de timelines
+   o el visitante pida menos movimiento. */
+[data-momento="noche"] {
+  --cielo-alto: #101a36;
+  --cielo-bajo: #33436a;
+  --luz-escena: #33426a;
+  --sol-nucleo: #f4f6ff;
+  --sol-halo: #9dafd6;
+}
+
+@keyframes noche-cielo {
+  0% {
+    --cielo-alto: #131f3d;
+    --cielo-bajo: #3a4a6e;
+  }
+  50% {
+    --cielo-alto: #0a1128;
+    --cielo-bajo: #2b3a5c;
+  }
+  100% {
+    --cielo-alto: #141b3a;
+    --cielo-bajo: #453f6b;
+  }
+}
+
+@keyframes noche-luz {
+  0% {
+    --luz-escena: #3b4a6d;
+  }
+  50% {
+    --luz-escena: #2b3a5c;
+  }
+  100% {
+    --luz-escena: #3d4370;
+  }
+}
+
+@keyframes noche-astro {
+  0% {
+    transform: translate3d(-10vw, 50vh, 0) scale(1.1);
+    --sol-nucleo: #eef2ff;
+    --sol-halo: #8fa3cc;
+    opacity: 0.88;
+  }
+  50% {
+    transform: translate3d(45vw, 9vh, 0) scale(0.92);
+    --sol-nucleo: #ffffff;
+    --sol-halo: #b9c8e8;
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(101vw, 52vh, 0) scale(1.12);
+    --sol-nucleo: #e8eeff;
+    --sol-halo: #8496bd;
+    opacity: 0.9;
+  }
+}
+
+/* De dia el cielo se puebla de estrellas solo en el ultimo tramo, cuando la
+   escena ya esta anocheciendo. */
+@keyframes dia-estrellas {
+  0%, 72% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.45;
+  }
+}
+
+/* El tramo "contain" es exactamente aquel en el que la seccion cubre la
+   pantalla completa, es decir, mientras el escenario esta fijo. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .escena-cielo,
+    .escena-luz,
+    .escena-sol {
+      animation-timeline: --dia;
+      animation-range: contain 0% contain 100%;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+    }
+    .escena-cielo {
+      animation-name: ciclo-cielo;
+    }
+    .escena-luz {
+      animation-name: ciclo-luz;
+    }
+    .escena-sol {
+      animation-name: ciclo-sol;
+      will-change: transform;
+    }
+
+    .escena-estrellas {
+      animation-timeline: --dia;
+      animation-range: contain 0% contain 100%;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-name: dia-estrellas;
+    }
+
+    .escena-panel {
+      animation: panel-fundido linear both;
+      animation-timeline: view(block);
+      animation-range: entry 25% exit 75%;
+    }
+
+    /* La aparicion depende del scroll: van con el ciclo del sol. */
+    .mariposas {
+      animation-timeline: --dia;
+      animation-range: contain 0% contain 100%;
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-name: dia-mariposas;
+    }
+
+    /* El vuelo y el aleteo van por tiempo: siguen revoloteando aunque el
+       visitante se quede quieto leyendo. */
+    .mariposa {
+      animation: var(--ruta) var(--dur) ease-in-out infinite;
+      animation-delay: var(--retardo);
+      will-change: transform;
+    }
+
+    .mariposa-ala {
+      animation: aletear var(--aleteo) ease-in-out infinite;
+      will-change: transform;
+    }
+
+    /* Parpadeo y cometas van por tiempo, no por scroll: siguen vivos aunque
+       el visitante se quede quieto leyendo. */
+    [data-momento="noche"] .capa-estrellas-lejos {
+      animation: titilar-a 7s ease-in-out infinite;
+    }
+    [data-momento="noche"] .capa-estrellas-medias {
+      animation: titilar-b 11s ease-in-out infinite;
+    }
+    [data-momento="noche"] .capa-estrellas-cerca {
+      animation: titilar-c 13s ease-in-out infinite;
+    }
+
+    [data-momento="noche"] .cometa {
+      animation: cometa-vuelo 19s linear infinite;
+      will-change: transform, opacity;
+    }
+
+    /* De noche mandan los ciclos nocturnos */
+    [data-momento="noche"] .escena-cielo {
+      animation-name: noche-cielo;
+    }
+    [data-momento="noche"] .escena-luz {
+      animation-name: noche-luz;
+    }
+    [data-momento="noche"] .escena-sol {
+      animation-name: noche-astro;
+    }
+    [data-momento="noche"] .escena-estrellas {
+      animation-name: none;
+    }
+  }
+}
+
+/* Los cometas son puro adorno: sin ellos la escena esta completa. */
+@media (prefers-reduced-motion: reduce) {
+  .cometa {
+    display: none;
+  }
+}
+
+/* Cinta institucional */
+@keyframes drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-drift {
+  animation: drift 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift {
+    animation: none;
+  }
+}
+
+/* --- Festival: tunel de paneles -----------------------------------------
+   La camara esta en el centro de un cilindro y no se mueve nunca: gira el
+   cilindro a su alrededor. Los paneles miran hacia dentro, de canto a canto,
+   asi que el que queda al fondo se ve pequeno y de frente en el centro de la
+   pantalla, y los que pasan por los lados crecen y se escorzan hasta salirse
+   del encuadre. Es la misma geometria de una sala circular vista desde su eje.
+
+   Todos los paneles tienen la misma altura real y anchura distinta: eso es lo
+   que da el ritmo de tira de pelicula. El radio del cilindro no se elige a
+   mano, sale de encajar las anchuras hasta cerrar los 360 grados; lo calcula
+   TunelPaneles.tsx y lo entrega ya resuelto en --tunel-r y --tunel-p.
+
+   El movimiento es continuo y por tiempo, no por scroll: la portada ocupa un
+   solo viewport y no hay recorrido al que atarlo. A cambio se para sola
+   cuando la portada sale de pantalla, y con prefers-reduced-motion no llega
+   a arrancar: el tunel se queda quieto y compuesto. */
+
+/* Tamano y fuerza de la perspectiva. Van aqui y no en linea porque cambian en
+   pantallas estrechas, y una declaracion en linea le ganaria a la media query.
+
+   En movil la banda se agranda subiendo el minimo del alto, no tocando la k.
+   Aplanar la perspectiva en una media query parecia mejor idea, pero k y el
+   arco que se pinta estan atados: el desplazamiento alcanza su maximo en
+   acos(-k), y con k baja ese pliegue se mete dentro del arco visible, los
+   paneles se doblan y la banda deja de llegar al borde. Con k a 0.835 el
+   pliegue queda en 147 grados, fuera del corte de 132. */
+.tunel {
+  --tunel-h: clamp(130px, 13.35vw, 420px);
+  --tunel-k: 0.835;
+  --tunel-r: calc(var(--tunel-h) * var(--tunel-factor));
+  --tunel-p: calc(var(--tunel-r) / var(--tunel-k));
+
+  perspective: var(--tunel-p);
+  perspective-origin: 50% 50%;
+}
+
+/* En un telefono el alto baja, no sube, y el motivo es contraintuitivo.
+   El desplazamiento horizontal de un panel crece con el radio, y el radio es
+   proporcional a este alto; cuanto mas alto, antes se sale del encuadre el
+   panel al girar, asi que la ventana angular visible se estrecha. Con un alto
+   grande en una pantalla estrecha solo quedan a la vista los paneles del
+   centro, todos del mismo tamano: la banda se ve como una tira plana y el
+   efecto de tunel desaparece. Bajandolo entra en cuadro un arco mas ancho y
+   vuelve a leerse el cono, con las caratulas de los extremos recortadas.
+   34vw es el punto donde el cono ya es evidente sin que las caratulas del
+   centro se queden demasiado pequenas. */
+@media (max-width: 640px) {
+  .tunel {
+    --tunel-h: 34vw;
+  }
+}
+
+
+.tunel-anillo {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+.tunel-panel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--ancho);
+  height: var(--tunel-h);
+  margin: calc(var(--tunel-h) / -2) 0 0 calc(var(--ancho) / -2);
+  /* rotateY deja el panel mirando al eje y translateZ lo empuja hasta la pared
+     del cilindro. La distancia no es el radio, sino la apotema de su cuerda:
+     asi las cuatro esquinas caen justo sobre la circunferencia, dos paneles
+     contiguos comparten arista exacta y ninguna esquina se sale del cilindro.
+     Colocarlos tangentes al radio -que es lo intuitivo- las deja por fuera, y
+     cerca del lateral eso basta para que rocen el plano de la camara y el
+     cuadrilatero degenere abriendo cunas de fondo en la banda. */
+  transform: rotateY(var(--angulo)) translateZ(calc(var(--dist) * -1));
+}
+
+/* Cada hueco es una funda de LP: un cuadrado que ocupa el panel entero. */
+.tunel-hueco {
+  position: absolute;
+  inset: 0;
+}
+
+.vinilo-funda {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-charcoal) 10%, var(--color-bone));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-charcoal) 22%, transparent);
+  /* La rotulacion se dimensiona en em sobre este tamano, atado al ancho del
+     panel: crece con la perspectiva igual que la imagen, de modo que es
+     legible en las fundas cercanas y pura textura en las del fondo. */
+  font-size: calc(var(--ancho) * 0.055);
+  color: #fff;
+}
+
+.vinilo-funda img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Canto de la abertura: una linea clara arriba, por donde sale el disco. */
+.vinilo-funda::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+@keyframes tunel-girar {
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
+/* Un panel solo existe mientras esta delante de la camara. Pasado ese arco ya
+   se ha ido del encuadre, de modo que aparecer y desaparecer ocurre fuera de
+   pantalla y no hay parpadeo visible.
+
+   Se anima display, no solo visibility: justo detras del punto de vista la
+   perspectiva dispara la escala y esos paneles llegan a medir miles de pixeles.
+   Ocultos seguirian ocupando ese sitio y obligando al navegador a reservar
+   capas enormes; con display none desaparecen del layout. En los navegadores
+   que no animan display de forma discreta queda visibility, que es correcto
+   aunque cueste mas. */
+@keyframes tunel-asomar {
+  0%,
+  36% {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+  36.5%,
+  63.5% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+  64%,
+  100% {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tunel[data-activo="si"] .tunel-anillo {
+    animation: tunel-girar var(--tunel-t) linear infinite;
+    will-change: transform;
+  }
+
+  .tunel[data-activo="si"] .tunel-panel {
+    animation: tunel-asomar var(--tunel-t) linear infinite;
+    animation-delay: var(--retardo);
+  }
+}
+
+/* Con el cilindro parado -fuera de pantalla, o con prefers-reduced-motion- los
+   paneles que quedan detras del punto de vista no se pintan: sin la animacion
+   que los gobierna se quedarian clavados delante, como planos gigantes. En
+   marcha manda tunel-asomar, que los mete y los saca fuera del encuadre. */
+.tunel[data-activo="no"] .tunel-panel[data-detras="si"] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tunel-panel[data-detras="si"] {
+    display: none;
+  }
+}
+
+/* --- Caratula ------------------------------------------------------------
+   Rotulacion generica de funda de LP sobre la fotografia: cabecera con el
+   nombre del festival y el sello, un renglon de disciplinas donde una portada
+   de verdad llevaria el corte a corte, y al pie el codigo de barras con su
+   numero de catalogo. Nada de esto identifica a la compania de la foto: es
+   deliberadamente la misma edicion repetida, como una caja de discos.
+
+   Todo se dimensiona en em sobre un font-size atado al ancho del panel, de
+   modo que la rotulacion crece con la perspectiva igual que la imagen: legible
+   en las fundas cercanas y pura textura en las del fondo. */
+
+/* Velo de legibilidad. Es la unica excepcion a la regla de no usar degradados:
+   sin el, el texto blanco se pierde sobre las fotos claras. */
+.vinilo-velo {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.62) 0%,
+    rgba(0, 0, 0, 0.12) 38%,
+    rgba(0, 0, 0, 0.12) 70%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.vinilo-texto {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0.85em;
+}
+
+.vinilo-cab {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.6em;
+}
+
+.vinilo-marca {
+  font-family: var(--font-mono);
+  font-size: 0.6em;
+  line-height: 1.3;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* El sello de cada funda toma un color del ciclo del imagotipo: los ocho
+   aparecen por igual a lo largo de la caja de discos, ninguno manda. Va
+   relleno y no en tinta, que es como esta paleta rinde a cualquier tamano. */
+.vinilo-sello {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2em;
+  height: 2.2em;
+  border-radius: 9999px;
+}
+
+.vinilo-sello span {
+  font-family: var(--font-mono);
+  font-size: 0.46em;
+  letter-spacing: 0.1em;
+}
+
+/* Caps deliberadas: aqui no son un titular de la pagina sino la rotulacion
+   impresa de una funda, que es donde vive esta convencion. */
+.vinilo-titulo {
+  margin-top: 0.55em;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.vinilo-lista {
+  margin-top: 0.5em;
+  max-width: 88%;
+  font-family: var(--font-mono);
+  font-size: 0.46em;
+  line-height: 1.6;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.88;
+}
+
+.vinilo-pie {
+  margin-top: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.6em;
+}
+
+/* Codigo de barras: barras de anchura irregular con un unico degradado
+   repetido, sin imagen ni nodos por barra. Es ornamento, no codifica nada. */
+.vinilo-barras {
+  display: block;
+  width: 4.4em;
+  height: 1.35em;
+  background-color: #fff;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #111 0 0.09em,
+    #fff 0.09em 0.2em,
+    #111 0.2em 0.26em,
+    #fff 0.26em 0.31em,
+    #111 0.31em 0.45em,
+    #fff 0.45em 0.52em,
+    #111 0.52em 0.56em,
+    #fff 0.56em 0.72em
+  );
+}
+
+.vinilo-cifra {
+  display: block;
+  margin-top: 0.22em;
+  font-family: var(--font-mono);
+  font-size: 0.42em;
+  letter-spacing: 0.14em;
+}
+
+.vinilo-fecha {
+  font-family: var(--font-mono);
+  font-size: 0.46em;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+/* --- Identidad del festival ---------------------------------------------
+   El festival tiene identidad propia, distinta de la editorial del Instituto:
+   Encode Sans como principal y Moghul como secundaria, sobre la paleta del
+   imagotipo. Vive acotada a .identidad-festival para que no se derrame al
+   resto del sitio.
+
+   Moghul no esta en Google Fonts, asi que se sirve como fuente local. Mientras
+   el archivo no exista, el navegador cae en Encode Sans sin romper nada: basta
+   dejar el .woff2 en public/fonts/ para que entre. */
+
+@font-face {
+  font-family: "Moghul";
+  src:
+    url("/fonts/moghul.woff2") format("woff2"),
+    url("/fonts/moghul.otf") format("opentype");
+  font-display: swap;
+}
+
+/* Los ocho colores del imagotipo, sin jerarquia: ninguno es el color de marca.
+   Se usan como RELLENO, no como tinta, y por una razon medida: sobre fondo
+   claro solo el morado alcanza 4.5:1, de modo que usarlos como texto obligaria
+   a elegir uno y romperia justamente la ausencia de jerarquia. Como relleno los
+   ocho valen por igual, y cada uno lleva apuntada la tinta que le corresponde.
+
+   Las tres de valor medio -coral, verde y azul- se quedan entre 3:1 y 4.5:1:
+   sirven para cifras y numeros grandes, no para texto corrido. */
+.identidad-festival {
+  --font-sans: var(--font-encode);
+  --font-display: "Moghul", var(--font-encode);
+  /* La identidad solo tiene dos fuentes, asi que los metadatos van tambien en
+     Encode: pierde la caja fija del mono, que aqui suplen las cifras
+     tabulares donde hacen falta. */
+  --font-mono: var(--font-encode);
+
+  /* Quedaba suelto el terracota del Instituto en etiquetas y enlaces. Se
+     sustituye por el morado, no por ser el color de marca -no lo hay- sino
+     porque es el unico de los ocho que llega a 4.5:1 sobre fondo claro y por
+     tanto el unico que puede ir como tinta. Los demas van de relleno. */
+  --color-accent: var(--id-morado);
+  --color-accent-bg: color-mix(in srgb, var(--id-morado) 10%, #ffffff);
+
+  --id-tinta: #373737;
+
+  --id-coral: #f45656;
+  --id-morado: #7645af;
+  --id-azul: #257fd8;
+  --id-lavanda: #dbccff;
+  --id-amarillo: #ffd940;
+  --id-turquesa: #42b8bf;
+  --id-rosa: #ff97c9;
+  --id-verde: #00a360;
+
+  /* Tinta sobre cada relleno, elegida por contraste medido. */
+  --sobre-coral: #ffffff; /* 3.3:1  solo texto grande */
+  --sobre-morado: #ffffff; /* 6.5:1 */
+  --sobre-azul: #ffffff; /* 4.1:1  solo texto grande */
+  --sobre-lavanda: var(--id-tinta); /* 8.0:1 */
+  --sobre-amarillo: var(--id-tinta); /* 8.7:1 */
+  --sobre-turquesa: var(--id-tinta); /* 5.0:1 */
+  --sobre-rosa: var(--id-tinta); /* 6.0:1 */
+  --sobre-verde: var(--id-tinta); /* 3.6:1  solo texto grande */
+}
+
+/* Cada elemento recibe su color por --tono y --sobre, de modo que el ciclo se
+   decide en un solo sitio y aqui solo se pinta. */
+.ficha-color {
+  background: var(--tono);
+  color: var(--sobre);
+}
+
+.borde-color {
+  border-color: var(--tono);
+}
+
+/* El azulejo del imagotipo ocupa su panel entero, igual que una caratula. */
+.tunel-icono {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Barrido circular entre secciones ----------------------------------
+   La pagina nueva se revela con un circulo que nace en el punto del clic y
+   crece hasta cubrir la pantalla, mientras la anterior se queda quieta debajo.
+
+   Lo hace la View Transitions API, y no una capa nuestra, por un motivo de
+   fondo: durante la animacion tienen que verse las dos paginas a la vez, y en
+   el App Router la anterior ya esta desmontada. El navegador congela una
+   instantanea de la que se va y recorta encima la de la que llega, de modo que
+   el circulo revela contenido real. Una capa hecha a mano solo puede crecer
+   con un color plano y luego dar paso al contenido de golpe.
+
+   Los CodePen conocidos de este efecto usan GSAP, pero ahi las paginas son
+   divs que conviven en el DOM: no hay cambio de ruta que resolver. Aqui lo que
+   hacia falta era la instantanea, no la libreria; la interpolacion de circle()
+   la hace el navegador solo.
+
+   Sobre el radio: en circle() el porcentaje se resuelve contra la diagonal del
+   area partida por raiz de dos. Desde una esquina hace falta la diagonal
+   entera, o sea raiz de dos veces esa referencia: 141.4%. Por eso 150% cubre
+   siempre, se pulse donde se pulse, sin calcular pixeles. */
+
+:root {
+  /* Centro del circulo. Lo escribe la isla con las coordenadas del clic; este
+     valor solo cubre el caso de que falten. */
+  --bx: 50%;
+  --by: 90%;
+}
+
+@keyframes revelar-circulo {
+  from {
+    clip-path: circle(0% at var(--bx) var(--by));
+  }
+  to {
+    clip-path: circle(150% at var(--bx) var(--by));
+  }
+}
+
+/* El navegador mezcla por defecto las dos instantaneas con plus-lighter, que
+   es lo correcto para un fundido cruzado pero no aqui: con la pagina anterior
+   a opacidad 1 los colores se suman y todo sale lavado. Aqui una tapa a la
+   otra, asi que la mezcla tiene que ser normal. */
+::view-transition-old(.debajo),
+::view-transition-new(.revelar) {
+  mix-blend-mode: normal;
+}
+
+/* La pagina que se va no se mueve ni se desvanece: se queda quieta debajo. Un
+   fundido delataria que hay dos paginas. */
+::view-transition-old(.debajo) {
+  animation: none;
+  opacity: 1;
+}
+
+::view-transition-new(.revelar) {
+  animation: revelar-circulo 900ms cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+
+/* La isla y la marca son los dos puntos fijos que sostienen la escena mientras
+   el circulo la recorre: su grupo no se anima, asi que no se mueven ni cambian
+   de tamano. Lo unico que cambia en ellas -que pastilla esta activa, el color
+   de la marca- se resuelve con un fundido corto. Sin el se superponen las dos
+   versiones y se ven dos pastillas activas a la vez. */
+::view-transition-group(isla),
+::view-transition-group(marca) {
+  animation: none;
+  z-index: 100;
+}
+
+::view-transition-old(isla),
+::view-transition-old(marca) {
+  animation: revelar-fundido 200ms ease-out both reverse;
+}
+
+::view-transition-new(isla),
+::view-transition-new(marca) {
+  animation: revelar-fundido 220ms ease-in 180ms both;
+}
+
+@keyframes revelar-fundido {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+
+/* --- Isla en movil: dial giratorio --------------------------------------
+   Los cinco destinos no caben en un telefono, asi que la isla se comporta como
+   un dial: el activo al centro y los demas rotando a su alrededor. El giro se
+   hace con order, no reordenando el DOM, de manera que el orden de lectura y
+   el de tabulacion no cambian al navegar.
+
+   El ajuste por swipe se apoya en scroll-snap centrado, para que al soltar
+   quede siempre una pastilla encuadrada y no a medias. */
+@media (max-width: 640px) {
+  .isla-carro {
+    scroll-snap-type: x mandatory;
+  }
+
+  .isla-punto {
+    order: var(--orden);
+    scroll-snap-align: center;
+  }
+}
+
+/* Quien pide menos movimiento no quiere que la isla se deslice sola al
+   navegar; el salto seco la deja igual de centrada. */
+@media (prefers-reduced-motion: reduce) {
+  .isla-carro {
+    scroll-behavior: auto;
+  }
+}
+
+/* --- Cartelera de artistas ----------------------------------------------
+   Lenguaje visual tomado de la referencia: lienzo casi negro y calido con una
+   trama de puntos muy tenue, fichas de fondo oscuro con filete de 1px, una
+   pastilla de color arriba a la izquierda y la fotografia dentro. Los colores
+   del lienzo estan muestreados de la propia captura -#1a1616 el fondo,
+   #2a2929 el filete, #d6d6d6 los rotulos-; lo que cambia es la pastilla, que
+   en la referencia es siempre naranja y aqui toma el color que le toca a cada
+   artista dentro del imagotipo. */
+
+/* Sin color de fondo propio: la capa fija con la fotografia va detras, y un
+   fondo opaco aqui la taparia por completo. El color de respaldo lo pone la
+   propia capa. */
+.cartelera {
+  color: #e6e4e4;
+}
+
+/* Velo sobre la fotografia. Sin el, los rotulos claros de las fichas se pierden
+   sobre las zonas claras de la foto. Se carga mas hacia la derecha, que es por
+   donde caen las fichas. */
+.cartelera-velo {
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(26, 22, 22, 0.06) 0%,
+      rgba(26, 22, 22, 0.22) 38%,
+      rgba(26, 22, 22, 0.82) 62%,
+      rgba(26, 22, 22, 0.95) 100%
+    ),
+    radial-gradient(
+      circle 1px at 1px 1px,
+      rgba(255, 255, 255, 0.07) 0 1px,
+      transparent 1px
+    );
+  background-size:
+    100% 100%,
+    26px 26px;
+}
+
+@media (max-width: 1023px) {
+  /* Sin columna libre, la ficha va encima de la foto: hace falta mas velo. */
+  .cartelera-velo {
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(26, 22, 22, 0.55) 0%,
+        rgba(26, 22, 22, 0.82) 100%
+      ),
+      radial-gradient(
+        circle 1px at 1px 1px,
+        rgba(255, 255, 255, 0.07) 0 1px,
+        transparent 1px
+      );
+    background-size:
+      100% 100%,
+      26px 26px;
+  }
+}
+
+.ficha-marco {
+  border: 1px solid #2a2929;
+  border-radius: 12px;
+  background-color: rgba(20, 17, 17, 0.82);
+  padding: 0.875rem;
+  backdrop-filter: blur(6px);
+}
+
+.ficha-pastilla {
+  display: inline-flex;
+  align-items: center;
+  height: 2rem;
+  padding: 0 0.9rem;
+  border-radius: 7px;
+  background: var(--tinte);
+  color: #1a1616;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Realce de la ficha activa. Solo se anima transform y opacity, que no obligan
+   a rehacer el layout en ningun fotograma. */
+.ficha-cuerpo {
+  opacity: 0.45;
+  transform: scale(0.97);
+  transform-origin: center right;
+  transition:
+    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ficha[data-activa="si"] .ficha-cuerpo {
+  opacity: 1;
+  transform: none;
+}
+
+/* La activa se reconoce ademas por el filete en su color, que es lo que ata la
+   ficha con la pastilla y con el resto de la identidad. */
+.ficha[data-activa="si"] .ficha-marco {
+  border-color: var(--tinte);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ficha-cuerpo {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Cartel de fechas de la portada. Es la pieza que pidio destacar, asi que
+   lleva fondo propio, filete y un relleno mucho mayor que el de un rotulo
+   normal: se lee como una etiqueta impresa y no como una linea de texto mas.
+   Va sobre el tunel, de modo que el fondo tiene que ser opaco. */
+.cartel-fechas {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background: var(--color-surface);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-charcoal);
 }
