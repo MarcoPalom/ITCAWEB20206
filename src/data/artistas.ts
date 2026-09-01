@@ -198,6 +198,72 @@ const FOTOS = new Map<string, string>([
   ["zurcidores de cuentos tamaulipas", "zurcidores-de-cuentos-tamaulipas"],
 ]);
 
+/* De las companias con fotografia, estas 60 tambien entregaron un clip
+   (clip.mp4, en su misma carpeta). Va aparte de FOTOS porque no todas las
+   que tienen foto tienen clip. */
+const CLIPS = new Set<string>([
+  "adicto5",
+  "amenaza-nortena",
+  "balcon-de-montezuma-tamaholipam",
+  "ballet-folklorico-de-mexico-de-amalia-hernandez",
+  "ballet-folklorico-xalmana",
+  "banda-de-musica-de-gobierno-del-estado-de-tamaulipas",
+  "brassas-mexican-beat",
+  "cana-dulce-cana-brava",
+  "chicos-malos",
+  "cia-circo-flotante",
+  "cia-ome",
+  "cirko-alebrije",
+  "colectivo-teatro-de-bolsillo",
+  "colectivo-trueque",
+  "compania-bestias-creativas",
+  "conjunto-varela",
+  "corarte-musica-vocal",
+  "cynthia-sanchez-soprano-antiqva-metropoli",
+  "distrito-cero",
+  "el-contrato",
+  "el-viaje-lustroso-de-los-zapatos-rotos",
+  "el-zar-de-monterrey",
+  "espuma-de-mar",
+  "esther-tovar",
+  "femenil-mariachi-puebla",
+  "foco-teatro",
+  "gato-negro",
+  "grupo-de-teatro-cornisa-20",
+  "grupo-legion-victoria",
+  "grupo-relativo",
+  "herencia-huasteca",
+  "irish-dance-theatre",
+  "joe-nieto",
+  "juan-rivas-band",
+  "la-nota-alegre",
+  "latido",
+  "los-del-pueblo",
+  "los-galindo-tradicion-genuina",
+  "los-valdes-ska",
+  "majumaje",
+  "manoella-torres",
+  "momi-maiga",
+  "nahuel-penissi",
+  "nortenos-de-rio-bravo",
+  "one-beat-band",
+  "pakidermo-artes-escenicas",
+  "performance-de-rua-do-palhaco-satin",
+  "proteac",
+  "que-siempre-si",
+  "rafaga-teatro",
+  "reales-de-nuevo-leon",
+  "ricardo-martinez-y-su-grupo-honda-nor-t",
+  "rita-donte",
+  "rodas",
+  "rondalla-magisterial-de-tamaulipas",
+  "sampling-is-beautiful",
+  "son-kalunga-y-ballet-folklorico-de-pachuca",
+  "soraima-y-sus-huastecos",
+  "teatro-guarapo",
+  "teatro-testigo-de-la-vida",
+]);
+
 /* Los ocho colores del imagotipo, en el mismo ciclo de matices alternos que usa
    el resto del festival, para que dos artistas seguidos nunca repitan tono. */
 const CICLO = [
@@ -237,6 +303,8 @@ export type Artista = {
   descripcion: string;
   /** Carpeta de fotografia, o null si esa compania aun no ha entregado. */
   foto: string | null;
+  /** Si ademas de fotografia entrego un clip (siempre en la misma carpeta). */
+  clip: boolean;
   /** Color del imagotipo que le toca. */
   tinte: string;
 };
@@ -259,6 +327,8 @@ function describir(a: ArtistaBruto): string {
 }
 
 function convertir(a: ArtistaBruto, i: number): Artista {
+  const foto = FOTOS.get(a.clave) ?? null;
+
   return {
     id: identificador(a.clave),
     nombre: limpiar(a.artista),
@@ -273,7 +343,8 @@ function convertir(a: ArtistaBruto, i: number): Artista {
       municipio: limpiar(p.municipio),
     })),
     descripcion: describir(a),
-    foto: FOTOS.get(a.clave) ?? null,
+    foto,
+    clip: foto !== null && CLIPS.has(foto),
     tinte: CICLO[i % CICLO.length],
   };
 }
@@ -306,5 +377,6 @@ export function imagenesDe(foto: string) {
   return {
     fondo: `/img/artistas/${foto}/fondo.webp`,
     cards: [`/img/artistas/${foto}/a.webp`, `/img/artistas/${foto}/b.webp`],
+    clip: `/img/artistas/${foto}/clip.mp4`,
   };
 }
