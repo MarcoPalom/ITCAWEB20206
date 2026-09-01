@@ -15,8 +15,13 @@ import { imagenesDe, type Artista } from "@/data/artistas";
  * porque el navegador ya lo resuelve fuera del hilo principal: no hay listener
  * de scroll ni medicion en cada fotograma.
  *
- * El mismo componente sirve para las cuatro secciones; lo unico que cambia es
- * la lista que recibe.
+ * De las 144 companias del programa, quince tienen fotografia entregada. Las
+ * demas van con marcador de posicion; el fondo se queda entonces en la ultima
+ * fotografia disponible, que es lo que evita que la pantalla parpadee en negro
+ * al recorrer una seccion donde casi nadie tiene material.
+ *
+ * El mismo componente sirve para las tres secciones; lo unico que cambia es la
+ * lista que recibe.
  */
 export default function CarteleraArtistas({ artistas }: { artistas: Artista[] }) {
   const [activo, setActivo] = useState(0);
@@ -44,25 +49,30 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
     return () => observador.disconnect();
   }, [artistas]);
 
+  /* Fondo: la fotografia de la ficha activa si la tiene y, si no, la ultima que
+     hubo. Se busca hacia atras y luego hacia delante, de modo que una seccion
+     entera sin material sigue abriendo sobre una imagen y no sobre el vacio. */
+  const conFondo = fondoVigente(artistas, activo);
+
   return (
     <div className="cartelera relative">
-      {/* Fondo. Solo se montan la activa y sus vecinas, de modo que no se
-          descarga el catalogo entero: el resto entra al acercarse. */}
+      {/* Solo se montan la activa y sus vecinas, de modo que no se descarga el
+          catalogo entero: el resto entra al acercarse. */}
       <div className="pointer-events-none fixed inset-0 -z-10 bg-[#1a1616]">
         {artistas.map((a, i) => {
-          if (Math.abs(i - activo) > 1) return null;
+          if (!a.foto || Math.abs(i - conFondo) > 1) return null;
           return (
             /* eslint-disable-next-line @next/next/no-img-element */
             <img
               key={a.id}
-              src={imagenesDe(a.id).fondo}
+              src={imagenesDe(a.foto).fondo}
               alt=""
               width={1500}
               height={950}
               decoding="async"
-              fetchPriority={i === activo ? "high" : "low"}
+              fetchPriority={i === conFondo ? "high" : "low"}
               className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ease-out"
-              style={{ opacity: i === activo ? 1 : 0 }}
+              style={{ opacity: i === conFondo ? 1 : 0 }}
             />
           );
         })}
@@ -77,7 +87,7 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
         <ol className="lg:col-span-6">
           {artistas.map((a, i) => {
             const activa = i === activo;
-            const imgs = imagenesDe(a.id).cards;
+            const [primera, ...resto] = a.presentaciones;
 
             return (
               <li
@@ -97,36 +107,111 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
                   </header>
 
                   <div className="ficha-marco mt-3">
-                    <span className="ficha-pastilla">{a.etiqueta}</span>
-
-                    <div className="mt-4 grid grid-cols-2 gap-2">
-                      {imgs.map((src, n) => (
-                        /* eslint-disable-next-line @next/next/no-img-element */
-                        <img
-                          key={src}
-                          src={src}
-                          alt={`${a.nombre}, fotografia ${n + 1}`}
-                          width={560}
-                          height={600}
-                          loading="lazy"
-                          decoding="async"
-                          className="h-full w-full rounded-md object-cover"
-                        />
-                      ))}
+                    <div className="flex items-baseline justify-between gap-4">
+                      <span className="ficha-pastilla">{a.etiqueta}</span>
+                      {a.procedencia ? (
+                        <span className="font-mono text-[0.7rem] tracking-[0.05em] text-[#8b8686] uppercase">
+                          {a.procedencia}
+                        </span>
+                      ) : null}
                     </div>
 
-                    <dl className="mt-4 grid grid-cols-3 gap-3 border-t border-[#2a2929] pt-4 text-[0.8rem]">
-                      {[
-                        ["Fecha", a.fecha],
-                        ["Hora", a.hora],
-                        ["Sede", a.sede],
-                      ].map(([rotulo, valor]) => (
-                        <div key={rotulo}>
-                          <dt className="text-[#8b8686]">{rotulo}</dt>
-                          <dd className="mt-1 text-[#e6e4e4]">{valor}</dd>
+                    {a.titulo ? (
+                      <p className="mt-3 text-[0.95rem] text-[#e6e4e4]">{a.titulo}</p>
+                    ) : null}
+
+                    {a.foto ? (
+                      /* Dos fotografias en paralelo en pantalla ancha; en movil
+                         la clase ficha-fotos las apila y les da el turno cada
+                         dos segundos, desde globals.css. Si la compania tiene
+                         clip, entra como tercer turno.
+
+                         El clip solo se monta en la ficha activa, y no en las
+                         109: asi hay un unico video vivo en toda la pagina, que
+                         es lo que permite reproducirlo en bucle sin que el
+                         movil se ahogue. */
+                      <div
+                        className="ficha-fotos mt-4 grid grid-cols-2 gap-2"
+                        data-turnos={a.clip && activa ? 3 : 2}
+                      >
+                        {imagenesDe(a.foto).cards.map((src, n) => (
+                          /* eslint-disable-next-line @next/next/no-img-element */
+                          <img
+                            key={src}
+                            src={src}
+                            alt={`${a.nombre}, fotografia ${n + 1}`}
+                            width={560}
+                            height={600}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-full w-full rounded-md object-cover"
+                          />
+                        ))}
+
+                        {a.clip && activa ? (
+                          <video
+                            src={imagenesDe(a.foto).clip}
+                            width={560}
+                            height={600}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            preload="auto"
+                            aria-hidden="true"
+                            className="hidden"
+                          />
+                        ) : null}
+                      </div>
+                    ) : (
+                      /* Marcador de posicion, no la foto de otra compania: la
+                         ficha afirma que la fotografia es de quien la firma.
+                         Borde de 1px y rotulo en monoespaciada diciendo que ira
+                         ahi, como pide el sistema de diseno.
+
+                         Es una banda baja y no el hueco entero de las dos
+                         fotografias: sin material son 86 de las 109 fichas de
+                         Tamaulipecos, y a tamano completo la seccion se leeria
+                         como rota en vez de como pendiente de entrega. */
+                      <div className="mt-4">
+                        <div className="flex h-28 items-center justify-center rounded-md border border-[#2a2929]">
+                          <p className="font-mono text-[0.7rem] tracking-[0.05em] text-[#6f6a6a] uppercase">
+                            Fotografia pendiente de entrega
+                          </p>
                         </div>
-                      ))}
-                    </dl>
+                      </div>
+                    )}
+
+                    {primera ? (
+                      <dl className="mt-4 grid grid-cols-3 gap-3 border-t border-[#2a2929] pt-4 text-[0.8rem]">
+                        {[
+                          ["Fecha", primera.fecha],
+                          ["Hora", primera.hora],
+                          ["Sede", primera.sede],
+                        ].map(([rotulo, valor]) => (
+                          <div key={rotulo}>
+                            <dt className="text-[#8b8686]">{rotulo}</dt>
+                            <dd className="mt-1 text-[#e6e4e4]">{valor}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    ) : null}
+
+                    {/* Casi la mitad de las companias repiten en varios
+                        municipios: el resto de su gira se lista aqui, que es
+                        justamente lo que hace util esta pagina. */}
+                    {resto.length > 0 ? (
+                      <ul className="mt-3 space-y-1 text-[0.78rem] text-[#a9a4a4]">
+                        {resto.map((p, n) => (
+                          <li key={n} className="flex gap-3">
+                            <span className="font-mono tracking-[0.05em] text-[#8b8686]">
+                              {p.fecha}
+                            </span>
+                            <span>{p.municipio}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
 
                     <p className="mt-4 text-[0.85rem] leading-relaxed text-[#a9a4a4]">
                       {a.descripcion}
@@ -140,4 +225,11 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
       </div>
     </div>
   );
+}
+
+/** Indice de la fotografia que debe verse de fondo con la ficha i activa. */
+function fondoVigente(artistas: Artista[], i: number): number {
+  for (let n = i; n >= 0; n--) if (artistas[n]?.foto) return n;
+  for (let n = i + 1; n < artistas.length; n++) if (artistas[n]?.foto) return n;
+  return i;
 }

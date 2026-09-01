@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { ARTISTAS } from "@/data/artistas";
 import { seccionPorSlug } from "@/data/secciones";
 import IslaNav from "./IslaNav";
 
@@ -25,7 +24,7 @@ export default function MarcoFestival({ children }: { children: React.ReactNode 
   /* Las secciones con cartelera abren sobre fotografia oscura, asi que la
      marca va clara; las que se quedan en su portadilla de color usan la tinta
      que le corresponde a ese color. */
-  const tintaMarca = ARTISTAS[slug]?.length
+  const tintaMarca = seccion?.cartelera
     ? "#f0eeee"
     : (seccion?.sobre ?? "var(--color-charcoal)");
 

@@ -20,19 +20,26 @@ import { SECCIONES } from "@/data/secciones";
  * De ese modo el orden de lectura y el de tabulacion no cambian nunca al
  * navegar, y el HTML del servidor y el del cliente coinciden.
  *
- * Los enlaces anotan ademas en el elemento raiz donde se pulso: el circulo del
- * barrido nace justo ahi.
+ * Los enlaces anotan ademas en el elemento raiz el centro de la pastilla y el
+ * radio que hace falta: el circulo del barrido nace justo en el boton pulsado.
  */
 type Punto = {
   href: string;
   titulo: string;
   /** Color de la seccion. Inicio no lleva. */
   tinte?: string;
+  /** Tinta medida para ese color. Viene de SECCIONES, no se improvisa. */
+  sobre?: string;
 };
 
 const seccion = (slug: string): Punto => {
   const s = SECCIONES.find((x) => x.slug === slug)!;
-  return { href: `/festival/${s.slug}`, titulo: s.titulo, tinte: s.tinte };
+  return {
+    href: `/festival/${s.slug}`,
+    titulo: s.titulo,
+    tinte: s.tinte,
+    sobre: s.sobre,
+  };
 };
 
 /* Orden base, el de escritorio: Inicio al centro con dos secciones a cada
@@ -47,10 +54,106 @@ const BASE: Punto[] = [
 
 const CENTRO = 2;
 
-function marcarOrigen(evento: React.MouseEvent) {
-  const raiz = document.documentElement;
-  raiz.style.setProperty("--bx", `${evento.clientX}px`);
-  raiz.style.setProperty("--by", `${evento.clientY}px`);
+/**
+ * Fija donde nace el circulo del barrido y cuanto tiene que crecer.
+ *
+ * Las tres cifras van a una hoja de estilo del <head>, no a estado de React, y
+ * esa es la razon de que sobrevivan al cambio de ruta: el arbol de la pagina se
+ * desmonta entero, pero el <head> sigue siendo el mismo mientras el navegador
+ * anima las instantaneas.
+ *
+ * Las coordenadas son del viewport -salen de getBoundingClientRect- que es el
+ * sistema en el que resuelve clip-path sobre la instantanea. No se mezclan con
+ * pageX/pageY, que llevarian el scroll sumado.
+ */
+function fijarOrigen(x: number, y: number) {
+  const ancho = window.innerWidth;
+  const alto = window.innerHeight;
+
+  /* Radio exacto: la distancia a la esquina mas lejana. Antes esto era un 150%
+     generico, que cubre pero se pasa de largo, y de dos maneras: el porcentaje
+     se mide contra la caja de la instantanea -no contra el viewport- asi que en
+     una seccion mas alta que la pantalla el circulo crecia desmedido, y al
+     nacer al pie el barrido terminaba de revelar mucho antes que la animacion,
+     dejando muerto el ultimo tramo. Con la esquina real, el circulo acaba de
+     cubrir justo cuando acaba el movimiento. */
+  const radio = Math.max(
+    Math.hypot(x, y),
+    Math.hypot(ancho - x, y),
+    Math.hypot(x, alto - y),
+    Math.hypot(ancho - x, alto - y),
+  );
+
+  /* Las cifras se escriben literales dentro de los fotogramas, no como
+     variables que el keyframe lea con var(). Es a proposito: el arbol de
+     pseudo-elementos de la transicion lo genera el navegador aparte, y hacer
+     depender el origen de que una custom property de <html> herede hasta
+     ::view-transition-new es el unico punto de toda la cadena que no se puede
+     comprobar desde el propio codigo. Si esa herencia falla, el circulo cae al
+     valor de reserva -abajo y centrado, o sea por el medio de la isla- y el
+     boton pulsado deja de importar. Con los pixeles ya puestos en la regla no
+     hay nada que heredar.
+
+     Se reescribe una sola hoja, siempre la misma, y antes de navegar: cuando
+     el navegador toma la instantanea la regla ya esta en su sitio. */
+  const hoja =
+    document.getElementById("barrido-origen") ??
+    Object.assign(document.createElement("style"), { id: "barrido-origen" });
+  /* Se recoloca al final del head en cada escritura, no solo al crearla: estos
+     fotogramas pisan por nombre a los de globals.css, y pisar por nombre lo
+     decide el orden del documento. Si el router llegara a anadir una hoja
+     despues, la nuestra dejaria de ganar sin previo aviso. */
+  document.head.append(hoja);
+  /* Px de CSS, tal cual. Hubo aqui una multiplicacion por devicePixelRatio,
+     deducida de un solo fotograma en una pantalla al 125% donde el circulo
+     salia a 0.79 del camino. Esa correccion era falsa como regla general y
+     rompia el movil, donde el ratio es 2 o 3: multiplicar por ahi mandaba el
+     origen fuera de la pantalla. La prueba de que en movil los px de CSS son
+     los correctos estaba a la vista desde el principio: la version primera ya
+     escribia px -los del clic- y en el telefono se veia bien. */
+  hoja.textContent =
+    `@keyframes revelar-circulo{` +
+    `from{clip-path:circle(0px at ${x}px ${y}px)}` +
+    `to{clip-path:circle(${radio}px at ${x}px ${y}px)}}`;
+}
+
+/**
+ * Origen del barrido: la columna de la pastilla pulsada, a la altura del borde
+ * superior de la isla.
+ *
+ * La horizontal es el centro del boton, no el punto del dedo: dentro de una
+ * pastilla de 44px de alto el clic cae cada vez en un sitio distinto y el
+ * circulo saldria descentrado sin motivo. currentTarget es siempre el <a> al
+ * que esta colgado el handler, aunque se pulse el punto de color de dentro.
+ *
+ * La vertical es el borde de la isla y no el centro de la pastilla, que seria
+ * lo literal. El motivo es que la isla se pinta por encima del barrido -tiene
+ * grupo propio y z-index 100- y su fondo es blanco al 85%, de modo que los
+ * primeros 28.8px de crecimiento quedan velados: naciendo en el centro exacto
+ * del boton, el circulo no se ve hasta rebasar la isla, y para entonces ya mide
+ * 29px de radio, asi que aparece de golpe. Naciendo en el borde empieza en cero
+ * justo donde se ve, y el salto desaparece. La columna sigue siendo la del
+ * boton, que es lo que distingue una pastilla de otra.
+ *
+ * Se mide antes de navegar, con la isla todavia en su sitio; despues la caja ya
+ * no sirve, porque en movil el carro se desliza para recentrar el activo.
+ */
+function marcarOrigen(evento: React.MouseEvent<HTMLAnchorElement>) {
+  const boton = evento.currentTarget;
+  const caja = boton.getBoundingClientRect();
+  const isla = boton.closest(".isla-carro")?.getBoundingClientRect() ?? caja;
+
+  /* La columna se acota a la parte visible de la isla. En movil la isla es un
+     dial que se desplaza, y una pastilla puede quedar a medias fuera del
+     recorte o directamente fuera: su centro daria entonces una coordenada que
+     no se corresponde con nada que el usuario vea -llega a ser negativa- y el
+     circulo naceria fuera de la pantalla. */
+  const x = Math.min(
+    Math.max(caja.left + caja.width / 2, isla.left),
+    isla.right,
+  );
+
+  fijarOrigen(x, isla.top);
 }
 
 export default function IslaNav() {
@@ -94,6 +197,33 @@ export default function IslaNav() {
     yaMontado.current = true;
   }, [ruta]);
 
+  /* Origen de reserva. Una navegacion puede empezar sin que se pulse ninguna
+     pastilla -atras y adelante del navegador- y entonces no hay boton del que
+     tomar la caja. Sin esto quedarian vigentes las coordenadas del ultimo clic,
+     que ya no significan nada: el circulo naceria en la pastilla equivocada.
+     Se cae al centro de la isla, que es de donde sale la navegacion.
+
+     Solo en popstate. Aqui hubo tambien una escucha de resize, y en el telefono
+     era un error: al desplazarse, la barra de direcciones se pliega y dispara
+     resize, de modo que los fotogramas se reescribian con el barrido ya en
+     marcha y el circulo daba un salto a media animacion. El evento de popstate
+     no tiene ese problema porque llega antes de que el router arranque nada.
+
+     Por lo mismo no se escribe nada al montar: mientras no se haya pulsado,
+     mandan los fotogramas de globals.css, que van en porcentajes y cubren se
+     empiece donde se empiece. */
+  useEffect(() => {
+    const desdeLaIsla = () => {
+      const carro = carroRef.current;
+      if (!carro) return;
+      const caja = carro.getBoundingClientRect();
+      fijarOrigen(caja.left + caja.width / 2, caja.top);
+    };
+
+    window.addEventListener("popstate", desdeLaIsla);
+    return () => window.removeEventListener("popstate", desdeLaIsla);
+  }, []);
+
   return (
     <nav
       aria-label="Secciones del festival"
@@ -125,18 +255,50 @@ export default function IslaNav() {
                   href={punto.href}
                   aria-current={esActivo ? "page" : undefined}
                   onClick={marcarOrigen}
+                  /* Activa, la pastilla se pinta del color de su seccion, con la
+                     tinta que SECCIONES tiene medida para ese fondo. Inicio no
+                     tiene color propio y se queda en charcoal, que es el boton
+                     primario del sistema. */
+                  style={
+                    esActivo && punto.tinte
+                      ? {
+                          background: punto.tinte,
+                          color: punto.sobre,
+                          /* Filete de 1px por dentro. Hace falta en la seccion
+                             cuya portadilla es de su mismo color: alli la
+                             pastilla queda a 1.8:1 contra el contenedor claro
+                             de la isla, por debajo del 3:1 que pide el contorno
+                             de un control. Se tine con currentColor, o sea con
+                             la tinta de la propia pastilla, que ya esta medida
+                             para contrastar con su relleno: asi el filete se ve
+                             sobre cualquiera de los cuatro colores sin fijar un
+                             gris que funcione solo en algunos.
+
+                             Va como sombra interior y no como borde para no
+                             ensanchar la caja: la isla no se anima en el barrido
+                             y un cambio de ancho al navegar daria un salto. */
+                          boxShadow:
+                            "inset 0 0 0 1px color-mix(in srgb, currentColor 35%, transparent)",
+                        }
+                      : undefined
+                  }
                   className={`flex h-11 items-center gap-2 rounded-full text-sm whitespace-nowrap transition-colors ${
                     punto.tinte ? "px-4" : "px-5 font-medium"
                   } ${
                     esActivo
-                      ? "bg-charcoal font-medium text-bone"
+                      ? `font-medium ${punto.tinte ? "" : "bg-charcoal text-bone"}`
                       : "text-charcoal hover:bg-[color-mix(in_srgb,var(--id-tinta)_7%,transparent)]"
                   }`}
                 >
                   {punto.tinte ? (
+                    /* Activa, el color ya lo lleva la pastilla entera y el punto
+                       de ese mismo color desapareceria; pasa a la tinta. Se
+                       conserva en vez de quitarlo porque su hueco sostiene el
+                       ancho: la isla no se anima en el barrido, y encoger una
+                       pastilla al navegar daria un salto seco. */
                     <span
                       aria-hidden="true"
-                      style={{ background: punto.tinte }}
+                      style={{ background: esActivo ? "currentColor" : punto.tinte }}
                       className="h-1.5 w-1.5 flex-none rounded-full"
                     />
                   ) : null}

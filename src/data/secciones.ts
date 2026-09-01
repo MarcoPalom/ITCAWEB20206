@@ -18,6 +18,11 @@ export type Seccion = {
   sobre: string;
   /** Si la cabecera va en blanco sobre este fondo. */
   cabeceraClara: boolean;
+  /** Si la seccion abre con cartelera de artistas o con su portadilla de color.
+      Se declara aqui y no se deduce de ARTISTAS porque quien lo pregunta es el
+      marco, que es codigo de cliente: importar la cartelera desde alli
+      arrastraria el programa entero -213KB- al navegador. */
+  cartelera: boolean;
 };
 
 export const SECCIONES: Seccion[] = [
@@ -29,6 +34,7 @@ export const SECCIONES: Seccion[] = [
     tinte: "var(--id-morado)",
     sobre: "#ffffff",
     cabeceraClara: true,
+    cartelera: true,
   },
   {
     slug: "nacionales",
@@ -38,6 +44,7 @@ export const SECCIONES: Seccion[] = [
     tinte: "var(--id-amarillo)",
     sobre: "var(--id-tinta)",
     cabeceraClara: false,
+    cartelera: true,
   },
   {
     slug: "tamaulipecos",
@@ -47,6 +54,7 @@ export const SECCIONES: Seccion[] = [
     tinte: "var(--id-turquesa)",
     sobre: "var(--id-tinta)",
     cabeceraClara: false,
+    cartelera: true,
   },
   {
     slug: "municipios",
@@ -56,6 +64,7 @@ export const SECCIONES: Seccion[] = [
     tinte: "var(--id-rosa)",
     sobre: "var(--id-tinta)",
     cabeceraClara: false,
+    cartelera: false,
   },
 ];
 

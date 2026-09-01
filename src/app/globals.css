@@ -1104,24 +1104,28 @@ body {
    hacia falta era la instantanea, no la libreria; la interpolacion de circle()
    la hace el navegador solo.
 
-   Sobre el radio: en circle() el porcentaje se resuelve contra la diagonal del
-   area partida por raiz de dos. Desde una esquina hace falta la diagonal
-   entera, o sea raiz de dos veces esa referencia: 141.4%. Por eso 150% cubre
-   siempre, se pulse donde se pulse, sin calcular pixeles. */
+   Sobre el radio: lo calcula la isla en pixeles, como la distancia del centro
+   del boton a la esquina mas lejana del viewport. Un porcentaje generico seria
+   mas corto de escribir pero no vale aqui, porque en circle() se resuelve
+   contra la caja de la instantanea y esa caja es la pagina entera, no la
+   pantalla: en una seccion mas alta que el viewport el 150% de antes crecia
+   desmedido y el barrido se daba por terminado a media animacion. */
 
 :root {
-  /* Centro del circulo. Lo escribe la isla con las coordenadas del clic; este
-     valor solo cubre el caso de que falten. */
+  /* Centro y radio del circulo, en coordenadas de viewport. Los escribe la
+     isla al pulsar; estos valores solo cubren el hueco anterior a la
+     hidratacion, cuando todavia no puede haber transicion ninguna. */
   --bx: 50%;
   --by: 90%;
+  --br: 150%;
 }
 
 @keyframes revelar-circulo {
   from {
-    clip-path: circle(0% at var(--bx) var(--by));
+    clip-path: circle(0px at var(--bx) var(--by));
   }
   to {
-    clip-path: circle(150% at var(--bx) var(--by));
+    clip-path: circle(var(--br) at var(--bx) var(--by));
   }
 }
 
@@ -1317,6 +1321,124 @@ body {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* --- Fotografia de la ficha en movil -------------------------------------
+   En pantalla ancha las dos fotografias van una al lado de la otra. En movil
+   no caben con dignidad -quedan en dos sellos de 150px- asi que se apilan y se
+   turnan: cada una dos segundos, con un fundido corto entre ambas.
+
+   El turno lo lleva CSS y no un temporizador de React, por una razon de
+   escala: Tamaulipecos tiene 109 fichas, y 109 intervalos vivos a la vez es un
+   derroche que ademas obliga a re-renderizar. Aqui la animacion solo existe
+   sobre la ficha activa -la que cruza la franja central- de modo que en todo
+   momento hay una y solo una en marcha, y ademas se compone en GPU porque solo
+   toca opacity.
+
+   Las dos capas usan el mismo ciclo de cuatro segundos; la segunda entra con
+   retardo negativo de dos, que es justo media vuelta. Asi el fundido de una
+   coincide con el de la otra y no hay un fotograma en que se vean las dos a
+   medias ni un corte al reiniciar el bucle. */
+@media (max-width: 1023px) {
+  .ficha-fotos {
+    display: block;
+    position: relative;
+    /* La proporcion de las propias fotografias, 560x600: asi la caja no obliga
+       a recortarlas otra vez. */
+    aspect-ratio: 56 / 60;
+    overflow: hidden;
+    border-radius: 0.375rem;
+  }
+
+  .ficha-fotos img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .ficha-fotos video {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* En reposo manda la primera; las demas esperan debajo. */
+  .ficha-fotos > :not(:first-child) {
+    opacity: 0;
+  }
+
+  /* Dos turnos cuando la compania solo tiene fotografia. */
+  .ficha[data-activa="si"] .ficha-fotos[data-turnos="2"] > * {
+    animation: ficha-turno-2 4s ease-in-out infinite;
+  }
+  .ficha[data-activa="si"] .ficha-fotos[data-turnos="2"] > :nth-child(2) {
+    animation-delay: -2s;
+  }
+
+  /* Tres cuando ademas hay clip: foto, foto y clip, dos segundos cada uno. */
+  .ficha[data-activa="si"] .ficha-fotos[data-turnos="3"] > * {
+    animation: ficha-turno-3 6s ease-in-out infinite;
+  }
+  .ficha[data-activa="si"] .ficha-fotos[data-turnos="3"] > :nth-child(2) {
+    animation-delay: -4s;
+  }
+  .ficha[data-activa="si"] .ficha-fotos[data-turnos="3"] > :nth-child(3) {
+    animation-delay: -2s;
+  }
+}
+
+/* Los retardos son negativos y no positivos a proposito: uno positivo dejaria
+   la primera vuelta descuadrada, porque hasta que vence el retardo el elemento
+   se queda en su estilo base. Con el negativo la animacion ya entra girada y el
+   turno es correcto desde el primer fotograma.
+
+   El reparto es el que hace falta para que cada pieza salga cuando le toca: en
+   el ciclo de tres, la segunda va a -4s y la tercera a -2s, no al reves. */
+@keyframes ficha-turno-2 {
+  0%,
+  42% {
+    opacity: 1;
+  }
+  50%,
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ficha-turno-3 {
+  0%,
+  28% {
+    opacity: 1;
+  }
+  33%,
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Sin movimiento: se queda la primera fotografia fija. El contenido no depende
+   de la animacion para poder verse.
+
+   La condicion de ancho es imprescindible y no un adorno: en escritorio las dos
+   fotografias van una al lado de la otra, asi que ocultar la segunda dejaria su
+   columna en blanco. Solo se oculta donde estan apiladas. */
+@media (prefers-reduced-motion: reduce) and (max-width: 1023px) {
+  .ficha[data-activa="si"] .ficha-fotos > * {
+    animation: none;
+  }
+  .ficha-fotos > :not(:first-child) {
+    opacity: 0;
   }
 }
 
