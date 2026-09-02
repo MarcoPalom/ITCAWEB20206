@@ -1325,21 +1325,35 @@ body {
 }
 
 /* --- Fotografia de la ficha en movil -------------------------------------
-   En pantalla ancha las dos fotografias van una al lado de la otra. En movil
-   no caben con dignidad -quedan en dos sellos de 150px- asi que se apilan y se
-   turnan: cada una dos segundos, con un fundido corto entre ambas.
+   En pantalla ancha las dos fotografias van una al lado de la otra. En movil no
+   caben con dignidad -quedan en dos sellos de 150px- asi que se ponen en fila y
+   el encuadre viaja de una a otra: dos segundos parado en cada pieza y un
+   barrido corto entre ellas.
 
-   El turno lo lleva CSS y no un temporizador de React, por una razon de
-   escala: Tamaulipecos tiene 109 fichas, y 109 intervalos vivos a la vez es un
-   derroche que ademas obliga a re-renderizar. Aqui la animacion solo existe
-   sobre la ficha activa -la que cruza la franja central- de modo que en todo
-   momento hay una y solo una en marcha, y ademas se compone en GPU porque solo
-   toca opacity.
+   No es un carrusel ni un fundido. Se emula un paneo de camara: el encuadre
+   acompana al sujeto, la velocidad lo desenfoca y al frenar vuelve a enfocar.
+   Por eso el movimiento y el foco viven en dos capas distintas -.ficha-tira
+   mueve, .ficha-lente enfoca- en vez de en una sola: cada uno necesita su
+   propia curva, y metiendolos en la misma regla el desenfoque quedaria atado a
+   la aceleracion del desplazamiento y no al momento de mayor velocidad.
 
-   Las dos capas usan el mismo ciclo de cuatro segundos; la segunda entra con
-   retardo negativo de dos, que es justo media vuelta. Asi el fundido de una
-   coincide con el de la otra y no hay un fotograma en que se vean las dos a
-   medias ni un corte al reiniciar el bucle. */
+   La vuelta al principio cruza toda la tira, asi que va mas rapida y con mas
+   desenfoque: es el latigazo de camara que cierra el ciclo, no un salto.
+
+   El turno lo lleva CSS y no un temporizador de React, por escala: Tamaulipecos
+   tiene 109 fichas y 109 intervalos vivos serian un derroche que ademas obliga
+   a re-renderizar. La animacion existe solo sobre la ficha activa -la que cruza
+   la franja central- de modo que en todo momento hay una y solo una en marcha. */
+
+/* El bloque de movil se oculta entero en pantalla ancha con lg:hidden, y alli
+   manda el mosaico. Antes habia aqui un display:contents para que estas capas
+   desaparecieran en escritorio y quedara la reja de dos columnas; ya no vale, y
+   ademas ganaba al lg:hidden -va despues en la hoja, con la misma
+   especificidad-, con lo que se habrian visto las dos versiones a la vez. */
+.ficha-fotos video {
+  display: none;
+}
+
 @media (max-width: 1023px) {
   .ficha-fotos {
     display: block;
@@ -1351,94 +1365,714 @@ body {
     border-radius: 0.375rem;
   }
 
-  .ficha-fotos img {
-    position: absolute;
-    inset: 0;
+  .ficha-lente {
+    display: block;
     height: 100%;
-    width: 100%;
-    border-radius: 0;
   }
 
-  .ficha-fotos video {
-    position: absolute;
-    inset: 0;
+  .ficha-tira {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0;
     height: 100%;
+  }
+
+  .ficha-tira > * {
+    flex: 0 0 100%;
     width: 100%;
+    height: 100%;
+    border-radius: 0;
     object-fit: cover;
   }
 
-  /* En reposo manda la primera; las demas esperan debajo. */
-  .ficha-fotos > :not(:first-child) {
-    opacity: 0;
+  .ficha-fotos video {
+    display: block;
   }
 
-  /* Dos turnos cuando la compania solo tiene fotografia. */
-  .ficha[data-activa="si"] .ficha-fotos[data-turnos="2"] > * {
-    animation: ficha-turno-2 4s ease-in-out infinite;
-  }
-  .ficha[data-activa="si"] .ficha-fotos[data-turnos="2"] > :nth-child(2) {
-    animation-delay: -2s;
+  /* will-change solo mientras dura, que es lo que pide el sistema: reservar la
+     capa en las 109 fichas seria peor que no reservarla en ninguna. */
+  .ficha[data-activa="si"] .ficha-tira {
+    will-change: transform;
   }
 
-  /* Tres cuando ademas hay clip: foto, foto y clip, dos segundos cada uno. */
-  .ficha[data-activa="si"] .ficha-fotos[data-turnos="3"] > * {
-    animation: ficha-turno-3 6s ease-in-out infinite;
+  .ficha[data-activa="si"] .ficha-lente {
+    will-change: filter, transform;
   }
-  .ficha[data-activa="si"] .ficha-fotos[data-turnos="3"] > :nth-child(2) {
-    animation-delay: -4s;
+
+  /* Dos piezas: la compania solo tiene fotografia. */
+  .ficha[data-activa="si"] .ficha-fotos[data-turnos="2"] .ficha-tira {
+    animation: ficha-paneo-2 4s infinite;
   }
-  .ficha[data-activa="si"] .ficha-fotos[data-turnos="3"] > :nth-child(3) {
-    animation-delay: -2s;
+  .ficha[data-activa="si"] .ficha-fotos[data-turnos="2"] .ficha-lente {
+    animation: ficha-foco-2 4s infinite;
+  }
+
+  /* Tres: ademas hay clip. */
+  .ficha[data-activa="si"] .ficha-fotos[data-turnos="3"] .ficha-tira {
+    animation: ficha-paneo-3 6s infinite;
+  }
+  .ficha[data-activa="si"] .ficha-fotos[data-turnos="3"] .ficha-lente {
+    animation: ficha-foco-3 6s infinite;
   }
 }
 
-/* Los retardos son negativos y no positivos a proposito: uno positivo dejaria
-   la primera vuelta descuadrada, porque hasta que vence el retardo el elemento
-   se queda en su estilo base. Con el negativo la animacion ya entra girada y el
-   turno es correcto desde el primer fotograma.
-
-   El reparto es el que hace falta para que cada pieza salga cuando le toca: en
-   el ciclo de tres, la segunda va a -4s y la tercera a -2s, no al reves. */
-@keyframes ficha-turno-2 {
+/* El desplazamiento. La curva va en el fotograma donde arranca cada barrido, no
+   en la regla: asi las paradas no llevan easing -no lo necesitan, no se mueven-
+   y cada barrido sale rapido y frena largo, que es como asienta una camara. */
+@keyframes ficha-paneo-2 {
   0%,
-  42% {
-    opacity: 1;
+  40.5% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
   }
   50%,
-  92% {
-    opacity: 0;
+  90.5% {
+    transform: translateX(-100%);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
   }
   100% {
-    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-@keyframes ficha-turno-3 {
+@keyframes ficha-paneo-3 {
   0%,
-  28% {
-    opacity: 1;
+  27% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
   }
-  33%,
-  95% {
-    opacity: 0;
+  33.3%,
+  60.4% {
+    transform: translateX(-100%);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
+  }
+  66.7%,
+  93.7% {
+    transform: translateX(-200%);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
   }
   100% {
-    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-/* Sin movimiento: se queda la primera fotografia fija. El contenido no depende
-   de la animacion para poder verse.
+/* El foco. Nitido en cada parada y desenfocado en el punto de mas velocidad, a
+   mitad del barrido. La escala minima acompana: es el peso de la camara al
+   arrancar y frenar, y de paso tapa el borde blando que deja el desenfoque
+   dentro del recorte. */
+@keyframes ficha-foco-2 {
+  0%,
+  40.5% {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  45.2% {
+    filter: blur(6px);
+    transform: scale(1.04);
+  }
+  50%,
+  90.5% {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  95.2% {
+    filter: blur(6px);
+    transform: scale(1.04);
+  }
+  100% {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
 
-   La condicion de ancho es imprescindible y no un adorno: en escritorio las dos
-   fotografias van una al lado de la otra, asi que ocultar la segunda dejaria su
-   columna en blanco. Solo se oculta donde estan apiladas. */
+@keyframes ficha-foco-3 {
+  0%,
+  27% {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  30.1% {
+    filter: blur(6px);
+    transform: scale(1.04);
+  }
+  33.3%,
+  60.4% {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  63.5% {
+    filter: blur(6px);
+    transform: scale(1.04);
+  }
+  66.7%,
+  93.7% {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  96.8% {
+    /* La vuelta cruza dos piezas en el mismo tiempo: al doble de velocidad le
+       toca el doble de desenfoque. */
+    filter: blur(12px);
+    transform: scale(1.06);
+  }
+  100% {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+
+/* Sin movimiento no hay paneo: la tira se queda en la primera pieza, que es lo
+   que el recorte deja ver. El contenido no depende de la animacion. */
 @media (prefers-reduced-motion: reduce) and (max-width: 1023px) {
-  .ficha[data-activa="si"] .ficha-fotos > * {
+  .ficha[data-activa="si"] .ficha-tira,
+  .ficha[data-activa="si"] .ficha-lente {
+    animation: none;
+    will-change: auto;
+  }
+}
+
+/* --- Linea de nodos de la ficha, solo en pantalla ancha -----------------
+   El material se pone en fila y la camara la recorre: siempre hay una pieza
+   centrada y la vecina asomando, nunca mas de dos a la vista.
+
+   Tres decisiones que la separan de un carrusel:
+
+   1. Las piezas no entran ni salen, pasan: la que se va sigue estando a un lado.
+   2. Las formas son irregulares -cuadrada, vertical alta, apaisada baja- y no
+      una reja de recortes iguales. Con piezas identicas el recorrido se lee
+      como una cinta transportadora; con formas distintas, como un plano por el
+      que uno se mueve.
+   3. El zigzag sale de que unas se apoyan arriba y otras abajo, y la camara
+      compensa para centrar la que toca. El vaiven no esta dibujado, es la
+      consecuencia.
+
+   Y el bucle no tiene costura: la fila va dos veces en el marcado y el
+   recorrido termina encuadrando la copia de la primera pieza, de modo que
+   volver al principio no cambia nada de lo que se ve. Las cifras de los
+   fotogramas son el centrado de cada forma, no valores tanteados. */
+.ficha-linea {
+  overflow: hidden;
+  height: 18.5rem;
+  border-radius: 0.375rem;
+}
+
+.ficha-linea-lente {
+  height: 100%;
+}
+
+.ficha-linea-tira {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  /* Mas aire entre piezas: separadas se leen como nodos sueltos en un plano y
+     no como los fotogramas de una tira. */
+  gap: 6%;
+  height: 100%;
+  transform: translate3d(33%, 17%, 0);
+}
+
+.ficha-nodo {
+  border-radius: 0.375rem;
+  object-fit: cover;
+}
+
+/* Las cuatro formas. La copia lleva el mismo data-forma que su original, que es
+   de lo que depende que el salto del bucle sea invisible. */
+.ficha-nodo[data-forma="0"] {
+  flex: 0 0 34%;
+  width: 34%;
+  height: 66%;
+  align-self: flex-start;
+}
+
+.ficha-nodo[data-forma="1"] {
+  flex: 0 0 28%;
+  width: 28%;
+  height: 92%;
+  align-self: flex-end;
+}
+
+.ficha-nodo[data-forma="2"] {
+  flex: 0 0 40%;
+  width: 40%;
+  height: 58%;
+  align-self: flex-start;
+}
+
+.ficha-nodo[data-forma="3"] {
+  flex: 0 0 30%;
+  width: 30%;
+  height: 80%;
+  align-self: flex-end;
+}
+
+/* El video tiene forma propia y no la que le tocaria por posicion. Los clips
+   son de 560x600 -mas altos que anchos- y caian en la forma apaisada, con lo
+   que object-fit les recortaba arriba y abajo: se veia la mitad del encuadre.
+   Aqui la caja tiene su misma proporcion, asi que no se recorta nada, y es la
+   pieza mas grande de la fila, que es lo que merece lo unico que se mueve. */
+.ficha-nodo[data-forma="video"] {
+  flex: 0 0 44%;
+  width: 44%;
+  height: 96%;
+  align-self: center;
+}
+
+/* Solo la ficha activa recorre su linea: 109 recorridos serian un derroche. */
+.ficha[data-activa="si"] .ficha-linea[data-nodos="3"] .ficha-linea-tira {
+  animation: ficha-linea-3 8s infinite;
+}
+.ficha[data-activa="si"] .ficha-linea[data-nodos="4"] .ficha-linea-tira {
+  animation: ficha-linea-4 10s infinite;
+}
+.ficha[data-activa="si"] .ficha-linea[data-nodos="3"] .ficha-linea-lente {
+  animation: ficha-linea-foco-3 8s infinite;
+}
+.ficha[data-activa="si"] .ficha-linea[data-nodos="4"] .ficha-linea-lente {
+  animation: ficha-linea-foco-4 10s infinite;
+}
+
+/* Tres piezas: cuatro paradas, y la ultima es la copia de la primera. */
+@keyframes ficha-linea-3 {
+  0%, 21.5% {
+    transform: translate3d(33%, 17%, 0);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
+  }
+  25%, 46.5% {
+    transform: translate3d(-4%, -4%, 0);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
+  }
+  50%, 71.5% {
+    transform: translate3d(-44%, 21%, 0);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
+  }
+  75%, 100% {
+    transform: translate3d(-87%, 17%, 0);
+  }
+}
+
+/* Cuatro piezas: cinco paradas, la ultima es la copia de la primera. */
+@keyframes ficha-linea-4 {
+  0%, 17% {
+    transform: translate3d(33%, 17%, 0);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
+  }
+  20%, 37% {
+    transform: translate3d(-4%, -4%, 0);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
+  }
+  40%, 57% {
+    transform: translate3d(-46%, 0%, 0);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
+  }
+  60%, 77% {
+    transform: translate3d(-89%, -10%, 0);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
+  }
+  80%, 100% {
+    transform: translate3d(-127%, 17%, 0);
+  }
+}
+
+/* El foco: nitido en cada parada, desenfocado a mitad del barrido. Ya no hay
+   latigazo de vuelta, asi que todos los barridos pesan igual. */
+@keyframes ficha-linea-foco-3 {
+  0%, 21.5% { filter: blur(0px); transform: scale(1); }
+  23.2% { filter: blur(5px); transform: scale(1.03); }
+  25%, 46.5% { filter: blur(0px); transform: scale(1); }
+  48.2% { filter: blur(5px); transform: scale(1.03); }
+  50%, 71.5% { filter: blur(0px); transform: scale(1); }
+  73.2% { filter: blur(5px); transform: scale(1.03); }
+  75%, 100% { filter: blur(0px); transform: scale(1); }
+}
+
+@keyframes ficha-linea-foco-4 {
+  0%, 17% { filter: blur(0px); transform: scale(1); }
+  18.5% { filter: blur(5px); transform: scale(1.03); }
+  20%, 37% { filter: blur(0px); transform: scale(1); }
+  38.5% { filter: blur(5px); transform: scale(1.03); }
+  40%, 57% { filter: blur(0px); transform: scale(1); }
+  58.5% { filter: blur(5px); transform: scale(1.03); }
+  60%, 77% { filter: blur(0px); transform: scale(1); }
+  78.5% { filter: blur(5px); transform: scale(1.03); }
+  80%, 100% { filter: blur(0px); transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ficha[data-activa="si"] .ficha-linea-tira,
+  .ficha[data-activa="si"] .ficha-linea-lente {
     animation: none;
   }
-  .ficha-fotos > :not(:first-child) {
+}
+
+/* --- Presentaciones de la ficha -----------------------------------------
+   Un carro horizontal con anclaje: cada parada encuadra una presentacion entera
+   -municipio, fecha, hora y sede- y se pasa deslizando o con las flechas.
+
+   El anclaje es obligatorio a proposito: con "proximity" el carro puede quedarse
+   a medio camino ensenando dos mitades, y eso a un publico mayor le dice que
+   algo se ha roto. Con "mandatory" siempre acaba encuadrando una.
+
+   overscroll-behavior-x es lo que impide que el deslizamiento, al llegar al
+   final, lo recoja el navegador y lo entienda como "atras". Sin eso, pasar de
+   la ultima presentacion te saca de la pagina, que es exactamente el susto que
+   no queremos dar. */
+.ficha-fechas {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  /* Imprescindible declarar tambien el eje vertical. Por especificacion, si un
+     eje deja de ser visible el otro pasa de visible a auto, asi que un carro
+     "solo horizontal" se convierte sin querer en contenedor de scroll vertical:
+     se traga la rueda y rompe la jerarquia de la isla, que es quien debe
+     desplazarse. Con hidden el gesto vertical pasa de largo hasta ella. */
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  /* Sin barra: la senal de que hay mas fechas son las flechas y el "1 de 5",
+     que para el publico de este sitio funcionan mejor que un hilo -se ven, se
+     tocan y dicen cuantas hay-. La barra vertical de la isla si se queda, que
+     alli no hay flechas que la sustituyan. */
+  scrollbar-width: none;
+}
+
+.ficha-fechas::-webkit-scrollbar {
+  display: none;
+}
+
+.ficha-fecha {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+/* --- Mandos de la cartelera en movil ------------------------------------
+   Los mismos que la isla de escritorio, pero plegados. Cerrados ocupan una sola
+   linea: la cartelera se recorre leyendo fichas, no filtrando, asi que el
+   buscador tiene que estar a un toque sin ponerse delante.
+
+   El despliegue lo anima GSAP desde el componente, no este archivo: la altura
+   depende de cuantos filtros traiga el volcado y no se puede transicionar hacia
+   auto. Aqui solo esta el aspecto. */
+.cartelera-mandos-boton {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+  height: 2.75rem;
+  padding: 0 0.875rem;
+  border: 1px solid #2a2929;
+  border-radius: 8px;
+  background-color: rgba(20, 17, 17, 0.92);
+  backdrop-filter: blur(8px);
+  font-size: 0.9rem;
+  color: #e6e4e4;
+}
+
+.cartelera-mandos-cuenta {
+  margin-right: auto;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #8b8686;
+}
+
+.cartelera-mandos-boton:focus-visible {
+  outline: 2px solid #4a4747;
+  outline-offset: 2px;
+}
+
+.cartelera-mandos-boton svg {
+  flex: none;
+  color: #8b8686;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cartelera-mandos-boton svg[data-abierto="si"] {
+  transform: rotate(180deg);
+}
+
+.cartelera-mandos-cuerpo {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.cartelera-mandos-interior {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-top: 0.5rem;
+  border: 1px solid #2a2929;
+  border-radius: 8px;
+  background-color: rgba(20, 17, 17, 0.92);
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+}
+
+/* --- Isla de la cartelera, solo en pantalla ancha ------------------------
+   Panel fijo a la izquierda con lo que el visitante necesita a mano mientras
+   recorre el cartel: buscador, filtros, y quien tiene delante con su semblanza
+   y sus fechas. La lista de companias pasa por la derecha; la isla no se mueve.
+
+   Usa el mismo vocabulario oscuro que las fichas -filete de 1px, fondo casi
+   opaco, desenfoque de fondo- para que pertenezca a la seccion y no parezca una
+   pieza traida de otro sitio. */
+.isla-cartelera {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  width: 100%;
+  /* El alto lo manda el hueco que deja el contenedor, que ya descuenta la banda
+     de la isla de navegacion. Un maximo en svh aqui volveria a invadirla. */
+  max-height: 100%;
+  /* La isla entera no se desplaza: lo hace solo su mitad de abajo. */
+  overflow: hidden;
+  border: 1px solid #2a2929;
+  border-radius: 12px;
+  background-color: rgba(20, 17, 17, 0.86);
+  /* Vertical apretado, horizontal intacto: el aire lateral daba la sensacion de
+     panel y el de arriba y abajo solo alargaba la isla. */
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+/* --- Las dos mitades ----------------------------------------------------
+   Arriba los mandos, que no se mueven. Abajo la ficha, que es lo unico capaz de
+   crecer sin medida: una semblanza larga o once fechas. */
+.isla-fijo {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.isla-desplaza {
+  flex: 1 1 auto;
+  /* Sin esto un hijo de flex no baja de su contenido y nunca llega a
+     desplazarse: se estira y desborda el panel. */
+  min-height: 0;
+  overflow-y: auto;
+  /* La entrada de la ficha llega desde la derecha; sin esto asoma una barra
+     horizontal durante la animacion. */
+  overflow-x: hidden;
+  /* Que el gesto muera aqui y no siga hasta la pagina: el scroll de la pagina
+     es lo que cambia de artista, asi que encadenarlo cambiaria la ficha justo
+     mientras se intenta leerla. */
+  overscroll-behavior: contain;
+  /* Barra ancha y con contraste, no un hilo discreto. El publico de este sitio
+     es mayor: una barra de 4px en gris oscuro sobre panel oscuro es invisible
+     para quien no la esta buscando, y sin ella no hay forma de saber que queda
+     contenido debajo. Aqui el pulgar da 6.7:1 contra su canal, muy por encima
+     del 3:1 que pide WCAG para un control. */
+  scrollbar-width: auto;
+  scrollbar-color: #a9a4a4 #232222;
+  padding-right: 0.5rem;
+}
+
+.isla-desplaza::-webkit-scrollbar {
+  width: 12px;
+}
+
+.isla-desplaza::-webkit-scrollbar-track {
+  background: #232222;
+  border-radius: 6px;
+}
+
+.isla-desplaza::-webkit-scrollbar-thumb {
+  background: #a9a4a4;
+  border-radius: 6px;
+  /* El filete deja ver el canal por detras: sin el, pulgar y canal se leen como
+     una sola barra y se pierde la nocion de cuanto queda. */
+  border: 2px solid #232222;
+}
+
+.isla-desplaza::-webkit-scrollbar-thumb:hover {
+  background: #e6e4e4;
+}
+
+.isla-bloque + .isla-bloque {
+  border-top: 1px solid #232222;
+  padding-top: 0.875rem;
+}
+
+/* El campo de busqueda. Alto de 44px, que es el area de toque minima, y filete
+   propio: sobre un panel oscuro un campo sin borde no se lee como campo. */
+.isla-campo {
+  display: block;
+  width: 100%;
+  height: 2.75rem;
+  border: 1px solid #2a2929;
+  border-radius: 6px;
+  background-color: rgba(10, 8, 8, 0.6);
+  padding: 0 0.75rem;
+  color: #e6e4e4;
+  font-size: 0.875rem;
+}
+
+.isla-campo::placeholder {
+  color: #6f6a6a;
+}
+
+.isla-campo:focus-visible {
+  outline: 2px solid #4a4747;
+  outline-offset: 2px;
+  border-color: #3a3838;
+}
+
+.isla-filtro {
+  display: inline-flex;
+  align-items: center;
+  height: 2rem;
+  padding: 0 0.75rem;
+  border: 1px solid #2a2929;
+  border-radius: 6px;
+  color: #a9a4a4;
+  font-size: 0.8rem;
+  transition:
+    color 200ms ease-out,
+    border-color 200ms ease-out,
+    background-color 200ms ease-out;
+}
+
+.isla-filtro:hover {
+  color: #e6e4e4;
+  border-color: #3a3838;
+}
+
+/* El activo no se distingue solo por color: cambia el relleno y ademas lleva
+   aria-pressed, de modo que un lector de pantalla lo anuncia. */
+.isla-filtro[data-activo="si"] {
+  background-color: #e6e4e4;
+  border-color: #e6e4e4;
+  color: #1a1616;
+}
+
+.isla-filtro:focus-visible {
+  outline: 2px solid #4a4747;
+  outline-offset: 2px;
+}
+
+/* --- La compania que esta en pantalla ---------------------------------- */
+.isla-ficha {
+  border-top: 1px solid #232222;
+  padding-top: 0.875rem;
+}
+
+
+.isla-semblanza {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #a9a4a4;
+}
+
+.isla-programacion {
+  margin-top: 0.75rem;
+}
+
+/* --- Semblanza plegada --------------------------------------------------
+   El control se lee como un boton y no como un rotulo con flecha. Antes era una
+   linea pequena en versales con un galon al lado, y eso no dice que se pueda
+   pulsar: pide interpretar una flecha. Ahora tiene filete, alto de 44px -el
+   area de toque minima- y dice en palabras lo que va a hacer.
+
+   Sigue siendo <details> y no un boton con estado en React: el navegador ya
+   trae el plegado accesible -teclado, lector de pantalla y buscar en la pagina
+   encuentra el texto aunque este cerrado- y funciona sin JavaScript. */
+.isla-semblanza-plegada {
+  margin-top: 0.75rem;
+  border-top: 1px solid #232222;
+  padding-top: 0.75rem;
+}
+
+.isla-semblanza-plegada > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  height: 2.75rem;
+  padding: 0 0.875rem;
+  border: 1px solid #2a2929;
+  border-radius: 6px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.85rem;
+  color: #e6e4e4;
+  transition:
+    border-color 200ms ease-out,
+    background-color 200ms ease-out;
+}
+
+.isla-semblanza-plegada > summary::-webkit-details-marker {
+  display: none;
+}
+
+.isla-semblanza-plegada > summary:hover {
+  border-color: var(--tinte);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.isla-semblanza-plegada > summary:focus-visible {
+  outline: 2px solid var(--tinte);
+  outline-offset: 2px;
+}
+
+/* Un rotulo u otro segun este abierto: el boton nombra la accion, no el estado. */
+.isla-semblanza-plegada > summary .isla-ver-menos,
+.isla-semblanza-plegada[open] > summary .isla-ver-mas {
+  display: none;
+}
+
+.isla-semblanza-plegada[open] > summary .isla-ver-menos {
+  display: inline;
+}
+
+.isla-semblanza-plegada > summary svg {
+  flex: none;
+  color: #8b8686;
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.isla-semblanza-plegada[open] > summary svg {
+  transform: rotate(180deg);
+}
+
+.isla-vacio {
+  border-top: 1px solid #232222;
+  padding-top: 1.25rem;
+  font-size: 0.85rem;
+  color: #8b8686;
+}
+
+/* El relevo al cambiar de compania: escalonado, no un fundido de todo a la vez.
+   Entra el nombre, luego la procedencia, luego la obra, la semblanza y al final
+   las fechas. */
+.isla-ficha > * {
+  animation: isla-entra 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.isla-ficha > :nth-child(1) { animation-delay: 0ms; }
+.isla-ficha > :nth-child(2) { animation-delay: 70ms; }
+.isla-ficha > :nth-child(3) { animation-delay: 140ms; }
+
+
+/* Entra de lado y no desde abajo: la lista se recorre en vertical, asi que un
+   movimiento vertical se confundiria con el scroll. De lado se lee como un
+   relevo, que es lo que es. */
+@keyframes isla-entra {
+  from {
     opacity: 0;
+    transform: translate3d(1.5rem, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .isla-ficha > * {
+    animation: none;
   }
 }
 

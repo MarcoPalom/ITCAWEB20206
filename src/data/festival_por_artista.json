@@ -100,6 +100,7 @@
       "titulos": [
         "Momento Adictivo"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -119,7 +120,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Momento Adictivo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D34"
         },
@@ -134,7 +137,9 @@
           "hora": "20:00",
           "sede": "Plaza Principal",
           "titulo": "Momento Adictivo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E44"
         },
@@ -149,7 +154,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Momento Adictivo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M84"
         }
@@ -167,6 +174,7 @@
       "titulos": [
         "Poética del Espacio"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -191,10 +199,12 @@
             "2026-10-10",
             "2026-10-11"
           ],
-          "hora": "19:00",
-          "sede": "Permanencia: Octubre 2026 a Enero 2027\nHorario de Visita:\nLunes-CERRADO\nMartes a Jueves de 9:00 a 17:00 hrs.",
+          "hora": "17:00",
+          "sede": "Galería \"Artemio Guerra\" del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Poética del Espacio",
+          "tipo": "exposición",
           "inauguracion": "Inauguración 6 de octubre 17:00 hrs. | Galería \"Artemio Guerra\" del Centro de Arte y Cultura del Parque Cultural Reynosa",
+          "permanencia": "Octubre 2026 a Enero 2027",
           "notas": [],
           "celda": "H27"
         }
@@ -212,6 +222,7 @@
       "titulos": [
         "Acordes de Nuestra Tierra"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -232,7 +243,9 @@
           "hora": "19:30",
           "sede": "Plaza Juárez",
           "titulo": "Acordes de Nuestra Tierra",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D11"
         },
@@ -247,7 +260,9 @@
           "hora": "18:45",
           "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
           "titulo": "Acordes de Nuestra Tierra",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E13"
         },
@@ -262,7 +277,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Acordes de Nuestra Tierra",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L34"
         },
@@ -277,7 +294,9 @@
           "hora": "19:00",
           "sede": "Plaza \"Damas Leonas\"",
           "titulo": "Acordes de Nuestra Tierra",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M19"
         }
@@ -295,6 +314,7 @@
       "titulos": [
         "El Sur Viaja en Tren"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -314,7 +334,9 @@
           "hora": "11:00",
           "sede": "Auditorio Casa Club del Ejido \"El Palmar\", Municipio de San Nicolás",
           "titulo": "El Sur Viaja en Tren",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G50"
         },
@@ -329,7 +351,9 @@
           "hora": null,
           "sede": null,
           "titulo": "El Sur Viaja en Tren",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H48"
         },
@@ -344,7 +368,9 @@
           "hora": null,
           "sede": null,
           "titulo": "El Sur Viaja en Tren",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I42"
         }
@@ -362,6 +388,7 @@
       "titulos": [
         "Arte Bajo el Cielo"
       ],
+      "sin_autor_nombrado": true,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -379,7 +406,9 @@
           "hora": "17:00",
           "sede": "Plaza Principal \"Treviño Zapata\"",
           "titulo": "Arte Bajo el Cielo",
+          "tipo": "exposición",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F22"
         }
@@ -397,6 +426,7 @@
       "titulos": [
         "La otra historia de Rosa"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -416,7 +446,9 @@
           "hora": "09:00",
           "sede": "Escuela Secundaria Técnica #38 \"Gral. y Lic. Aarón Sáenz Garza!",
           "titulo": "La otra historia de Rosa",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G98"
         },
@@ -431,7 +463,9 @@
           "hora": "10:30",
           "sede": "Secundaria Técnica #25 del Poblado \"Loma Alta\", Municipio de Gómez Farías",
           "titulo": "La otra historia de Rosa",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H100"
         },
@@ -446,7 +480,9 @@
           "hora": null,
           "sede": "Para mayores de 12, programar en Auditorio con invitación a escuelas o en secundaria.",
           "titulo": "La otra historia de Rosa",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I86"
         }
@@ -464,6 +500,7 @@
       "titulos": [
         "Mundo Fantástico"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 7,
       "total_municipios": 7,
       "municipios": [
@@ -487,7 +524,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Mundo Fantástico",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D108"
         },
@@ -502,7 +541,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Mundo Fantástico",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D106"
         },
@@ -517,7 +558,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Mundo Fantástico",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H17"
         },
@@ -532,7 +575,9 @@
           "hora": "10:30",
           "sede": "Escuela Primaria \"Guadalupe Mainero\"",
           "titulo": "Mundo Fantástico",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I19"
         },
@@ -547,7 +592,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Mundo Fantástico",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J34"
         },
@@ -562,7 +609,9 @@
           "hora": "18:00",
           "sede": "Foro de la Iglesia del Poblado \"Loma Alta\", Municipio de Gómez Farías",
           "titulo": "Mundo Fantástico",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M100"
         },
@@ -577,7 +626,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Mundo Fantástico",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M96"
         }
@@ -595,6 +646,7 @@
       "titulos": [
         "Ballet Folklórico de la Guardia Nacional"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -612,7 +664,9 @@
           "hora": "19:30",
           "sede": "Teatro Principal del Espacio Cultural Metropolitano",
           "titulo": "Ballet Folklórico de la Guardia Nacional",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E121"
         }
@@ -630,6 +684,7 @@
       "titulos": [
         "Ballet Folklórico de México de Amalia Hernández"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -647,7 +702,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Ballet Folklórico de México de Amalia Hernández",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D21"
         }
@@ -665,6 +722,7 @@
       "titulos": [
         "Ballet Folklórico \"Xalmana\""
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -683,7 +741,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Ballet Folklórico \"Xalmana\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L98"
         },
@@ -698,9 +758,67 @@
           "hora": "18:30",
           "sede": "Teatro Principal del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Ballet Folklórico \"Xalmana\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M21"
+        }
+      ]
+    },
+    {
+      "artista": "Ballet Folklórico Yacatecutli",
+      "clave": "ballet folklorico yacatecutli",
+      "disciplinas": [
+        "Danza"
+      ],
+      "procedencias": [
+        "Tamaulipas"
+      ],
+      "titulos": [
+        "Solo Veracruz es Bello"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 2,
+      "total_municipios": 2,
+      "municipios": [
+        "Mante",
+        "Padilla"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Mante",
+          "dias": [
+            "Viernes 2"
+          ],
+          "fechas": [
+            "2026-10-02"
+          ],
+          "hora": "19:00",
+          "sede": "Plaza Principal \"Gral. Plutarco Elías Calles\"",
+          "titulo": "Solo Veracruz es Bello",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "D102"
+        },
+        {
+          "municipio": "Padilla",
+          "dias": [
+            "Domingo 11"
+          ],
+          "fechas": [
+            "2026-10-11"
+          ],
+          "hora": "18:00",
+          "sede": "Teatro del Pueblo\nPlaza Principal",
+          "titulo": "Solo Veracruz es Bello",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "M67"
         }
       ]
     },
@@ -716,6 +834,7 @@
       "titulos": [
         "Ballets Folklóricos del IRCA"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -733,7 +852,9 @@
           "hora": "18:00",
           "sede": "Plaza Principal \"Miguel Hidalgo\"",
           "titulo": "Ballets Folklóricos del IRCA",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E22"
         }
@@ -752,6 +873,7 @@
         "125 Aniversario",
         "Tributo a Juan Gabriel"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -773,7 +895,9 @@
           "hora": "18:00",
           "sede": "Concha Acústica de la Plaza Principal",
           "titulo": "125 Aniversario",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D62"
         },
@@ -788,7 +912,9 @@
           "hora": "18:00",
           "sede": "Explanada Municipal de Soto la Marina",
           "titulo": "125 Aniversario",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F64"
         },
@@ -803,7 +929,9 @@
           "hora": "11:00",
           "sede": "Auditorio Municipal",
           "titulo": "125 Aniversario",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J52"
         },
@@ -818,7 +946,9 @@
           "hora": "19:00",
           "sede": "Concha Acústica de la Unidad Deportiva Siglo XXI",
           "titulo": "Tributo a Juan Gabriel",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K78"
         },
@@ -833,7 +963,9 @@
           "hora": "19:30",
           "sede": "Plaza \"Benito Juárez\"",
           "titulo": "125 Aniversario",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M32"
         }
@@ -851,6 +983,7 @@
       "titulos": [
         "Banda Sinfónica Municipal \"Elías Valenzuela\""
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -868,7 +1001,9 @@
           "hora": "17:00",
           "sede": "Explanada del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Banda Sinfónica Municipal \"Elías Valenzuela\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L22"
         }
@@ -886,6 +1021,7 @@
       "titulos": [
         "Música de banda del planeta tierra"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -905,7 +1041,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Música de banda del planeta tierra",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D94"
         },
@@ -920,7 +1058,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Música de banda del planeta tierra",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E119"
         },
@@ -935,7 +1075,9 @@
           "hora": "19:00",
           "sede": "Plaza de la Constitución",
           "titulo": "Música de banda del planeta tierra",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F117"
         }
@@ -953,6 +1095,7 @@
       "titulos": [
         "Lo que el viento me dejó"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -973,10 +1116,12 @@
             "2026-10-10",
             "2026-10-11"
           ],
-          "hora": "16:00",
-          "sede": "Permanencia: Octubre 2026 a Enero 2027\nHorario de Visita:\nLunes CERRADO\nMartes a Sábado de 10:00 a 18:00 hrs.",
+          "hora": "18:00",
+          "sede": "Museo de Arte Contemporáneo de Tamaulipas (MACT)",
           "titulo": "Lo que el viento me dejó",
+          "tipo": "exposición",
           "inauguracion": "Inauguración 8 de octubre 18:00 hrs. | Museo de Arte Contemporáneo de Tamaulipas (MACT)",
+          "permanencia": "Octubre 2026 a Enero 2027",
           "notas": [],
           "celda": "J40"
         }
@@ -995,6 +1140,7 @@
       "titulos": [
         "Soneras de Mar y Río"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -1015,7 +1161,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Soneras de Mar y Río",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D119"
         },
@@ -1030,7 +1178,9 @@
           "hora": "19:00",
           "sede": "Teatro del IMSS",
           "titulo": "Soneras de Mar y Río",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E102"
         },
@@ -1045,7 +1195,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Soneras de Mar y Río",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F94"
         },
@@ -1060,7 +1212,9 @@
           "hora": "18:00",
           "sede": "Canchas Nuevas de Fut-Bol de la Colonia Jesús Vega",
           "titulo": "Soneras de Mar y Río",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G115"
         }
@@ -1078,6 +1232,7 @@
       "titulos": [
         "Carrera de \"Gateo\" Motivacional y el Tesoro Escondido"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -1095,9 +1250,67 @@
           "hora": "09:00",
           "sede": "Jardín de Niños \"Estefanía Castañeda\" de la Colonia Constitución",
           "titulo": "Carrera de \"Gateo\" Motivacional y el Tesoro Escondido",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J113"
+        }
+      ]
+    },
+    {
+      "artista": "Cartel Gráfico Mundialista y Tiro al Ángulo: Exposición de Cartel y Fotografía",
+      "clave": "cartel grafico mundialista y tiro al angulo: exposicion de cartel y fotografia",
+      "disciplinas": [
+        "Artes Visuales"
+      ],
+      "procedencias": [
+        "Tamaulipas"
+      ],
+      "titulos": [
+        "Cartel Gráfico Mundialista y Tiro al Ángulo: Exposición de Cartel y Fotografía"
+      ],
+      "sin_autor_nombrado": true,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Soto la Marina"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Soto la Marina",
+          "dias": [
+            "Viernes 2",
+            "Sábado 3",
+            "Domingo 4",
+            "Lunes 5",
+            "Martes 6",
+            "Miércoles 7",
+            "Jueves 8",
+            "Viernes 9",
+            "Sábado 10",
+            "Domingo 11"
+          ],
+          "fechas": [
+            "2026-10-02",
+            "2026-10-03",
+            "2026-10-04",
+            "2026-10-05",
+            "2026-10-06",
+            "2026-10-07",
+            "2026-10-08",
+            "2026-10-09",
+            "2026-10-10",
+            "2026-10-11"
+          ],
+          "hora": null,
+          "sede": "Casa de la Cultura de Soto la Marina",
+          "titulo": "Cartel Gráfico Mundialista y Tiro al Ángulo: Exposición de Cartel y Fotografía",
+          "tipo": "exposición",
+          "inauguracion": "Inauguración | Casa de la Cultura de Soto la Marina",
+          "permanencia": null,
+          "notas": [],
+          "celda": "D65"
         }
       ]
     },
@@ -1113,6 +1326,7 @@
       "titulos": [
         "Cuentocirco"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 11,
       "total_municipios": 11,
       "municipios": [
@@ -1140,7 +1354,9 @@
           "hora": "18:00",
           "sede": "Plaza Principal de Miquihuana",
           "titulo": "Cuentocirco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D90"
         },
@@ -1155,7 +1371,9 @@
           "hora": "18:00",
           "sede": "Plaza 20 de Noviembre",
           "titulo": "Cuentocirco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E88"
         },
@@ -1170,7 +1388,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Cuentocirco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F86"
         },
@@ -1185,7 +1405,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Cuentocirco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G84"
         },
@@ -1200,7 +1422,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Cuentocirco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G96"
         },
@@ -1215,7 +1439,9 @@
           "hora": "18:00",
           "sede": "Plaza Principal del Ejido Lázaro Cárdenas, Municipio de Casas",
           "titulo": "Cuentocirco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H72"
         },
@@ -1230,7 +1456,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Cuentocirco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I69"
         },
@@ -1245,7 +1473,9 @@
           "hora": "10:00",
           "sede": "Jardín de niños \"Alborada\"\nPoblado \"El Barretal\"",
           "titulo": "Cuentocirco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J67"
         },
@@ -1260,7 +1490,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Cuentocirco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K58"
         },
@@ -1275,7 +1507,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Cuentocirco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L54"
         },
@@ -1290,7 +1524,9 @@
           "hora": "19:00",
           "sede": "Plaza Principal",
           "titulo": "Cuentocirco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M52"
         }
@@ -1308,6 +1544,7 @@
       "titulos": [
         "Embrulho"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -1329,7 +1566,9 @@
           "hora": "10:30",
           "sede": "Auditorio Municipal",
           "titulo": "Embrulho",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J64"
         },
@@ -1344,7 +1583,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Embrulho",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J76"
         },
@@ -1359,7 +1600,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Embrulho",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K84"
         },
@@ -1374,7 +1617,9 @@
           "hora": "18:00",
           "sede": "Concha Acústica de la Plaza Principal",
           "titulo": "Embrulho",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L62"
         },
@@ -1389,7 +1634,9 @@
           "hora": "11:00",
           "sede": "Auditorio Municipal ubicado en la Cabecera Municipal",
           "titulo": "Embrulho",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M50"
         }
@@ -1407,6 +1654,7 @@
       "titulos": [
         "De camino a casa"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -1428,7 +1676,9 @@
           "hora": "10:00",
           "sede": "Auditorio \"Juan Macías Castillo\"",
           "titulo": "De camino a casa",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I117"
         },
@@ -1443,7 +1693,9 @@
           "hora": "09:30",
           "sede": "Jardín de Niños \"Estefanía Castañeda\" de la Colonia Constitución",
           "titulo": "De camino a casa",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J115"
         },
@@ -1458,7 +1710,9 @@
           "hora": "18:00",
           "sede": "Auditorio Municipal de Jiménez",
           "titulo": "De camino a casa",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K60"
         },
@@ -1473,7 +1727,9 @@
           "hora": null,
           "sede": null,
           "titulo": "De camino a casa",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "(Programar de preferencia en Auditorio)"
           ],
@@ -1490,7 +1746,9 @@
           "hora": null,
           "sede": null,
           "titulo": "De camino a casa",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "(Programar de preferencia en Auditorio)"
           ],
@@ -1510,6 +1768,7 @@
       "titulos": [
         "Entreverte"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -1530,7 +1789,9 @@
           "hora": "18:00",
           "sede": "Explanada del Centro Cultural Tamaulipas",
           "titulo": "Entreverte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D74"
         },
@@ -1545,7 +1806,9 @@
           "hora": "17:30",
           "sede": "Foro de la Iglesia del Poblado \"Loma Alta\", Municipio de Gómez Farías",
           "titulo": "Entreverte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E100"
         },
@@ -1560,7 +1823,9 @@
           "hora": "20:00",
           "sede": "Plaza Principal de Estación Manuel, Municipio de González",
           "titulo": "Entreverte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F110"
         },
@@ -1575,7 +1840,9 @@
           "hora": "18:00",
           "sede": "Concha Acústica de la Plaza Principal",
           "titulo": "Entreverte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G62"
         }
@@ -1593,6 +1860,7 @@
       "titulos": [
         "Las Maravillas del Cielo"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 7,
       "total_municipios": 7,
       "municipios": [
@@ -1616,7 +1884,9 @@
           "hora": "17:30",
           "sede": "Foro de la Iglesia del Poblado \"Loma Alta\", Municipio de Gómez Farías",
           "titulo": "Las Maravillas del Cielo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D100"
         },
@@ -1631,7 +1901,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Las Maravillas del Cielo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E98"
         },
@@ -1646,7 +1918,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Las Maravillas del Cielo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F96"
         },
@@ -1661,7 +1935,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Las Maravillas del Cielo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G106"
         },
@@ -1676,7 +1952,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Las Maravillas del Cielo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H108"
         },
@@ -1691,7 +1969,9 @@
           "hora": "10:00",
           "sede": "Plaza 20 de Noviembre",
           "titulo": "Las Maravillas del Cielo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M88"
         },
@@ -1706,109 +1986,11 @@
           "hora": "18:00",
           "sede": "Plaza Principal de Miquihuana",
           "titulo": "Las Maravillas del Cielo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M90"
-        }
-      ]
-    },
-    {
-      "artista": "Colectiva de 21 Artistas Tamaulipecos",
-      "clave": "colectiva de 21 artistas tamaulipecos",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Tamaulipas"
-      ],
-      "titulos": [
-        "NEXOS Muestra de Arte Emergente"
-      ],
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Martes 6",
-            "Miércoles 7",
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-06",
-            "2026-10-07",
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": "19:00",
-          "sede": "Permanencia: Octubre 2026 a Enero 2027\nHorario de Visita:\nLunes-CERRADO\nMartes a Jueves de 9:00 a 17:00 hrs.",
-          "titulo": "NEXOS Muestra de Arte Emergente",
-          "inauguracion": "Inauguración 6 de octubre 17:00 hrs. | Galería \"Artemio Guerra\" del Centro de Arte y Cultura del Parque Cultural Reynosa",
-          "notas": [
-            "(Primera Edición)"
-          ],
-          "celda": "H28"
-        }
-      ]
-    },
-    {
-      "artista": "Colectiva de 24 artistas Tamaulipecos",
-      "clave": "colectiva de 24 artistas tamaulipecos",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Tamaulipas"
-      ],
-      "titulos": [
-        "Cartel Gráfico Mundialista y Tiro al Ángulo: Exposición de Cartel y Fotografía"
-      ],
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Soto la Marina"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Soto la Marina",
-          "dias": [
-            "Viernes 2",
-            "Sábado 3",
-            "Domingo 4",
-            "Lunes 5",
-            "Martes 6",
-            "Miércoles 7",
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-02",
-            "2026-10-03",
-            "2026-10-04",
-            "2026-10-05",
-            "2026-10-06",
-            "2026-10-07",
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": null,
-          "sede": "Permanencia:\nHorario de Visita:",
-          "titulo": "Cartel Gráfico Mundialista y Tiro al Ángulo: Exposición de Cartel y Fotografía",
-          "inauguracion": "Inauguración | Casa de la Cultura de Soto la Marina",
-          "notas": [],
-          "celda": "D65"
         }
       ]
     },
@@ -1824,6 +2006,7 @@
       "titulos": [
         "Titiricuento: Caperuza Celeste"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -1845,7 +2028,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Titiricuento: Caperuza Celeste",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G42"
         },
@@ -1860,7 +2045,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Titiricuento: Caperuza Celeste",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H46"
         },
@@ -1875,7 +2062,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Titiricuento: Caperuza Celeste",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I48"
         },
@@ -1890,7 +2079,9 @@
           "hora": "16:00",
           "sede": "Techumbre del Ejido \"El Palmar\", Municipio de San Nicolás",
           "titulo": "Titiricuento: Caperuza Celeste",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J50"
         },
@@ -1905,7 +2096,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Titiricuento: Caperuza Celeste",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M17"
         }
@@ -1923,6 +2116,7 @@
       "titulos": [
         "Beautiful Julia"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -1941,7 +2135,9 @@
           "hora": "18:00",
           "sede": "Teatro Experimental del Espacio Cultural Metropolitano",
           "titulo": "Beautiful Julia",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G122"
         },
@@ -1956,7 +2152,9 @@
           "hora": "10:30",
           "sede": "Teatro Experimental del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Beautiful Julia",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I22"
         }
@@ -1974,6 +2172,7 @@
       "titulos": [
         "Kopalli: el espíritu astral"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -1995,7 +2194,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro Cultural de Nuevo Laredo",
           "titulo": "Kopalli: el espíritu astral",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D5"
         },
@@ -2010,7 +2211,9 @@
           "hora": "18:00",
           "sede": "Teatro Principal del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Kopalli: el espíritu astral",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F21"
         },
@@ -2025,7 +2228,9 @@
           "hora": "20:00",
           "sede": "Plaza \"Miguel Hidalgo\"",
           "titulo": "Kopalli: el espíritu astral",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G38"
         },
@@ -2040,7 +2245,9 @@
           "hora": "19:00",
           "sede": "Concha Acústica de la Unidad Deportiva Siglo XXI",
           "titulo": "Kopalli: el espíritu astral",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I78"
         },
@@ -2055,7 +2262,9 @@
           "hora": "20:00",
           "sede": "Teatro Principal del Espacio Cultural Metropolitano",
           "titulo": "Kopalli: el espíritu astral",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K121"
         }
@@ -2073,6 +2282,7 @@
       "titulos": [
         "Compañía de Teatro Comunitario  del IRCA"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2090,7 +2300,9 @@
           "hora": "18:00",
           "sede": "IRCA Jarachina",
           "titulo": "Compañía de Teatro Comunitario  del IRCA",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I23"
         }
@@ -2108,6 +2320,7 @@
       "titulos": [
         "Dido y Eneas"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2125,7 +2338,9 @@
           "hora": "18:30",
           "sede": "Teatro Principal del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Dido y Eneas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J21"
         }
@@ -2143,6 +2358,7 @@
       "titulos": [
         "Concierto Orquesta Sinfónica Juvenil de México"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2160,7 +2376,9 @@
           "hora": "18:00",
           "sede": "Teatro Principal del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Concierto Orquesta Sinfónica Juvenil de México",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M22"
         }
@@ -2178,6 +2396,7 @@
       "titulos": [
         "Concurso de Caracterización Infantil"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2195,7 +2414,9 @@
           "hora": "17:30",
           "sede": "Canchas de Fut-Bol 11\nColonia Paraíso",
           "titulo": "Concurso de Caracterización Infantil",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I113"
         }
@@ -2213,6 +2434,7 @@
       "titulos": [
         "Norteño Fest"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -2233,7 +2455,9 @@
           "hora": "18:00",
           "sede": "Teatro del Pueblo\nPlaza Principal",
           "titulo": "Norteño Fest",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D67"
         },
@@ -2248,7 +2472,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Norteño Fest",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K119"
         },
@@ -2263,7 +2489,9 @@
           "hora": "18:00",
           "sede": "Foro de la Iglesia del Poblado \"Loma Alta\", Municipio de Gómez Farías",
           "titulo": "Norteño Fest",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L100"
         },
@@ -2278,7 +2506,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Norteño Fest",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M98"
         }
@@ -2296,6 +2526,7 @@
       "titulos": [
         "Sal, Arena y Arte Contemporáneo"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2313,7 +2544,9 @@
           "hora": "11:00",
           "sede": null,
           "titulo": "Sal, Arena y Arte Contemporáneo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "(MACT)"
           ],
@@ -2333,6 +2566,7 @@
       "titulos": [
         "Ecos del Noreste Mexicano"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -2352,7 +2586,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Ecos del Noreste Mexicano",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K98"
         },
@@ -2367,7 +2603,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Ecos del Noreste Mexicano",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L88"
         },
@@ -2382,7 +2620,9 @@
           "hora": "13:00",
           "sede": "Iglesia de Nuestra Señora de las Nieves",
           "titulo": "Ecos del Noreste Mexicano",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M92"
         }
@@ -2400,6 +2640,7 @@
       "titulos": [
         "Las pasiones del alma. Voces reveladas"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -2419,7 +2660,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Las pasiones del alma. Voces reveladas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Se sugiere programar en iglesia o espacio con buena acústica"
           ],
@@ -2436,7 +2679,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Las pasiones del alma. Voces reveladas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Se sugiere programar en iglesia o espacio con buena acústica"
           ],
@@ -2453,7 +2698,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Las pasiones del alma. Voces reveladas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Se sugiere programar en iglesia o espacio con buena acústica"
           ],
@@ -2473,6 +2720,7 @@
       "titulos": [
         "Danza Clásica y Moderna del IRCA"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2490,7 +2738,9 @@
           "hora": "18:00",
           "sede": "IRCA Jarachina",
           "titulo": "Danza Clásica y Moderna del IRCA",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H22"
         }
@@ -2508,6 +2758,7 @@
       "titulos": [
         "Grupo de Danza \"Mitotl\""
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2525,7 +2776,9 @@
           "hora": "19:00",
           "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
           "titulo": "Grupo de Danza \"Mitotl\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F14"
         }
@@ -2543,6 +2796,7 @@
       "titulos": [
         "Danza González"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2560,7 +2814,9 @@
           "hora": "18:00",
           "sede": "Plaza Principal de González",
           "titulo": "Danza González",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D110"
         }
@@ -2578,6 +2834,7 @@
       "titulos": [
         "Danza Manuel"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2595,7 +2852,9 @@
           "hora": "18:00",
           "sede": "Plaza Principal de Estación Manuel, Municipio de González",
           "titulo": "Danza Manuel",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I110"
         }
@@ -2613,6 +2872,7 @@
       "titulos": [
         "Proyecto X"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2630,7 +2890,9 @@
           "hora": "18:45",
           "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
           "titulo": "Proyecto X",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D13"
         }
@@ -2648,6 +2910,7 @@
       "titulos": [
         "David Onassis Guevara Cruz"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2665,7 +2928,9 @@
           "hora": "17:30",
           "sede": "Canchas Nuevas de Fut-Bol de la Colonia Jesús Vega",
           "titulo": "David Onassis Guevara Cruz",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G114"
         }
@@ -2683,6 +2948,7 @@
       "titulos": [
         "Por quien suenan los tambores"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -2703,7 +2969,9 @@
           "hora": "09:00",
           "sede": "Telesecundaria \"Miguel Hidalgo\"",
           "titulo": "Por quien suenan los tambores",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J92"
         },
@@ -2718,7 +2986,9 @@
           "hora": "18:00",
           "sede": "Plaza 20 de Noviembre",
           "titulo": "Por quien suenan los tambores",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K88"
         },
@@ -2733,7 +3003,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Por quien suenan los tambores",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L84"
         },
@@ -2748,7 +3020,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Por quien suenan los tambores",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M86"
         }
@@ -2766,6 +3040,7 @@
       "titulos": [
         "Distrito Cero"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -2786,7 +3061,9 @@
           "hora": "18:15",
           "sede": "Plaza Principal de González",
           "titulo": "Distrito Cero",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D111"
         },
@@ -2801,7 +3078,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Distrito Cero",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E69"
         },
@@ -2816,7 +3095,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Distrito Cero",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L58"
         },
@@ -2831,7 +3112,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Distrito Cero",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M42"
         }
@@ -2849,6 +3132,7 @@
       "titulos": [
         "Domingo de Danzón"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2866,7 +3150,9 @@
           "hora": "19:00",
           "sede": "Plaza Principal \"Treviño Zapata\"",
           "titulo": "Domingo de Danzón",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F23"
         }
@@ -2884,6 +3170,7 @@
       "titulos": [
         "Dueto \"La Joya\""
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -2901,7 +3188,9 @@
           "hora": "19:00",
           "sede": "Plaza \"Benito Juárez\"",
           "titulo": "Dueto \"La Joya\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M30"
         }
@@ -2919,6 +3208,7 @@
       "titulos": [
         "De Tamaulipas para el Mundo"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -2938,7 +3228,9 @@
           "hora": "19:00",
           "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
           "titulo": "De Tamaulipas para el Mundo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D14"
         },
@@ -2953,7 +3245,9 @@
           "hora": "19:00",
           "sede": "Plaza Principal \"Gral. Plutarco Elías Calles\"",
           "titulo": "De Tamaulipas para el Mundo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L102"
         },
@@ -2968,7 +3262,9 @@
           "hora": null,
           "sede": null,
           "titulo": "De Tamaulipas para el Mundo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M94"
         }
@@ -2986,6 +3282,7 @@
       "titulos": [
         "El éxodo de los pequeños zapatos"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -3007,7 +3304,9 @@
           "hora": null,
           "sede": "Programar en escuelas o auditorios, con invitación a escuelas",
           "titulo": "El éxodo de los pequeños zapatos",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G108"
         },
@@ -3022,7 +3321,9 @@
           "hora": null,
           "sede": "Programar en escuelas o auditorios, con invitación a escuelas",
           "titulo": "El éxodo de los pequeños zapatos",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H106"
         },
@@ -3037,7 +3338,9 @@
           "hora": "18:15",
           "sede": "Plaza Principal de Estación Manuel, Municipio de González",
           "titulo": "El éxodo de los pequeños zapatos",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I111"
         },
@@ -3052,7 +3355,9 @@
           "hora": "09:00",
           "sede": "Escuela Primaria \"La Corregidora\"",
           "titulo": "El éxodo de los pequeños zapatos",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J98"
         },
@@ -3067,7 +3372,9 @@
           "hora": "11:00",
           "sede": "Escuela Primaria \"Fraternidad Campesina\" del Ejido \"Benito Juárez\", Municipio de Gómez Farías",
           "titulo": "El éxodo de los pequeños zapatos",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K100"
         }
@@ -3085,6 +3392,7 @@
       "titulos": [
         "El Zar de Monterrey"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -3104,7 +3412,9 @@
           "hora": null,
           "sede": null,
           "titulo": "El Zar de Monterrey",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D17"
         },
@@ -3119,7 +3429,9 @@
           "hora": "20:00",
           "sede": "Kiosko Plaza Juárez",
           "titulo": "El Zar de Monterrey",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E9"
         },
@@ -3134,7 +3446,9 @@
           "hora": null,
           "sede": null,
           "titulo": "El Zar de Monterrey",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M48"
         }
@@ -3152,6 +3466,7 @@
       "titulos": [
         "Ensamble de Guitarras de la Casa de la Cultura de Aldama"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -3169,7 +3484,9 @@
           "hora": "18:15",
           "sede": "Foro de la Plaza de la Colonia Constitución",
           "titulo": "Ensamble de Guitarras de la Casa de la Cultura de Aldama",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E114"
         }
@@ -3187,6 +3504,7 @@
       "titulos": [
         "Entre viento y marea"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -3208,7 +3526,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro Cultural de Nuevo Laredo",
           "titulo": "Entre viento y marea",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G5"
         },
@@ -3223,7 +3543,9 @@
           "hora": "18:30",
           "sede": "Teatro Principal del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Entre viento y marea",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I21"
         },
@@ -3238,7 +3560,9 @@
           "hora": "20:00",
           "sede": "Teatro de la Reforma",
           "titulo": "Entre viento y marea",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J36"
         },
@@ -3253,7 +3577,9 @@
           "hora": "19:00",
           "sede": "Teatro Amalia González Caballero de Castillo Ledón del Centro Cultural Tamaulipas",
           "titulo": "Entre viento y marea",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L75"
         },
@@ -3268,7 +3594,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Espacio Cultural Metropolitano",
           "titulo": "Entre viento y marea",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M121"
         }
@@ -3286,6 +3614,7 @@
       "titulos": [
         "Atrapando al viento"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -3304,7 +3633,9 @@
           "hora": "08:30",
           "sede": "Escuela Secundaria Técnica\n#10 \"Lázaro Cárdenas\"",
           "titulo": "Atrapando al viento",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H32"
         },
@@ -3319,62 +3650,11 @@
           "hora": "09:30",
           "sede": "Concha Acústica del Parque Olímpico",
           "titulo": "Atrapando al viento",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I38"
-        }
-      ]
-    },
-    {
-      "artista": "Esculturas de Bronce a la Cera Perdida",
-      "clave": "esculturas de bronce a la cera perdida",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Nacional"
-      ],
-      "titulos": [
-        "CaminArte Escultura Monumental"
-      ],
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Viernes 2",
-            "Sábado 3",
-            "Domingo 4",
-            "Lunes 5",
-            "Martes 6",
-            "Miércoles 7",
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-02",
-            "2026-10-03",
-            "2026-10-04",
-            "2026-10-05",
-            "2026-10-06",
-            "2026-10-07",
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": null,
-          "sede": "Permanencia: Marzo 2027\nHorario de Visita: Expuesto en Espacio Público (Permanente)",
-          "titulo": "CaminArte Escultura Monumental",
-          "inauguracion": "Inauguración 21 de septiembre | Explanada del Centro Cultural Tamaulipas",
-          "notas": [],
-          "celda": "D79"
         }
       ]
     },
@@ -3390,6 +3670,7 @@
       "titulos": [
         "De Conchas y Corales, Música Costeña de aquí y de allá"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -3409,7 +3690,9 @@
           "hora": null,
           "sede": null,
           "titulo": "De Conchas y Corales, Música Costeña de aquí y de allá",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D69"
         },
@@ -3424,7 +3707,9 @@
           "hora": "18:00",
           "sede": "Teatro del Pueblo\nPlaza Principal",
           "titulo": "De Conchas y Corales, Música Costeña de aquí y de allá",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E67"
         },
@@ -3439,7 +3724,9 @@
           "hora": null,
           "sede": null,
           "titulo": "De Conchas y Corales, Música Costeña de aquí y de allá",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F84"
         }
@@ -3457,6 +3744,7 @@
       "titulos": [
         "Estancias Creativas I y II"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -3475,10 +3763,12 @@
             "2026-10-10",
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": "Permanencia:\nHorario de Visita:",
+          "hora": "17:00",
+          "sede": "Museo Histórico Reynosa",
           "titulo": "Estancias Creativas I y II",
+          "tipo": "exposición",
           "inauguracion": "Inauguración 9 de octubre 17:00 hrs. | Museo Histórico Reynosa",
+          "permanencia": null,
           "notas": [],
           "celda": "K25"
         }
@@ -3496,6 +3786,7 @@
       "titulos": [
         "La Dama del Bolero, Feeling Jazz Tour 2026"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -3515,7 +3806,9 @@
           "hora": "19:30",
           "sede": "Plaza Juárez",
           "titulo": "La Dama del Bolero, Feeling Jazz Tour 2026",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E11"
         },
@@ -3530,7 +3823,9 @@
           "hora": "20:00",
           "sede": "Foro Externo\n\"Parque Viveros\"",
           "titulo": "La Dama del Bolero, Feeling Jazz Tour 2026",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G7"
         },
@@ -3543,50 +3838,13 @@
             "2026-10-09"
           ],
           "hora": "19:00",
-          "sede": null,
+          "sede": "Museo Trazos Regionales",
           "titulo": "La Dama del Bolero, Feeling Jazz Tour 2026",
+          "tipo": "presentación",
           "inauguracion": null,
-          "notas": [
-            "Museo Trazos Regionales (tentativo)"
-          ],
-          "celda": "K9"
-        }
-      ]
-    },
-    {
-      "artista": "Exposición por el Aniversario de Pinacoteca",
-      "clave": "exposicion por el aniversario de pinacoteca",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [],
-      "titulos": [
-        "Casa Filizola: Una Puerta al Arte y la Historia"
-      ],
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": null,
-          "sede": "Permanencia: Octubre de 2026 a Enero de 2027\nHorario de Visita:\nLunes CERRADO\nMartes a Viernes de 10:00 a 18:00 hrs.\nSábado y Domingo de 10:00 a 16:00 hrs.",
-          "titulo": "Casa Filizola: Una Puerta al Arte y la Historia",
-          "inauguracion": "Inauguración 9 de octubre 18:00 hrs. | Pinacoteca de Tamaulipas",
+          "permanencia": null,
           "notas": [],
-          "celda": "K81"
+          "celda": "K9"
         }
       ]
     },
@@ -3602,6 +3860,7 @@
       "titulos": [
         "México con Voz de Mujer"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -3623,7 +3882,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro Cultural de Nuevo Laredo",
           "titulo": "México con Voz de Mujer",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I5"
         },
@@ -3638,7 +3899,9 @@
           "hora": "18:00",
           "sede": "Casa de la Cultura",
           "titulo": "México con Voz de Mujer",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J19"
         },
@@ -3653,7 +3916,9 @@
           "hora": null,
           "sede": null,
           "titulo": "México con Voz de Mujer",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K17"
         },
@@ -3668,7 +3933,9 @@
           "hora": "19:30",
           "sede": "Plaza Juárez",
           "titulo": "México con Voz de Mujer",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L11"
         },
@@ -3683,7 +3950,9 @@
           "hora": "20:00",
           "sede": "Explanada de Palacio Municipal",
           "titulo": "México con Voz de Mujer",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M9"
         }
@@ -3701,6 +3970,7 @@
       "titulos": [
         "Fernando Candelario Gallegos"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -3718,7 +3988,9 @@
           "hora": "19:30",
           "sede": "Explanada de la Presidencia Municipal",
           "titulo": "Fernando Candelario Gallegos",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D114"
         }
@@ -3736,6 +4008,7 @@
       "titulos": [
         "El horizonte como libro abierto"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -3757,7 +4030,9 @@
           "hora": null,
           "sede": null,
           "titulo": "El horizonte como libro abierto",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F54"
         },
@@ -3772,7 +4047,9 @@
           "hora": null,
           "sede": null,
           "titulo": "El horizonte como libro abierto",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G56"
         },
@@ -3787,7 +4064,9 @@
           "hora": null,
           "sede": null,
           "titulo": "El horizonte como libro abierto",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H58"
         },
@@ -3802,7 +4081,9 @@
           "hora": "10:00",
           "sede": "Jardín de Niños \"ABC\"  No. 21",
           "titulo": "El horizonte como libro abierto",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I67"
         },
@@ -3817,7 +4098,9 @@
           "hora": null,
           "sede": null,
           "titulo": "El horizonte como libro abierto",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J69"
         }
@@ -3835,6 +4118,7 @@
       "titulos": [
         "Sherly H."
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -3855,7 +4139,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Sherly H.",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "(Teatro para adolescentes, programar en Auditorio para secundarias)"
           ],
@@ -3872,7 +4158,9 @@
           "hora": "11:00",
           "sede": "Auditorio Municipal ubicado en la Cabecera Municipal",
           "titulo": "Sherly H.",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H50"
         },
@@ -3887,7 +4175,9 @@
           "hora": "10:00",
           "sede": "Escuela Secundaria \"Belisario Domínguez\"",
           "titulo": "Sherly H.",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I44"
         },
@@ -3902,7 +4192,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Sherly H.",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "(Teatro para adolescentes, programar en Auditorio para secundarias)"
           ],
@@ -3922,6 +4214,7 @@
       "titulos": [
         "Baile y Elegancia: un Cabaret de Ayer"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -3939,7 +4232,9 @@
           "hora": "20:00",
           "sede": "Foro Externo\n\"Parque Viveros\"",
           "titulo": "Baile y Elegancia: un Cabaret de Ayer",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F7"
         }
@@ -3957,6 +4252,7 @@
       "titulos": [
         "Grupo de Danza Folklórica de Jóvenes"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -3974,7 +4270,9 @@
           "hora": "18:45",
           "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
           "titulo": "Grupo de Danza Folklórica de Jóvenes",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F13"
         }
@@ -3990,6 +4288,7 @@
       "titulos": [
         "México en la Frontera"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -4007,7 +4306,9 @@
           "hora": "19:00",
           "sede": "Foro Externo\n\"Parque Viveros\"",
           "titulo": "México en la Frontera",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M7"
         }
@@ -4025,6 +4326,7 @@
       "titulos": [
         "Grupo de Danza \"Villa de Croix\"de la Casa de la Cultura"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 1,
       "municipios": [
@@ -4042,7 +4344,9 @@
           "hora": "17:30",
           "sede": "Plaza Principal",
           "titulo": "Grupo de Danza \"Villa de Croix\"de la Casa de la Cultura",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D71"
         },
@@ -4057,7 +4361,9 @@
           "hora": "17:00",
           "sede": "Plaza Principal del Ejido Lázaro Cárdenas, Municipio de Casas",
           "titulo": "Grupo de Danza \"Villa de Croix\"de la Casa de la Cultura",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H71"
         },
@@ -4072,7 +4378,9 @@
           "hora": "16:00",
           "sede": "Plaza Principal del Ejido La Lajilla, Municipio de Casas",
           "titulo": "Grupo de Danza \"Villa de Croix\"de la Casa de la Cultura",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M71"
         }
@@ -4088,6 +4396,7 @@
       "titulos": [
         "Programa Unidos por la Cultura"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -4105,7 +4414,9 @@
           "hora": "19:00",
           "sede": "Foro Externo\n\"Parque Viveros\"",
           "titulo": "Programa Unidos por la Cultura",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D6"
         }
@@ -4121,6 +4432,7 @@
       "titulos": [
         "Boleros de la Frontera"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -4138,7 +4450,9 @@
           "hora": "19:00",
           "sede": "Foro Externo\n\"Parque Viveros\"",
           "titulo": "Boleros de la Frontera",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G6"
         }
@@ -4156,6 +4470,7 @@
       "titulos": [
         "Fiestas"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -4177,7 +4492,9 @@
           "hora": "19:00",
           "sede": "Parque de Bienestar \"Plazuela\"",
           "titulo": "Fiestas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D92"
         },
@@ -4192,7 +4509,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Fiestas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E96"
         },
@@ -4207,7 +4526,9 @@
           "hora": "18:00",
           "sede": "Plaza 20 de Noviembre",
           "titulo": "Fiestas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F88"
         },
@@ -4222,7 +4543,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Fiestas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G86"
         },
@@ -4237,7 +4560,9 @@
           "hora": "10:00",
           "sede": "CEMSADET 10 Miquihuana",
           "titulo": "Fiestas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "(Patio Cívico)"
           ],
@@ -4257,6 +4582,7 @@
       "titulos": [
         "Sonidos del Orgullo Tamaulipeco"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -4276,7 +4602,9 @@
           "hora": "19:00",
           "sede": "Plaza Principal",
           "titulo": "Sonidos del Orgullo Tamaulipeco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D52"
         },
@@ -4291,7 +4619,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Sonidos del Orgullo Tamaulipeco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E34"
         },
@@ -4306,7 +4636,9 @@
           "hora": "20:00",
           "sede": "Plaza Principal",
           "titulo": "Sonidos del Orgullo Tamaulipeco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F44"
         }
@@ -4324,6 +4656,7 @@
       "titulos": [
         "Grupo Musical \"Latido\""
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -4343,7 +4676,9 @@
           "hora": "19:00",
           "sede": "Plaza \"Damas Leonas\"",
           "titulo": "Grupo Musical \"Latido\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D19"
         },
@@ -4358,7 +4693,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Grupo Musical \"Latido\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G119"
         },
@@ -4373,7 +4710,9 @@
           "hora": "19:00",
           "sede": "Plaza Principal \"Gral. Plutarco Elías Calles\"",
           "titulo": "Grupo Musical \"Latido\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K102"
         }
@@ -4391,6 +4730,7 @@
       "titulos": [
         "Tamaulipas también es Norte"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -4409,7 +4749,9 @@
           "hora": "19:00",
           "sede": "Explanada de Palacio Municipal",
           "titulo": "Tamaulipas también es Norte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D9"
         },
@@ -4424,7 +4766,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Tamaulipas también es Norte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M54"
         }
@@ -4442,6 +4786,7 @@
       "titulos": [
         "Grupos de Danza Folklórica de Río Bravo"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -4459,7 +4804,9 @@
           "hora": "18:00",
           "sede": "Ex Hacienda \"La Sauteña\"",
           "titulo": "Grupos de Danza Folklórica de Río Bravo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G30"
         }
@@ -4475,6 +4822,7 @@
       "titulos": [
         "Programa Entre Generaciones"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -4492,7 +4840,9 @@
           "hora": "19:00",
           "sede": "Foro Externo\n\"Parque Viveros\"",
           "titulo": "Programa Entre Generaciones",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F6"
         }
@@ -4510,6 +4860,7 @@
       "titulos": [
         "Dos Miradas al Paisaje"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -4530,10 +4881,12 @@
             "2026-10-10",
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": "Permanencia: Octubre-Diciembre\nHorario de visita: 8:00 a 20:00 hrs.",
+          "hora": "18:00",
+          "sede": "Galería de Arte \"Ramón Cano Manilla\"",
           "titulo": "Dos Miradas al Paisaje",
+          "tipo": "exposición",
           "inauguracion": "Inauguración 8 de octubre 18:00 hrs. | Galería de Arte \"Ramón Cano Manilla\"",
+          "permanencia": "Octubre-Diciembre",
           "notas": [],
           "celda": "J104"
         }
@@ -4551,6 +4904,7 @@
       "titulos": [
         "Liebre de Mar"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -4569,7 +4923,9 @@
           "hora": "17:00",
           "sede": "Auditorio de la Prepa Mante",
           "titulo": "Liebre de Mar",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G102"
         },
@@ -4584,7 +4940,9 @@
           "hora": "19:00",
           "sede": "Teatro Amalia González Caballero de Castillo Ledón del Centro Cultural Tamaulipas",
           "titulo": "Liebre de Mar",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H75"
         }
@@ -4602,6 +4960,7 @@
       "titulos": [
         "Orgullo Tamaulipeco"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -4621,7 +4980,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Orgullo Tamaulipeco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K54"
         },
@@ -4636,7 +4997,9 @@
           "hora": "17:00",
           "sede": "Techumbre Explanada del Ejido \"Las Vírgenes\", Municipio de San Nicolás",
           "titulo": "Orgullo Tamaulipeco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L50"
         },
@@ -4651,7 +5014,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Orgullo Tamaulipeco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M46"
         }
@@ -4669,6 +5034,7 @@
       "titulos": [
         "Homenaje a la Música de Claudio Rosas"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -4686,7 +5052,9 @@
           "hora": "20:00",
           "sede": "Explanada de la Presidencia Municipal",
           "titulo": "Homenaje a la Música de Claudio Rosas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D115"
         }
@@ -4704,6 +5072,7 @@
       "titulos": [
         "Leaving Ireland"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -4724,7 +5093,9 @@
           "hora": "19:00",
           "sede": "Teatro Amalia González Caballero de Castillo Ledón del Centro Cultural Tamaulipas",
           "titulo": "Leaving Ireland",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D75"
         },
@@ -4739,7 +5110,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro Cultural de Nuevo Laredo",
           "titulo": "Leaving Ireland",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F5"
         },
@@ -4754,7 +5127,9 @@
           "hora": "18:30",
           "sede": "Teatro Principal del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Leaving Ireland",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G21"
         },
@@ -4769,7 +5144,9 @@
           "hora": "19:30",
           "sede": "Teatro Principal del Espacio Cultural Metropolitano",
           "titulo": "Leaving Ireland",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I121"
         }
@@ -4787,6 +5164,7 @@
       "titulos": [
         "Irving Aguilar"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -4804,7 +5182,9 @@
           "hora": "19:00",
           "sede": "Ex Hacienda \"La Sauteña\"",
           "titulo": "Irving Aguilar",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D30"
         }
@@ -4820,6 +5200,7 @@
       "titulos": [
         "Jaiba Brava: Exposición Futbol"
       ],
+      "sin_autor_nombrado": true,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -4853,9 +5234,11 @@
             "2026-10-11"
           ],
           "hora": null,
-          "sede": "Permanencia: Octubre a Noviembre de 2026\nHorario de Visita:\nLunes CERRADO\nMartes a Viernes de 10:00 a 18:00 hrs.\nSábado y Domingo de 10:00 a 17:00 hrs.",
+          "sede": "Galería Pedro Banda del Centro Cultural Tamaulipas",
           "titulo": "Jaiba Brava: Exposición Futbol",
+          "tipo": "exposición",
           "inauguracion": "Inauguración | Galería Pedro Banda del Centro Cultural Tamaulipas",
+          "permanencia": "Octubre a Noviembre de 2026",
           "notas": [],
           "celda": "D82"
         }
@@ -4873,6 +5256,7 @@
       "titulos": [
         "Jhonivan"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 6,
       "total_municipios": 6,
       "municipios": [
@@ -4895,7 +5279,9 @@
           "hora": "19:30",
           "sede": "Ex Hacienda \"La Sauteña\"",
           "titulo": "Jhonivan",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D32"
         },
@@ -4910,7 +5296,9 @@
           "hora": "19:00",
           "sede": "Plaza \"Benito Juárez\"",
           "titulo": "Jhonivan",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E19"
         },
@@ -4925,7 +5313,9 @@
           "hora": "20:00",
           "sede": "Plaza \"Miguel Hidalgo\"",
           "titulo": "Jhonivan",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F37"
         },
@@ -4940,7 +5330,9 @@
           "hora": "20:00",
           "sede": "Explanada del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Jhonivan",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J23"
         },
@@ -4955,7 +5347,9 @@
           "hora": "20:00",
           "sede": "Plaza Principal",
           "titulo": "Jhonivan",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K44"
         },
@@ -4970,7 +5364,9 @@
           "hora": "20:00",
           "sede": "Foro Externo\n\"Parque Viveros\"",
           "titulo": "Jhonivan",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L7"
         }
@@ -4988,6 +5384,7 @@
       "titulos": [
         "Joe Nieto"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -5006,7 +5403,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Joe Nieto",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E94"
         },
@@ -5021,7 +5420,9 @@
           "hora": "19:00",
           "sede": "Explanada Municipal de Soto la Marina",
           "titulo": "Joe Nieto",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L64"
         }
@@ -5039,6 +5440,7 @@
       "titulos": [
         "Cuerdas eléctricas: Rock Latino y Fusiones"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -5057,7 +5459,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Cuerdas eléctricas: Rock Latino y Fusiones",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F76"
         },
@@ -5072,7 +5476,9 @@
           "hora": "18:30",
           "sede": "Museo Histórico Reynosa",
           "titulo": "Cuerdas eléctricas: Rock Latino y Fusiones",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K22"
         }
@@ -5088,6 +5494,7 @@
       "titulos": [
         "Frontera Urbana"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -5105,7 +5512,9 @@
           "hora": "19:00",
           "sede": "Foro Externo\n\"Parque Viveros\"",
           "titulo": "Frontera Urbana",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L6"
         }
@@ -5123,6 +5532,7 @@
       "titulos": [
         "Voces Eternas"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -5143,7 +5553,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Voces Eternas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D98"
         },
@@ -5158,7 +5570,9 @@
           "hora": "18:30",
           "sede": "Foro de la Plaza de la Colonia Constitución",
           "titulo": "Voces Eternas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E115"
         },
@@ -5173,7 +5587,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Voces Eternas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L86"
         },
@@ -5188,7 +5604,9 @@
           "hora": "20:00",
           "sede": "Plaza Principal de González",
           "titulo": "Voces Eternas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M110"
         }
@@ -5206,6 +5624,7 @@
       "titulos": [
         "Kena Yasbek Lara Zamora"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -5223,7 +5642,9 @@
           "hora": "18:00",
           "sede": "Foro de la Plaza de la Colonia Constitución",
           "titulo": "Kena Yasbek Lara Zamora",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E113"
         }
@@ -5241,6 +5662,7 @@
       "titulos": [
         "Atardecer Salvaje"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -5262,7 +5684,9 @@
           "hora": "18:30",
           "sede": "Canchas de Fut-Bol 11\nColonia Paraíso",
           "titulo": "Atardecer Salvaje",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I115"
         },
@@ -5277,7 +5701,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Atardecer Salvaje",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J119"
         },
@@ -5292,7 +5718,9 @@
           "hora": "18:15",
           "sede": "Plaza Principal de González",
           "titulo": "Atardecer Salvaje",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K111"
         },
@@ -5307,7 +5735,9 @@
           "hora": "18:30",
           "sede": "Plaza de los Pies Descalzos",
           "titulo": "Atardecer Salvaje",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L117"
         },
@@ -5322,7 +5752,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Atardecer Salvaje",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M78"
         }
@@ -5340,6 +5772,7 @@
       "titulos": [
         "Música para Campeones"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -5361,7 +5794,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Música para Campeones",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D96"
         },
@@ -5376,7 +5811,9 @@
           "hora": "18:00",
           "sede": "Plaza Principal de González",
           "titulo": "Música para Campeones",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E110"
         },
@@ -5391,7 +5828,9 @@
           "hora": "19:00",
           "sede": "Explanada Municipal de Soto la Marina",
           "titulo": "Música para Campeones",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K64"
         },
@@ -5406,7 +5845,9 @@
           "hora": "18:00",
           "sede": "Plaza Hidalgo",
           "titulo": "Música para Campeones",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L60"
         },
@@ -5421,7 +5862,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Música para Campeones",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M69"
         }
@@ -5439,6 +5882,7 @@
       "titulos": [
         "El Hombre de Cartón"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -5457,7 +5901,9 @@
           "hora": "16:00",
           "sede": "Instituto Regional de Bellas Artes de Matamoros",
           "titulo": "El Hombre de Cartón",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "(IRBAM)"
           ],
@@ -5474,7 +5920,9 @@
           "hora": "18:00",
           "sede": "Teatro Experimental del Centro Cultural de Nuevo Laredo",
           "titulo": "El Hombre de Cartón",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M6"
         }
@@ -5492,6 +5940,7 @@
       "titulos": [
         "Un Viaje Sagrado"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -5525,9 +5974,11 @@
             "2026-10-11"
           ],
           "hora": null,
-          "sede": null,
+          "sede": "Museo del Ferrocarril, Arte y Maquila",
           "titulo": "Un Viaje Sagrado",
+          "tipo": "exposición",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D26"
         }
@@ -5545,6 +5996,7 @@
       "titulos": [
         "De Tamaulipas para el Mundo con los 10 Tenores"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -5563,7 +6015,9 @@
           "hora": "19:00",
           "sede": "Plaza de la Constitución",
           "titulo": "De Tamaulipas para el Mundo con los 10 Tenores",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D117"
         },
@@ -5578,7 +6032,9 @@
           "hora": "20:00",
           "sede": "Plaza Principal",
           "titulo": "De Tamaulipas para el Mundo con los 10 Tenores",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M44"
         }
@@ -5596,6 +6052,7 @@
       "titulos": [
         "Herencia del Pueblo: Música del Norte"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -5616,7 +6073,9 @@
           "hora": "18:00",
           "sede": "Plaza 20 de Noviembre",
           "titulo": "Herencia del Pueblo: Música del Norte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D88"
         },
@@ -5631,7 +6090,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Herencia del Pueblo: Música del Norte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E86"
         },
@@ -5646,7 +6107,9 @@
           "hora": "19:00",
           "sede": "Parque de Bienestar \"Plazuela\"",
           "titulo": "Herencia del Pueblo: Música del Norte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F92"
         },
@@ -5661,7 +6124,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Herencia del Pueblo: Música del Norte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "(viajan con sus instrumentos, incluída batería)"
           ],
@@ -5681,6 +6146,7 @@
       "titulos": [
         "Habia una vez un huapango"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -5700,7 +6166,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Habia una vez un huapango",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D46"
         },
@@ -5715,7 +6183,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Habia una vez un huapango",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H69"
         },
@@ -5730,7 +6200,9 @@
           "hora": "10:00",
           "sede": "Escuela Primaria  del Ejido Lázaro Cárdenas, Municipio de Casas",
           "titulo": "Habia una vez un huapango",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I71"
         }
@@ -5748,6 +6220,7 @@
       "titulos": [
         "Tamaholi-ska: por siempre gloriosa"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -5766,7 +6239,9 @@
           "hora": "20:00",
           "sede": "Foro Externo\n\"Parque Viveros\"",
           "titulo": "Tamaholi-ska: por siempre gloriosa",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E7"
         },
@@ -5781,7 +6256,9 @@
           "hora": "20:00",
           "sede": "Plaza Principal",
           "titulo": "Tamaholi-ska: por siempre gloriosa",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L44"
         }
@@ -5799,6 +6276,7 @@
       "titulos": [
         "MajuMaje"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -5816,7 +6294,9 @@
           "hora": null,
           "sede": null,
           "titulo": "MajuMaje",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Escenario Plaza o buscar sede alternativa"
           ],
@@ -5836,6 +6316,7 @@
       "titulos": [
         "Sin Cuenta"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -5856,7 +6337,9 @@
           "hora": "19:00",
           "sede": "Teatro Amalia González Caballero de Castillo Ledón del Centro Cultural Tamaulipas",
           "titulo": "Sin Cuenta",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J75"
         },
@@ -5871,7 +6354,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Sin Cuenta",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K21"
         },
@@ -5886,7 +6371,9 @@
           "hora": "20:00",
           "sede": "Teatro de la Reforma",
           "titulo": "Sin Cuenta",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L36"
         },
@@ -5901,9 +6388,51 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro Cultural de Nuevo Laredo",
           "titulo": "Sin Cuenta",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M5"
+        }
+      ]
+    },
+    {
+      "artista": "Mario Fuentes, Rodolfo Ríos, Efrén Yañez, Esther González, entre otros.",
+      "clave": "mario fuentes, rodolfo rios, efren yanez, esther gonzalez, entre otros.",
+      "disciplinas": [
+        "Artes Visuales"
+      ],
+      "procedencias": [],
+      "titulos": [
+        "Casa Filizola: Una Puerta al Arte y la Historia"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Viernes 9",
+            "Sábado 10",
+            "Domingo 11"
+          ],
+          "fechas": [
+            "2026-10-09",
+            "2026-10-10",
+            "2026-10-11"
+          ],
+          "hora": "18:00",
+          "sede": "Pinacoteca de Tamaulipas",
+          "titulo": "Casa Filizola: Una Puerta al Arte y la Historia",
+          "tipo": "exposición",
+          "inauguracion": "Inauguración 9 de octubre 18:00 hrs. | Pinacoteca de Tamaulipas",
+          "permanencia": "Octubre de 2026 a Enero de 2027",
+          "notas": [],
+          "celda": "K81"
         }
       ]
     },
@@ -5919,6 +6448,7 @@
       "titulos": [
         "Disco Stereo Tour"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -5936,7 +6466,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Disco Stereo Tour",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M76"
         }
@@ -5954,6 +6486,7 @@
       "titulos": [
         "El lugar (Bagdad) donde los suspiros se desintegran"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -5974,10 +6507,12 @@
             "2026-10-10",
             "2026-10-11"
           ],
-          "hora": "16:00",
-          "sede": "Permanencia: Octubre 2026 a Enero 2027\nHorario de Visita:\nLunes CERRADO\nMartes a Sábado de 10:00 a 18:00 hrs.",
+          "hora": "18:00",
+          "sede": "Museo de Arte Contemporáneo de Tamaulipas (MACT)",
           "titulo": "El lugar (Bagdad) donde los suspiros se desintegran",
+          "tipo": "exposición",
           "inauguracion": "Inauguración 8 de octubre 18:00 hrs. | Museo de Arte Contemporáneo de Tamaulipas (MACT)",
+          "permanencia": "Octubre 2026 a Enero 2027",
           "notas": [],
           "celda": "J39"
         }
@@ -5995,6 +6530,7 @@
       "titulos": [
         "Tributo a Arjona"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -6012,7 +6548,9 @@
           "hora": "19:00",
           "sede": "Concha Acústica de la Unidad Deportiva Siglo XXI",
           "titulo": "Tributo a Arjona",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J78"
         }
@@ -6030,6 +6568,7 @@
       "titulos": [
         "Aprende, Juega y Baila"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -6048,7 +6587,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Aprende, Juega y Baila",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K86"
         },
@@ -6063,7 +6604,9 @@
           "hora": "17:00",
           "sede": "Plaza Principal del Ejido La Lajilla, Municipio de Casas",
           "titulo": "Aprende, Juega y Baila",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M72"
         }
@@ -6081,6 +6624,7 @@
       "titulos": [
         "Mía Chairez Enriquez"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -6098,7 +6642,9 @@
           "hora": "17:00",
           "sede": "Canchas Nuevas de Fut-Bol de la Colonia Jesús Vega",
           "titulo": "Mía Chairez Enriquez",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G113"
         }
@@ -6116,6 +6662,7 @@
       "titulos": [
         "Kairo"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -6136,7 +6683,9 @@
           "hora": "19:00",
           "sede": "Teatro Amalia González Caballero de Castillo Ledón del Centro Cultural Tamaulipas",
           "titulo": "Kairo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G75"
         },
@@ -6151,7 +6700,9 @@
           "hora": "18:30",
           "sede": "Teatro Principal del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Kairo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H21"
         },
@@ -6166,7 +6717,9 @@
           "hora": "20:00",
           "sede": "Teatro de la Reforma",
           "titulo": "Kairo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I36"
         },
@@ -6181,7 +6734,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro Cultural de Nuevo Laredo",
           "titulo": "Kairo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J5"
         }
@@ -6199,6 +6754,7 @@
       "titulos": [
         "Tour 2026"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -6219,7 +6775,9 @@
           "hora": "19:00",
           "sede": "Teatro Amalia González Caballero de Castillo Ledón del Centro Cultural Tamaulipas",
           "titulo": "Tour 2026",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E75"
         },
@@ -6234,7 +6792,9 @@
           "hora": "19:30",
           "sede": "Teatro Principal del Espacio Cultural Metropolitano",
           "titulo": "Tour 2026",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F121"
         },
@@ -6249,7 +6809,9 @@
           "hora": "18:00",
           "sede": "Teatro de la Reforma",
           "titulo": "Tour 2026",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G36"
         },
@@ -6264,9 +6826,61 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro Cultural de Nuevo Laredo",
           "titulo": "Tour 2026",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H5"
+        }
+      ]
+    },
+    {
+      "artista": "NEXOS Muestra de Arte Emergente",
+      "clave": "nexos muestra de arte emergente",
+      "disciplinas": [
+        "Artes Visuales"
+      ],
+      "procedencias": [
+        "Tamaulipas"
+      ],
+      "titulos": [
+        "NEXOS Muestra de Arte Emergente"
+      ],
+      "sin_autor_nombrado": true,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Reynosa"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Reynosa",
+          "dias": [
+            "Martes 6",
+            "Miércoles 7",
+            "Jueves 8",
+            "Viernes 9",
+            "Sábado 10",
+            "Domingo 11"
+          ],
+          "fechas": [
+            "2026-10-06",
+            "2026-10-07",
+            "2026-10-08",
+            "2026-10-09",
+            "2026-10-10",
+            "2026-10-11"
+          ],
+          "hora": "17:00",
+          "sede": "Galería \"Artemio Guerra\" del Centro de Arte y Cultura del Parque Cultural Reynosa",
+          "titulo": "NEXOS Muestra de Arte Emergente",
+          "tipo": "exposición",
+          "inauguracion": "Inauguración 6 de octubre 17:00 hrs. | Galería \"Artemio Guerra\" del Centro de Arte y Cultura del Parque Cultural Reynosa",
+          "permanencia": "Octubre 2026 a Enero 2027",
+          "notas": [
+            "(Primera Edición)"
+          ],
+          "celda": "H28"
         }
       ]
     },
@@ -6282,6 +6896,7 @@
       "titulos": [
         "¡Que viva el campesino, entre acordes y maizalez!"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -6301,7 +6916,9 @@
           "hora": "19:00",
           "sede": "Explanada Municipal de Soto la Marina",
           "titulo": "¡Que viva el campesino, entre acordes y maizalez!",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D64"
         },
@@ -6316,7 +6933,9 @@
           "hora": null,
           "sede": null,
           "titulo": "¡Que viva el campesino, entre acordes y maizalez!",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K76"
         },
@@ -6331,7 +6950,9 @@
           "hora": null,
           "sede": null,
           "titulo": "¡Que viva el campesino, entre acordes y maizalez!",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L94"
         }
@@ -6349,6 +6970,7 @@
       "titulos": [
         "Isla"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -6367,7 +6989,9 @@
           "hora": "10:00",
           "sede": "Barco, Centro Cultural para las Infancias",
           "titulo": "Isla",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H122"
         },
@@ -6382,7 +7006,9 @@
           "hora": "17:00",
           "sede": "Auditorio de los Cocodrilos\nEjido Jacinto Canek, Municipio de Casas",
           "titulo": "Isla",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J71"
         }
@@ -6400,6 +7026,7 @@
       "titulos": [
         "Retro Hits Vol.2"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -6417,7 +7044,9 @@
           "hora": "19:00",
           "sede": "Plaza de la Constitución",
           "titulo": "Retro Hits Vol.2",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M117"
         }
@@ -6435,6 +7064,7 @@
       "titulos": [
         "Orquesta Sinfónica de la Universidad Autónoma de Tamaulipas"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -6452,7 +7082,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Orquesta Sinfónica de la Universidad Autónoma de Tamaulipas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F103"
         }
@@ -6470,6 +7102,7 @@
       "titulos": [
         "Voces y ecos de la Tinaco"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -6489,7 +7122,9 @@
           "hora": "19:00",
           "sede": "Explanada Municipal de Soto la Marina",
           "titulo": "Voces y ecos de la Tinaco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E64"
         },
@@ -6504,7 +7139,9 @@
           "hora": "18:00",
           "sede": "Plaza\nPoblado \"El Barretal\"",
           "titulo": "Voces y ecos de la Tinaco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F67"
         },
@@ -6519,7 +7156,9 @@
           "hora": "10:00",
           "sede": "Secundaria de Villa de Casas",
           "titulo": "Voces y ecos de la Tinaco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G71"
         }
@@ -6537,6 +7176,7 @@
       "titulos": [
         "Nuevas Músicas de Oaxaca"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -6556,7 +7196,9 @@
           "hora": "19:00",
           "sede": "Teatro Amalia González Caballero de Castillo Ledón del Centro Cultural Tamaulipas",
           "titulo": "Nuevas Músicas de Oaxaca",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K75"
         },
@@ -6571,7 +7213,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Nuevas Músicas de Oaxaca",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L119"
         },
@@ -6586,7 +7230,9 @@
           "hora": "20:00",
           "sede": "Explanada de la Presidencia Municipal",
           "titulo": "Nuevas Músicas de Oaxaca",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M115"
         }
@@ -6604,6 +7250,7 @@
       "titulos": [
         "Contempo Di Folklore"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -6625,7 +7272,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Contempo Di Folklore",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D42"
         },
@@ -6640,7 +7289,9 @@
           "hora": "19:00",
           "sede": "Plaza Principal",
           "titulo": "Contempo Di Folklore",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E52"
         },
@@ -6655,7 +7306,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Contempo Di Folklore",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F58"
         },
@@ -6670,7 +7323,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Contempo Di Folklore",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L108"
         },
@@ -6685,7 +7340,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Contempo Di Folklore",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M106"
         }
@@ -6703,6 +7360,7 @@
       "titulos": [
         "Amateur"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -6724,7 +7382,9 @@
           "hora": "20:00",
           "sede": "Plaza \"Hijas de Tampico\"",
           "titulo": "Amateur",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E123"
         },
@@ -6739,7 +7399,9 @@
           "hora": "19:00",
           "sede": "Plaza Principal \"Gral. Plutarco Elías Calles\"",
           "titulo": "Amateur",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F102"
         },
@@ -6754,7 +7416,9 @@
           "hora": "11:00",
           "sede": "Escuela Primaria \"Norberto Uriegas\"  del Poblado \"Loma Alta\", Municipio de Gómez Farías",
           "titulo": "Amateur",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G100"
         },
@@ -6769,7 +7433,9 @@
           "hora": "09:00",
           "sede": "Escuela Primaria Justo Sierra Méndez Turno Matutino",
           "titulo": "Amateur",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H98"
         },
@@ -6784,7 +7450,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Amateur",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I94"
         }
@@ -6802,6 +7470,7 @@
       "titulos": [
         "Pintura y Baile Moderno"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -6819,7 +7488,9 @@
           "hora": "18:00",
           "sede": "Plaza Principal de Estación Manuel, Municipio de González",
           "titulo": "Pintura y Baile Moderno",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H110"
         }
@@ -6837,6 +7508,7 @@
       "titulos": [
         "Presentación del Grupo de \"Wushu\" de la Casa de la Cultura de Miguel Alemán"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -6854,7 +7526,9 @@
           "hora": "19:30",
           "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
           "titulo": "Presentación del Grupo de \"Wushu\" de la Casa de la Cultura de Miguel Alemán",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I15"
         }
@@ -6872,6 +7546,7 @@
       "titulos": [
         "Rosa de Dos Aromas"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 2,
       "total_municipios": 2,
       "municipios": [
@@ -6890,7 +7565,9 @@
           "hora": "18:00",
           "sede": "Teatro Experimental del Centro Cultural de Nuevo Laredo",
           "titulo": "Rosa de Dos Aromas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K6"
         },
@@ -6905,7 +7582,9 @@
           "hora": "17:00",
           "sede": "Teatro Principal del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Rosa de Dos Aromas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L21"
         }
@@ -6923,6 +7602,7 @@
       "titulos": [
         "Puras del Norte"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -6944,7 +7624,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Puras del Norte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Grupo Pendiente"
           ],
@@ -6961,7 +7643,9 @@
           "hora": "18:00",
           "sede": "Plaza Hidalgo",
           "titulo": "Puras del Norte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Grupo Pendiente"
           ],
@@ -6978,7 +7662,9 @@
           "hora": "18:00",
           "sede": "Concha Acústica de la Plaza Principal",
           "titulo": "Puras del Norte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Grupo Pendiente"
           ],
@@ -6995,7 +7681,9 @@
           "hora": "19:00",
           "sede": "Plaza Principal",
           "titulo": "Puras del Norte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Grupo Pendiente"
           ],
@@ -7012,7 +7700,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Puras del Norte",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Grupo Pendiente"
           ],
@@ -7032,6 +7722,7 @@
       "titulos": [
         "Son Jarocho"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -7051,7 +7742,9 @@
           "hora": "18:00",
           "sede": "Plaza Principal de González",
           "titulo": "Son Jarocho",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J110"
         },
@@ -7066,7 +7759,9 @@
           "hora": "19:00",
           "sede": "Plaza de la Constitución",
           "titulo": "Son Jarocho",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K117"
         },
@@ -7081,7 +7776,9 @@
           "hora": "20:00",
           "sede": "Teatro Principal del Espacio Cultural Metropolitano",
           "titulo": "Son Jarocho",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L121"
         }
@@ -7099,6 +7796,7 @@
       "titulos": [
         "Quinteto de Alientos de la Universidad Autónoma de Tamaulipas"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -7116,7 +7814,9 @@
           "hora": "11:30",
           "sede": "Barco, Centro Cultural para las Infancias",
           "titulo": "Quinteto de Alientos de la Universidad Autónoma de Tamaulipas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E122"
         }
@@ -7134,6 +7834,7 @@
       "titulos": [
         "Rafael Alcalá Trío"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -7153,7 +7854,9 @@
           "hora": "20:00",
           "sede": "Plaza Principal",
           "titulo": "Rafael Alcalá Trío",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J44"
         },
@@ -7168,7 +7871,9 @@
           "hora": "19:30",
           "sede": "Plaza Juárez",
           "titulo": "Rafael Alcalá Trío",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K11"
         },
@@ -7183,7 +7888,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro Cultural de Nuevo Laredo",
           "titulo": "Rafael Alcalá Trío",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L5"
         }
@@ -7201,6 +7908,7 @@
       "titulos": [
         "Sin Pies ni Cabeza"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -7222,7 +7930,9 @@
           "hora": "16:00",
           "sede": "Auditorio Municipal ubicado en la Cabecera Municipal",
           "titulo": "Sin Pies ni Cabeza",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D50"
         },
@@ -7237,7 +7947,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Sin Pies ni Cabeza",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Requieren Auditorio o Espacio Cerrado"
           ],
@@ -7254,7 +7966,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Sin Pies ni Cabeza",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Requieren Auditorio o Espacio Cerrado"
           ],
@@ -7271,7 +7985,9 @@
           "hora": "09:30",
           "sede": "Auditorio Municipal",
           "titulo": "Sin Pies ni Cabeza",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G64"
         },
@@ -7286,7 +8002,9 @@
           "hora": "18:00",
           "sede": "Auditorio Municipal de Jiménez",
           "titulo": "Sin Pies ni Cabeza",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Requieren Auditorio o Espacio Cerrado"
           ],
@@ -7306,6 +8024,7 @@
       "titulos": [
         "Reales de Nuevo León"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -7326,7 +8045,9 @@
           "hora": "18:00",
           "sede": "Plaza Principal",
           "titulo": "Reales de Nuevo León",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D72"
         },
@@ -7341,7 +8062,9 @@
           "hora": "19:15",
           "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
           "titulo": "Reales de Nuevo León",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F15"
         },
@@ -7356,7 +8079,9 @@
           "hora": "20:00",
           "sede": "Canchita de la Colonia Brownsville",
           "titulo": "Reales de Nuevo León",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L115"
         },
@@ -7371,7 +8096,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Reales de Nuevo León",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M119"
         }
@@ -7389,6 +8116,7 @@
       "titulos": [
         "Reynosa el Encanto de lo Cotidiano II"
       ],
+      "sin_autor_nombrado": true,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -7415,10 +8143,12 @@
             "2026-10-10",
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": "Permanencia:\nHorario de Visita:",
+          "hora": "16:00",
+          "sede": "Galería del Instituto Reynocense para la Cultura y las Artes (IRCA)",
           "titulo": "Reynosa el Encanto de lo Cotidiano II",
+          "tipo": "exposición",
           "inauguracion": "Inauguración 5 de octubre 16:00 hrs. | Galería del Instituto Reynocense para la Cultura y las Artes (IRCA)",
+          "permanencia": null,
           "notas": [],
           "celda": "G24"
         }
@@ -7436,6 +8166,7 @@
       "titulos": [
         "Folclor Tamaulipeco"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -7456,7 +8187,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Folclor Tamaulipeco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D48"
         },
@@ -7471,7 +8204,9 @@
           "hora": "19:00",
           "sede": "Plaza de la Constitución",
           "titulo": "Folclor Tamaulipeco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E117"
         },
@@ -7486,7 +8221,9 @@
           "hora": "18:15",
           "sede": "Plaza Principal de González",
           "titulo": "Folclor Tamaulipeco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L111"
         },
@@ -7501,7 +8238,9 @@
           "hora": "18:00",
           "sede": "Plaza Hidalgo",
           "titulo": "Folclor Tamaulipeco",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M60"
         }
@@ -7519,6 +8258,7 @@
       "titulos": [
         "Ritual"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -7539,7 +8279,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Ritual",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H94"
         },
@@ -7554,7 +8296,9 @@
           "hora": "19:00",
           "sede": "Plaza Principal \"Gral. Plutarco Elías Calles\"",
           "titulo": "Ritual",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I102"
         },
@@ -7569,7 +8313,9 @@
           "hora": "20:00",
           "sede": "Plaza \"Hijas de Tampico\"",
           "titulo": "Ritual",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J122"
         },
@@ -7584,7 +8330,9 @@
           "hora": "18:30",
           "sede": "Casa de la Cultura de Aldama",
           "titulo": "Ritual",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K115"
         }
@@ -7602,6 +8350,7 @@
       "titulos": [
         "Rondalla Juvenil de la Casa de la Cultura de Aldama"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -7619,7 +8368,9 @@
           "hora": "19:00",
           "sede": "Explanada de la Presidencia Municipal",
           "titulo": "Rondalla Juvenil de la Casa de la Cultura de Aldama",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D113"
         }
@@ -7637,6 +8388,7 @@
       "titulos": [
         "Roberto Cantoral, de Tamaulipas para el Mundo. El mas grande exponente de la música romántica."
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -7654,7 +8406,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Roberto Cantoral, de Tamaulipas para el Mundo. El mas grande exponente de la música romántica.",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "Sugerir callejoneada"
           ],
@@ -7674,6 +8428,7 @@
       "titulos": [
         "Rondalla Manuel y González"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -7691,7 +8446,9 @@
           "hora": "18:00",
           "sede": "Plaza Principal de González",
           "titulo": "Rondalla Manuel y González",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K110"
         }
@@ -7709,6 +8466,7 @@
       "titulos": [
         "Callejoneada con Rondallas"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -7726,7 +8484,9 @@
           "hora": "18:00",
           "sede": "Del Kiosko de la Plaza Principal \"Miguel Hidalgo\" al Museo del Ferrocarril, Historia Arte y Maquila",
           "titulo": "Callejoneada con Rondallas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J22"
         }
@@ -7744,6 +8504,7 @@
       "titulos": [
         "Capture : Repensando el jazz y las fronteras musicales a través del Sampling!"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -7765,7 +8526,9 @@
           "hora": "19:00",
           "sede": "Plaza de la Constitución",
           "titulo": "Capture : Repensando el jazz y las fronteras musicales a través del Sampling!",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H117"
         },
@@ -7780,7 +8543,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Capture : Repensando el jazz y las fronteras musicales a través del Sampling!",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I119"
         },
@@ -7795,7 +8560,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro Cultural de Nuevo Laredo",
           "titulo": "Capture : Repensando el jazz y las fronteras musicales a través del Sampling!",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K5"
         },
@@ -7810,7 +8577,9 @@
           "hora": "19:00",
           "sede": "Plaza Principal \"Miguel Hidalgo\"",
           "titulo": "Capture : Repensando el jazz y las fronteras musicales a través del Sampling!",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L23"
         },
@@ -7825,7 +8594,9 @@
           "hora": "19:00",
           "sede": "Explanada Municipal de Soto la Marina",
           "titulo": "Capture : Repensando el jazz y las fronteras musicales a través del Sampling!",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M64"
         }
@@ -7843,6 +8614,7 @@
       "titulos": [
         "Sekyr"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -7860,7 +8632,9 @@
           "hora": "19:15",
           "sede": "Ex Hacienda \"La Sauteña\"",
           "titulo": "Sekyr",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D31"
         }
@@ -7878,6 +8652,7 @@
       "titulos": [
         "Sistema Tamaulipeco de Agrupaciones Musicales Comunitarias"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -7895,7 +8670,9 @@
           "hora": "19:00",
           "sede": "Teatro Amalia González Caballero de Castillo Ledón del Centro Cultural Tamaulipas",
           "titulo": "Sistema Tamaulipeco de Agrupaciones Musicales Comunitarias",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [
             "(por confirmar nombre)"
           ],
@@ -7915,6 +8692,7 @@
       "titulos": [
         "Son Kalunga y Ballet Folklórico de Pachuca"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -7935,7 +8713,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Son Kalunga y Ballet Folklórico de Pachuca",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D76"
         },
@@ -7950,7 +8730,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro Cultural de Nuevo Laredo",
           "titulo": "Son Kalunga y Ballet Folklórico de Pachuca",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E5"
         },
@@ -7965,7 +8747,9 @@
           "hora": "19:00",
           "sede": "Ex Hacienda \"La Sauteña\"",
           "titulo": "Son Kalunga y Ballet Folklórico de Pachuca",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G32"
         },
@@ -7980,7 +8764,9 @@
           "hora": "18:15",
           "sede": "Plaza Principal de Estación Manuel, Municipio de González",
           "titulo": "Son Kalunga y Ballet Folklórico de Pachuca",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H111"
         }
@@ -7998,6 +8784,7 @@
       "titulos": [
         "Soprano Leticia de Altamirano y Trío \"Los Panchos\""
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -8018,7 +8805,9 @@
           "hora": "20:00",
           "sede": "Plaza \"Miguel Hidalgo\"",
           "titulo": "Soprano Leticia de Altamirano y Trío \"Los Panchos\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D36"
         },
@@ -8033,7 +8822,9 @@
           "hora": "19:00",
           "sede": "Teatro Principal del Centro de Arte y Cultura del Parque Cultural Reynosa",
           "titulo": "Soprano Leticia de Altamirano y Trío \"Los Panchos\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E21"
         },
@@ -8048,7 +8839,9 @@
           "hora": "19:00",
           "sede": "Teatro Amalia González Caballero de Castillo Ledón del Centro Cultural Tamaulipas",
           "titulo": "Soprano Leticia de Altamirano y Trío \"Los Panchos\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F75"
         },
@@ -8063,7 +8856,9 @@
           "hora": "19:30",
           "sede": "Teatro Principal del Espacio Cultural Metropolitano",
           "titulo": "Soprano Leticia de Altamirano y Trío \"Los Panchos\"",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H121"
         }
@@ -8081,6 +8876,7 @@
       "titulos": [
         "Tradiciones Vivas de la Huasteca"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -8101,7 +8897,9 @@
           "hora": "18:00",
           "sede": "Plaza Hidalgo",
           "titulo": "Tradiciones Vivas de la Huasteca",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D60"
         },
@@ -8116,7 +8914,9 @@
           "hora": "18:00",
           "sede": "Teatro del Pueblo\nPlaza Principal",
           "titulo": "Tradiciones Vivas de la Huasteca",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K67"
         },
@@ -8131,7 +8931,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Tradiciones Vivas de la Huasteca",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L69"
         },
@@ -8146,7 +8948,9 @@
           "hora": "18:00",
           "sede": "Concha Acústica de la Plaza Principal",
           "titulo": "Tradiciones Vivas de la Huasteca",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M62"
         }
@@ -8164,6 +8968,7 @@
       "titulos": [
         "Talentos de Canto"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -8181,7 +8986,9 @@
           "hora": "19:00",
           "sede": "Explanada de la Presidencia Municipal",
           "titulo": "Talentos de Canto",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M113"
         }
@@ -8199,6 +9006,7 @@
       "titulos": [
         "Talentos de Piano"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -8216,7 +9024,9 @@
           "hora": "18:00",
           "sede": "Casa de la Cultura de Aldama",
           "titulo": "Talentos de Piano",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K113"
         }
@@ -8234,6 +9044,7 @@
       "titulos": [
         "Duelo de Acordeones"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -8251,7 +9062,9 @@
           "hora": "19:00",
           "sede": "Canchita de la Colonia Brownsville",
           "titulo": "Duelo de Acordeones",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L113"
         }
@@ -8269,6 +9082,7 @@
       "titulos": [
         "Taller de Pintura de González"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -8286,7 +9100,9 @@
           "hora": "18:00",
           "sede": "Plaza Principal de González",
           "titulo": "Taller de Pintura de González",
+          "tipo": "exposición",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "L110"
         }
@@ -8304,6 +9120,7 @@
       "titulos": [
         "BYN…Conoce Tamaulipas"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 4,
       "total_municipios": 4,
       "municipios": [
@@ -8324,7 +9141,9 @@
           "hora": null,
           "sede": null,
           "titulo": "BYN…Conoce Tamaulipas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D56"
         },
@@ -8339,7 +9158,9 @@
           "hora": "18:00",
           "sede": "Concha Acústica de la Plaza Principal",
           "titulo": "BYN…Conoce Tamaulipas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E62"
         },
@@ -8354,7 +9175,9 @@
           "hora": "18:00",
           "sede": "Plaza Hidalgo",
           "titulo": "BYN…Conoce Tamaulipas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F60"
         },
@@ -8369,7 +9192,9 @@
           "hora": null,
           "sede": null,
           "titulo": "BYN…Conoce Tamaulipas",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M108"
         }
@@ -8387,6 +9212,7 @@
       "titulos": [
         "Los Cuentos de Don Esopo y Más"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -8408,7 +9234,9 @@
           "hora": "11:00",
           "sede": "Escuela Primaria \"Profesor Leoncio Leal\"",
           "titulo": "Los Cuentos de Don Esopo y Más",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G9"
         },
@@ -8423,7 +9251,9 @@
           "hora": "10:00",
           "sede": "Casino Argüelles",
           "titulo": "Los Cuentos de Don Esopo y Más",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H11"
         },
@@ -8438,7 +9268,9 @@
           "hora": "18:45",
           "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
           "titulo": "Los Cuentos de Don Esopo y Más",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "I13"
         },
@@ -8453,7 +9285,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Los Cuentos de Don Esopo y Más",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "J17"
         },
@@ -8468,7 +9302,9 @@
           "hora": "10:30",
           "sede": "Escuela Primaria \"Leona Vicario\" en Congregación Valadeces",
           "titulo": "Los Cuentos de Don Esopo y Más",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "K19"
         }
@@ -8486,6 +9322,7 @@
       "titulos": [
         "Las Despicadoras del Oro Rojo"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -8503,7 +9340,9 @@
           "hora": "13:00",
           "sede": "Paso Santa Cruz",
           "titulo": "Las Despicadoras del Oro Rojo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D121"
         }
@@ -8521,6 +9360,7 @@
       "titulos": [
         "Ópera Rock"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 3,
       "total_municipios": 3,
       "municipios": [
@@ -8540,7 +9380,9 @@
           "hora": "20:00",
           "sede": "Plaza Principal",
           "titulo": "Ópera Rock",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D44"
         },
@@ -8555,7 +9397,9 @@
           "hora": "19:00",
           "sede": "Plaza \"Benito Juárez\"",
           "titulo": "Ópera Rock",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F19"
         },
@@ -8570,60 +9414,11 @@
           "hora": "19:00",
           "sede": "Plaza Principal \"Gral. Plutarco Elías Calles\"",
           "titulo": "Ópera Rock",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "M102"
-        }
-      ]
-    },
-    {
-      "artista": "Un recorrido desde Totonacapan hasta la Huasteca Veracruzana",
-      "clave": "un recorrido desde totonacapan hasta la huasteca veracruzana",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Tamaulipas"
-      ],
-      "titulos": [
-        "Solo Veracruz es Bello"
-      ],
-      "total_presentaciones": 2,
-      "total_municipios": 2,
-      "municipios": [
-        "Mante",
-        "Padilla"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Mante",
-          "dias": [
-            "Viernes 2"
-          ],
-          "fechas": [
-            "2026-10-02"
-          ],
-          "hora": "19:00",
-          "sede": "Plaza Principal \"Gral. Plutarco Elías Calles\"",
-          "titulo": "Solo Veracruz es Bello",
-          "inauguracion": null,
-          "notas": [],
-          "celda": "D102"
-        },
-        {
-          "municipio": "Padilla",
-          "dias": [
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-11"
-          ],
-          "hora": "18:00",
-          "sede": "Teatro del Pueblo\nPlaza Principal",
-          "titulo": "Solo Veracruz es Bello",
-          "inauguracion": null,
-          "notas": [],
-          "celda": "M67"
         }
       ]
     },
@@ -8637,6 +9432,7 @@
       "titulos": [
         "Un Viaje por la Historia de los Teatros en Tamaulipas"
       ],
+      "sin_autor_nombrado": true,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -8670,9 +9466,11 @@
             "2026-10-11"
           ],
           "hora": null,
-          "sede": "Permanencia: Octubre 2026 a Enero 2027\nHorario de Visita: Lunes a Domingo de 10:00 a 14:00 hrs.",
+          "sede": "Palacio de Gobierno",
           "titulo": "Un Viaje por la Historia de los Teatros en Tamaulipas",
+          "tipo": "exposición",
           "inauguracion": "Inauguración 2 de octubre (Horario por definir) | Palacio de Gobierno",
+          "permanencia": "Octubre 2026 a Enero 2027",
           "notas": [],
           "celda": "D80"
         }
@@ -8688,6 +9486,7 @@
       "titulos": [
         "Vibra Nuevo Laredo"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 1,
       "total_municipios": 1,
       "municipios": [
@@ -8705,9 +9504,67 @@
           "hora": "19:00",
           "sede": "Foro Externo\n\"Parque Viveros\"",
           "titulo": "Vibra Nuevo Laredo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E6"
+        }
+      ]
+    },
+    {
+      "artista": "Vicente Rojo, Manuel Felguérez y Sergio Hernández",
+      "clave": "vicente rojo, manuel felguerez y sergio hernandez",
+      "disciplinas": [
+        "Artes Visuales"
+      ],
+      "procedencias": [
+        "Nacional"
+      ],
+      "titulos": [
+        "CaminArte Escultura Monumental"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Viernes 2",
+            "Sábado 3",
+            "Domingo 4",
+            "Lunes 5",
+            "Martes 6",
+            "Miércoles 7",
+            "Jueves 8",
+            "Viernes 9",
+            "Sábado 10",
+            "Domingo 11"
+          ],
+          "fechas": [
+            "2026-10-02",
+            "2026-10-03",
+            "2026-10-04",
+            "2026-10-05",
+            "2026-10-06",
+            "2026-10-07",
+            "2026-10-08",
+            "2026-10-09",
+            "2026-10-10",
+            "2026-10-11"
+          ],
+          "hora": null,
+          "sede": "Explanada del Centro Cultural Tamaulipas",
+          "titulo": "CaminArte Escultura Monumental",
+          "tipo": "exposición",
+          "inauguracion": "Inauguración 21 de septiembre | Explanada del Centro Cultural Tamaulipas",
+          "permanencia": "Marzo 2027",
+          "notas": [],
+          "celda": "D79"
         }
       ]
     },
@@ -8723,6 +9580,7 @@
       "titulos": [
         "Pelusa al vuelo"
       ],
+      "sin_autor_nombrado": false,
       "total_presentaciones": 5,
       "total_municipios": 5,
       "municipios": [
@@ -8744,7 +9602,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Pelusa al vuelo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "D54"
         },
@@ -8759,7 +9619,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Pelusa al vuelo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "E56"
         },
@@ -8774,7 +9636,9 @@
           "hora": "10:00",
           "sede": "Plaza Juárez, Zona Centro",
           "titulo": "Pelusa al vuelo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "F52"
         },
@@ -8789,7 +9653,9 @@
           "hora": null,
           "sede": null,
           "titulo": "Pelusa al vuelo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "G46"
         },
@@ -8804,7 +9670,9 @@
           "hora": "10:00",
           "sede": "Escuela \"Ford\" #6",
           "titulo": "Pelusa al vuelo",
+          "tipo": "presentación",
           "inauguracion": null,
+          "permanencia": null,
           "notas": [],
           "celda": "H44"
         }
