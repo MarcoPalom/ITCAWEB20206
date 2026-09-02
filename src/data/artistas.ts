@@ -272,25 +272,16 @@ const FOTOS = new Map<string, string>([
   ["zurcidores de cuentos tamaulipas", "zurcidores-de-cuentos-tamaulipas"],
 ]);
 
-<<<<<<< HEAD
 /* Companias que ademas tienen clip: dos segundos sin audio, sacados del mismo
    material. Se lista aparte de FOTOS porque no todas las que tienen fotografia
    traen video -de 88 carpetas de origen, 19 no tenian ninguno- y porque el
    turno de la ficha cambia de dos piezas a tres segun lo haya o no. */
-=======
-/* De las companias con fotografia, estas 60 tambien entregaron un clip
-   (clip.mp4, en su misma carpeta). Va aparte de FOTOS porque no todas las
-   que tienen foto tienen clip. */
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
 const CLIPS = new Set<string>([
   "adicto5",
   "amenaza-nortena",
   "balcon-de-montezuma-tamaholipam",
   "ballet-folklorico-de-mexico-de-amalia-hernandez",
-<<<<<<< HEAD
   "ballet-folklorico-guardia-nacional",
-=======
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
   "ballet-folklorico-xalmana",
   "banda-de-musica-de-gobierno-del-estado-de-tamaulipas",
   "brassas-mexican-beat",
@@ -298,10 +289,7 @@ const CLIPS = new Set<string>([
   "chicos-malos",
   "cia-circo-flotante",
   "cia-ome",
-<<<<<<< HEAD
   "cia-teatro-en-espiral",
-=======
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
   "cirko-alebrije",
   "colectivo-teatro-de-bolsillo",
   "colectivo-trueque",
@@ -309,10 +297,7 @@ const CLIPS = new Set<string>([
   "conjunto-varela",
   "corarte-musica-vocal",
   "cynthia-sanchez-soprano-antiqva-metropoli",
-<<<<<<< HEAD
   "dementenmente-teatro",
-=======
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
   "distrito-cero",
   "el-contrato",
   "el-viaje-lustroso-de-los-zapatos-rotos",
@@ -327,15 +312,10 @@ const CLIPS = new Set<string>([
   "grupo-relativo",
   "herencia-huasteca",
   "irish-dance-theatre",
-<<<<<<< HEAD
   "jhonivan",
   "joe-nieto",
   "juan-rivas-band",
   "la-historia-de-todxs",
-=======
-  "joe-nieto",
-  "juan-rivas-band",
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
   "la-nota-alegre",
   "latido",
   "los-del-pueblo",
@@ -348,17 +328,11 @@ const CLIPS = new Set<string>([
   "nortenos-de-rio-bravo",
   "one-beat-band",
   "pakidermo-artes-escenicas",
-<<<<<<< HEAD
   "pasatono-orquesta",
   "performance-de-rua-do-palhaco-satin",
   "proteac",
   "que-siempre-si",
   "rafael-alcala-trio",
-=======
-  "performance-de-rua-do-palhaco-satin",
-  "proteac",
-  "que-siempre-si",
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
   "rafaga-teatro",
   "reales-de-nuevo-leon",
   "ricardo-martinez-y-su-grupo-honda-nor-t",
@@ -367,16 +341,12 @@ const CLIPS = new Set<string>([
   "rondalla-magisterial-de-tamaulipas",
   "sampling-is-beautiful",
   "son-kalunga-y-ballet-folklorico-de-pachuca",
-<<<<<<< HEAD
   "soprano-leticia-de-altamirano-y-trio-los-panchos",
-=======
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
   "soraima-y-sus-huastecos",
   "teatro-guarapo",
   "teatro-testigo-de-la-vida",
 ]);
 
-<<<<<<< HEAD
 
 /* --- Banderas -----------------------------------------------------------
    La procedencia viene en texto libre y en castellano -"Portugal/Mexico",
@@ -423,8 +393,6 @@ function banderasDe(procedencias: string[]): string[] {
     .map(([, codigo]) => codigo);
 }
 
-=======
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
 /* Los ocho colores del imagotipo, en el mismo ciclo de matices alternos que usa
    el resto del festival, para que dos artistas seguidos nunca repitan tono. */
 const CICLO = [
@@ -464,11 +432,7 @@ export type Artista = {
   presentaciones: Presentacion[];
   /** Carpeta de fotografia, o null si esa compania aun no ha entregado. */
   foto: string | null;
-<<<<<<< HEAD
   /** Si esa carpeta trae ademas el clip de dos segundos. */
-=======
-  /** Si ademas de fotografia entrego un clip (siempre en la misma carpeta). */
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
   clip: boolean;
   /** Color del imagotipo que le toca. */
   tinte: string;
@@ -478,26 +442,7 @@ export type Artista = {
 
 type ArtistaBruto = (typeof bruto.artistas)[number];
 
-<<<<<<< HEAD
 function convertir(a: ArtistaBruto, i: number, seccion: Seccion): Artista {
-=======
-/** Recorrido de la compania, dicho con los datos que hay y sin adornos. */
-function describir(a: ArtistaBruto): string {
-  const municipios = a.municipios.map(limpiar);
-  const cuantas = a.total_presentaciones;
-  const veces = cuantas === 1 ? "Una presentacion" : `${cuantas} presentaciones`;
-
-  if (municipios.length === 0) return `${veces} en el programa del festival.`;
-  if (municipios.length === 1) return `${veces} en ${municipios[0]}.`;
-
-  const ultimo = municipios[municipios.length - 1];
-  return `${veces} en ${municipios.slice(0, -1).join(", ")} y ${ultimo}.`;
-}
-
-function convertir(a: ArtistaBruto, i: number): Artista {
-  const foto = FOTOS.get(a.clave) ?? null;
-
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
   return {
     id: identificador(a.clave),
     nombre: NOMBRES.get(a.clave) ?? limpiar(a.artista),
@@ -512,14 +457,8 @@ function convertir(a: ArtistaBruto, i: number): Artista {
       sede: sede(p.sede),
       municipio: limpiar(p.municipio),
     })),
-<<<<<<< HEAD
     foto: FOTOS.get(a.clave) ?? null,
     clip: CLIPS.has(FOTOS.get(a.clave) ?? ""),
-=======
-    descripcion: describir(a),
-    foto,
-    clip: foto !== null && CLIPS.has(foto),
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
     tinte: CICLO[i % CICLO.length],
   };
 }
@@ -552,14 +491,3 @@ export const ARTISTAS: Record<string, Artista[]> = agrupar();
 /* Municipios no lleva cartelera: no es una seccion de artistas sino el
    recorrido por el territorio, y sus datos viven en festival_por_municipio. */
 
-<<<<<<< HEAD
-=======
-/** Rutas de las imagenes de un artista. Todas viven bajo la misma carpeta. */
-export function imagenesDe(foto: string) {
-  return {
-    fondo: `/img/artistas/${foto}/fondo.webp`,
-    cards: [`/img/artistas/${foto}/a.webp`, `/img/artistas/${foto}/b.webp`],
-    clip: `/img/artistas/${foto}/clip.mp4`,
-  };
-}
->>>>>>> f807a861308fb0d2fdd0af3f9a4e1d5a82e11f31
