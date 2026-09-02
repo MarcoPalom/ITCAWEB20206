@@ -40,55 +40,37 @@ export default function MandosPlegables({
       const el = cuerpo.current;
       if (!el) return;
 
-      /* Con movimiento reducido no hay despliegue: se pone o se quita, y el
-         contenido queda legible en su posicion final. */
-      const mm = gsap.matchMedia();
+      /* Movimiento reducido: se pone o se quita, sin recorrido. Se comprueba con
+         matchMedia del navegador y no con gsap.matchMedia() a proposito: aquel
+         crea su propio contexto por consulta y aqui, dentro de un hook que se
+         re-sincroniza en cada cambio de estado, sus altas y bajas se pisaban
+         con el ciclo del efecto y acababan sin escribir nada. */
+      const quieto = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      mm.add("(prefers-reduced-motion: reduce)", () => {
+      if (quieto) {
         gsap.set(el, { height: abierto ? "auto" : 0, opacity: abierto ? 1 : 0 });
-      });
+        return;
+      }
 
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        if (abierto) {
-          /* height: auto se mide, se anima hasta esa cifra y se devuelve a auto
-             al terminar; asi el panel sigue creciendo solo si cambia el
-             contenido -por ejemplo al filtrar y cambiar la cuenta-. */
-          gsap.set(el, { height: "auto", opacity: 1 });
-          gsap.from(el, {
-            height: 0,
-            opacity: 0,
-            duration: 0.42,
-            ease: "power3.out",
-            /* Al terminar se deja en auto y no en la cifra medida, para que el
-               panel siga creciendo si cambia el contenido -al filtrar cambia la
-               cuenta, y con dos filas de pastillas cambia el alto-.
-
-               Y nada de clearProps: eso devolveria el alto al valor de la hoja,
-               que es 0, y el panel se cerraria solo al terminar de abrirse. Es
-               justo lo que pasaba. */
-            onComplete: () => gsap.set(el, { height: "auto" }),
-          });
-          gsap.from(el.querySelectorAll(".isla-bloque"), {
-            y: 10,
-            opacity: 0,
-            duration: 0.38,
-            stagger: 0.06,
-            delay: 0.08,
-            ease: "power3.out",
-          });
-        } else {
-          gsap.to(el, {
-            height: 0,
-            opacity: 0,
-            duration: 0.32,
-            ease: "power2.inOut",
-          });
-        }
-      });
-
-      return () => mm.revert();
+      /* Se anima hacia "auto" y no hacia una cifra medida: GSAP mide el
+         contenido, anima hasta ahi y deja height:auto puesto, con lo que el
+         panel sigue creciendo solo si cambia el contenido -al filtrar cambia la
+         cuenta, y con dos filas de pastillas cambia el alto-. */
+      if (abierto) {
+        gsap.to(el, { height: "auto", opacity: 1, duration: 0.42, ease: "power3.out" });
+        gsap.from(el.querySelectorAll(".isla-bloque"), {
+          y: 10,
+          opacity: 0,
+          duration: 0.38,
+          stagger: 0.06,
+          delay: 0.08,
+          ease: "power3.out",
+        });
+      } else {
+        gsap.to(el, { height: 0, opacity: 0, duration: 0.32, ease: "power2.inOut" });
+      }
     },
-    { dependencies: [abierto], scope: raiz, revertOnUpdate: true },
+    { dependencies: [abierto], scope: raiz },
   );
 
   return (

@@ -12,5 +12,10 @@ export function imagenesDe(foto: string) {
     fondo: `/img/artistas/${foto}/fondo.webp`,
     cards: [`/img/artistas/${foto}/a.webp`, `/img/artistas/${foto}/b.webp`],
     clip: `/img/artistas/${foto}/clip.mp4`,
+    /* Un fotograma del propio clip. Es lo que se ve mientras el video carga y,
+       sobre todo, lo que se ve si no llega a reproducirse nunca: en ahorro de
+       datos o de bateria el movil bloquea la reproduccion automatica, y sin
+       poster ahi quedaria un rectangulo negro. */
+    poster: `/img/artistas/${foto}/poster.webp`,
   };
 }

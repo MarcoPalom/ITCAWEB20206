@@ -7,6 +7,7 @@ import { imagenesDe } from "@/data/imagenes";
 import { enlaceMapa } from "@/data/mapas";
 import IslaCartelera, { Controles } from "./IslaCartelera";
 import MandosPlegables from "./MandosPlegables";
+import { usarEsAncha } from "./usarAnchura";
 
 /**
  * Cartelera de artistas: fotografia a sangre a la izquierda y columna de
@@ -37,6 +38,21 @@ import MandosPlegables from "./MandosPlegables";
 export default function CarteleraArtistas({ artistas }: { artistas: Artista[] }) {
   const [activo, setActivo] = useState(0);
   const [busqueda, setBusqueda] = useState("");
+  /* Cual de los dos bloques de material se monta. Con CSS no basta: un video
+     escondido con display:none se descarga igual y reserva decodificador. */
+  const esAncha = usarEsAncha();
+
+  /* El clip no se monta en la ficha activa sino en la que lleva un momento
+     activa. Al desplazarse deprisa por 109 fichas, seguir a 'activo' al
+     instante significaba crear y destruir un <video> por cada ficha que pasa
+     -decenas en un segundo-, y eso es lo que agota al telefono aunque solo haya
+     uno vivo a la vez. Con la espera, pasar de largo no cuesta nada y solo
+     paga quien se detiene. */
+  const [activoAsentado, setActivoAsentado] = useState(0);
+  useEffect(() => {
+    const reloj = window.setTimeout(() => setActivoAsentado(activo), 450);
+    return () => window.clearTimeout(reloj);
+  }, [activo]);
   const [filtro, setFiltro] = useState<string | null>(null);
   const fichas = useRef<(HTMLElement | null)[]>([]);
 
@@ -194,6 +210,8 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
         <ol className="lg:col-span-7">
           {visibles.map((a, i) => {
             const activa = i === activo;
+            /* Activa de verdad para el video: lleva un momento en pantalla. */
+            const asentada = i === activoAsentado;
 
             return (
               <li
@@ -274,7 +292,7 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
                             descuadraria el paneo. */}
                         <div
                           className="ficha-fotos lg:hidden"
-                          data-turnos={a.clip && activa ? 3 : 2}
+                          data-turnos={a.clip && asentada && esAncha === false ? 3 : 2}
                         >
                           <div className="ficha-lente">
                             <div className="ficha-tira grid grid-cols-2 gap-2">
@@ -292,16 +310,21 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
                                 />
                               ))}
 
-                              {a.clip && activa ? (
+                              {a.clip && asentada && esAncha === false ? (
                                 <video
                                   src={imagenesDe(a.foto).clip}
+                                  poster={imagenesDe(a.foto).poster}
                                   width={560}
                                   height={600}
                                   autoPlay
                                   muted
                                   loop
                                   playsInline
-                                  preload="auto"
+                                  /* metadata y no auto: con auto el navegador
+                                     se traga el archivo entero aunque la ficha
+                                     no llegue a mirarse. Lo que hace falta para
+                                     arrancar ya lo pide autoplay solo. */
+                                  preload="metadata"
                                   aria-hidden="true"
                                 />
                               ) : null}
@@ -318,9 +341,17 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
                             El numero de nodos lo dice el atributo, y el CSS
                             elige el recorrido: sin video son tres paradas y con
                             video, cuatro. */}
+                        {/* La fila solo se monta en pantalla ancha, y no se
+                            oculta con CSS: son seis imagenes por ficha, y en
+                            Tamaulipecos eso son mas de trescientos nodos que un
+                            telefono sostiene sin llegar a ensenarlos nunca.
+                            Perezosas no se descargan, pero ocupan memoria, y la
+                            memoria es justo lo que hace que el navegador
+                            descarte la pestana. */}
+                        {esAncha ? (
                         <div
-                          className="ficha-linea hidden lg:block"
-                          data-nodos={a.clip && activa ? 4 : 3}
+                          className="ficha-linea"
+                          data-nodos={a.clip && asentada ? 4 : 3}
                         >
                           <div className="ficha-linea-lente">
                             <div className="ficha-linea-tira">
@@ -337,10 +368,15 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
                                   misma forma que la original, que es de lo que
                                   depende que el salto sea invisible. */}
                               {[0, 1].map((vuelta) =>
-                                piezasDe(a, Boolean(a.clip && activa)).map((pieza, n) => (
+                                piezasDe(a, Boolean(a.clip && asentada)).map((pieza, n) => (
                                   <Nodo
                                     key={`${vuelta}-${n}`}
                                     pieza={pieza}
+                                    /* Fuera de escritorio la fila conserva su
+                                       cuarta pieza -y con ella la geometria del
+                                       recorrido- pero como fotograma fijo, sin
+                                       montar un video que nadie va a ver. */
+                                    congelado={vuelta === 1 || esAncha !== true}
                                     /* El video no toma la forma que le tocaria
                                        por posicion: tiene la suya, con su misma
                                        proporcion, para que no salga recortado. */
@@ -353,6 +389,7 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
                             </div>
                           </div>
                         </div>
+                        ) : null}
                       </div>
                     ) : (
                       /* Marcador de posicion, no la foto de otra compania: la
@@ -601,7 +638,7 @@ function IrAlMapa({ sede, municipio }: { sede: string; municipio: string }) {
 }
 
 /** Las piezas de una compania, en el orden en que la camara las recorre. */
-type Pieza = { tipo: "imagen" | "video"; src: string; rotulo: string };
+type Pieza = { tipo: "imagen" | "video"; src: string; rotulo: string; poster?: string };
 
 function piezasDe(a: Artista, conClip: boolean): Pieza[] {
   if (!a.foto) return [];
@@ -614,7 +651,13 @@ function piezasDe(a: Artista, conClip: boolean): Pieza[] {
   /* El clip se intercala en tercer lugar y no al final: asi el movimiento cae
      en mitad del recorrido y no cierra la fila, donde competiria con el salto
      del bucle. */
-  if (conClip) piezas.splice(2, 0, { tipo: "video", src: rutas.clip, rotulo: "" });
+  if (conClip)
+    piezas.splice(2, 0, {
+      tipo: "video",
+      src: rutas.clip,
+      rotulo: "",
+      poster: rutas.poster,
+    });
   return piezas;
 }
 
@@ -630,25 +673,50 @@ function Nodo({
   forma,
   nombre,
   copia,
+  congelado,
 }: {
   pieza: Pieza;
   forma: number | string;
   nombre: string;
   copia: boolean;
+  congelado: boolean;
 }) {
+  /* Hay dos casos en que el video se monta como fotograma fijo y no como video:
+     la copia de la fila -la camara nunca se detiene en ella, solo se ve de
+     refilon, y montar un segundo <video> obligaba a sostener dos
+     decodificadores por ficha- y cualquier pantalla que no sea ancha, donde
+     esta fila esta oculta y su video seria puro peso. */
+  if (pieza.tipo === "video" && congelado) {
+    return (
+      /* eslint-disable-next-line @next/next/no-img-element */
+      <img
+        className="ficha-nodo"
+        data-forma={forma}
+        src={pieza.poster}
+        alt=""
+        aria-hidden="true"
+        width={560}
+        height={600}
+        loading="lazy"
+        decoding="async"
+      />
+    );
+  }
+
   if (pieza.tipo === "video") {
     return (
       <video
         className="ficha-nodo"
         data-forma={forma}
         src={pieza.src}
+        poster={pieza.poster}
         width={560}
         height={600}
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         aria-hidden="true"
       />
     );
