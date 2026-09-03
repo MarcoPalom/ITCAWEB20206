@@ -1,4 +1,5 @@
 import bruto from "./festival_por_artista.json";
+import { nombrePorClave } from "./nombres";
 import semblanzas from "./semblanzas.json";
 
 /**
@@ -77,13 +78,8 @@ function seccionDe(procedencias: string[]): Seccion {
 
 
 /* --- Nombres corregidos --------------------------------------------------
-   Como se llama de verdad una compania, cuando el volcado la trae de otro modo.
-   Vive aqui y no en el JSON a proposito: el volcado lo regenera el comite y lo
-   sustituimos entero cada vez, asi que una correccion escrita alli se perderia
-   en la siguiente entrega. La clave es la del volcado, que es lo unico estable. */
-const NOMBRES = new Map<string, string>([
-  ["cia. teatro en espiral", "Colectivo de Teatro en Espiral"],
-]);
+   La lista vive en nombres.ts, que la comparte con las fichas de municipio:
+   antes estaba aqui y solo corregia la cartelera. */
 
 /* --- Fichas que son la misma compania -------------------------------------
    Clave duplicada -> clave buena. Cuando una compania aparece dos veces en el
@@ -494,7 +490,7 @@ function convertir(
 
   return {
     id: identificador(a.clave),
-    nombre: NOMBRES.get(a.clave) ?? limpiar(a.artista),
+    nombre: nombrePorClave(a.clave) ?? limpiar(a.artista),
     etiqueta: limpiar(a.disciplinas[0] ?? "Programación"),
     titulo: limpiar(a.titulos[0] ?? ""),
     procedencia: a.procedencias.map(limpiar).join(" / "),

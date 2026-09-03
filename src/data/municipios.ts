@@ -1,4 +1,5 @@
 import bruto from "./festival_por_municipio.json";
+import { nombreArtista } from "./nombres";
 
 /**
  * Programacion por municipio, derivada del volcado del comite
@@ -142,7 +143,9 @@ export type Municipio = {
 function convertirEvento(e: EventoBruto): EventoMunicipio {
   return {
     titulo: e.titulo ?? "",
-    artista: e.artista ?? "",
+    /* Pasa por nombres.ts: el volcado por municipio trae "CIA. Circo Flotante"
+       y "Raul Di Blasio" tal cual los tecleo el comite. */
+    artista: nombreArtista(e.artista ?? ""),
     disciplina: e.disciplina ?? "",
     procedencia: e.procedencia ?? "",
     nivel: nivelDe(e.procedencia ?? ""),
