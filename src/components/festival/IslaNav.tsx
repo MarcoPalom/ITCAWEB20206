@@ -138,6 +138,17 @@ function fijarOrigen(x: number, y: number) {
  * Se mide antes de navegar, con la isla todavia en su sitio; despues la caja ya
  * no sirve, porque en movil el carro se desliza para recentrar el activo.
  */
+/**
+ * Cuanto dura el barrido, en milisegundos. Tiene que coincidir con la duracion
+ * de revelar-circulo en globals.css: es lo unico que permite saber, sin
+ * preguntarle al navegador, si el barrido anterior sigue corriendo.
+ */
+const BARRIDO = 900;
+
+/** Instante del ultimo barrido lanzado. Fuera del componente porque el arbol se
+ *  desmonta entero en cada cambio de ruta y un ref no sobreviviria. */
+let ultimoBarrido = 0;
+
 function marcarOrigen(evento: React.MouseEvent<HTMLAnchorElement>) {
   const boton = evento.currentTarget;
   const caja = boton.getBoundingClientRect();
@@ -154,6 +165,23 @@ function marcarOrigen(evento: React.MouseEvent<HTMLAnchorElement>) {
   );
 
   fijarOrigen(x, isla.top);
+
+  /* Barrido encadenado: si el anterior no ha terminado, este sale corto.
+
+     Pulsar otra pastilla a media animacion obliga al navegador a abortar la
+     transicion en curso -que ya de por si da un salto- y a reconstruir la
+     seccion entera encima de la anterior. Alargar 900ms mas de espectaculo
+     sobre ese destrozo no aporta nada: quien va encadenando pastillas quiere
+     llegar, no mirar. Con el barrido corto la pagina se asienta enseguida y el
+     siguiente toque ya la encuentra quieta.
+
+     El marcador vive en <html> y no en el arbol de React porque los
+     pseudo-elementos de la transicion cuelgan de la raiz del documento, que es
+     lo unico que sigue en pie mientras la pagina se cambia por debajo. */
+  const ahora = performance.now();
+  document.documentElement.dataset.barrido =
+    ahora - ultimoBarrido < BARRIDO ? "corto" : "normal";
+  ultimoBarrido = ahora;
 }
 
 export default function IslaNav() {

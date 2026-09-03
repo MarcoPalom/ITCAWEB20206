@@ -1172,6 +1172,16 @@ body {
   animation: revelar-circulo 900ms cubic-bezier(0.65, 0, 0.35, 1) both;
 }
 
+/* Barrido encadenado, marcado desde IslaNav: la pastilla se pulso mientras el
+   anterior seguia corriendo. Se acorta en vez de suprimirse -que dejaria el
+   cambio sin explicar- y se le quita la entrada lenta de la curva, porque a
+   260ms ese arranque suave solo se percibe como retraso. La regla cuelga de
+   html[data-barrido] y gana por especificidad a la de arriba, sin tocarla. */
+html[data-barrido="corto"]::view-transition-new(.revelar) {
+  animation-duration: 260ms;
+  animation-timing-function: cubic-bezier(0.33, 0, 0.2, 1);
+}
+
 /* La isla y la marca son los dos puntos fijos que sostienen la escena mientras
    el circulo la recorre: su grupo no se anima, asi que no se mueven ni cambian
    de tamano. Lo unico que cambia en ellas -que pastilla esta activa, el color
@@ -1319,6 +1329,25 @@ body {
 
 /* Realce de la ficha activa. Solo se anima transform y opacity, que no obligan
    a rehacer el layout en ningun fotograma. */
+/* Una ficha fuera de cuadro no se maqueta ni se pinta.
+
+   Complementa al montaje por tandas y cubre su caso final: la tanda arregla el
+   pico del cambio de seccion, pero quien recorre Tamaulipecos entera acaba con
+   las 109 montadas otra vez, y entonces el navegador vuelve a maquetar un arbol
+   enorme del que se ven dos fichas. Con esto solo trabaja lo que esta en
+   pantalla y sus aledanos.
+
+   El tamano de reserva no es un numero al azar: medidas en un telefono de
+   390px, las fichas van de 542 a 903px de alto, con mediana en 854. La palabra
+   clave auto es la que evita que el scroll pegue saltos, porque una vez que el
+   navegador ha visto una ficha de verdad se queda con su altura real y deja de
+   usar la estimacion. Los 850px solo valen para las que todavia no ha visto
+   nunca, y de esas siempre estan por debajo del pliegue. */
+.ficha {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 850px;
+}
+
 .ficha-cuerpo {
   opacity: 0.45;
   transform: scale(0.97);

@@ -35,6 +35,25 @@ import { useEsAncha } from "./usarAnchura";
  * El mismo componente sirve para las tres secciones; lo unico que cambia es la
  * lista que recibe.
  */
+/**
+ * Cuantas fichas se montan de entrada, y de cuantas en cuantas crece la lista.
+ *
+ * Existe por el cambio de seccion, no por el scroll. Las cuatro secciones
+ * comparten una misma page y el <ViewTransition> lleva key, asi que al pasar de
+ * una a otra React desmonta el arbol entero y monta el siguiente de cero. En
+ * Tamaulipecos eso eran 5801 nodos de una vez, y esa reconstruccion ocurre
+ * dentro de la actualizacion de la transicion, es decir, mientras el navegador
+ * tiene la pantalla congelada en una instantanea. Medido por el camino mas
+ * rapido que existe -createContextualFragment, sin React de por medio- costaba
+ * 102ms en un escritorio; un telefono va varias veces mas lento y ademas hay
+ * que sumarle la reconciliacion y los efectos. De ahi el tiron.
+ *
+ * Doce cubren de sobra la primera pantalla de cualquier telefono, que es lo
+ * unico que tiene que estar listo cuando termina el barrido. El resto entra
+ * despues, ya sin instantanea que congelar y sin nadie esperando.
+ */
+const TANDA = 12;
+
 export default function CarteleraArtistas({ artistas }: { artistas: Artista[] }) {
   const [activo, setActivo] = useState(0);
   const [busqueda, setBusqueda] = useState("");
@@ -55,6 +74,10 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
   }, [activo]);
   const [filtro, setFiltro] = useState<string | null>(null);
   const fichas = useRef<(HTMLElement | null)[]>([]);
+
+  /* Hasta donde esta montada la lista. Crece sola al acercarse el final. */
+  const [techo, setTecho] = useState(TANDA);
+  const cola = useRef<HTMLLIElement | null>(null);
 
   /* Las disciplinas salen del propio cartel y no de una lista escrita a mano:
      si el volcado trae una nueva, el filtro aparece solo. */
@@ -92,11 +115,13 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
   const cambiarBusqueda = useCallback((valor: string) => {
     setBusqueda(valor);
     setActivo(0);
+    setTecho(TANDA);
   }, []);
 
   const cambiarFiltro = useCallback((disciplina: string | null) => {
     setFiltro(disciplina);
     setActivo(0);
+    setTecho(TANDA);
   }, []);
 
   const guardar = useCallback((el: HTMLElement | null, i: number) => {
@@ -109,7 +134,23 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
         for (const entrada of entradas) {
           if (!entrada.isIntersecting) continue;
           const i = Number((entrada.target as HTMLElement).dataset.indice);
-          if (!Number.isNaN(i)) setActivo(i);
+          if (Number.isNaN(i)) continue;
+          setActivo(i);
+
+          /* Segundo disparador del crecimiento, ademas del centinela.
+
+             No es redundancia gratuita: si la lista se quedara sin crecer, la
+             seccion escondaria a la mayoria de las companias, que es un fallo
+             mucho peor que el tiron que vino a arreglar. Este va colgado del
+             observador que ya mueve la isla y el fondo -mecanismo que lleva
+             funcionando en produccion desde el principio-, asi que los dos
+             caminos no comparten mas punto de fallo que el propio
+             IntersectionObserver.
+
+             Se actualiza con la forma funcional porque el callback se queda con
+             el techo que habia cuando se creo el observador, y con la cifra
+             capturada un disparo tardio podria hacerlo retroceder. */
+          setTecho((t) => (i >= t - 3 ? t + TANDA : t));
         }
       },
       /* Franja central: arriba y abajo se descuenta el 44%, asi que la raiz
@@ -119,7 +160,38 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
 
     for (const el of fichas.current) if (el) observador.observe(el);
     return () => observador.disconnect();
-  }, [visibles]);
+    /* techo entra en las dependencias porque cada tanda trae fichas nuevas que
+       nadie estaria observando: sin esto, a partir de la duodecima el fondo
+       dejaria de seguir a la lista y la isla se quedaria clavada. */
+  }, [visibles, techo]);
+
+  /* Crecimiento de la lista. El centinela va detras de la ultima ficha montada
+     y pide otra tanda cuando asoma, con margen de 1200px para que llegue antes
+     que el dedo: la tanda entra fuera de pantalla y no se ve aparecer nada.
+
+     No se precargan todas en tiempo muerto a proposito. Lo que arregla el tiron
+     es que la seccion se construya en dos tiempos; adelantar el resto en cuanto
+     el navegador respira devolveria el mismo pico, solo que unos milisegundos
+     mas tarde. */
+  const montadas = useMemo(
+    () => visibles.slice(0, techo),
+    [visibles, techo],
+  );
+
+  useEffect(() => {
+    const el = cola.current;
+    if (!el) return;
+
+    const observador = new IntersectionObserver(
+      ([entrada]) => {
+        if (entrada.isIntersecting) setTecho((t) => t + TANDA);
+      },
+      { rootMargin: "1200px 0px" },
+    );
+
+    observador.observe(el);
+    return () => observador.disconnect();
+  }, [montadas.length]);
 
   /* Fondo: la fotografia de la ficha activa si la tiene y, si no, la ultima que
      hubo. Se busca hacia atras y luego hacia delante, de modo que una seccion
@@ -208,7 +280,7 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
         </div>
 
         <ol className="lg:col-span-7">
-          {visibles.map((a, i) => {
+          {montadas.map((a, i) => {
             const activa = i === activo;
             /* Activa de verdad para el video: lleva un momento en pantalla. */
             const asentada = i === activoAsentado;
@@ -422,6 +494,16 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
               </li>
             );
           })}
+
+          {/* Centinela: pide la siguiente tanda al asomar. Desaparece cuando ya
+              no queda nada por montar, y eso importa mas de lo que parece: el
+              relleno de cierre de la seccion cuelga de .ficha:last-child, asi
+              que solo con el centinela fuera vuelve a recaer donde debe, en la
+              ultima compania de verdad. Mientras crece la lista no se nota,
+              porque ese punto esta a mitad del recorrido. */}
+          {techo < visibles.length ? (
+            <li ref={cola} aria-hidden="true" className="h-px" />
+          ) : null}
         </ol>
       </div>
     </div>
