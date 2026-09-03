@@ -18,7 +18,10 @@ type EventoBruto = MunicipioBruto["eventos"][number];
 
 /* Mismo criterio que sinAcentos/identificador de artistas.ts: sin acentos,
    minusculas, espacios a guion. Se duplica en vez de importarse porque esa
-   version vive sin exportar dentro de artistas.ts. */
+   version vive sin exportar dentro de artistas.ts.
+
+   sinAcentos es para urls y comparaciones, no para pintar: aqui el nombre del
+   municipio, el titulo y la disciplina se sirven tal cual vienen del comite. */
 function sinAcentos(texto: string): string {
   return texto.normalize("NFD").replace(/[̀-ͯ]/g, "");
 }
@@ -39,7 +42,7 @@ const CALENDARIO =
   /^(permanencia|horario|lunes|martes|miercoles|jueves|viernes|sabado|domingo)/i;
 
 function limpiar(texto: string): string {
-  return sinAcentos(texto).replace(/\s+/g, " ").trim();
+  return texto.replace(/\s+/g, " ").trim();
 }
 
 /**
@@ -51,10 +54,12 @@ function limpiar(texto: string): string {
  */
 function sede(valor: string | null, inauguracion: string | null): string {
   if (valor) {
-    const linea = sinAcentos(valor)
+    /* Se compara sin acentos pero se devuelve la linea original: antes el
+       recinto salia ya mutilado de aqui. */
+    const linea = valor
       .split("\n")
       .map((l) => l.trim())
-      .find((l) => l.length > 0 && !CALENDARIO.test(l));
+      .find((l) => l.length > 0 && !CALENDARIO.test(sinAcentos(l)));
     if (linea) return limpiar(linea);
   }
 

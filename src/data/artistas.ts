@@ -121,20 +121,30 @@ const RETIRADAS = new Set<string>([
 ]);
 
 /* --- Convenciones de escritura ------------------------------------------
-   El proyecto escribe el contenido sin acentos, y el volcado viene con ellos.
-   La conversion pasa por aqui y solo por aqui: si algun dia se decide respetar
-   la ortografia de los nombres propios -que es lo que yo recomendaria para un
-   sitio institucional-, se devuelve la cadena tal cual y no hay mas que tocar. */
+   El volcado del comite viene acentuado y ahora se respeta tal cual. Antes no:
+   limpiar() le quitaba los acentos a todo lo que se pinta, y la cartelera
+   publicaba "Musica" 154 veces mientras las fichas de municipio decian "Musica"
+   bien escrito -alli el nombre y la disciplina no pasan por limpiar()-. La misma
+   palabra salia de dos maneras segun la ruta, y los nombres propios perdian el
+   acento: Gonzalez, Xicotencatl, Guemez.
+
+   Quitar acentos sigue haciendo falta, pero solo para comparar y para construir
+   urls, nunca para pintar. Por eso sinAcentos() se llama ahora donde de verdad
+   hace falta -identificador(), nivelDe(), seccionDe(), el filtro de calendario
+   de sede()- y limpiar() se limita a normalizar espacios. */
 function sinAcentos(texto: string): string {
   return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
 function limpiar(texto: string): string {
-  return sinAcentos(texto).replace(/\s+/g, " ").trim();
+  return texto.replace(/\s+/g, " ").trim();
 }
 
+/* sinAcentos aqui es imprescindible: sin el, un nombre acentuado daria el slug
+   "gonz-lez", porque [^a-z0-9] convierte en guion todo lo que no sea ascii. Con
+   el, las urls ya publicadas no se mueven. */
 function identificador(clave: string): string {
-  return limpiar(clave)
+  return sinAcentos(limpiar(clave))
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
@@ -185,10 +195,12 @@ const CALENDARIO = /^(permanencia|horario|lunes|martes|miercoles|jueves|viernes|
 function sede(valor: string | null): string {
   if (!valor) return "Por confirmar";
 
-  const linea = sinAcentos(valor)
+  /* Se busca sobre la linea original y se compara sin acentos. Antes se
+     descartaba el acento antes de elegir, y el recinto se devolvia mutilado. */
+  const linea = valor
     .split("\n")
     .map((l) => l.trim())
-    .find((l) => l.length > 0 && !CALENDARIO.test(l));
+    .find((l) => l.length > 0 && !CALENDARIO.test(sinAcentos(l)));
 
   return linea ? limpiar(linea) : "Por confirmar";
 }
@@ -483,7 +495,7 @@ function convertir(
   return {
     id: identificador(a.clave),
     nombre: NOMBRES.get(a.clave) ?? limpiar(a.artista),
-    etiqueta: limpiar(a.disciplinas[0] ?? "Programacion"),
+    etiqueta: limpiar(a.disciplinas[0] ?? "Programación"),
     titulo: limpiar(a.titulos[0] ?? ""),
     procedencia: a.procedencias.map(limpiar).join(" / "),
     semblanza: resumir((semblanzas as Record<string, string>)[a.clave] ?? ""),

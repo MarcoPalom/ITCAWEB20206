@@ -50,7 +50,7 @@ export default function EnlacesGenerales() {
             <Enlace
               id="convocatorias"
               titulo="Convocatorias"
-              desc="Premios, becas y estimulos abiertos para artistas y gestores culturales de Tamaulipas, con sus bases y fechas de cierre."
+              desc="Premios, becas y estímulos abiertos para artistas y gestores culturales de Tamaulipas, con sus bases y fechas de cierre."
               href="#"
               className="h-full"
             />

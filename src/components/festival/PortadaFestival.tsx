@@ -46,7 +46,7 @@ export default function PortadaFestival() {
       {/* En movil este renglon cae justo donde flota la isla, asi que solo se
           muestra a partir de tableta. */}
       <p className="meta absolute bottom-4 left-4 z-10 hidden text-muted sm:left-6 sm:block lg:left-8">
-        Companias participantes en la edicion 2026
+        Compañías participantes en la edición 2026
       </p>
     </section>
   );

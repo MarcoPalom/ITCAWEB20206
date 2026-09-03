@@ -37,11 +37,11 @@ type Hueco =
   | { tipo: "icono"; slug: string; alt: string };
 
 const HUECOS: Hueco[] = [
-  { tipo: "funda", slug: "cia-ome", alt: "Tres interpretes de Cia. Ome con mascaras de madera" },
+  { tipo: "funda", slug: "cia-ome", alt: "Tres intérpretes de Cía. Ome con máscaras de madera" },
   { tipo: "icono", slug: "icono-01", alt: "" },
   { tipo: "funda", slug: "irish-dance-theatre", alt: "Bailarines de Irish Dance Theatre en escena" },
   { tipo: "icono", slug: "icono-02", alt: "" },
-  { tipo: "funda", slug: "momi-maiga", alt: "Momi Maiga, musico de Senegal" },
+  { tipo: "funda", slug: "momi-maiga", alt: "Momi Maiga, músico de Senegal" },
   { tipo: "icono", slug: "icono-03", alt: "" },
   { tipo: "funda", slug: "nahuel-penissi", alt: "Nahuel Penissi, cantautor argentino" },
   { tipo: "icono", slug: "icono-04", alt: "" },
@@ -51,7 +51,7 @@ const HUECOS: Hueco[] = [
   { tipo: "icono", slug: "icono-06", alt: "" },
   { tipo: "funda", slug: "sampling-is-beautiful", alt: "Los tres integrantes de Sampling is Beautiful en una calle" },
   { tipo: "icono", slug: "icono-07", alt: "" },
-  { tipo: "funda", slug: "manoella-torres", alt: "Manoella Torres cantando entre humo escenico" },
+  { tipo: "funda", slug: "manoella-torres", alt: "Manoella Torres cantando entre humo escénico" },
   { tipo: "icono", slug: "icono-08", alt: "" },
 ];
 
@@ -281,7 +281,7 @@ export default function TunelPaneles() {
                   </span>
 
                   <span className="vinilo-lista">
-                    Musica &middot; Danza &middot; Teatro &middot; Cine &middot;
+                    Música &middot; Danza &middot; Teatro &middot; Cine &middot;
                     Letras &middot; Artes populares &middot; Circo
                   </span>
 

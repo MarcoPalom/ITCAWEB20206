@@ -26,19 +26,19 @@ const PANELES = [
   },
   {
     meta: "Cuarenta y tres municipios",
-    titulo: "De la sierra a la costa, una sola conversacion",
+    titulo: "De la sierra a la costa, una sola conversación",
     texto:
       "Talleres en la Huasteca, orquestas juveniles en la frontera, salas de lectura en los pueblos pesqueros. El Instituto trabaja en todo el territorio.",
   },
   {
     meta: "Archivo vivo",
-    titulo: "Lo que se crea aqui merece quedar registrado",
+    titulo: "Lo que se crea aquí merece quedar registrado",
     texto:
-      "Fotografia, video y publicaciones que documentan la vida cultural del Estado y quedan disponibles para consulta libre.",
+      "Fotografía, video y publicaciones que documentan la vida cultural del Estado y quedan disponibles para consulta libre.",
   },
   {
     meta: "Sigue bajando",
-    titulo: "Todo lo del Instituto, a partir de aqui",
+    titulo: "Todo lo del Instituto, a partir de aquí",
     texto:
       "Publicaciones, convocatorias, biblioteca y comunicados, organizados para que encuentres lo que buscas.",
   },
@@ -51,7 +51,7 @@ export default function EscenaDia() {
       <div className="sticky top-0 h-[100svh] overflow-hidden">
         <Image
           src={cerroDelBernal}
-          alt="El Cerro del Bernal se recorta sobre el horizonte tras un campo de girasoles en Gonzalez, Tamaulipas."
+          alt="El Cerro del Bernal se recorta sobre el horizonte tras un campo de girasoles en González, Tamaulipas."
           placeholder="blur"
           priority
           sizes="100vw"

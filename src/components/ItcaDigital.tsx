@@ -12,17 +12,17 @@ const ITEMS = [
   {
     titulo: "Revista digital",
     formato: "Publicacion",
-    desc: "Ensayo, cronica y critica sobre la vida cultural tamaulipeca. Descarga en PDF o consulta en linea.",
+    desc: "Ensayo, crónica y crítica sobre la vida cultural tamaulipeca. Descarga en PDF o consulta en línea.",
   },
   {
     titulo: "Repositorio cultural",
     formato: "Archivo",
-    desc: "Fotografia y video de Por los Municipios, Solana, el Encuentro de Cine y Dia de Muertos.",
+    desc: "Fotografía y video de Por los Municipios, Solana, el Encuentro de Cine y Día de Muertos.",
   },
   {
     titulo: "Charlas ITCA",
     formato: "Video",
-    desc: "Platicas y mesas de trabajo grabadas en las sedes del Instituto, disponibles en abierto.",
+    desc: "Pláticas y mesas de trabajo grabadas en las sedes del Instituto, disponibles en abierto.",
   },
 ];
 

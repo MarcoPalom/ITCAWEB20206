@@ -340,7 +340,7 @@ export default function CarteleraArtistas({
                         Material en proceso de carga
                       </p>
                       <p className="mt-3 text-[0.95rem] leading-relaxed text-[#a9a4a4]">
-                        Las {visibles.length - primeraSinFoto} companias que
+                        Las {visibles.length - primeraSinFoto} compañías que
                         siguen forman parte del programa. Sus fotografias se
                         estan subiendo conforme el ITCA las recibe.
                       </p>
@@ -737,7 +737,7 @@ function MedioMovil({
            es lo que necesita quien no ve el cambio de cara. */
         aria-label={
           leyendo
-            ? `Ver las fotografias de ${artista.nombre}`
+            ? `Ver las fotografías de ${artista.nombre}`
             : `Leer la semblanza de ${artista.nombre}`
         }
         className="ficha-voltea relative block w-full rounded-md text-left focus-visible:ring-2 focus-visible:ring-[var(--tinte)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#141111] focus-visible:outline-none"
@@ -822,7 +822,7 @@ function Presentaciones({ artista }: { artista: Artista }) {
     <section className="mt-4 border-t border-[#2a2929] pt-4">
       <div className="flex items-center justify-between gap-3">
         <h4 className="font-mono text-[0.7rem] tracking-[0.05em] text-[#8b8686] uppercase">
-          {total === 1 ? "Presentacion" : "Presentaciones"}
+          {total === 1 ? "Presentación" : "Presentaciones"}
         </h4>
 
         {total > 1 ? (
@@ -907,8 +907,8 @@ function Flecha({
       disabled={inerte}
       aria-label={
         hacia === "anterior"
-          ? "Presentacion anterior"
-          : "Presentacion siguiente"
+          ? "Presentación anterior"
+          : "Presentación siguiente"
       }
       className="flex h-11 w-11 flex-none items-center justify-center rounded-md border border-[#2a2929] text-[#e6e4e4] transition-colors enabled:hover:border-[var(--tinte)] disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--tinte)]"
     >

@@ -30,7 +30,7 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: "Convocatorias",
     href: "#convocatorias",
-    desc: "Premios, becas y estimulos abiertos para creadores tamaulipecos.",
+    desc: "Premios, becas y estímulos abiertos para creadores tamaulipecos.",
   },
   {
     label: "Biblioteca Virtual",
@@ -40,7 +40,7 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: "Comunicados",
     href: "#comunicados",
-    desc: "Blog institucional organizado por eje de accion.",
+    desc: "Blog institucional organizado por eje de acción.",
   },
   {
     label: "Redes sociales",
@@ -148,7 +148,7 @@ export default function SiteHeader({
         ref={panelRef}
         role="dialog"
         aria-modal="true"
-        aria-label="Menu principal"
+        aria-label="Menú principal"
         inert={!open}
         className={`fixed inset-0 z-60 bg-bone transition-opacity duration-300 ${
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"

@@ -22,7 +22,7 @@ export async function generateMetadata({
   const datos = municipioPorId(municipio);
   if (!datos) return {};
   const titulo = `${datos.nombre} | Municipios | ${FESTIVAL.siglas} ${FESTIVAL.anio}`;
-  const descripcion = `Programacion de ${datos.nombre} en el ${FESTIVAL.nombre}.`;
+  const descripcion = `Programación de ${datos.nombre} en el ${FESTIVAL.nombre}.`;
   return {
     title: titulo,
     description: descripcion,

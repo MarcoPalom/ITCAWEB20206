@@ -8,7 +8,7 @@ import { MUNICIPIOS } from "@/data/municipios";
 import { MUNICIPIOS_FOTOS } from "@/data/municipios_fotos";
 import { SITIO } from "@/data/sitio";
 
-const DESCRIPCION = "La programacion que recorre los 43 municipios de Tamaulipas.";
+const DESCRIPCION = "La programación que recorre los 43 municipios de Tamaulipas.";
 
 export const metadata: Metadata = {
   title: `Municipios | ${FESTIVAL.siglas} ${FESTIVAL.anio}`,
@@ -77,7 +77,7 @@ export default function MunicipiosPage() {
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={`/img/municipios/${m.id}.jpg`}
-                            alt={`Fotografia de ${m.nombre}. ${foto.autor ? `Autor: ${foto.autor}.` : ""} ${foto.licencia}, via Wikimedia Commons.`}
+                            alt={`Fotografía de ${m.nombre}. ${foto.autor ? `Autor: ${foto.autor}.` : ""} ${foto.licencia}, via Wikimedia Commons.`}
                             width={1200}
                             height={900}
                             loading="lazy"
@@ -87,7 +87,7 @@ export default function MunicipiosPage() {
                         </div>
                       ) : (
                         <MarcoImagen
-                          descripcion={`Fotografia de ${m.nombre}`}
+                          descripcion={`Fotografía de ${m.nombre}`}
                           proporcion={proporcion}
                           className="rounded-none border-0"
                         />

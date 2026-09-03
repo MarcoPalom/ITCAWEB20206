@@ -11,7 +11,7 @@ import { SITIO } from "@/data/sitio";
    buscador, y Google pesa mas las palabras que abren el titulo. Las keywords
    ya no influyen en el ranking de Google desde hace anos, pero Bing y otros
    todavia las leen, y no cuesta nada dejarlas. */
-const DESCRIPCION = `${FESTIVAL.edicion}, del ${FESTIVAL.fechas}. Musica, danza, teatro, cine y letras en los 43 municipios de Tamaulipas. Entrada libre en todas las sedes.`;
+const DESCRIPCION = `${FESTIVAL.edicion}, del ${FESTIVAL.fechas}. Música, danza, teatro, cine y letras en los 43 municipios de Tamaulipas. Entrada libre en todas las sedes.`;
 
 export const metadata: Metadata = {
   title: `${FESTIVAL.nombre} | ITCA`,

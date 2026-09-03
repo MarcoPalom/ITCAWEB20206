@@ -23,25 +23,25 @@ type Comunicado = {
 
 const COMUNICADOS: Comunicado[] = [
   {
-    titulo: "Talleres de cesteria en la Huasteca tamaulipeca",
+    titulo: "Talleres de cestería en la Huasteca tamaulipeca",
     entrada:
-      "Ocho comunidades de Ocampo y Antiguo Morelos participan en un ciclo de formacion con maestras artesanas de la region.",
+      "Ocho comunidades de Ocampo y Antiguo Morelos participan en un ciclo de formación con maestras artesanas de la región.",
     eje: "Cultura comunitaria",
     fecha: "2026-08-04",
     sede: "Ocampo",
   },
   {
-    titulo: "Convocatoria abierta para residencias artisticas 2027",
+    titulo: "Convocatoria abierta para residencias artísticas 2027",
     entrada:
-      "El Instituto destina doce plazas de residencia para creadores en artes visuales, escenicas y sonoras.",
+      "El Instituto destina doce plazas de residencia para creadores en artes visuales, escénicas y sonoras.",
     eje: "Desarrollo cultural",
     fecha: "2026-07-29",
     sede: "Ciudad Victoria",
   },
   {
-    titulo: "Restauracion del retablo de la parroquia de Tula",
+    titulo: "Restauración del retablo de la parroquia de Tula",
     entrada:
-      "Concluye la primera etapa de intervencion sobre la pieza del siglo XVIII, con acompanamiento tecnico del INAH.",
+      "Concluye la primera etapa de intervención sobre la pieza del siglo XVIII, con acompañamiento técnico del INAH.",
     eje: "Patrimonio",
     fecha: "2026-07-21",
     sede: "Tula",
@@ -49,7 +49,7 @@ const COMUNICADOS: Comunicado[] = [
   {
     titulo: "Encuentro estatal de salas de lectura",
     entrada:
-      "Mediadores de los cuarenta y tres municipios comparten metodologias de fomento lector en comunidades rurales.",
+      "Mediadores de los cuarenta y tres municipios comparten metodologías de fomento lector en comunidades rurales.",
     eje: "Fomento literario",
     fecha: "2026-07-15",
     sede: "Tampico",
@@ -57,7 +57,7 @@ const COMUNICADOS: Comunicado[] = [
   {
     titulo: "Orquestas juveniles cierran su temporada de verano",
     entrada:
-      "Mas de trescientos alumnos de los nucleos de Reynosa, Matamoros y Altamira presentan su concierto de fin de ciclo.",
+      "Más de trescientos alumnos de los núcleos de Reynosa, Matamoros y Altamira presentan su concierto de fin de ciclo.",
     eje: "Infancias y juventudes",
     fecha: "2026-07-08",
     sede: "Reynosa",
@@ -101,7 +101,7 @@ export default function Comunicados() {
 
             <div
               role="group"
-              aria-label="Filtrar comunicados por eje de accion"
+              aria-label="Filtrar comunicados por eje de acción"
               className="flex flex-wrap gap-2"
             >
               <button

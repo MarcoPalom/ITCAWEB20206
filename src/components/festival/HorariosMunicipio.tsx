@@ -41,7 +41,7 @@ export default function HorariosMunicipio({ municipio }: { municipio: Municipio 
       </h2>
 
       {dias.length === 0 ? (
-        <p className="mt-8 text-center text-muted">Programacion por confirmar.</p>
+        <p className="mt-8 text-center text-muted">Programación por confirmar.</p>
       ) : (
         <div className="mx-auto mt-12 grid max-w-6xl grid-cols-[repeat(auto-fill,minmax(13rem,1fr))] items-start gap-6">
           {dias.map((dia, i) => {

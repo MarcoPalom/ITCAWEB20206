@@ -30,7 +30,7 @@ export const SECCIONES: Seccion[] = [
     slug: "internacionales",
     titulo: "Internacionales",
     entradilla:
-      "Delegaciones invitadas de ocho paises del Atlantico y del Caribe. El cartel se publica en marzo de 2026.",
+      "Delegaciones invitadas de ocho países del Atlántico y del Caribe. El cartel se publica en marzo de 2026.",
     tinte: "var(--id-morado)",
     sobre: "#ffffff",
     cabeceraClara: true,
@@ -40,7 +40,7 @@ export const SECCIONES: Seccion[] = [
     slug: "nacionales",
     titulo: "Nacionales",
     entradilla:
-      "Companias y agrupaciones del resto del pais. El cartel se publica en marzo de 2026.",
+      "Compañías y agrupaciones del resto del país. El cartel se publica en marzo de 2026.",
     tinte: "var(--id-amarillo)",
     sobre: "var(--id-tinta)",
     cabeceraClara: false,
@@ -50,7 +50,7 @@ export const SECCIONES: Seccion[] = [
     slug: "tamaulipecos",
     titulo: "Tamaulipecos",
     entradilla:
-      "Musica, teatro, danza y circo hechos en Tamaulipas. El cartel se publica en marzo de 2026.",
+      "Música, teatro, danza y circo hechos en Tamaulipas. El cartel se publica en marzo de 2026.",
     tinte: "var(--id-turquesa)",
     sobre: "var(--id-tinta)",
     cabeceraClara: false,
@@ -60,7 +60,7 @@ export const SECCIONES: Seccion[] = [
     slug: "municipios",
     titulo: "Municipios",
     entradilla:
-      "La programacion que recorre los 43 municipios de Tamaulipas. El cartel se publica en marzo de 2026.",
+      "La programación que recorre los 43 municipios de Tamaulipas. El cartel se publica en marzo de 2026.",
     tinte: "var(--id-rosa)",
     sobre: "var(--id-tinta)",
     cabeceraClara: false,

@@ -93,7 +93,7 @@ export default function CartelMunicipio({ municipio }: { municipio: Municipio })
 
         <div className="mt-12 flex max-w-4xl flex-col gap-5">
           {grupos.length === 0 ? (
-            <p className="mt-4 opacity-60">Programacion por confirmar.</p>
+            <p className="mt-4 opacity-60">Programación por confirmar.</p>
           ) : (
             grupos.map((g, i) => (
               <p key={i} className={`title-display font-semibold ${g.clase}`}>

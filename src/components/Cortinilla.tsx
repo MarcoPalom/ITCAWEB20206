@@ -24,12 +24,12 @@ export default function Cortinilla() {
         </p>
 
         <h1 className="title-display mt-6 text-[clamp(2rem,5vw,3.25rem)] leading-[1.1] font-medium tracking-[-0.03em] text-charcoal">
-          El sitio del ITCA esta en construccion
+          El sitio del ITCA está en construcción
         </h1>
 
         <p className="mt-6 max-w-prose text-base leading-relaxed text-charcoal">
           Estamos trabajando en el sitio del Instituto. Mientras tanto ya puede
-          consultarse el del {FESTIVAL.nombre}, con el programa por compania,
+          consultarse el del {FESTIVAL.nombre}, con el programa por compañía,
           las sedes y los horarios.
         </p>
 

@@ -11,7 +11,11 @@
  * que ya no montaba nadie. Si algun dato del festival hace falta en pantalla,
  * se deriva del volcado, no se vuelve a teclear aqui.
  *
- * Convencion del proyecto: el contenido se escribe sin acentos.
+ * Convencion del proyecto: el contenido que se publica va acentuado y bien
+ * escrito -es un sitio institucional-. Los comentarios y los identificadores
+ * del codigo siguen sin acentos, que es otra cosa. Antes la regla era "sin
+ * acentos" tambien para el contenido, y de ahi salian "Musica" y "Edicion"
+ * en la metadata y en la cartelera.
  */
 
 export const FESTIVAL = {
@@ -23,7 +27,7 @@ export const FESTIVAL = {
   /* No es la primera: el festival viene de lejos y esta es la 33. Ojo, en el
      volcado del comite hay un acto titulado "Homenaje de la edicion 34", que
      contradice este numero; el 33 es el que dio el instituto. */
-  edicion: "Edicion 33",
+  edicion: "Edición 33",
   fechas: "02 al 11 de octubre de 2026",
   /* Como se escribe en la portada, con la preposicion incluida. */
   fechasLargas: "Del 02 al 11 de octubre",

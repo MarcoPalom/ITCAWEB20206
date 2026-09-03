@@ -190,7 +190,7 @@ export function Controles({
           type="search"
           value={busqueda}
           onChange={(e) => alBuscar(e.target.value)}
-          placeholder="Compania, obra o municipio"
+          placeholder="Compañía, obra o municipio"
           className="isla-campo mt-2"
         />
       </div>
@@ -220,8 +220,8 @@ export function Controles({
           className="mt-2 font-mono text-[0.7rem] tracking-[0.05em] text-[#6f6a6a]"
         >
           {totalVisible === total
-            ? `${total} companias`
-            : `${totalVisible} de ${total} companias`}
+            ? `${total} compañías`
+            : `${totalVisible} de ${total} compañías`}
         </p>
       </div>
     </>
