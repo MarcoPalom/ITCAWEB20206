@@ -1,7 +1,7 @@
 {
   "festival": "Festival Internacional en la Costa del Seno Mexicano 2026",
-  "archivo_origen": "31_de_agosto__por_la_tarde_.xlsx",
-  "hoja": "31 de agosto (por la tarde)",
+  "archivo_origen": "2_de_septiembre__por_la_tarde_.xlsx",
+  "hoja": "2 de septiembre (por la tarde)",
   "mes": "Octubre",
   "anio": 2026,
   "dias": [
@@ -86,7 +86,14 @@
       "fecha": "2026-10-11"
     }
   ],
-  "total_artistas": 144,
+  "columnas_de_apoyo": {
+    "contadores_int_nac_tam_local": false,
+    "artes_visuales": false,
+    "comedores_del_bienestar": false,
+    "requerimientos_tecnicos": false,
+    "observaciones": false
+  },
+  "total_artistas": 184,
   "artistas": [
     {
       "artista": "Adicto5",
@@ -95,6 +102,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -117,14 +127,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:45",
+          "sede": "Foro al Aire Libre de la Plaza Principal",
           "titulo": "Momento Adictivo",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D34"
+          "celda": "D35"
         },
         {
           "municipio": "San Fernando",
@@ -141,7 +151,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E44"
+          "celda": "E46"
         },
         {
           "municipio": "Llera",
@@ -158,7 +168,145 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M84"
+          "celda": "M89"
+        }
+      ]
+    },
+    {
+      "artista": "Agrupación Musical",
+      "clave": "agrupacion musical",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Agrupación Musical",
+        "Dueto Blanco y Negro",
+        "Grupo Amartes",
+        "Space Cowboys"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 4,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Lunes 5"
+          ],
+          "fechas": [
+            "2026-10-05"
+          ],
+          "hora": "18:30",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Space Cowboys",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "G78"
+        },
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Martes 6"
+          ],
+          "fechas": [
+            "2026-10-06"
+          ],
+          "hora": "19:00",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Agrupación Musical",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [
+            "Grupo Pendiente"
+          ],
+          "celda": "H79"
+        },
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Miércoles 7"
+          ],
+          "fechas": [
+            "2026-10-07"
+          ],
+          "hora": "19:15",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Dueto Blanco y Negro",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "I79"
+        },
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Sábado 10"
+          ],
+          "fechas": [
+            "2026-10-10"
+          ],
+          "hora": "19:40",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Grupo Amartes",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "L78"
+        }
+      ]
+    },
+    {
+      "artista": "Aldebarán Acústico",
+      "clave": "aldebaran acustico",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Las Guitarras Mágicas de Aldebarán"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Tampico"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Tampico",
+          "dias": [
+            "Sábado 3"
+          ],
+          "fechas": [
+            "2026-10-03"
+          ],
+          "hora": "19:00",
+          "sede": "Plaza Hijas de Tampico",
+          "titulo": "Las Guitarras Mágicas de Aldebarán",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "E128"
         }
       ]
     },
@@ -169,6 +317,9 @@
         "Artes Visuales"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -217,6 +368,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -274,14 +428,14 @@
           "fechas": [
             "2026-10-10"
           ],
-          "hora": null,
+          "hora": "19:20",
           "sede": null,
           "titulo": "Acordes de Nuestra Tierra",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L34"
+          "celda": "L35"
         },
         {
           "municipio": "Gustavo Díaz Ordaz",
@@ -311,6 +465,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "El Sur Viaja en Tren"
       ],
@@ -338,7 +495,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G50"
+          "celda": "G52"
         },
         {
           "municipio": "Cruillas",
@@ -355,7 +512,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H48"
+          "celda": "H50"
         },
         {
           "municipio": "Méndez",
@@ -372,7 +529,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I42"
+          "celda": "I44"
+        }
+      ]
+    },
+    {
+      "artista": "Aralé  Norimaki",
+      "clave": "arale norimaki",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Aralé  Norimaki"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Sábado 3"
+          ],
+          "fechas": [
+            "2026-10-03"
+          ],
+          "hora": "18:00",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Aralé  Norimaki",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "E76"
         }
       ]
     },
@@ -384,6 +582,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Arte Bajo el Cielo"
@@ -423,6 +624,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "La otra historia de Rosa"
       ],
@@ -450,7 +654,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G98"
+          "celda": "G103"
         },
         {
           "municipio": "Gómez Farías",
@@ -467,7 +671,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H100"
+          "celda": "H105"
         },
         {
           "municipio": "Jaumave",
@@ -477,14 +681,14 @@
           "fechas": [
             "2026-10-07"
           ],
-          "hora": null,
-          "sede": "Para mayores de 12, programar en Auditorio con invitación a escuelas o en secundaria.",
+          "hora": "20:00",
+          "sede": "\"Teatro del Pueblo\" ubicado en Presidencia Municipal",
           "titulo": "La otra historia de Rosa",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I86"
+          "celda": "I91"
         }
       ]
     },
@@ -495,6 +699,9 @@
         "Teatro"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -528,7 +735,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D108"
+          "celda": "D113"
         },
         {
           "municipio": "Nuevo Morelos",
@@ -538,14 +745,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:00",
+          "sede": "Escuela Comunitaria CONAFE. de la Colonia \"El Paraíso\"",
           "titulo": "Mundo Fantástico",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D106"
+          "celda": "D111"
         },
         {
           "municipio": "Camargo",
@@ -589,8 +796,8 @@
           "fechas": [
             "2026-10-08"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Escuela Primaria \"Petra Valdéz Rodríguez\" en el Fraccionamiento \"Las Flores\"",
           "titulo": "Mundo Fantástico",
           "tipo": "presentación",
           "inauguracion": null,
@@ -613,7 +820,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M100"
+          "celda": "M105"
         },
         {
           "municipio": "Ocampo",
@@ -630,7 +837,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M96"
+          "celda": "M101"
+        }
+      ]
+    },
+    {
+      "artista": "Ballet de Jalisco",
+      "clave": "ballet de jalisco",
+      "disciplinas": [
+        "Danza"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Carmina Burana. Una Gala con el Lago de los Cisnes y Don Quijote"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Sábado 3"
+          ],
+          "fechas": [
+            "2026-10-03"
+          ],
+          "hora": "20:00",
+          "sede": "Teatro de la Reforma",
+          "titulo": "Carmina Burana. Una Gala con el Lago de los Cisnes y Don Quijote",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "E37"
         }
       ]
     },
@@ -642,6 +890,9 @@
       ],
       "procedencias": [
         "CDMX"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Ballet Folklórico de la Guardia Nacional"
@@ -668,7 +919,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E121"
+          "celda": "E126"
         }
       ]
     },
@@ -680,6 +931,9 @@
       ],
       "procedencias": [
         "CDMX"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Ballet Folklórico de México de Amalia Hernández"
@@ -719,6 +973,9 @@
       "procedencias": [
         "Veracruz"
       ],
+      "origen": [
+        "Nacional"
+      ],
       "titulos": [
         "Ballet Folklórico \"Xalmana\""
       ],
@@ -745,7 +1002,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L98"
+          "celda": "L103"
         },
         {
           "municipio": "Reynosa",
@@ -775,6 +1032,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "Solo Veracruz es Bello"
       ],
@@ -801,7 +1061,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D102"
+          "celda": "D107"
         },
         {
           "municipio": "Padilla",
@@ -818,7 +1078,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M67"
+          "celda": "M69"
         }
       ]
     },
@@ -830,6 +1090,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Ballets Folklóricos del IRCA"
@@ -869,6 +1132,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "125 Aniversario",
         "Tributo a Juan Gabriel"
@@ -899,7 +1165,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D62"
+          "celda": "D64"
         },
         {
           "municipio": "Soto la Marina",
@@ -916,7 +1182,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F64"
+          "celda": "F66"
         },
         {
           "municipio": "San Carlos",
@@ -933,7 +1199,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J52"
+          "celda": "J54"
         },
         {
           "municipio": "Victoria",
@@ -950,7 +1216,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K78"
+          "celda": "K83"
         },
         {
           "municipio": "Río Bravo",
@@ -972,6 +1238,47 @@
       ]
     },
     {
+      "artista": "Banda de Música Municipal de H. Matamoros y Banda Sinfónica del Colegio San Juan",
+      "clave": "banda de musica municipal de h. matamoros y banda sinfonica del colegio san juan",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "México Sinfónico"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Viernes 9"
+          ],
+          "fechas": [
+            "2026-10-09"
+          ],
+          "hora": "18:00",
+          "sede": "Plaza Principal \"Miguel Hidalgo\"",
+          "titulo": "México Sinfónico",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "K40"
+        }
+      ]
+    },
+    {
       "artista": "Banda Sinfónica Municipal \"Elías Valenzuela\"",
       "clave": "banda sinfonica municipal elias valenzuela",
       "disciplinas": [
@@ -979,6 +1286,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Banda Sinfónica Municipal \"Elías Valenzuela\""
@@ -1018,6 +1328,9 @@
       "procedencias": [
         "Veracruz/Tamaulipas"
       ],
+      "origen": [
+        "Nacional"
+      ],
       "titulos": [
         "Música de banda del planeta tierra"
       ],
@@ -1038,14 +1351,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:30",
+          "sede": "Explanada de la Presidencia Municipal",
           "titulo": "Música de banda del planeta tierra",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D94"
+          "celda": "D99"
         },
         {
           "municipio": "Madero",
@@ -1062,7 +1375,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E119"
+          "celda": "E124"
         },
         {
           "municipio": "Altamira",
@@ -1079,7 +1392,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F117"
+          "celda": "F122"
         }
       ]
     },
@@ -1090,6 +1403,9 @@
         "Artes Visuales"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -1123,7 +1439,7 @@
           "inauguracion": "Inauguración 8 de octubre 18:00 hrs. | Museo de Arte Contemporáneo de Tamaulipas (MACT)",
           "permanencia": "Octubre 2026 a Enero 2027",
           "notas": [],
-          "celda": "J40"
+          "celda": "J42"
         }
       ]
     },
@@ -1136,6 +1452,9 @@
       "procedencias": [
         "Tamaulipas / Veracruz",
         "Veracruz"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Soneras de Mar y Río"
@@ -1165,7 +1484,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D119"
+          "celda": "D124"
         },
         {
           "municipio": "Mante",
@@ -1182,7 +1501,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E102"
+          "celda": "E107"
         },
         {
           "municipio": "Tula",
@@ -1192,14 +1511,14 @@
           "fechas": [
             "2026-10-04"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:30",
+          "sede": "Explanada de la Presidencia Municipal",
           "titulo": "Soneras de Mar y Río",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F94"
+          "celda": "F99"
         },
         {
           "municipio": "Aldama",
@@ -1216,7 +1535,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G115"
+          "celda": "G120"
         }
       ]
     },
@@ -1228,6 +1547,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Carrera de \"Gateo\" Motivacional y el Tesoro Escondido"
@@ -1254,7 +1576,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J113"
+          "celda": "J118"
         }
       ]
     },
@@ -1265,6 +1587,9 @@
         "Artes Visuales"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -1310,7 +1635,48 @@
           "inauguracion": "Inauguración | Casa de la Cultura de Soto la Marina",
           "permanencia": null,
           "notas": [],
-          "celda": "D65"
+          "celda": "D67"
+        }
+      ]
+    },
+    {
+      "artista": "Categoría Infantil",
+      "clave": "categoria infantil",
+      "disciplinas": [
+        "Danza"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Danza Folklórica"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Valle Hermoso"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Valle Hermoso",
+          "dias": [
+            "Viernes 2"
+          ],
+          "fechas": [
+            "2026-10-02"
+          ],
+          "hora": "19:30",
+          "sede": "Foro al Aire Libre de la Plaza Principal",
+          "titulo": "Danza Folklórica",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "D34"
         }
       ]
     },
@@ -1322,6 +1688,9 @@
       ],
       "procedencias": [
         "Nuevo León"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Cuentocirco"
@@ -1358,7 +1727,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D90"
+          "celda": "D95"
         },
         {
           "municipio": "Bustamante",
@@ -1375,7 +1744,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E88"
+          "celda": "E93"
         },
         {
           "municipio": "Jaumave",
@@ -1385,14 +1754,14 @@
           "fechas": [
             "2026-10-04"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "\"Teatro del Pueblo\" ubicado en Presidencia Municipal",
           "titulo": "Cuentocirco",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F86"
+          "celda": "F91"
         },
         {
           "municipio": "Llera",
@@ -1409,7 +1778,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G84"
+          "celda": "G89"
         },
         {
           "municipio": "Ocampo",
@@ -1426,7 +1795,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G96"
+          "celda": "G101"
         },
         {
           "municipio": "Casas",
@@ -1443,7 +1812,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H72"
+          "celda": "H74"
         },
         {
           "municipio": "Güémez",
@@ -1460,7 +1829,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I69"
+          "celda": "I71"
         },
         {
           "municipio": "Padilla",
@@ -1477,7 +1846,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J67"
+          "celda": "J69"
         },
         {
           "municipio": "Hidalgo",
@@ -1494,7 +1863,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K58"
+          "celda": "K60"
         },
         {
           "municipio": "Mainero",
@@ -1511,7 +1880,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L54"
+          "celda": "L56"
         },
         {
           "municipio": "San Carlos",
@@ -1528,7 +1897,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M52"
+          "celda": "M54"
         }
       ]
     },
@@ -1540,6 +1909,9 @@
       ],
       "procedencias": [
         "Portugal/México"
+      ],
+      "origen": [
+        "Internacional"
       ],
       "titulos": [
         "Embrulho"
@@ -1570,7 +1942,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J64"
+          "celda": "J66"
         },
         {
           "municipio": "Victoria",
@@ -1580,14 +1952,14 @@
           "fechas": [
             "2026-10-08"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Escenario \"Plaza Juárez\"",
           "titulo": "Embrulho",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J76"
+          "celda": "J81"
         },
         {
           "municipio": "Llera",
@@ -1604,7 +1976,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K84"
+          "celda": "K89"
         },
         {
           "municipio": "Abasolo",
@@ -1621,7 +1993,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L62"
+          "celda": "L64"
         },
         {
           "municipio": "San Nicolás",
@@ -1638,7 +2010,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M50"
+          "celda": "M52"
         }
       ]
     },
@@ -1650,6 +2022,9 @@
       ],
       "procedencias": [
         "Baja California"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "De camino a casa"
@@ -1680,7 +2055,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I117"
+          "celda": "I122"
         },
         {
           "municipio": "Aldama",
@@ -1697,7 +2072,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J115"
+          "celda": "J120"
         },
         {
           "municipio": "Jiménez",
@@ -1714,7 +2089,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K60"
+          "celda": "K62"
         },
         {
           "municipio": "Cruillas",
@@ -1733,7 +2108,7 @@
           "notas": [
             "(Programar de preferencia en Auditorio)"
           ],
-          "celda": "L48"
+          "celda": "L50"
         },
         {
           "municipio": "Valle Hermoso",
@@ -1765,6 +2140,9 @@
       "procedencias": [
         "Jalisco"
       ],
+      "origen": [
+        "Nacional"
+      ],
       "titulos": [
         "Entreverte"
       ],
@@ -1793,7 +2171,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D74"
+          "celda": "D76"
         },
         {
           "municipio": "Gómez Farías",
@@ -1810,7 +2188,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E100"
+          "celda": "E105"
         },
         {
           "municipio": "González",
@@ -1827,7 +2205,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F110"
+          "celda": "F115"
         },
         {
           "municipio": "Abasolo",
@@ -1844,7 +2222,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G62"
+          "celda": "G64"
         }
       ]
     },
@@ -1855,6 +2233,9 @@
         "Multidisciplinario"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -1888,7 +2269,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D100"
+          "celda": "D105"
         },
         {
           "municipio": "Xicoténcatl",
@@ -1905,7 +2286,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E98"
+          "celda": "E103"
         },
         {
           "municipio": "Ocampo",
@@ -1922,7 +2303,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F96"
+          "celda": "F101"
         },
         {
           "municipio": "Nuevo Morelos",
@@ -1932,14 +2313,14 @@
           "fechas": [
             "2026-10-05"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Jardin de Niños \"Gabriela Mistral\" en la Cabecera Municipal",
           "titulo": "Las Maravillas del Cielo",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G106"
+          "celda": "G111"
         },
         {
           "municipio": "Antiguo Morelos",
@@ -1956,7 +2337,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H108"
+          "celda": "H113"
         },
         {
           "municipio": "Bustamante",
@@ -1973,7 +2354,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M88"
+          "celda": "M93"
         },
         {
           "municipio": "Miquihuana",
@@ -1990,7 +2371,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M90"
+          "celda": "M95"
         }
       ]
     },
@@ -2001,6 +2382,9 @@
         "Teatro"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -2032,7 +2416,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G42"
+          "celda": "G44"
         },
         {
           "municipio": "Burgos",
@@ -2042,14 +2426,14 @@
           "fechas": [
             "2026-10-06"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Escuela Primaria Mártires de la Revolución",
           "titulo": "Titiricuento: Caperuza Celeste",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H46"
+          "celda": "H48"
         },
         {
           "municipio": "Cruillas",
@@ -2066,7 +2450,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I48"
+          "celda": "I50"
         },
         {
           "municipio": "San Nicolás",
@@ -2083,7 +2467,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J50"
+          "celda": "J52"
         },
         {
           "municipio": "Camargo",
@@ -2113,6 +2497,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "Beautiful Julia"
       ],
@@ -2139,7 +2526,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G122"
+          "celda": "G127"
         },
         {
           "municipio": "Reynosa",
@@ -2168,6 +2555,9 @@
       ],
       "procedencias": [
         "Jalisco"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Kopalli: el espíritu astral"
@@ -2232,7 +2622,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G38"
+          "celda": "G39"
         },
         {
           "municipio": "Victoria",
@@ -2249,7 +2639,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I78"
+          "celda": "I83"
         },
         {
           "municipio": "Tampico",
@@ -2266,7 +2656,65 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K121"
+          "celda": "K126"
+        }
+      ]
+    },
+    {
+      "artista": "Compañía de Música",
+      "clave": "compania de musica",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Vivace"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 2,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Jueves 8"
+          ],
+          "fechas": [
+            "2026-10-08"
+          ],
+          "hora": "18:00",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Vivace",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "J76"
+        },
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Jueves 8"
+          ],
+          "fechas": [
+            "2026-10-08"
+          ],
+          "hora": "18:40",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Vivace",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "J78"
         }
       ]
     },
@@ -2278,6 +2726,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Compañía de Teatro Comunitario  del IRCA"
@@ -2317,6 +2768,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "Dido y Eneas"
       ],
@@ -2347,6 +2801,45 @@
       ]
     },
     {
+      "artista": "Concierto de Clausura",
+      "clave": "concierto de clausura",
+      "disciplinas": [],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Concierto de Clausura"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Domingo 11"
+          ],
+          "fechas": [
+            "2026-10-11"
+          ],
+          "hora": "21:00",
+          "sede": "Plaza Principal \"Miguel Hidalgo\"",
+          "titulo": "Concierto de Clausura",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "M37"
+        }
+      ]
+    },
+    {
       "artista": "Concierto Orquesta Sinfónica Juvenil de México",
       "clave": "concierto orquesta sinfonica juvenil de mexico",
       "disciplinas": [
@@ -2354,6 +2847,9 @@
       ],
       "procedencias": [
         "CDMX / Programación Local"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Concierto Orquesta Sinfónica Juvenil de México"
@@ -2393,6 +2889,9 @@
       "procedencias": [
         "Programación Local"
       ],
+      "origen": [
+        "Local"
+      ],
       "titulos": [
         "Concurso de Caracterización Infantil"
       ],
@@ -2418,7 +2917,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I113"
+          "celda": "I118"
+        }
+      ]
+    },
+    {
+      "artista": "Conjunto Folklórico",
+      "clave": "conjunto folklorico",
+      "disciplinas": [
+        "Danza"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Herencia de mi Tierra"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Martes 6"
+          ],
+          "fechas": [
+            "2026-10-06"
+          ],
+          "hora": "18:30",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Herencia de mi Tierra",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "H78"
         }
       ]
     },
@@ -2429,6 +2969,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -2459,7 +3002,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D67"
+          "celda": "D69"
         },
         {
           "municipio": "Madero",
@@ -2476,7 +3019,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K119"
+          "celda": "K124"
         },
         {
           "municipio": "Gómez Farías",
@@ -2493,7 +3036,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L100"
+          "celda": "L105"
         },
         {
           "municipio": "Xicoténcatl",
@@ -2510,7 +3053,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M98"
+          "celda": "M103"
         }
       ]
     },
@@ -2521,6 +3064,9 @@
         "Multidisciplinario"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -2550,7 +3096,7 @@
           "notas": [
             "(MACT)"
           ],
-          "celda": "K36"
+          "celda": "K39"
         }
       ]
     },
@@ -2561,6 +3107,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -2590,7 +3139,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K98"
+          "celda": "K103"
         },
         {
           "municipio": "Bustamante",
@@ -2600,14 +3149,14 @@
           "fechas": [
             "2026-10-10"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:00",
+          "sede": "Iglesia San Miguel Arcángel",
           "titulo": "Ecos del Noreste Mexicano",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L88"
+          "celda": "L93"
         },
         {
           "municipio": "Palmillas",
@@ -2624,7 +3173,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M92"
+          "celda": "M97"
         }
       ]
     },
@@ -2636,6 +3185,9 @@
       ],
       "procedencias": [
         "CDMX"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Las pasiones del alma. Voces reveladas"
@@ -2666,7 +3218,7 @@
           "notas": [
             "Se sugiere programar en iglesia o espacio con buena acústica"
           ],
-          "celda": "K94"
+          "celda": "K99"
         },
         {
           "municipio": "Victoria",
@@ -2676,7 +3228,7 @@
           "fechas": [
             "2026-10-10"
           ],
-          "hora": null,
+          "hora": "17:30",
           "sede": null,
           "titulo": "Las pasiones del alma. Voces reveladas",
           "tipo": "presentación",
@@ -2685,7 +3237,7 @@
           "notas": [
             "Se sugiere programar en iglesia o espacio con buena acústica"
           ],
-          "celda": "L76"
+          "celda": "L81"
         },
         {
           "municipio": "Mier",
@@ -2716,6 +3268,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Danza Clásica y Moderna del IRCA"
@@ -2755,6 +3310,9 @@
       "procedencias": [
         "Programación Local"
       ],
+      "origen": [
+        "Local"
+      ],
       "titulos": [
         "Grupo de Danza \"Mitotl\""
       ],
@@ -2793,6 +3351,9 @@
       "procedencias": [
         "Programación Local"
       ],
+      "origen": [
+        "Local"
+      ],
       "titulos": [
         "Danza González"
       ],
@@ -2818,7 +3379,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D110"
+          "celda": "D115"
         }
       ]
     },
@@ -2830,6 +3391,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Danza Manuel"
@@ -2856,7 +3420,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I110"
+          "celda": "I115"
         }
       ]
     },
@@ -2868,6 +3432,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Proyecto X"
@@ -2907,6 +3474,9 @@
       "procedencias": [
         "Programación Local"
       ],
+      "origen": [
+        "Local"
+      ],
       "titulos": [
         "David Onassis Guevara Cruz"
       ],
@@ -2932,7 +3502,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G114"
+          "celda": "G119"
         }
       ]
     },
@@ -2944,6 +3514,9 @@
       ],
       "procedencias": [
         "Zacatecas"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Por quien suenan los tambores"
@@ -2973,7 +3546,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J92"
+          "celda": "J97"
         },
         {
           "municipio": "Bustamante",
@@ -2990,7 +3563,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K88"
+          "celda": "K93"
         },
         {
           "municipio": "Llera",
@@ -3007,7 +3580,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L84"
+          "celda": "L89"
         },
         {
           "municipio": "Jaumave",
@@ -3017,14 +3590,73 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "\"Teatro del Pueblo\" ubicado en Presidencia Municipal",
           "titulo": "Por quien suenan los tambores",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M86"
+          "celda": "M91"
+        }
+      ]
+    },
+    {
+      "artista": "Departamento de Cultura de Valle Hermoso",
+      "clave": "departamento de cultura de valle hermoso",
+      "disciplinas": [
+        "Danza"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Danza Juvenil",
+        "Grupo de Danza Infantil"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 2,
+      "total_municipios": 1,
+      "municipios": [
+        "Valle Hermoso"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Valle Hermoso",
+          "dias": [
+            "Sábado 3"
+          ],
+          "fechas": [
+            "2026-10-03"
+          ],
+          "hora": "19:00",
+          "sede": "Foro al Aire Libre de la Plaza Principal",
+          "titulo": "Danza Juvenil",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "E34"
+        },
+        {
+          "municipio": "Valle Hermoso",
+          "dias": [
+            "Sábado 10"
+          ],
+          "fechas": [
+            "2026-10-10"
+          ],
+          "hora": "19:00",
+          "sede": "Foro al Aire Libre de la Plaza Principal",
+          "titulo": "Grupo de Danza Infantil",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "L34"
         }
       ]
     },
@@ -3036,6 +3668,9 @@
       ],
       "procedencias": [
         "Nuevo León"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Distrito Cero"
@@ -3065,7 +3700,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D111"
+          "celda": "D116"
         },
         {
           "municipio": "Güémez",
@@ -3082,7 +3717,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E69"
+          "celda": "E71"
         },
         {
           "municipio": "Hidalgo",
@@ -3099,7 +3734,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L58"
+          "celda": "L60"
         },
         {
           "municipio": "Méndez",
@@ -3116,7 +3751,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M42"
+          "celda": "M44"
         }
       ]
     },
@@ -3128,6 +3763,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Domingo de Danzón"
@@ -3167,6 +3805,9 @@
       "procedencias": [
         "Programación Local"
       ],
+      "origen": [
+        "Local"
+      ],
       "titulos": [
         "Dueto \"La Joya\""
       ],
@@ -3203,6 +3844,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -3249,7 +3893,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L102"
+          "celda": "L107"
         },
         {
           "municipio": "Tula",
@@ -3259,14 +3903,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:30",
+          "sede": "Explanada de la Presidencia Municipal",
           "titulo": "De Tamaulipas para el Mundo",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M94"
+          "celda": "M99"
         }
       ]
     },
@@ -3277,6 +3921,9 @@
         "Teatro"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -3308,7 +3955,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G108"
+          "celda": "G113"
         },
         {
           "municipio": "Nuevo Morelos",
@@ -3318,14 +3965,14 @@
           "fechas": [
             "2026-10-06"
           ],
-          "hora": null,
-          "sede": "Programar en escuelas o auditorios, con invitación a escuelas",
+          "hora": "11:00",
+          "sede": "Escuela Primaria \"Miguel Hidalgo\" en la Cabecera Municipal",
           "titulo": "El éxodo de los pequeños zapatos",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H106"
+          "celda": "H111"
         },
         {
           "municipio": "González",
@@ -3342,7 +3989,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I111"
+          "celda": "I116"
         },
         {
           "municipio": "Xicoténcatl",
@@ -3359,7 +4006,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J98"
+          "celda": "J103"
         },
         {
           "municipio": "Gómez Farías",
@@ -3376,7 +4023,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K100"
+          "celda": "K105"
         }
       ]
     },
@@ -3388,6 +4035,9 @@
       ],
       "procedencias": [
         "Nuevo León"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "El Zar de Monterrey"
@@ -3450,7 +4100,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M48"
+          "celda": "M50"
+        }
+      ]
+    },
+    {
+      "artista": "ENIK Tango",
+      "clave": "enik tango",
+      "disciplinas": [
+        "Danza"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "ENIK Tango"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Sábado 10"
+          ],
+          "fechas": [
+            "2026-10-10"
+          ],
+          "hora": "18:00",
+          "sede": "Plaza Principal \"Miguel Hidalgo\"",
+          "titulo": "ENIK Tango",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "L39"
         }
       ]
     },
@@ -3462,6 +4153,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Ensamble de Guitarras de la Casa de la Cultura de Aldama"
@@ -3488,7 +4182,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E114"
+          "celda": "E119"
         }
       ]
     },
@@ -3500,6 +4194,9 @@
       ],
       "procedencias": [
         "CDMX/Tamaulipas"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Entre viento y marea"
@@ -3564,7 +4261,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J36"
+          "celda": "J37"
         },
         {
           "municipio": "Victoria",
@@ -3581,7 +4278,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L75"
+          "celda": "L80"
         },
         {
           "municipio": "Tampico",
@@ -3598,7 +4295,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M121"
+          "celda": "M126"
         }
       ]
     },
@@ -3609,6 +4306,9 @@
         "Teatro"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -3647,8 +4347,8 @@
           "fechas": [
             "2026-10-07"
           ],
-          "hora": "09:30",
-          "sede": "Concha Acústica del Parque Olímpico",
+          "hora": "09:00",
+          "sede": "Escuela Primaria \"Vicente Cevada\" de la Colonia Ampliación Solidaridad",
           "titulo": "Atrapando al viento",
           "tipo": "presentación",
           "inauguracion": null,
@@ -3659,12 +4359,174 @@
       ]
     },
     {
+      "artista": "Escuela de Baile",
+      "clave": "escuela de baile",
+      "disciplinas": [
+        "Danza"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Actitud Ballet",
+        "Mfox: La Puerta del Talento",
+        "Mirshadance Estudio"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 3,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Lunes 5"
+          ],
+          "fechas": [
+            "2026-10-05"
+          ],
+          "hora": "18:00",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Mirshadance Estudio",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "G76"
+        },
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Jueves 8"
+          ],
+          "fechas": [
+            "2026-10-08"
+          ],
+          "hora": "19:00",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Actitud Ballet",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "J79"
+        },
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Sábado 10"
+          ],
+          "fechas": [
+            "2026-10-10"
+          ],
+          "hora": "19:00",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Mfox: La Puerta del Talento",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "L76"
+        }
+      ]
+    },
+    {
+      "artista": "Escuela de Danza Tahitiana",
+      "clave": "escuela de danza tahitiana",
+      "disciplinas": [
+        "Danza"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Nai O Tera"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Domingo 4"
+          ],
+          "fechas": [
+            "2026-10-04"
+          ],
+          "hora": "18:00",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Nai O Tera",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "F76"
+        }
+      ]
+    },
+    {
+      "artista": "Escuela de Música",
+      "clave": "escuela de musica",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "MV Academy"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Sábado 3"
+          ],
+          "fechas": [
+            "2026-10-03"
+          ],
+          "hora": "18:45",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "MV Academy",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "E79"
+        }
+      ]
+    },
+    {
       "artista": "Espuma de Mar",
       "clave": "espuma de mar",
       "disciplinas": [
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -3694,7 +4556,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D69"
+          "celda": "D71"
         },
         {
           "municipio": "Padilla",
@@ -3711,7 +4573,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E67"
+          "celda": "E69"
         },
         {
           "municipio": "Llera",
@@ -3728,7 +4590,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F84"
+          "celda": "F89"
         }
       ]
     },
@@ -3740,6 +4602,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Estancias Creativas I y II"
@@ -3781,6 +4646,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -3856,6 +4724,9 @@
       ],
       "procedencias": [
         "Puebla"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "México con Voz de Mujer"
@@ -3967,6 +4838,9 @@
       "procedencias": [
         "Programación Local"
       ],
+      "origen": [
+        "Local"
+      ],
       "titulos": [
         "Fernando Candelario Gallegos"
       ],
@@ -3992,7 +4866,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D114"
+          "celda": "D119"
         }
       ]
     },
@@ -4004,6 +4878,9 @@
       ],
       "procedencias": [
         "Nuevo León"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "El horizonte como libro abierto"
@@ -4034,7 +4911,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F54"
+          "celda": "F56"
         },
         {
           "municipio": "Villagrán",
@@ -4051,7 +4928,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G56"
+          "celda": "G58"
         },
         {
           "municipio": "Hidalgo",
@@ -4068,7 +4945,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H58"
+          "celda": "H60"
         },
         {
           "municipio": "Padilla",
@@ -4085,7 +4962,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I67"
+          "celda": "I69"
         },
         {
           "municipio": "Güémez",
@@ -4102,7 +4979,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J69"
+          "celda": "J71"
         }
       ]
     },
@@ -4113,6 +4990,9 @@
         "Teatro"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -4145,7 +5025,7 @@
           "notas": [
             "(Teatro para adolescentes, programar en Auditorio para secundarias)"
           ],
-          "celda": "G48"
+          "celda": "G50"
         },
         {
           "municipio": "San Nicolás",
@@ -4162,7 +5042,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H50"
+          "celda": "H52"
         },
         {
           "municipio": "San Fernando",
@@ -4179,7 +5059,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I44"
+          "celda": "I46"
         },
         {
           "municipio": "Méndez",
@@ -4198,7 +5078,66 @@
           "notas": [
             "(Teatro para adolescentes, programar en Auditorio para secundarias)"
           ],
-          "celda": "J42"
+          "celda": "J44"
+        }
+      ]
+    },
+    {
+      "artista": "Grupo de Baile",
+      "clave": "grupo de baile",
+      "disciplinas": [
+        "Danza"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Eclipse",
+        "Icon Dance"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 2,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Sábado 3"
+          ],
+          "fechas": [
+            "2026-10-03"
+          ],
+          "hora": "18:30",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Eclipse",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "E78"
+        },
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Jueves 8"
+          ],
+          "fechas": [
+            "2026-10-08"
+          ],
+          "hora": "18:25",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Icon Dance",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "J77"
         }
       ]
     },
@@ -4209,6 +5148,9 @@
         "Danza"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -4241,6 +5183,83 @@
       ]
     },
     {
+      "artista": "Grupo de Danza Folklórica",
+      "clave": "grupo de danza folklorica",
+      "disciplinas": [
+        "Danza"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Anacahuita del Corazón",
+        "Xitzahuil",
+        "Época de Oro"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 3,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Miércoles 7"
+          ],
+          "fechas": [
+            "2026-10-07"
+          ],
+          "hora": "18:00",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Anacahuita del Corazón",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "I76"
+        },
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Miércoles 7"
+          ],
+          "fechas": [
+            "2026-10-07"
+          ],
+          "hora": "18:45",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Época de Oro",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "I78"
+        },
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Viernes 9"
+          ],
+          "fechas": [
+            "2026-10-09"
+          ],
+          "hora": "18:20",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Xitzahuil",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "K77"
+        }
+      ]
+    },
+    {
       "artista": "Grupo de Danza Folklórica de Jóvenes",
       "clave": "grupo de danza folklorica de jovenes",
       "disciplinas": [
@@ -4248,6 +5267,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Grupo de Danza Folklórica de Jóvenes"
@@ -4284,6 +5306,9 @@
       "disciplinas": [],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "México en la Frontera"
@@ -4323,6 +5348,9 @@
       "procedencias": [
         "Programación Local"
       ],
+      "origen": [
+        "Local"
+      ],
       "titulos": [
         "Grupo de Danza \"Villa de Croix\"de la Casa de la Cultura"
       ],
@@ -4348,7 +5376,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D71"
+          "celda": "D73"
         },
         {
           "municipio": "Casas",
@@ -4365,7 +5393,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H71"
+          "celda": "H73"
         },
         {
           "municipio": "Casas",
@@ -4382,7 +5410,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M71"
+          "celda": "M73"
         }
       ]
     },
@@ -4392,6 +5420,9 @@
       "disciplinas": [],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Programa Unidos por la Cultura"
@@ -4428,6 +5459,9 @@
       "disciplinas": [],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Boleros de la Frontera"
@@ -4467,6 +5501,9 @@
       "procedencias": [
         "Guanajuato"
       ],
+      "origen": [
+        "Nacional"
+      ],
       "titulos": [
         "Fiestas"
       ],
@@ -4496,7 +5533,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D92"
+          "celda": "D97"
         },
         {
           "municipio": "Ocampo",
@@ -4513,7 +5550,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E96"
+          "celda": "E101"
         },
         {
           "municipio": "Bustamante",
@@ -4530,7 +5567,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F88"
+          "celda": "F93"
         },
         {
           "municipio": "Jaumave",
@@ -4540,14 +5577,14 @@
           "fechas": [
             "2026-10-05"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Plaza Hidalgo",
           "titulo": "Fiestas",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G86"
+          "celda": "G91"
         },
         {
           "municipio": "Miquihuana",
@@ -4566,7 +5603,7 @@
           "notas": [
             "(Patio Cívico)"
           ],
-          "celda": "H90"
+          "celda": "H95"
         }
       ]
     },
@@ -4577,6 +5614,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -4606,7 +5646,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D52"
+          "celda": "D54"
         },
         {
           "municipio": "Valle Hermoso",
@@ -4616,14 +5656,14 @@
           "fechas": [
             "2026-10-03"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:30",
+          "sede": "Foro al Aire Libre de la Plaza Principal",
           "titulo": "Sonidos del Orgullo Tamaulipeco",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E34"
+          "celda": "E35"
         },
         {
           "municipio": "San Fernando",
@@ -4640,7 +5680,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F44"
+          "celda": "F46"
         }
       ]
     },
@@ -4651,6 +5691,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -4697,7 +5740,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G119"
+          "celda": "G124"
         },
         {
           "municipio": "Mante",
@@ -4714,7 +5757,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K102"
+          "celda": "K107"
         }
       ]
     },
@@ -4725,6 +5768,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -4770,7 +5816,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M54"
+          "celda": "M56"
+        }
+      ]
+    },
+    {
+      "artista": "Grupo Vicio",
+      "clave": "grupo vicio",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Fiesta Norteña"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Tampico"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Tampico",
+          "dias": [
+            "Sábado 10"
+          ],
+          "fechas": [
+            "2026-10-10"
+          ],
+          "hora": "20:00",
+          "sede": "Plaza \"Hijas de Tampico\"",
+          "titulo": "Fiesta Norteña",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "L127"
         }
       ]
     },
@@ -4782,6 +5869,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Grupos de Danza Folklórica de Río Bravo"
@@ -4818,6 +5908,9 @@
       "disciplinas": [],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Programa Entre Generaciones"
@@ -4857,6 +5950,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "Dos Miradas al Paisaje"
       ],
@@ -4888,7 +5984,7 @@
           "inauguracion": "Inauguración 8 de octubre 18:00 hrs. | Galería de Arte \"Ramón Cano Manilla\"",
           "permanencia": "Octubre-Diciembre",
           "notas": [],
-          "celda": "J104"
+          "celda": "J109"
         }
       ]
     },
@@ -4900,6 +5996,9 @@
       ],
       "procedencias": [
         "Jalisco/Tamaulipas"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Liebre de Mar"
@@ -4927,7 +6026,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G102"
+          "celda": "G107"
         },
         {
           "municipio": "Victoria",
@@ -4944,7 +6043,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H75"
+          "celda": "H80"
         }
       ]
     },
@@ -4955,6 +6054,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -4984,7 +6086,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K54"
+          "celda": "K56"
         },
         {
           "municipio": "San Nicolás",
@@ -5001,7 +6103,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L50"
+          "celda": "L52"
         },
         {
           "municipio": "Burgos",
@@ -5011,14 +6113,96 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:00",
+          "sede": "Plaza Municipal, Zona Centro",
           "titulo": "Orgullo Tamaulipeco",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M46"
+          "celda": "M48"
+        }
+      ]
+    },
+    {
+      "artista": "Herí Sobrevilla",
+      "clave": "heri sobrevilla",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Herí Sobrevilla y su Sabor"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Tampico"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Tampico",
+          "dias": [
+            "Domingo 11"
+          ],
+          "fechas": [
+            "2026-10-11"
+          ],
+          "hora": "17:00",
+          "sede": "Plaza Hijas de Tampico",
+          "titulo": "Herí Sobrevilla y su Sabor",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "M128"
+        }
+      ]
+    },
+    {
+      "artista": "Homenaje Local aTessa de la Fuente",
+      "clave": "homenaje local atessa de la fuente",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Una Voz que vuelve a Casa"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Domingo 4"
+          ],
+          "fechas": [
+            "2026-10-04"
+          ],
+          "hora": "18:00",
+          "sede": "Teatro de la Reforma",
+          "titulo": "Una Voz que vuelve a Casa",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "F37"
         }
       ]
     },
@@ -5029,6 +6213,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -5056,7 +6243,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D115"
+          "celda": "D120"
         }
       ]
     },
@@ -5068,6 +6255,9 @@
       ],
       "procedencias": [
         "Irlanda/Australia"
+      ],
+      "origen": [
+        "Internacional"
       ],
       "titulos": [
         "Leaving Ireland"
@@ -5097,7 +6287,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D75"
+          "celda": "D80"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -5148,7 +6338,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I121"
+          "celda": "I126"
         }
       ]
     },
@@ -5161,14 +6351,18 @@
       "procedencias": [
         "Programación Local"
       ],
+      "origen": [
+        "Local"
+      ],
       "titulos": [
         "Irving Aguilar"
       ],
       "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
+      "total_presentaciones": 2,
+      "total_municipios": 2,
       "municipios": [
-        "Río Bravo"
+        "Río Bravo",
+        "Victoria"
       ],
       "presentaciones": [
         {
@@ -5187,6 +6381,23 @@
           "permanencia": null,
           "notas": [],
           "celda": "D30"
+        },
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Miércoles 7"
+          ],
+          "fechas": [
+            "2026-10-07"
+          ],
+          "hora": "18:20",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Irving Aguilar",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "I77"
         }
       ]
     },
@@ -5197,6 +6408,7 @@
         "Artes Visuales"
       ],
       "procedencias": [],
+      "origen": [],
       "titulos": [
         "Jaiba Brava: Exposición Futbol"
       ],
@@ -5240,7 +6452,48 @@
           "inauguracion": "Inauguración | Galería Pedro Banda del Centro Cultural Tamaulipas",
           "permanencia": "Octubre a Noviembre de 2026",
           "notas": [],
-          "celda": "D82"
+          "celda": "D87"
+        }
+      ]
+    },
+    {
+      "artista": "Jesús Betancourt",
+      "clave": "jesus betancourt",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Jesús Betancourt"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Viernes 9"
+          ],
+          "fechas": [
+            "2026-10-09"
+          ],
+          "hora": "18:00",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Jesús Betancourt",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "K76"
         }
       ]
     },
@@ -5252,6 +6505,9 @@
       ],
       "procedencias": [
         "Nuevo León"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Jhonivan"
@@ -5317,7 +6573,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F37"
+          "celda": "F40"
         },
         {
           "municipio": "Reynosa",
@@ -5351,7 +6607,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K44"
+          "celda": "K46"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -5381,6 +6637,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "Joe Nieto"
       ],
@@ -5400,14 +6659,14 @@
           "fechas": [
             "2026-10-03"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:30",
+          "sede": "Explanada de la Presidencia Municipal",
           "titulo": "Joe Nieto",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E94"
+          "celda": "E99"
         },
         {
           "municipio": "Soto la Marina",
@@ -5424,7 +6683,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L64"
+          "celda": "L66"
+        }
+      ]
+    },
+    {
+      "artista": "Josué Barraza",
+      "clave": "josue barraza",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Barraza Show"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Tampico"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Tampico",
+          "dias": [
+            "Lunes 5"
+          ],
+          "fechas": [
+            "2026-10-05"
+          ],
+          "hora": "19:00",
+          "sede": "Plaza Hijas de Tampico",
+          "titulo": "Barraza Show",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "G128"
         }
       ]
     },
@@ -5435,6 +6735,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -5456,14 +6759,14 @@
           "fechas": [
             "2026-10-04"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Escenario \"Plaza Juárez\"",
           "titulo": "Cuerdas eléctricas: Rock Latino y Fusiones",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F76"
+          "celda": "F81"
         },
         {
           "municipio": "Reynosa",
@@ -5490,6 +6793,9 @@
       "disciplinas": [],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Frontera Urbana"
@@ -5529,6 +6835,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "Voces Eternas"
       ],
@@ -5557,7 +6866,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D98"
+          "celda": "D103"
         },
         {
           "municipio": "Aldama",
@@ -5574,7 +6883,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E115"
+          "celda": "E120"
         },
         {
           "municipio": "Jaumave",
@@ -5584,14 +6893,14 @@
           "fechas": [
             "2026-10-10"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "\"Teatro del Pueblo\" ubicado en Presidencia Municipal",
           "titulo": "Voces Eternas",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L86"
+          "celda": "L91"
         },
         {
           "municipio": "González",
@@ -5608,7 +6917,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M110"
+          "celda": "M115"
         }
       ]
     },
@@ -5620,6 +6929,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Kena Yasbek Lara Zamora"
@@ -5646,7 +6958,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E113"
+          "celda": "E118"
         }
       ]
     },
@@ -5658,6 +6970,9 @@
       ],
       "procedencias": [
         "Nuevo León/CDMX"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Atardecer Salvaje"
@@ -5688,7 +7003,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I115"
+          "celda": "I120"
         },
         {
           "municipio": "Madero",
@@ -5705,7 +7020,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J119"
+          "celda": "J124"
         },
         {
           "municipio": "González",
@@ -5722,7 +7037,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K111"
+          "celda": "K116"
         },
         {
           "municipio": "Altamira",
@@ -5739,7 +7054,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L117"
+          "celda": "L122"
         },
         {
           "municipio": "Victoria",
@@ -5749,14 +7064,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:00",
+          "sede": "17 Hidalgo (Presidencia Municipal) a Explanada del Centro Cultural Tamaulipas ubicada en \"Plaza Juárez\"",
           "titulo": "Atardecer Salvaje",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M78"
+          "celda": "M81"
         }
       ]
     },
@@ -5767,6 +7082,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -5798,7 +7116,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D96"
+          "celda": "D101"
         },
         {
           "municipio": "González",
@@ -5815,7 +7133,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E110"
+          "celda": "E115"
         },
         {
           "municipio": "Soto la Marina",
@@ -5832,7 +7150,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K64"
+          "celda": "K66"
         },
         {
           "municipio": "Jiménez",
@@ -5849,7 +7167,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L60"
+          "celda": "L62"
         },
         {
           "municipio": "Güémez",
@@ -5866,7 +7184,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M69"
+          "celda": "M71"
         }
       ]
     },
@@ -5877,6 +7195,9 @@
         "Teatro"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -5937,6 +7258,9 @@
       "procedencias": [
         "Internacional-Programación Local"
       ],
+      "origen": [
+        "Internacional"
+      ],
       "titulos": [
         "Un Viaje Sagrado"
       ],
@@ -5993,6 +7317,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "De Tamaulipas para el Mundo con los 10 Tenores"
       ],
@@ -6019,7 +7346,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D117"
+          "celda": "D122"
         },
         {
           "municipio": "San Fernando",
@@ -6036,7 +7363,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M44"
+          "celda": "M46"
         }
       ]
     },
@@ -6047,6 +7374,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -6077,7 +7407,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D88"
+          "celda": "D93"
         },
         {
           "municipio": "Jaumave",
@@ -6094,7 +7424,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E86"
+          "celda": "E91"
         },
         {
           "municipio": "Palmillas",
@@ -6111,7 +7441,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F92"
+          "celda": "F97"
         },
         {
           "municipio": "Hidalgo",
@@ -6130,7 +7460,7 @@
           "notas": [
             "(viajan con sus instrumentos, incluída batería)"
           ],
-          "celda": "M58"
+          "celda": "M60"
         }
       ]
     },
@@ -6141,6 +7471,9 @@
         "Multidisciplinario"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -6163,14 +7496,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Escuela Primaria Mártires de la Revolución",
           "titulo": "Habia una vez un huapango",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D46"
+          "celda": "D48"
         },
         {
           "municipio": "Güémez",
@@ -6187,7 +7520,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H69"
+          "celda": "H71"
         },
         {
           "municipio": "Casas",
@@ -6204,7 +7537,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I71"
+          "celda": "I73"
         }
       ]
     },
@@ -6215,6 +7548,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -6260,7 +7596,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L44"
+          "celda": "L46"
         }
       ]
     },
@@ -6271,6 +7607,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -6291,16 +7630,14 @@
           "fechas": [
             "2026-10-03"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Escenario \"Plaza Juárez\"",
           "titulo": "MajuMaje",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "Escenario Plaza o buscar sede alternativa"
-          ],
-          "celda": "E76"
+          "notas": [],
+          "celda": "E81"
         }
       ]
     },
@@ -6312,6 +7649,9 @@
       ],
       "procedencias": [
         "Estados Unidos | Puerto Rico"
+      ],
+      "origen": [
+        "Internacional"
       ],
       "titulos": [
         "Sin Cuenta"
@@ -6341,7 +7681,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J75"
+          "celda": "J80"
         },
         {
           "municipio": "Reynosa",
@@ -6375,7 +7715,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L36"
+          "celda": "L37"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -6397,12 +7737,54 @@
       ]
     },
     {
+      "artista": "Marimba \"La Familia\"",
+      "clave": "marimba la familia",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "¡Que suene la Marimba!"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Tampico"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Tampico",
+          "dias": [
+            "Martes 6"
+          ],
+          "fechas": [
+            "2026-10-06"
+          ],
+          "hora": "20:00",
+          "sede": "Plaza Hijas de Tampico",
+          "titulo": "¡Que suene la Marimba!",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "H128"
+        }
+      ]
+    },
+    {
       "artista": "Mario Fuentes, Rodolfo Ríos, Efrén Yañez, Esther González, entre otros.",
       "clave": "mario fuentes, rodolfo rios, efren yanez, esther gonzalez, entre otros.",
       "disciplinas": [
         "Artes Visuales"
       ],
       "procedencias": [],
+      "origen": [],
       "titulos": [
         "Casa Filizola: Una Puerta al Arte y la Historia"
       ],
@@ -6432,7 +7814,7 @@
           "inauguracion": "Inauguración 9 de octubre 18:00 hrs. | Pinacoteca de Tamaulipas",
           "permanencia": "Octubre de 2026 a Enero de 2027",
           "notas": [],
-          "celda": "K81"
+          "celda": "K86"
         }
       ]
     },
@@ -6444,6 +7826,9 @@
       ],
       "procedencias": [
         "CDMX"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Disco Stereo Tour"
@@ -6463,8 +7848,8 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Escenario \"Plaza Juárez\"",
           "titulo": "Disco Stereo Tour",
           "tipo": "presentación",
           "inauguracion": null,
@@ -6481,6 +7866,9 @@
         "Artes Visuales"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -6514,7 +7902,7 @@
           "inauguracion": "Inauguración 8 de octubre 18:00 hrs. | Museo de Arte Contemporáneo de Tamaulipas (MACT)",
           "permanencia": "Octubre 2026 a Enero 2027",
           "notas": [],
-          "celda": "J39"
+          "celda": "J41"
         }
       ]
     },
@@ -6525,6 +7913,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -6552,7 +7943,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J78"
+          "celda": "J83"
         }
       ]
     },
@@ -6563,6 +7954,9 @@
         "Danza"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -6584,14 +7978,14 @@
           "fechas": [
             "2026-10-09"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "\"Teatro del Pueblo\" ubicado en Presidencia Municipal",
           "titulo": "Aprende, Juega y Baila",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K86"
+          "celda": "K91"
         },
         {
           "municipio": "Casas",
@@ -6608,7 +8002,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M72"
+          "celda": "M74"
         }
       ]
     },
@@ -6620,6 +8014,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Mía Chairez Enriquez"
@@ -6646,7 +8043,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G113"
+          "celda": "G118"
         }
       ]
     },
@@ -6658,6 +8055,9 @@
       ],
       "procedencias": [
         "Senegal"
+      ],
+      "origen": [
+        "Internacional"
       ],
       "titulos": [
         "Kairo"
@@ -6687,7 +8087,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G75"
+          "celda": "G80"
         },
         {
           "municipio": "Reynosa",
@@ -6721,7 +8121,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I36"
+          "celda": "I37"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -6751,6 +8151,9 @@
       "procedencias": [
         "Argentina"
       ],
+      "origen": [
+        "Internacional"
+      ],
       "titulos": [
         "Tour 2026"
       ],
@@ -6779,7 +8182,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E75"
+          "celda": "E80"
         },
         {
           "municipio": "Tampico",
@@ -6796,7 +8199,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F121"
+          "celda": "F126"
         },
         {
           "municipio": "Matamoros",
@@ -6813,7 +8216,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G36"
+          "celda": "G37"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -6841,6 +8244,9 @@
         "Artes Visuales"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -6885,12 +8291,73 @@
       ]
     },
     {
+      "artista": "Nono y su Teatrino",
+      "clave": "nono y su teatrino",
+      "disciplinas": [
+        "Teatro"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Nuestra Playa Bagdad"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 2,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Sábado 3"
+          ],
+          "fechas": [
+            "2026-10-03"
+          ],
+          "hora": "17:00",
+          "sede": "Parque \"El Laguito\"",
+          "titulo": "Nuestra Playa Bagdad",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "E39"
+        },
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Sábado 10"
+          ],
+          "fechas": [
+            "2026-10-10"
+          ],
+          "hora": "17:00",
+          "sede": "Sala de Lectura de la Colonia Casa Blanca",
+          "titulo": "Nuestra Playa Bagdad",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "L38"
+        }
+      ]
+    },
+    {
       "artista": "Norteños de Río Bravo",
       "clave": "nortenos de rio bravo",
       "disciplinas": [
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -6920,7 +8387,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D64"
+          "celda": "D66"
         },
         {
           "municipio": "Victoria",
@@ -6930,14 +8397,14 @@
           "fechas": [
             "2026-10-09"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Escenario \"Plaza Juárez\"",
           "titulo": "¡Que viva el campesino, entre acordes y maizalez!",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K76"
+          "celda": "K81"
         },
         {
           "municipio": "Tula",
@@ -6947,14 +8414,55 @@
           "fechas": [
             "2026-10-10"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:30",
+          "sede": "Explanada de la Presidencia Municipal",
           "titulo": "¡Que viva el campesino, entre acordes y maizalez!",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L94"
+          "celda": "L99"
+        }
+      ]
+    },
+    {
+      "artista": "Ofrenda a Dulce la Cantante",
+      "clave": "ofrenda a dulce la cantante",
+      "disciplinas": [
+        "Multidisciplinario"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Altar de Muertos"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Sábado 3"
+          ],
+          "fechas": [
+            "2026-10-03"
+          ],
+          "hora": "10:00",
+          "sede": "CEMAVI",
+          "titulo": "Altar de Muertos",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "E38"
         }
       ]
     },
@@ -6965,6 +8473,9 @@
         "Teatro"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -6993,7 +8504,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H122"
+          "celda": "H127"
         },
         {
           "municipio": "Casas",
@@ -7010,7 +8521,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J71"
+          "celda": "J73"
         }
       ]
     },
@@ -7021,6 +8532,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -7048,7 +8562,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M117"
+          "celda": "M122"
         }
       ]
     },
@@ -7059,6 +8573,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -7086,7 +8603,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F103"
+          "celda": "F108"
         }
       ]
     },
@@ -7097,6 +8614,9 @@
         "Teatro"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -7126,7 +8646,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E64"
+          "celda": "E66"
         },
         {
           "municipio": "Padilla",
@@ -7143,7 +8663,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F67"
+          "celda": "F69"
         },
         {
           "municipio": "Casas",
@@ -7160,7 +8680,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G71"
+          "celda": "G73"
         }
       ]
     },
@@ -7172,6 +8692,9 @@
       ],
       "procedencias": [
         "Oaxaca"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Nuevas Músicas de Oaxaca"
@@ -7200,7 +8723,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K75"
+          "celda": "K80"
         },
         {
           "municipio": "Madero",
@@ -7217,7 +8740,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L119"
+          "celda": "L124"
         },
         {
           "municipio": "Aldama",
@@ -7234,7 +8757,50 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M115"
+          "celda": "M120"
+        }
+      ]
+    },
+    {
+      "artista": "Paula Villaurrutia",
+      "clave": "paula villaurrutia",
+      "disciplinas": [
+        "Danza"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Flores Blancas"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Martes 6"
+          ],
+          "fechas": [
+            "2026-10-06"
+          ],
+          "hora": "20:00",
+          "sede": "Teatro de la Reforma",
+          "titulo": "Flores Blancas",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [
+            "(Cuando llorar no se puede)"
+          ],
+          "celda": "H37"
         }
       ]
     },
@@ -7245,6 +8811,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -7276,7 +8845,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D42"
+          "celda": "D44"
         },
         {
           "municipio": "San Carlos",
@@ -7293,7 +8862,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E52"
+          "celda": "E54"
         },
         {
           "municipio": "Hidalgo",
@@ -7310,7 +8879,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F58"
+          "celda": "F60"
         },
         {
           "municipio": "Antiguo Morelos",
@@ -7327,7 +8896,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L108"
+          "celda": "L113"
         },
         {
           "municipio": "Nuevo Morelos",
@@ -7344,7 +8913,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M106"
+          "celda": "M111"
         }
       ]
     },
@@ -7356,6 +8925,9 @@
       ],
       "procedencias": [
         "Brasil"
+      ],
+      "origen": [
+        "Internacional"
       ],
       "titulos": [
         "Amateur"
@@ -7386,7 +8958,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E123"
+          "celda": "E129"
         },
         {
           "municipio": "Mante",
@@ -7403,7 +8975,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F102"
+          "celda": "F107"
         },
         {
           "municipio": "Gómez Farías",
@@ -7420,7 +8992,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G100"
+          "celda": "G105"
         },
         {
           "municipio": "Xicoténcatl",
@@ -7437,7 +9009,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H98"
+          "celda": "H103"
         },
         {
           "municipio": "Tula",
@@ -7447,14 +9019,14 @@
           "fechas": [
             "2026-10-07"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:30",
+          "sede": "Explanada de la Presidencia Municipal",
           "titulo": "Amateur",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I94"
+          "celda": "I99"
         }
       ]
     },
@@ -7466,6 +9038,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Pintura y Baile Moderno"
@@ -7492,7 +9067,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H110"
+          "celda": "H115"
+        }
+      ]
+    },
+    {
+      "artista": "Presentación de Libro",
+      "clave": "presentacion de libro",
+      "disciplinas": [
+        "Literatura"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Bicentenario"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Martes 6"
+          ],
+          "fechas": [
+            "2026-10-06"
+          ],
+          "hora": "18:00",
+          "sede": "Museo Fuerte Casamata",
+          "titulo": "Bicentenario",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "H38"
         }
       ]
     },
@@ -7504,6 +9120,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Presentación del Grupo de \"Wushu\" de la Casa de la Cultura de Miguel Alemán"
@@ -7542,6 +9161,9 @@
       ],
       "procedencias": [
         "Nuevo León"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Rosa de Dos Aromas"
@@ -7599,6 +9221,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "Puras del Norte"
       ],
@@ -7630,7 +9255,7 @@
           "notas": [
             "Grupo Pendiente"
           ],
-          "celda": "D58"
+          "celda": "D60"
         },
         {
           "municipio": "Jiménez",
@@ -7649,7 +9274,7 @@
           "notas": [
             "Grupo Pendiente"
           ],
-          "celda": "E60"
+          "celda": "E62"
         },
         {
           "municipio": "Abasolo",
@@ -7668,7 +9293,7 @@
           "notas": [
             "Grupo Pendiente"
           ],
-          "celda": "K62"
+          "celda": "K64"
         },
         {
           "municipio": "San Carlos",
@@ -7687,7 +9312,7 @@
           "notas": [
             "Grupo Pendiente"
           ],
-          "celda": "L52"
+          "celda": "L54"
         },
         {
           "municipio": "Villagrán",
@@ -7706,7 +9331,7 @@
           "notas": [
             "Grupo Pendiente"
           ],
-          "celda": "M56"
+          "celda": "M58"
         }
       ]
     },
@@ -7718,6 +9343,9 @@
       ],
       "procedencias": [
         "Veracruz/CDMX"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Son Jarocho"
@@ -7746,7 +9374,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J110"
+          "celda": "J115"
         },
         {
           "municipio": "Altamira",
@@ -7763,7 +9391,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K117"
+          "celda": "K122"
         },
         {
           "municipio": "Tampico",
@@ -7780,7 +9408,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L121"
+          "celda": "L126"
         }
       ]
     },
@@ -7791,6 +9419,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -7818,7 +9449,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E122"
+          "celda": "E127"
         }
       ]
     },
@@ -7830,6 +9461,9 @@
       ],
       "procedencias": [
         "Veracruz"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Rafael Alcalá Trío"
@@ -7858,7 +9492,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J44"
+          "celda": "J46"
         },
         {
           "municipio": "Mier",
@@ -7905,6 +9539,9 @@
       "procedencias": [
         "Estado de México"
       ],
+      "origen": [
+        "Nacional"
+      ],
       "titulos": [
         "Sin Pies ni Cabeza"
       ],
@@ -7934,7 +9571,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D50"
+          "celda": "D52"
         },
         {
           "municipio": "Cruillas",
@@ -7953,7 +9590,7 @@
           "notas": [
             "Requieren Auditorio o Espacio Cerrado"
           ],
-          "celda": "E48"
+          "celda": "E50"
         },
         {
           "municipio": "Méndez",
@@ -7972,7 +9609,7 @@
           "notas": [
             "Requieren Auditorio o Espacio Cerrado"
           ],
-          "celda": "F42"
+          "celda": "F44"
         },
         {
           "municipio": "Soto la Marina",
@@ -7989,7 +9626,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G64"
+          "celda": "G66"
         },
         {
           "municipio": "Jiménez",
@@ -8008,7 +9645,48 @@
           "notas": [
             "Requieren Auditorio o Espacio Cerrado"
           ],
-          "celda": "H60"
+          "celda": "H62"
+        }
+      ]
+    },
+    {
+      "artista": "Raul Di Blasio",
+      "clave": "raul di blasio",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Homenaje de la edición 34"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Viernes 9"
+          ],
+          "fechas": [
+            "2026-10-09"
+          ],
+          "hora": "20:00",
+          "sede": "Teatro de la Reforma",
+          "titulo": "Homenaje de la edición 34",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "K37"
         }
       ]
     },
@@ -8020,6 +9698,9 @@
       ],
       "procedencias": [
         "Nuevo León"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Reales de Nuevo León"
@@ -8049,7 +9730,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D72"
+          "celda": "D74"
         },
         {
           "municipio": "Miguel Alemán",
@@ -8083,7 +9764,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L115"
+          "celda": "L120"
         },
         {
           "municipio": "Madero",
@@ -8100,7 +9781,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M119"
+          "celda": "M124"
+        }
+      ]
+    },
+    {
+      "artista": "Recuerdos del Son",
+      "clave": "recuerdos del son",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Raíces del Son"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Tampico"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Tampico",
+          "dias": [
+            "Viernes 9"
+          ],
+          "fechas": [
+            "2026-10-09"
+          ],
+          "hora": "20:00",
+          "sede": "Plaza \"Hijas de Tampico\"",
+          "titulo": "Raíces del Son",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "K127"
         }
       ]
     },
@@ -8112,6 +9834,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Reynosa el Encanto de lo Cotidiano II"
@@ -8163,6 +9888,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "Folclor Tamaulipeco"
       ],
@@ -8191,7 +9919,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D48"
+          "celda": "D50"
         },
         {
           "municipio": "Altamira",
@@ -8208,7 +9936,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E117"
+          "celda": "E122"
         },
         {
           "municipio": "González",
@@ -8225,7 +9953,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L111"
+          "celda": "L116"
         },
         {
           "municipio": "Jiménez",
@@ -8242,7 +9970,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M60"
+          "celda": "M62"
         }
       ]
     },
@@ -8254,6 +9982,9 @@
       ],
       "procedencias": [
         "Cuba"
+      ],
+      "origen": [
+        "Internacional"
       ],
       "titulos": [
         "Ritual"
@@ -8276,14 +10007,14 @@
           "fechas": [
             "2026-10-06"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:30",
+          "sede": "Explanada de la Presidencia Municipal",
           "titulo": "Ritual",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H94"
+          "celda": "H99"
         },
         {
           "municipio": "Mante",
@@ -8300,7 +10031,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I102"
+          "celda": "I107"
         },
         {
           "municipio": "Tampico",
@@ -8310,14 +10041,14 @@
           "fechas": [
             "2026-10-08"
           ],
-          "hora": "20:00",
+          "hora": "19:30",
           "sede": "Plaza \"Hijas de Tampico\"",
           "titulo": "Ritual",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J122"
+          "celda": "J127"
         },
         {
           "municipio": "Aldama",
@@ -8334,7 +10065,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K115"
+          "celda": "K120"
         }
       ]
     },
@@ -8346,6 +10077,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Rondalla Juvenil de la Casa de la Cultura de Aldama"
@@ -8372,7 +10106,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D113"
+          "celda": "D118"
         }
       ]
     },
@@ -8383,6 +10117,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -8403,16 +10140,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Plaza Hidalgo",
           "titulo": "Roberto Cantoral, de Tamaulipas para el Mundo. El mas grande exponente de la música romántica.",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "Sugerir callejoneada"
-          ],
-          "celda": "D86"
+          "notas": [],
+          "celda": "D91"
         }
       ]
     },
@@ -8424,6 +10159,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Rondalla Manuel y González"
@@ -8450,7 +10188,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K110"
+          "celda": "K115"
         }
       ]
     },
@@ -8462,6 +10200,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Callejoneada con Rondallas"
@@ -8501,6 +10242,9 @@
       "procedencias": [
         "Francia"
       ],
+      "origen": [
+        "Internacional"
+      ],
       "titulos": [
         "Capture : Repensando el jazz y las fronteras musicales a través del Sampling!"
       ],
@@ -8530,7 +10274,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H117"
+          "celda": "H122"
         },
         {
           "municipio": "Madero",
@@ -8547,7 +10291,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I119"
+          "celda": "I124"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -8598,7 +10342,89 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M64"
+          "celda": "M66"
+        }
+      ]
+    },
+    {
+      "artista": "Sandunga",
+      "clave": "sandunga",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Corazón de Folklór"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Viernes 9"
+          ],
+          "fechas": [
+            "2026-10-09"
+          ],
+          "hora": "09:00",
+          "sede": "Concha Acústica del Parque Olímpico",
+          "titulo": "Corazón de Folklór",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "K38"
+        }
+      ]
+    },
+    {
+      "artista": "Saúl Gámez",
+      "clave": "saul gamez",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Saúl Gámez"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Domingo 4"
+          ],
+          "fechas": [
+            "2026-10-04"
+          ],
+          "hora": "18:30",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Saúl Gámez",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "F78"
         }
       ]
     },
@@ -8610,6 +10436,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Sekyr"
@@ -8641,12 +10470,56 @@
       ]
     },
     {
+      "artista": "Sergio Torres",
+      "clave": "sergio torres",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "El Sentido de la Cumbia"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Tampico"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Tampico",
+          "dias": [
+            "Domingo 4"
+          ],
+          "fechas": [
+            "2026-10-04"
+          ],
+          "hora": "17:00",
+          "sede": "Plaza \"Hijas de Tampico\"",
+          "titulo": "El Sentido de la Cumbia",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "F127"
+        }
+      ]
+    },
+    {
       "artista": "Sistema Tamaulipeco de Agrupaciones Musicales Comunitarias",
       "clave": "sistema tamaulipeco de agrupaciones musicales comunitarias",
       "disciplinas": [
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -8676,7 +10549,89 @@
           "notas": [
             "(por confirmar nombre)"
           ],
-          "celda": "M75"
+          "celda": "M80"
+        }
+      ]
+    },
+    {
+      "artista": "Skalon",
+      "clave": "skalon",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Skalon x Skalon"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Tampico"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Tampico",
+          "dias": [
+            "Miércoles 7"
+          ],
+          "fechas": [
+            "2026-10-07"
+          ],
+          "hora": "20:00",
+          "sede": "Plaza \"Hijas de Tampico\"",
+          "titulo": "Skalon x Skalon",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "I127"
+        }
+      ]
+    },
+    {
+      "artista": "Son de la Rosa",
+      "clave": "son de la rosa",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Noche de Salsa"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Tampico"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Tampico",
+          "dias": [
+            "Jueves 8"
+          ],
+          "fechas": [
+            "2026-10-08"
+          ],
+          "hora": "19:00",
+          "sede": "Plaza Hijas de Tampico",
+          "titulo": "Noche de Salsa",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "J128"
         }
       ]
     },
@@ -8688,6 +10643,9 @@
       ],
       "procedencias": [
         "Hidalgo"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Son Kalunga y Ballet Folklórico de Pachuca"
@@ -8710,14 +10668,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Escenario \"Plaza Juárez\"",
           "titulo": "Son Kalunga y Ballet Folklórico de Pachuca",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D76"
+          "celda": "D81"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -8768,7 +10726,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H111"
+          "celda": "H116"
         }
       ]
     },
@@ -8780,6 +10738,9 @@
       ],
       "procedencias": [
         "CDMX"
+      ],
+      "origen": [
+        "Nacional"
       ],
       "titulos": [
         "Soprano Leticia de Altamirano y Trío \"Los Panchos\""
@@ -8809,7 +10770,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D36"
+          "celda": "D38"
         },
         {
           "municipio": "Reynosa",
@@ -8843,7 +10804,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F75"
+          "celda": "F80"
         },
         {
           "municipio": "Tampico",
@@ -8860,7 +10821,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H121"
+          "celda": "H126"
         }
       ]
     },
@@ -8871,6 +10832,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -8901,7 +10865,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D60"
+          "celda": "D62"
         },
         {
           "municipio": "Padilla",
@@ -8918,7 +10882,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K67"
+          "celda": "K69"
         },
         {
           "municipio": "Güémez",
@@ -8935,7 +10899,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L69"
+          "celda": "L71"
         },
         {
           "municipio": "Abasolo",
@@ -8952,7 +10916,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M62"
+          "celda": "M64"
+        }
+      ]
+    },
+    {
+      "artista": "Spotlight Teatro",
+      "clave": "spotlight teatro",
+      "disciplinas": [
+        "Multidisciplinario"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Mentiras el Musical"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Domingo 4"
+          ],
+          "fechas": [
+            "2026-10-04"
+          ],
+          "hora": "16:00",
+          "sede": "Parque Olímpico",
+          "titulo": "Mentiras el Musical",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "F39"
         }
       ]
     },
@@ -8964,6 +10969,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Talentos de Canto"
@@ -8990,7 +10998,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M113"
+          "celda": "M118"
         }
       ]
     },
@@ -9002,6 +11010,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Talentos de Piano"
@@ -9028,7 +11039,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K113"
+          "celda": "K118"
         }
       ]
     },
@@ -9040,6 +11051,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Duelo de Acordeones"
@@ -9066,7 +11080,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L113"
+          "celda": "L118"
         }
       ]
     },
@@ -9078,6 +11092,9 @@
       ],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Taller de Pintura de González"
@@ -9104,7 +11121,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L110"
+          "celda": "L115"
+        }
+      ]
+    },
+    {
+      "artista": "Tamara Ortíz",
+      "clave": "tamara ortiz",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Tamara Ortíz"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Martes 6"
+          ],
+          "fechas": [
+            "2026-10-06"
+          ],
+          "hora": "18:00",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Tamara Ortíz",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "H76"
         }
       ]
     },
@@ -9115,6 +11173,9 @@
         "Teatro"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -9145,7 +11206,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D56"
+          "celda": "D58"
         },
         {
           "municipio": "Abasolo",
@@ -9162,7 +11223,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E62"
+          "celda": "E64"
         },
         {
           "municipio": "Jiménez",
@@ -9179,7 +11240,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F60"
+          "celda": "F62"
         },
         {
           "municipio": "Antiguo Morelos",
@@ -9196,7 +11257,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M108"
+          "celda": "M113"
+        }
+      ]
+    },
+    {
+      "artista": "Teatro ERA",
+      "clave": "teatro era",
+      "disciplinas": [
+        "Teatro"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Ricardín Apestosín"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Lunes 5"
+          ],
+          "fechas": [
+            "2026-10-05"
+          ],
+          "hora": "09:00",
+          "sede": "Secundaria #2",
+          "titulo": "Ricardín Apestosín",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "G38"
         }
       ]
     },
@@ -9207,6 +11309,9 @@
         "Teatro"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -9319,6 +11424,9 @@
       "procedencias": [
         "Tamaulipas"
       ],
+      "origen": [
+        "Tamaulipas"
+      ],
       "titulos": [
         "Las Despicadoras del Oro Rojo"
       ],
@@ -9337,14 +11445,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": "13:00",
+          "hora": "14:30",
           "sede": "Paso Santa Cruz",
           "titulo": "Las Despicadoras del Oro Rojo",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D121"
+          "celda": "D126"
         }
       ]
     },
@@ -9355,6 +11463,9 @@
         "Música"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -9384,7 +11495,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D44"
+          "celda": "D46"
         },
         {
           "municipio": "Gustavo Díaz Ordaz",
@@ -9418,7 +11529,48 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M102"
+          "celda": "M107"
+        }
+      ]
+    },
+    {
+      "artista": "Títeres Garabatos",
+      "clave": "titeres garabatos",
+      "disciplinas": [
+        "Teatro"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "El Lobo de los Cuentos"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Jueves 8"
+          ],
+          "fechas": [
+            "2026-10-08"
+          ],
+          "hora": "09:00",
+          "sede": "Primario \"Lázaro Cárdenas del Río\"",
+          "titulo": "El Lobo de los Cuentos",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "J38"
         }
       ]
     },
@@ -9429,6 +11581,7 @@
         "Artes Visuales"
       ],
       "procedencias": [],
+      "origen": [],
       "titulos": [
         "Un Viaje por la Historia de los Teatros en Tamaulipas"
       ],
@@ -9472,7 +11625,7 @@
           "inauguracion": "Inauguración 2 de octubre (Horario por definir) | Palacio de Gobierno",
           "permanencia": "Octubre 2026 a Enero 2027",
           "notas": [],
-          "celda": "D80"
+          "celda": "D85"
         }
       ]
     },
@@ -9482,6 +11635,9 @@
       "disciplinas": [],
       "procedencias": [
         "Programación Local"
+      ],
+      "origen": [
+        "Local"
       ],
       "titulos": [
         "Vibra Nuevo Laredo"
@@ -9519,6 +11675,9 @@
         "Artes Visuales"
       ],
       "procedencias": [
+        "Nacional"
+      ],
+      "origen": [
         "Nacional"
       ],
       "titulos": [
@@ -9564,7 +11723,130 @@
           "inauguracion": "Inauguración 21 de septiembre | Explanada del Centro Cultural Tamaulipas",
           "permanencia": "Marzo 2027",
           "notas": [],
-          "celda": "D79"
+          "celda": "D84"
+        }
+      ]
+    },
+    {
+      "artista": "Videomapping",
+      "clave": "videomapping",
+      "disciplinas": [
+        "Multidisciplinario"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Luna Iluminada Monumental"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Viernes 2"
+          ],
+          "fechas": [
+            "2026-10-02"
+          ],
+          "hora": "19:30",
+          "sede": "Plaza \"Miguel Hidalgo\"",
+          "titulo": "Luna Iluminada Monumental",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "D37"
+        }
+      ]
+    },
+    {
+      "artista": "Zeferino Herrera",
+      "clave": "zeferino herrera",
+      "disciplinas": [
+        "Música"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Zeferino Herrera"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Victoria"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Victoria",
+          "dias": [
+            "Viernes 9"
+          ],
+          "fechas": [
+            "2026-10-09"
+          ],
+          "hora": "19:00",
+          "sede": "Escenario \"Plaza Juárez\"",
+          "titulo": "Zeferino Herrera",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "K78"
+        }
+      ]
+    },
+    {
+      "artista": "Zurcidores de Cuentos",
+      "clave": "zurcidores de cuentos",
+      "disciplinas": [
+        "Teatro"
+      ],
+      "procedencias": [
+        "Programación Local"
+      ],
+      "origen": [
+        "Local"
+      ],
+      "titulos": [
+        "Pelusa al Vuelo"
+      ],
+      "sin_autor_nombrado": false,
+      "total_presentaciones": 1,
+      "total_municipios": 1,
+      "municipios": [
+        "Matamoros"
+      ],
+      "presentaciones": [
+        {
+          "municipio": "Matamoros",
+          "dias": [
+            "Jueves 8"
+          ],
+          "fechas": [
+            "2026-10-08"
+          ],
+          "hora": "18:00",
+          "sede": "Canchas de la Colonia Mariano Matamoros",
+          "titulo": "Pelusa al Vuelo",
+          "tipo": "presentación",
+          "inauguracion": null,
+          "permanencia": null,
+          "notas": [],
+          "celda": "J39"
         }
       ]
     },
@@ -9575,6 +11857,9 @@
         "Teatro"
       ],
       "procedencias": [
+        "Tamaulipas"
+      ],
+      "origen": [
         "Tamaulipas"
       ],
       "titulos": [
@@ -9606,7 +11891,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D54"
+          "celda": "D56"
         },
         {
           "municipio": "Villagrán",
@@ -9623,7 +11908,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E56"
+          "celda": "E58"
         },
         {
           "municipio": "San Carlos",
@@ -9640,7 +11925,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F52"
+          "celda": "F54"
         },
         {
           "municipio": "Burgos",
@@ -9650,14 +11935,14 @@
           "fechas": [
             "2026-10-05"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Escuela Primaria Mártires de la Revolución",
           "titulo": "Pelusa al vuelo",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G46"
+          "celda": "G48"
         },
         {
           "municipio": "San Fernando",
@@ -9674,7 +11959,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H44"
+          "celda": "H46"
         }
       ]
     }

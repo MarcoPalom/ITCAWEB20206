@@ -1484,6 +1484,30 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
   }
 }
 
+/* La caja que se voltea para ensenar la semblanza.
+
+   Lo unico que hace falta en la hoja es la perspectiva, y tiene que vivir en el
+   padre: un rotateY sin ella gira en paralelo y el giro se ve plano, como un
+   acordeon, en vez de como una cara que se aleja. 900px es una perspectiva
+   larga -poca deformacion- que es lo que corresponde a una caja de 340px de
+   ancho: mas corta y la fotografia saldria abombada en cada vuelta.
+
+   El giro en si no esta aqui sino en GSAP, dentro de CarteleraArtistas: son dos
+   medias vueltas con el contenido cambiado en medio, y eso no se puede escribir
+   en una animacion CSS porque el punto de cambio es un cambio de estado de
+   React, no un fotograma clave.
+
+   El alto de la cara escrita no se fija ni se iguala al de la fotografia. Las
+   semblanzas van de 117 a 463 caracteres, asi que forzar la caja a la
+   proporcion 56/60 dejaria a unas con un hueco vacio de media pantalla y a
+   otras desbordadas o con scroll propio dentro de una pagina que ya se
+   desplaza. El min-height evita que las cortas queden en una tira, y las largas
+   crecen; el relleno inferior es el que reserva sitio al rotulo, que va
+   flotando en la esquina. Los dos van en utilidades, sobre el elemento. */
+.ficha-voltea {
+  perspective: 900px;
+}
+
 /* El desplazamiento. La curva va en el fotograma donde arranca cada barrido, no
    en la regla: asi las paradas no llevan easing -no lo necesitan, no se mueven-
    y cada barrido sale rapido y frena largo, que es como asienta una camara. */

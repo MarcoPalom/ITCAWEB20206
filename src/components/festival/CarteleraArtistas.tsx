@@ -9,12 +9,17 @@ import {
   useState,
 } from "react";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 import type { Artista } from "@/data/artistas";
 import { imagenesDe } from "@/data/imagenes";
 import { enlaceMapa } from "@/data/mapas";
 import IslaCartelera, { Controles } from "./IslaCartelera";
 import MandosPlegables from "./MandosPlegables";
 import { useEsAncha } from "./usarAnchura";
+
+gsap.registerPlugin(useGSAP);
 
 /**
  * Cartelera de artistas: fotografia a sangre a la izquierda y columna de
@@ -27,7 +32,7 @@ import { useEsAncha } from "./usarAnchura";
  * porque el navegador ya lo resuelve fuera del hilo principal: no hay listener
  * de scroll ni medicion en cada fotograma.
  *
- * De las 144 companias del programa, 81 tienen fotografia entregada y 60 tienen
+ * De las 184 companias del programa, 85 tienen fotografia entregada y 68 tienen
  * ademas un clip de dos segundos. Las demas van con marcador de posicion; el
  * fondo se queda entonces en la ultima fotografia disponible, que es lo que
  * evita que la pantalla parpadee en negro al recorrer una seccion donde casi
@@ -356,7 +361,7 @@ export default function CarteleraArtistas({
                     <div className="ficha-marco">
                       {/* Disciplina y procedencia, que es lo que situa a la
                         compania antes de nombrarla. La disciplina va solo en la
-                        pastilla: antes se repetia arriba en texto, y en las 144
+                        pastilla: antes se repetia arriba en texto, y en las
                         fichas decia exactamente lo mismo -ninguna tiene mas de
                         una disciplina-. */}
                       <div className="flex items-baseline justify-between gap-4">
@@ -413,54 +418,13 @@ export default function CarteleraArtistas({
                          es lo que permite reproducirlo en bucle sin que el
                          movil se ahogue. */
                         <div className="mt-4">
-                          {/* Movil: el turno de siempre, intacto. Va envuelto en
-                            lg:hidden y no compartido con el mosaico porque el
-                            turno se reparte con :nth-child, y un hermano de mas
-                            -aunque estuviera oculto- correria los retardos y
-                            descuadraria el paneo. */}
-                          <div
-                            className="ficha-fotos lg:hidden"
-                            data-turnos={
-                              a.clip && asentada && esAncha === false ? 3 : 2
-                            }
-                          >
-                            <div className="ficha-lente">
-                              <div className="ficha-tira grid grid-cols-2 gap-2">
-                                {imagenesDe(a.foto).cards.map((src, n) => (
-                                  /* eslint-disable-next-line @next/next/no-img-element */
-                                  <img
-                                    key={src}
-                                    src={src}
-                                    alt={`${a.nombre}, fotografia ${n + 1}`}
-                                    width={560}
-                                    height={600}
-                                    loading="lazy"
-                                    decoding="async"
-                                    className="h-full w-full rounded-md object-cover"
-                                  />
-                                ))}
-
-                                {a.clip && asentada && esAncha === false ? (
-                                  <video
-                                    src={imagenesDe(a.foto).clip}
-                                    poster={imagenesDe(a.foto).poster}
-                                    width={560}
-                                    height={600}
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                    /* metadata y no auto: con auto el navegador
-                                     se traga el archivo entero aunque la ficha
-                                     no llegue a mirarse. Lo que hace falta para
-                                     arrancar ya lo pide autoplay solo. */
-                                    preload="metadata"
-                                    aria-hidden="true"
-                                  />
-                                ) : null}
-                              </div>
-                            </div>
-                          </div>
+                          {/* Movil: fotografia y semblanza en el mismo hueco,
+                            una u otra segun el toque. */}
+                          <MedioMovil
+                            artista={a}
+                            asentada={asentada}
+                            esAncha={esAncha}
+                          />
 
                           {/* Escritorio: una linea de nodos por la que viaja la
                             camara. No es un carrusel: el encuadre no salta de
@@ -571,6 +535,237 @@ export default function CarteleraArtistas({
           ) : null}
         </ol>
       </div>
+    </div>
+  );
+}
+
+/**
+ * El hueco de la fotografia en movil, que se da la vuelta al tocarlo.
+ *
+ * En escritorio la semblanza vive en la isla, siempre a la vista junto a la
+ * ficha activa. En movil no hay isla -un panel fijo se comeria media pantalla-
+ * y hasta ahora la semblanza sencillamente no se leia en el telefono: el texto
+ * estaba escrito, recortado y servido, y no habia manera de llegar a el.
+ *
+ * Se resuelve sin anadir nada a la ficha: el mismo hueco ensena las fotografias
+ * o la semblanza, y el toque cambia de una a otra. Es lo unico que cabe sin
+ * alargar una ficha que ya mide entre 542 y 903px de alto.
+ *
+ * Las fotografias no se esconden con CSS sino que se desmontan. Importa por el
+ * clip: un <video> con autoplay y display:none sigue decodificando fotogramas,
+ * de modo que ocultarlo dejaria al telefono trabajando para nadie mientras se
+ * lee el texto. Desmontarlo lo para de verdad.
+ *
+ * El rotulo no se mueve al cambiar de cara -misma esquina, mismo sitio- porque
+ * es el mismo control en los dos estados; lo que cambia es lo que dice. Va
+ * sobre un chip opaco porque debajo puede haber una fotografia clara, y el
+ * boton entero es la zona sensible, muy por encima de los 44px de area tactil.
+ *
+ * --- El giro ---
+ *
+ * Es media vuelta y media vuelta, no una: la caja gira hasta quedar de canto
+ * -90 grados, invisible-, ahi se cambia el contenido, y la cara nueva entra
+ * girando desde el otro canto. Se hace asi y no con las dos caras montadas y
+ * backface-visibility por lo mismo que se desmontan las fotografias: tener las
+ * dos vivas a la vez significa tener el <video> decodificando detras del texto.
+ * De paso, el cambio de alto entre una cara y otra ocurre justo en el fotograma
+ * en que la caja no se ve, que es donde menos se nota.
+ *
+ * La ida es corta y acelerando (power2.in) y la vuelta mas larga y frenando
+ * (power3.out): una vuelta simetrica se lee como mecanica, y asi queda el peso
+ * de un objeto que se voltea de verdad. Solo se anima transform y opacity.
+ */
+function MedioMovil({
+  artista,
+  asentada,
+  esAncha,
+}: {
+  artista: Artista;
+  asentada: boolean;
+  /* null mientras no ha montado: en el servidor no hay ventana que medir. */
+  esAncha: boolean | null;
+}) {
+  const [leyendo, setLeyendo] = useState(false);
+  const raiz = useRef<HTMLDivElement | null>(null);
+  const caja = useRef<HTMLDivElement | null>(null);
+  /* La cara que habia la ultima vez que corrio el hook. Sirve para no animar
+     una entrada cuando no ha habido vuelta: ni en el primer montaje -la ficha
+     aparece con sus fotografias sin mas- ni en la segunda pasada que React da
+     a los efectos en desarrollo, que con un simple booleano "ya estrenada"
+     colaba un giro fantasma al cargar. */
+  const caraPrevia = useRef(leyendo);
+  /* La media vuelta de ida, montada y en pausa. */
+  const ida = useRef<gsap.core.Tween | null>(null);
+
+  useGSAP(
+    () => {
+      const el = caja.current;
+      if (!el) return;
+
+      /* Movimiento reducido: se cambia de cara y ya. Se lee con matchMedia del
+         navegador y no con gsap.matchMedia() por lo mismo que en
+         MandosPlegables: dentro de un hook que se re-sincroniza con el estado,
+         las altas y bajas de sus contextos se pisan con el ciclo del efecto. */
+      const quieto = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      if (quieto) return;
+
+      /* La ida se crea aqui, en pausa, y no en el manejador del toque. Es lo
+         que evita tener que envolverla en contextSafe: creada dentro de
+         useGSAP ya nace dentro del contexto, de modo que si la ficha se
+         desmonta a medio giro -al filtrar, al buscar o al cambiar de seccion-
+         se revierte sola. El toque no crea nada, solo la lanza. */
+      const tween = gsap.to(el, {
+        rotateY: -90,
+        opacity: 0,
+        duration: 0.26,
+        ease: "power2.in",
+        paused: true,
+        onComplete: () => setLeyendo((v) => !v),
+      });
+      ida.current = tween;
+
+      /* La cara nueva entra desde el canto contrario al que salio la anterior,
+         que es lo que hace que las dos mitades se lean como un solo giro.
+         clearProps deja el elemento sin transform al terminar: si se quedara
+         puesto, cada una de las 148 fichas de Tamaulipecos arrastraria su
+         propia capa de composicion. */
+      if (caraPrevia.current !== leyendo) {
+        gsap.fromTo(
+          el,
+          { rotateY: 90, opacity: 0 },
+          {
+            rotateY: 0,
+            opacity: 1,
+            duration: 0.44,
+            ease: "power3.out",
+            clearProps: "transform,opacity",
+          },
+        );
+      }
+      caraPrevia.current = leyendo;
+
+      /* useGSAP no revierte al re-sincronizar sino al desmontar, asi que la
+         ida de la vuelta anterior hay que matarla a mano: si no, cada toque
+         dejaria una tween en pausa colgando de la ficha. */
+      return () => {
+        tween.kill();
+        if (ida.current === tween) ida.current = null;
+      };
+    },
+    { dependencies: [leyendo], scope: raiz },
+  );
+
+  const voltear = () => {
+    /* Sin tween montada -movimiento reducido, o la caja aun sin montar- se
+       cambia de cara sin mas, que es el estado final correcto. */
+    if (!ida.current) {
+      setLeyendo((v) => !v);
+      return;
+    }
+    /* Un segundo toque a media vuelta no la reinicia: el giro que ya va en
+       marcha termina en la otra cara, que es a donde llevaba el primer toque.
+       Reiniciando, dos toques seguidos daban una sola vuelta y el segundo se
+       sentia perdido. */
+    if (ida.current.isActive()) return;
+    ida.current.restart();
+  };
+
+  const foto = artista.foto;
+  if (!foto) return null;
+
+  /* El turno de siempre, intacto. No se comparte con el mosaico de escritorio
+     porque se reparte con :nth-child, y un hermano de mas -aunque estuviera
+     oculto- correria los retardos y descuadraria el paneo. */
+  const fotografias = (
+    <div
+      className="ficha-fotos"
+      data-turnos={artista.clip && asentada && esAncha === false ? 3 : 2}
+    >
+      <div className="ficha-lente">
+        <div className="ficha-tira grid grid-cols-2 gap-2">
+          {imagenesDe(foto).cards.map((src, n) => (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              key={src}
+              src={src}
+              alt={`${artista.nombre}, fotografia ${n + 1}`}
+              width={560}
+              height={600}
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full rounded-md object-cover"
+            />
+          ))}
+
+          {artista.clip && asentada && esAncha === false ? (
+            <video
+              src={imagenesDe(foto).clip}
+              poster={imagenesDe(foto).poster}
+              width={560}
+              height={600}
+              autoPlay
+              muted
+              loop
+              playsInline
+              /* metadata y no auto: con auto el navegador se traga el archivo
+                 entero aunque la ficha no llegue a mirarse. Lo que hace falta
+                 para arrancar ya lo pide autoplay solo. */
+              preload="metadata"
+              aria-hidden="true"
+            />
+          ) : null}
+        </div>
+      </div>
+    </div>
+  );
+
+  /* Sin semblanza no hay otra cara, asi que tampoco hay boton ni rotulo: un
+     control que no lleva a ninguna parte confunde mas que la falta del texto.
+     Hoy son 99 de las 181 fichas, y todas las que tienen semblanza tienen
+     ademas fotografia, de modo que el marcador de posicion nunca se toca. */
+  if (!artista.semblanza) return <div className="lg:hidden">{fotografias}</div>;
+
+  return (
+    <div ref={raiz} className="lg:hidden">
+      <button
+        type="button"
+        onClick={voltear}
+        aria-expanded={leyendo}
+        /* El nombre accesible dice a donde lleva el toque, no que hay debajo:
+           es lo que necesita quien no ve el cambio de cara. */
+        aria-label={
+          leyendo
+            ? `Ver las fotografias de ${artista.nombre}`
+            : `Leer la semblanza de ${artista.nombre}`
+        }
+        className="ficha-voltea relative block w-full rounded-md text-left focus-visible:ring-2 focus-visible:ring-[var(--tinte)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#141111] focus-visible:outline-none"
+      >
+        <div ref={caja}>
+          {leyendo ? (
+            <div className="min-h-48 rounded-md border border-[#2a2929] px-4 pt-4 pb-14">
+              <p className="font-mono text-[0.7rem] tracking-[0.05em] text-[#8b8686] uppercase">
+                Semblanza
+              </p>
+              <p className="mt-3 text-[0.95rem] leading-relaxed text-[#c9c5c5]">
+                {artista.semblanza}
+              </p>
+            </div>
+          ) : (
+            fotografias
+          )}
+        </div>
+
+        {/* Fuera de la caja que gira: es el mismo control en las dos caras, asi
+            que se queda quieto mientras el contenido se voltea detras. */}
+        <span
+          aria-hidden="true"
+          className="absolute right-2 bottom-2 rounded-md border border-[#2a2929] bg-[rgba(20,17,17,0.9)] px-2.5 py-1.5 font-mono text-[0.65rem] tracking-[0.05em] whitespace-nowrap text-[#e6e4e4] uppercase"
+        >
+          {leyendo ? "Ver fotografias" : "Leer semblanza"}
+        </span>
+      </button>
     </div>
   );
 }
@@ -748,9 +943,10 @@ function Flecha({
  * fijo, asi que no puede estirar nada; y va en linea, de modo que fluye con el
  * texto y se va a la linea siguiente si no cabe.
  *
- * Solo aparece cuando hay recinto: de las 363 presentaciones del cartel, 108 lo
+ * Solo aparece cuando hay recinto: de las 413 presentaciones del cartel, 76 lo
  * traen sin confirmar, y un enlace que busca "Por confirmar" no lleva a ninguna
- * parte.
+ * parte. Eran 108 de 363 antes de la entrega del 2 de septiembre, que es la que
+ * cerro casi todas las sedes que faltaban.
  *
  * Como el icono es lo unico que hay dentro, el nombre accesible lo pone
  * aria-label y nombra la sede concreta: un lector de pantalla que recorra los

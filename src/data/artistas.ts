@@ -4,11 +4,13 @@ import semblanzas from "./semblanzas.json";
 /**
  * Cartelera por seccion, derivada del programa real.
  *
- * La fuente es festival_por_artista.json, el volcado del Excel del comite: 144
- * artistas con sus 363 presentaciones. Aqui no se copia nada a mano; se deriva,
- * de manera que cuando llegue un volcado nuevo baste sustituir el JSON.
+ * La fuente es festival_por_artista.json, el volcado del Excel del comite: 184
+ * artistas con sus 415 presentaciones. Aqui no se copia nada a mano; se deriva,
+ * de manera que cuando llegue un volcado nuevo baste sustituir el JSON, y eso
+ * es exactamente lo que se hizo con la entrega del 2 de septiembre: el volcado
+ * anterior traia 144 artistas y 363 presentaciones.
  *
- * Este modulo importa ese JSON de 213KB, asi que solo puede consumirlo codigo
+ * Este modulo importa ese JSON de 286KB, asi que solo puede consumirlo codigo
  * de servidor. Por eso MarcoFestival, que es cliente, ya no pregunta aqui si
  * una seccion tiene cartelera sino que lo lee de SECCIONES: importarlo desde el
  * cliente arrastraria el programa entero al navegador.
@@ -81,6 +83,25 @@ function seccionDe(procedencias: string[]): Seccion {
    en la siguiente entrega. La clave es la del volcado, que es lo unico estable. */
 const NOMBRES = new Map<string, string>([
   ["cia. teatro en espiral", "Colectivo de Teatro en Espiral"],
+]);
+
+/* --- Fichas que son la misma compania -------------------------------------
+   Clave duplicada -> clave buena. Cuando una compania aparece dos veces en el
+   volcado bajo nombres distintos, la segunda no se tira: sus funciones se
+   pasan a la ficha buena, que es la que tiene fotografia y semblanza.
+
+   El caso que lo estrena viene de la entrega del 2 de septiembre. Al llenar la
+   programacion local de Matamoros, la hoja apunto "Zurcidores de Cuentos" con
+   su funcion de "Pelusa al Vuelo" del dia 8, sin caer en que esa compania ya
+   estaba en el cartel como "Zurcidores de Cuentos Tamaulipas" con las cinco
+   funciones de la misma obra. Sin esto saldrian dos fichas seguidas con el
+   mismo nombre, y la de Matamoros ademas sin foto.
+
+   Se fusiona y no se retira porque la funcion del dia 8 es real y tiene que
+   verse; y se hace por clave, como NOMBRES, porque es lo unico que el comite
+   no cambia entre entregas. */
+const FUSIONES = new Map<string, string>([
+  ["zurcidores de cuentos", "zurcidores de cuentos tamaulipas"],
 ]);
 
 /* --- Fichas retiradas de la cartelera ------------------------------------
@@ -177,8 +198,7 @@ function hora(valor: string | null): string {
 }
 
 /* --- Fotografia ----------------------------------------------------------
-   81 de las 144 companias del programa tienen material entregado; el
-   resto sale con marcador de posicion.
+   85 de las 184 companias del programa tienen material entregado.
    Las demas salen con marcador de posicion, que es lo que pide el sistema de
    diseno mientras no haya foto real: nunca la de otra compania, porque la
    ficha afirma que la fotografia es de quien la firma.
@@ -246,6 +266,7 @@ const FOTOS = new Map<string, string>([
   ["amenaza nortena", "amenaza-nortena"],
   ["apapacho arte y diversidad", "apapacho-arte-y-diversidad"],
   ["balcon de montezuma tamaholipam", "balcon-de-montezuma-tamaholipam"],
+  ["ballet folklorico yacatecutli", "yacatecutli"],
   ["colectivo teatro de bolsillo", "colectivo-teatro-de-bolsillo"],
   ["conjunto varela", "conjunto-varela"],
   ["corarte: musica vocal", "corarte-musica-vocal"],
@@ -441,8 +462,24 @@ export type Artista = {
 /* --- Derivacion ---------------------------------------------------------- */
 
 type ArtistaBruto = (typeof bruto.artistas)[number];
+type PresentacionBruta = ArtistaBruto["presentaciones"][number];
 
-function convertir(a: ArtistaBruto, i: number, seccion: Seccion): Artista {
+function convertir(
+  a: ArtistaBruto,
+  i: number,
+  seccion: Seccion,
+  absorbidas: PresentacionBruta[],
+): Artista {
+  /* Solo se reordena cuando ha habido fusion. El volcado ya trae las funciones
+     de cada compania en orden de fecha, asi que ordenar siempre no cambiaria
+     nada; pero las que llegan de otra ficha se pegan al final y ahi si haria
+     falta, porque una cartelera que salta del dia 8 al 2 no se entiende. */
+  const funciones = absorbidas.length
+    ? [...a.presentaciones, ...absorbidas].sort((x, y) =>
+        (x.fechas[0] ?? "").localeCompare(y.fechas[0] ?? ""),
+      )
+    : a.presentaciones;
+
   return {
     id: identificador(a.clave),
     nombre: NOMBRES.get(a.clave) ?? limpiar(a.artista),
@@ -451,7 +488,7 @@ function convertir(a: ArtistaBruto, i: number, seccion: Seccion): Artista {
     procedencia: a.procedencias.map(limpiar).join(" / "),
     semblanza: resumir((semblanzas as Record<string, string>)[a.clave] ?? ""),
     banderas: seccion === "internacionales" ? banderasDe(a.procedencias) : [],
-    presentaciones: a.presentaciones.map((p) => ({
+    presentaciones: funciones.map((p) => ({
       fecha: fecha(p.fechas),
       hora: hora(p.hora),
       sede: sede(p.sede),
@@ -470,19 +507,34 @@ function agrupar(): Record<Seccion, Artista[]> {
     internacionales: [],
   };
 
+  /* Las funciones de las fichas duplicadas, recogidas antes de repartir para
+     que la ficha buena las tenga ya montadas cuando le toque. Una fusion cuya
+     clave buena no exista se ignora sola: no hay a quien darselas. */
+  const heredadas = new Map<string, PresentacionBruta[]>();
+  for (const a of bruto.artistas) {
+    const buena = FUSIONES.get(a.clave);
+    if (!buena) continue;
+    heredadas.set(buena, [
+      ...(heredadas.get(buena) ?? []),
+      ...a.presentaciones,
+    ]);
+  }
+
   for (const a of bruto.artistas) {
     if (RETIRADAS.has(a.clave)) continue;
+    if (FUSIONES.has(a.clave)) continue;
     cajones[seccionDe(a.procedencias)].push(a);
   }
 
   /* El ciclo de color se cuenta dentro de cada seccion, no sobre el total: lo
      que no debe repetirse es el tono de dos fichas seguidas en la pagina. */
+  const monta = (seccion: Seccion) => (a: ArtistaBruto, i: number) =>
+    convertir(a, i, seccion, heredadas.get(a.clave) ?? []);
+
   return {
-    tamaulipecos: cajones.tamaulipecos.map((a, i) => convertir(a, i, "tamaulipecos")),
-    nacionales: cajones.nacionales.map((a, i) => convertir(a, i, "nacionales")),
-    internacionales: cajones.internacionales.map((a, i) =>
-      convertir(a, i, "internacionales"),
-    ),
+    tamaulipecos: cajones.tamaulipecos.map(monta("tamaulipecos")),
+    nacionales: cajones.nacionales.map(monta("nacionales")),
+    internacionales: cajones.internacionales.map(monta("internacionales")),
   };
 }
 

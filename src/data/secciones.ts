@@ -21,7 +21,7 @@ export type Seccion = {
   /** Si la seccion abre con cartelera de artistas o con su portadilla de color.
       Se declara aqui y no se deduce de ARTISTAS porque quien lo pregunta es el
       marco, que es codigo de cliente: importar la cartelera desde alli
-      arrastraria el programa entero -213KB- al navegador. */
+      arrastraria el programa entero -286KB- al navegador. */
   cartelera: boolean;
 };
 
