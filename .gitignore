@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# fuentes crudas de scripts de derivacion de datos (shapefiles, etc.):
+# pesan decenas de MB y se vuelven a descargar solo si hace falta regenerar.
+/scripts/fuente/

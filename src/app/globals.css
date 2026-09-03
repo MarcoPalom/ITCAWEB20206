@@ -2145,3 +2145,379 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
   letter-spacing: -0.01em;
   color: var(--color-charcoal);
 }
+
+/* --- Mapa de municipios ---------------------------------------------------
+   Seccion "Municipios" del festival: mapa de Tamaulipas + lista, y la sheet
+   que se abre al elegir uno. Mismo criterio de color que el resto -tono de
+   fondo tomado de SECCIONES- y misma convencion de clases planas que
+   .isla-* y .cartelera-mandos*. */
+
+.mapa-municipios {
+  min-height: 100svh;
+  padding: 6rem 1.25rem 4rem;
+}
+
+.mapa-municipios-cabecera {
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mapa-municipios-entradilla {
+  margin-top: 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.mapa-municipios-cuerpo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 72rem;
+  margin: 3rem auto 0;
+}
+
+@media (min-width: 1024px) {
+  .mapa-municipios-cuerpo {
+    grid-template-columns: minmax(0, 1fr) 19rem;
+    align-items: start;
+  }
+}
+
+/* --- Lienzo: contorno decorativo + marcadores reales ---------------------- */
+
+.mapa-municipios-lienzo {
+  position: relative;
+  width: 100%;
+  max-width: 26rem;
+  margin: 0 auto;
+}
+
+.mapa-municipios-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mapa-municipios-contorno {
+  fill: var(--tono);
+  fill-opacity: 0.32;
+  stroke: var(--tono);
+  stroke-opacity: 0.65;
+  stroke-width: 1.5;
+  transition: fill-opacity 200ms ease-out;
+}
+
+.mapa-municipios-contorno[data-activo="si"] {
+  fill-opacity: 0.7;
+  stroke-width: 2.5;
+}
+
+/* El boton, no el poligono, es el control: mismo tamano para los 43 -de
+   Nuevo Laredo a Miquihuana-, asi que quien no puede hacer clic milimetrico
+   en una astilla de mapa igual tiene algo solido que tocar. */
+.mapa-municipios-marcador {
+  /* El preflight de Tailwind pone box-sizing: border-box en todo. Con eso, el
+     padding de abajo se comeria el ancho declarado hasta dejar el area de
+     color en 0 -el bug que salio en la primera prueba visual, donde el color
+     "de los marcadores" en realidad era el poligono de debajo transparentando
+     por un boton sin relleno propio-. Se vuelve a content-box aqui, a
+     proposito, para que width sea el tamano del punto de color y no el del
+     boton entero. */
+  box-sizing: content-box;
+  position: absolute;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--tono);
+  /* Borde oscuro y no blanco: dos de los ocho tonos del ciclo -lavanda,
+     amarillo- son tan claros que un borde blanco se les funde encima y el
+     punto desaparece contra el fondo rosa de la seccion. */
+  border: 1.5px solid var(--color-charcoal, #1a1818);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.6);
+  /* El padding agranda solo el area en que se puede tocar/hacer clic: los
+     43 municipios comparten este mismo boton, del mas grande -Nuevo Laredo-
+     al mas chico -Miquihuana, una astilla de pocos pixeles en el mapa real-. */
+  padding: 0.6rem;
+  background-clip: content-box;
+  cursor: pointer;
+}
+
+.mapa-municipios-marcador:hover,
+.mapa-municipios-marcador[aria-pressed="true"] {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25), 0 0 0 4px rgba(0, 0, 0, 0.12);
+}
+
+.mapa-municipios-marcador:focus-visible {
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: 2px;
+}
+
+/* --- Lista: mismo control que el mapa, buscable de un vistazo ------------- */
+
+.mapa-municipios-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-height: 26rem;
+  overflow-y: auto;
+}
+
+@media (min-width: 1024px) {
+  .mapa-municipios-lista-fija .mapa-municipios-lista {
+    max-height: calc(100svh - 10rem);
+  }
+}
+
+.mapa-municipios-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  text-align: left;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.mapa-municipios-item:hover,
+.mapa-municipios-item[data-activo="si"] {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.mapa-municipios-item-numero {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 4px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* --- Sheet ------------------------------------------------------------ */
+
+.mapa-municipios-velo {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(20, 18, 18, 0.55);
+  animation: mapa-velo-entra 220ms ease-out both;
+}
+
+@media (min-width: 640px) {
+  .mapa-municipios-velo {
+    align-items: center;
+  }
+}
+
+@keyframes mapa-velo-entra {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mapa-municipios-sheet {
+  width: 100%;
+  max-width: 36rem;
+  max-height: 85svh;
+  overflow-y: auto;
+  background: var(--color-surface, #fff);
+  color: var(--color-charcoal, #1a1818);
+  border-radius: 1rem 1rem 0 0;
+  padding: 1.5rem 1.5rem 2.5rem;
+  animation: mapa-sheet-entra 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (min-width: 640px) {
+  .mapa-municipios-sheet {
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+}
+
+@keyframes mapa-sheet-entra {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapa-municipios-velo,
+  .mapa-municipios-sheet {
+    animation: none;
+  }
+}
+
+.mapa-municipios-sheet-cabecera {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.mapa-municipios-sheet-chip {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--tono);
+  color: var(--sobre);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.9rem;
+}
+
+.mapa-municipios-sheet-cerrar {
+  margin-left: auto;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapa-municipios-sheet-cerrar:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.mapa-municipios-sheet-conteos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.mapa-municipios-conteo {
+  text-align: center;
+  padding: 0.6rem 0.3rem;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.mapa-municipios-conteo-valor {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.mapa-municipios-conteo-etiqueta {
+  margin-top: 0.15rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.mapa-municipios-sheet-cuerpo {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mapa-municipios-sheet-vacio {
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
+
+.mapa-municipios-dia {
+  animation: mapa-dia-entra 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--orden, 0) * 60ms);
+}
+
+@keyframes mapa-dia-entra {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0.75rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mapa-municipios-dia {
+    animation: none;
+  }
+}
+
+.mapa-municipios-dia-rotulo {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.mapa-municipios-evento {
+  display: flex;
+  gap: 0.85rem;
+  padding: 0.6rem 0;
+}
+
+.mapa-municipios-evento + .mapa-municipios-evento {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.mapa-municipios-evento-hora {
+  flex: none;
+  width: 3.75rem;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.mapa-municipios-evento-titulo {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.mapa-municipios-evento-artista {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.mapa-municipios-evento-meta {
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+.mapa-municipios-evento-sede {
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.mapa-municipios-evento-nota {
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+  font-style: italic;
+  opacity: 0.7;
+}
