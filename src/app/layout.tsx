@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Newsreader, Geist, Geist_Mono, Encode_Sans } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
-import { SITIO } from "@/data/sitio";
+import { ANALITICA, SITIO } from "@/data/sitio";
 
 /**
  * Tipografia del festival, que tiene identidad propia y no la del Instituto.
@@ -103,7 +104,24 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: scriptMomento }} />
       </head>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        {children}
+
+        {/* Analitica, si hay propiedad configurada. Sin ANALITICA no se monta
+            nada y el sitio no pide un solo byte a Google.
+
+            Se usa el componente de @next/third-parties y no el fragmento de
+            gtag pegado a mano porque el App Router navega sin recargar: una
+            vista de pagina por carga real solo contaria la primera, y aqui el
+            recorrido normal -portada, seccion, otra seccion- ocurre entero
+            dentro de la misma carga. El componente engancha las navegaciones
+            del router y las cuenta.
+
+            Va al final del body: carga con estrategia afterInteractive, o sea
+            despues de que la pagina sea usable, de modo que la medicion no
+            compite con la cartelera por el hilo principal. */}
+        {ANALITICA ? <GoogleAnalytics gaId={ANALITICA} /> : null}
+      </body>
     </html>
   );
 }

@@ -10,3 +10,17 @@
  * cuenta como export invalido de ruta.
  */
 export const SITIO = "https://itcadigital.mx";
+
+/**
+ * Identificador de medicion de Google Analytics 4: el "G-XXXXXXXXXX" que da la
+ * propiedad en el panel. Cadena vacia significa sin analitica, y sin analitica
+ * no se carga absolutamente nada: ni script, ni peticion, ni cookie.
+ *
+ * Vive aqui y no en una variable de entorno por dos motivos. No es un secreto:
+ * cualquier NEXT_PUBLIC_ se incrusta en el HTML al compilar, de modo que el
+ * identificador queda a la vista en el codigo fuente de todas formas. Y sobre
+ * todo por operativa: .gitignore excluye .env*, asi que un valor escrito ahi
+ * habria que volver a ponerlo a mano en el VPS y cualquier despliegue limpio se
+ * quedaria sin medicion sin avisar de nada.
+ */
+export const ANALITICA = "G-DS6XJBFCQ6";
