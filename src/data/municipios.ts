@@ -159,7 +159,13 @@ function convertirEvento(e: EventoBruto): EventoMunicipio {
 }
 
 function convertirMunicipio(m: MunicipioBruto): Municipio {
-  const eventos = m.eventos.map(convertirEvento);
+  /* origen "Local" es la programacion que arma el propio municipio con sus
+     grupos, no un acto que trae el festival. No se confunde con "Tamaulipas"
+     -companias del estado que si forman parte del cartel central- ni con los
+     "null" sin dato, que se quedan. */
+  const eventos = m.eventos
+    .filter((e) => e.origen !== "Local")
+    .map(convertirEvento);
   return {
     id: identificador(m.municipio),
     nombre: m.municipio,

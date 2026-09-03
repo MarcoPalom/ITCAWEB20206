@@ -61,6 +61,15 @@ export type Seccion = "tamaulipecos" | "nacionales" | "internacionales";
 const ESTADOS =
   /\b(nuevo leon|cdmx|veracruz|jalisco|baja california|zacatecas|puebla|guanajuato|oaxaca|estado de mexico|hidalgo|nacional)\b/;
 
+/* Companias cuya procedencia es exactamente "Programacion Local", sin pais
+   ni otro estado mezclado: la programacion que arma cada municipio con sus
+   propios grupos, no un acto de fuera. "CDMX / Programacion Local" no cuenta
+   -es una compania de CDMX que programa aqui, la regla 3 de seccionDe() ya la
+   manda a nacionales- y por eso se compara la cadena entera, no con includes(). */
+function esProgramacionLocal(procedencias: string[]): boolean {
+  return sinAcentos(procedencias.join(" / ")).trim().toLowerCase() === "programacion local";
+}
+
 function seccionDe(procedencias: string[]): Seccion {
   const texto = sinAcentos(procedencias.join(" / ")).toLowerCase();
 
@@ -549,6 +558,7 @@ function agrupar(): Record<Seccion, Artista[]> {
   for (const a of bruto.artistas) {
     if (RETIRADAS.has(a.clave)) continue;
     if (FUSIONES.has(a.clave)) continue;
+    if (esProgramacionLocal(a.procedencias)) continue;
     cajones[seccionDe(a.procedencias)].push(a);
   }
 
