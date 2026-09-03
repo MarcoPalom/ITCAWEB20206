@@ -2154,9 +2154,20 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
 
 .mapa-municipios {
   min-height: 100svh;
-  padding: 5rem 1.25rem 4rem;
-  background: var(--color-bone);
-  color: var(--color-charcoal);
+  padding: 6rem 1.25rem 4rem;
+}
+
+.mapa-municipios-cabecera {
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mapa-municipios-entradilla {
+  margin-top: 1.5rem;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  opacity: 0.85;
 }
 
 .mapa-municipios-cuerpo {
@@ -2164,7 +2175,7 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
   grid-template-columns: 1fr;
   gap: 2rem;
   max-width: 72rem;
-  margin: 0 auto;
+  margin: 3rem auto 0;
 }
 
 @media (min-width: 1024px) {
