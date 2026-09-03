@@ -8,7 +8,13 @@ import { FESTIVAL } from "@/data/festival";
 import { SECCIONES, seccionPorSlug } from "@/data/secciones";
 
 export function generateStaticParams() {
-  return SECCIONES.map((s) => ({ seccion: s.slug }));
+  /* "municipios" no pasa por aqui: tiene su propia ruta literal en
+     app/festival/municipios/, con bentobox y paginas por municipio. Next
+     prioriza esa ruta mas especifica, pero generarla tambien aqui chocaria
+     con ella al hacer build. */
+  return SECCIONES.filter((s) => s.slug !== "municipios").map((s) => ({
+    seccion: s.slug,
+  }));
 }
 
 export async function generateMetadata({

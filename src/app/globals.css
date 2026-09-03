@@ -769,8 +769,15 @@ body {
      contiguos comparten arista exacta y ninguna esquina se sale del cilindro.
      Colocarlos tangentes al radio -que es lo intuitivo- las deja por fuera, y
      cerca del lateral eso basta para que rocen el plano de la camara y el
-     cuadrilatero degenere abriendo cunas de fondo en la banda. */
-  transform: rotateY(var(--angulo)) translateZ(calc(var(--dist) * -1));
+     cuadrilatero degenere abriendo cunas de fondo en la banda.
+
+     --entrada va delante y no detras del rotateY: aplicado antes, desplaza el
+     panel en el eje X original -el de la pantalla, con el anillo aun quieto-
+     y solo despues lo rota a su sitio en el cilindro. Es lo que permite que
+     TunelPaneles.tsx lo anime en linea recta desde el lateral sin recalcular
+     el resto de la geometria; en 0 no hace nada. */
+  transform: translateX(var(--entrada, 0px)) rotateY(var(--angulo))
+    translateZ(calc(var(--dist) * -1));
 }
 
 /* Cada hueco es una funda de LP: un cuadrado que ocupa el panel entero. */
@@ -1182,24 +1189,33 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
   animation-timing-function: cubic-bezier(0.33, 0, 0.2, 1);
 }
 
-/* La isla y la marca son los dos puntos fijos que sostienen la escena mientras
-   el circulo la recorre: su grupo no se anima, asi que no se mueven ni cambian
-   de tamano. Lo unico que cambia en ellas -que pastilla esta activa, el color
-   de la marca- se resuelve con un fundido corto. Sin el se superponen las dos
-   versiones y se ven dos pastillas activas a la vez. */
+/* La isla, la marca y el boton de volver de un municipio son los puntos fijos
+   que sostienen la escena mientras el circulo la recorre: su grupo no se
+   anima, asi que no se mueven ni cambian de tamano. Los tres son de posicion
+   fija, y por eso necesitan su propio nombre -sin uno, el navegador los mete
+   en la misma instantanea plana que el resto del contenido, y ahi el barrido
+   circular no los respeta como elemento aparte: el resultado es un reborde
+   irregular en vez de un circulo limpio sobre algo que ya esta fijo en
+   pantalla. Lo unico que cambia en ellos -que pastilla esta activa, el color
+   de la marca, si el boton existe en la pagina de destino- se resuelve con un
+   fundido corto. Sin el se superponen las dos versiones y se ven dos
+   pastillas activas a la vez. */
 ::view-transition-group(isla),
-::view-transition-group(marca) {
+::view-transition-group(marca),
+::view-transition-group(volver-municipios) {
   animation: none;
   z-index: 100;
 }
 
 ::view-transition-old(isla),
-::view-transition-old(marca) {
+::view-transition-old(marca),
+::view-transition-old(volver-municipios) {
   animation: revelar-fundido 200ms ease-out both reverse;
 }
 
 ::view-transition-new(isla),
-::view-transition-new(marca) {
+::view-transition-new(marca),
+::view-transition-new(volver-municipios) {
   animation: revelar-fundido 220ms ease-in 180ms both;
 }
 

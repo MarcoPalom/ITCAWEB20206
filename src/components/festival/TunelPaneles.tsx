@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 import { FESTIVAL } from "@/data/festival";
 import { estiloTono } from "@/data/paleta";
@@ -36,21 +37,21 @@ type Hueco =
   | { tipo: "icono"; slug: string; alt: string };
 
 const HUECOS: Hueco[] = [
-  { tipo: "funda", slug: "cirque-eros", alt: "Numero de Cirque Eros con alas de mariposa monarca" },
+  { tipo: "funda", slug: "cia-ome", alt: "Tres interpretes de Cia. Ome con mascaras de madera" },
   { tipo: "icono", slug: "icono-01", alt: "" },
-  { tipo: "funda", slug: "karina-pimentel", alt: "Karina Pimentel, de Karina Pimentel y la QuintaLey" },
+  { tipo: "funda", slug: "irish-dance-theatre", alt: "Bailarines de Irish Dance Theatre en escena" },
   { tipo: "icono", slug: "icono-02", alt: "" },
-  { tipo: "funda", slug: "la-obra", alt: "Mascara dorada de La Obra Compania de Teatro" },
+  { tipo: "funda", slug: "momi-maiga", alt: "Momi Maiga, musico de Senegal" },
   { tipo: "icono", slug: "icono-03", alt: "" },
-  { tipo: "funda", slug: "yacatecutli", alt: "Bailarinas del Ballet Folklorico Yacatecutli" },
+  { tipo: "funda", slug: "nahuel-penissi", alt: "Nahuel Penissi, cantautor argentino" },
   { tipo: "icono", slug: "icono-04", alt: "" },
-  { tipo: "funda", slug: "colectivo-trueque", alt: "Cuatro interpretes de Colectivo Trueque en escena" },
+  { tipo: "funda", slug: "performance-de-rua-do-palhaco-satin", alt: "El payaso Satin, de Performance de rua do palhaco Satin" },
   { tipo: "icono", slug: "icono-05", alt: "" },
-  { tipo: "funda", slug: "orquesta-tampico", alt: "Metales de la Internacional Orquesta Tampico de Claudio Rosas" },
+  { tipo: "funda", slug: "rita-donte", alt: "Rita Donte cantando con turbante azul" },
   { tipo: "icono", slug: "icono-06", alt: "" },
-  { tipo: "funda", slug: "la-nota-alegre", alt: "Integrantes de La Nota Alegre con mascaras de lucha libre" },
+  { tipo: "funda", slug: "sampling-is-beautiful", alt: "Los tres integrantes de Sampling is Beautiful en una calle" },
   { tipo: "icono", slug: "icono-07", alt: "" },
-  { tipo: "funda", slug: "chicos-malos", alt: "El grupo de baile Club Chicos Malos, en traje de escena" },
+  { tipo: "funda", slug: "manoella-torres", alt: "Manoella Torres cantando entre humo escenico" },
   { tipo: "icono", slug: "icono-08", alt: "" },
 ];
 
@@ -116,8 +117,9 @@ const PANELES = (() => {
     const apotema = Math.cos(arcos[i] / 2);
     const grados = (centro * 180) / Math.PI - (arcos[0] * 90) / Math.PI;
     /* Mismo angulo medido en el rango -180..180, que es donde se ve si el
-       panel esta delante o detras del punto de vista. */
-    const desdeElFrente = Math.abs(((grados + 540) % 360) - 180);
+       panel esta delante o detras del punto de vista, y de que lado cae. */
+    const medido = ((grados + 540) % 360) - 180;
+    const desdeElFrente = Math.abs(medido);
     return {
       ...hueco,
       grados,
@@ -128,6 +130,14 @@ const PANELES = (() => {
       /* El panel esta de frente en la fraccion grados/360 de la vuelta. El
          retardo negativo adelanta su ciclo de aparicion hasta ahi. */
       fase: ((grados / 360) % 1) - 1,
+      /* De que lado de la pantalla nace en la entrada: -1 izquierda, 1
+         derecha. El del frente exacto (medido 0) no importa, cae de un lado
+         cualquiera. */
+      lado: medido < 0 ? -1 : 1,
+      /* Distancia angular al frente, 0..180: gobierna el retardo de la
+         entrada -el frente llega primero, los laterales despues, como si la
+         banda se completara hacia los dos lados a la vez-. */
+      distanciaFrente: desdeElFrente,
     };
   });
 })();
@@ -152,6 +162,45 @@ export default function TunelPaneles() {
 
     observador.observe(el);
     return () => observador.disconnect();
+  }, []);
+
+  /* Bienvenida: la banda no aparece completa de golpe, entra desde los dos
+     lados como si se fuera montando delante de quien llega. --entrada
+     desplaza cada panel en el eje X de pantalla antes de que rotateY lo
+     lleve a su sitio en el cilindro (ver .tunel-panel en globals.css), asi
+     que el anillo sigue girando por CSS desde el primer fotograma sin que
+     las dos animaciones se estorben.
+
+     Es GSAP y no CSS porque el retardo de cada panel depende de un numero
+     que solo existe aqui -su distancia angular al frente, PANELES[i].
+     distanciaFrente- y no de su orden en el DOM: con el retardo creciendo
+     desde el frente hacia los lados, el panel central llega primero y la
+     banda se completa hacia ambos lados a la vez, en vez de barrer de
+     principio a fin como haria un stagger por indice.
+
+     useLayoutEffect y no useEffect: --entrada tiene que quedar puesto antes
+     de la primera pintura, o se veria un fogonazo de la banda ya completa
+     antes de desarmarse para animar la entrada. */
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const paneles = gsap.utils.toArray<HTMLElement>(".tunel-panel", el);
+    paneles.forEach((panel, i) => {
+      gsap.set(panel, { "--entrada": `${PANELES[i].lado * 90}vw` });
+    });
+
+    const animacion = gsap.to(paneles, {
+      "--entrada": "0vw",
+      duration: 1.1,
+      ease: "power3.out",
+      delay: (i: number) => (PANELES[i].distanciaFrente / 180) * 0.5,
+    });
+
+    return () => {
+      animacion.kill();
+    };
   }, []);
 
   return (
