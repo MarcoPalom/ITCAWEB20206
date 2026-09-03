@@ -62,21 +62,12 @@ export default function MapaMunicipios({ municipios }: { municipios: Municipio[]
   }, [seleccionadoId]);
 
   return (
-    <section
-      className="mapa-municipios"
-      style={{ background: "var(--id-rosa)", color: "var(--id-tinta)" }}
-    >
-      <div className="mapa-municipios-cabecera">
-        <p className="meta opacity-70">FICSM 2026</p>
-        <h1 className="title-display mt-2 text-[clamp(2.25rem,7vw,5rem)] leading-[0.92] font-black tracking-[-0.03em]">
-          Municipios
-        </h1>
-        <p className="mapa-municipios-entradilla">
-          Los 43 municipios de Tamaulipas tienen programacion propia. Toca uno
-          en el mapa o elige de la lista para ver su cartel.
-        </p>
-      </div>
-
+    /* Sin cabecera de color ni titulo: a diferencia de la portadilla de las
+       secciones sin cartel, esta si tiene contenido real desde el primer
+       instante, y la cartelera de artistas -con la que comparte pantalla al
+       cambiar de seccion- tampoco lleva titulo propio. Fondo neutro de la
+       pagina (--color-bone/--color-charcoal), no el tinte de identidad. */
+    <section className="mapa-municipios">
       <div className="mapa-municipios-cuerpo">
         <div className="mapa-municipios-lienzo">
           <svg
