@@ -3,10 +3,8 @@ import { notFound } from "next/navigation";
 import { ViewTransition } from "react";
 
 import CarteleraArtistas from "@/components/festival/CarteleraArtistas";
-import MapaMunicipios from "@/components/festival/MapaMunicipios";
 import { ARTISTAS } from "@/data/artistas";
 import { FESTIVAL } from "@/data/festival";
-import { MUNICIPIOS } from "@/data/municipios";
 import { SECCIONES, seccionPorSlug } from "@/data/secciones";
 
 export function generateStaticParams() {
@@ -50,10 +48,6 @@ export default async function SeccionPage({
              portadilla de bienvenida por delante. El circulo del barrido
              revela ya la fotografia del primer artista. */
           <CarteleraArtistas artistas={artistas} />
-        ) : seccion === "municipios" ? (
-          /* Unica seccion sin cartelera de artistas que aun asi no se queda en
-             la portadilla de color: tiene su propio mapa interactivo. */
-          <MapaMunicipios municipios={MUNICIPIOS} />
         ) : (
           /* Las secciones sin cartelera se quedan en su portadilla de color. */
           <section
