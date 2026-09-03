@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
+import { FESTIVAL } from "@/data/festival";
+
 export type NavItem = {
   label: string;
   href: string;
@@ -15,7 +17,10 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: "Festival del Seno Mexicano",
     href: "/festival",
-    desc: "Programacion y sedes de la primera edicion, del 02 al 11 de octubre de 2026.",
+    /* Derivado de FESTIVAL y no escrito a mano: aqui vivian "primera edicion"
+       y la fecha duplicada, que es justo como se desincronizan. En minusculas
+       porque va dentro de la frase, no abriendola. */
+    desc: `Programacion y sedes de la ${FESTIVAL.edicion.toLowerCase()}, del ${FESTIVAL.fechas}.`,
   },
   {
     label: "ITCA Digital",

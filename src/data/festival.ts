@@ -20,7 +20,10 @@ export const FESTIVAL = {
      Seno Mexicano. Ojo, la carpeta del material viene nombrada FISCM. */
   siglas: "FICSM",
   anio: "2026",
-  edicion: "Primera edicion",
+  /* No es la primera: el festival viene de lejos y esta es la 33. Ojo, en el
+     volcado del comite hay un acto titulado "Homenaje de la edicion 34", que
+     contradice este numero; el 33 es el que dio el instituto. */
+  edicion: "Edicion 33",
   fechas: "02 al 11 de octubre de 2026",
   /* Como se escribe en la portada, con la preposicion incluida. */
   fechasLargas: "Del 02 al 11 de octubre",
