@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import SiteHeader from "@/components/SiteHeader";
 import EscenaDia from "@/components/EscenaDia";
 import Marquee from "@/components/Marquee";
@@ -6,6 +8,16 @@ import EnlacesGenerales from "@/components/EnlacesGenerales";
 import Comunicados from "@/components/Comunicados";
 import Footer from "@/components/Footer";
 import Cortinilla from "@/components/Cortinilla";
+
+/* noindex mientras la cancela siga en pie: para cualquiera sin la llave -y
+   por tanto para Google- esta ruta es la cortinilla, no el sitio. Indexarla
+   pondria en el buscador una pantalla de acceso en vez del contenido real,
+   y encima competiria con /festival por la misma marca. Sale de aqui y no de
+   robots.txt porque un disallow ahi taparia tambien /festival: son la misma
+   /, solo que en rutas de Next son ficheros distintos. */
+export const metadata: Metadata = {
+  robots: { index: false, follow: true },
+};
 
 /**
  * Llave para ver el sitio institucional mientras dura la obra: /?acceso=itca

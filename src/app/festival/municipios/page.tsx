@@ -6,11 +6,25 @@ import MarcoImagen from "@/components/MarcoImagen";
 import { FESTIVAL } from "@/data/festival";
 import { MUNICIPIOS } from "@/data/municipios";
 import { MUNICIPIOS_FOTOS } from "@/data/municipios_fotos";
+import { SITIO } from "@/data/sitio";
+
+const DESCRIPCION = "La programacion que recorre los 43 municipios de Tamaulipas.";
 
 export const metadata: Metadata = {
   title: `Municipios | ${FESTIVAL.siglas} ${FESTIVAL.anio}`,
-  description:
-    "La programacion que recorre los 43 municipios de Tamaulipas.",
+  description: DESCRIPCION,
+  alternates: { canonical: `${SITIO}/festival/municipios` },
+  /* openGraph propio: reemplaza el del layout raiz entero, asi que siteName
+     y locale se repiten aqui en vez de heredarse campo a campo. */
+  openGraph: {
+    siteName: "ITCA",
+    locale: "es_MX",
+    title: `Municipios | ${FESTIVAL.siglas} ${FESTIVAL.anio}`,
+    description: DESCRIPCION,
+    url: `${SITIO}/festival/municipios`,
+    type: "website",
+    images: [`${SITIO}/opengraph-image.png`],
+  },
 };
 
 /**

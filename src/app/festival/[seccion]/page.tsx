@@ -6,6 +6,7 @@ import CarteleraArtistas from "@/components/festival/CarteleraArtistas";
 import { ARTISTAS } from "@/data/artistas";
 import { FESTIVAL } from "@/data/festival";
 import { SECCIONES, seccionPorSlug } from "@/data/secciones";
+import { SITIO } from "@/data/sitio";
 
 export function generateStaticParams() {
   /* "municipios" no pasa por aqui: tiene su propia ruta literal en
@@ -28,6 +29,18 @@ export async function generateMetadata({
   return {
     title: `${datos.titulo} | ${FESTIVAL.siglas} ${FESTIVAL.anio}`,
     description: datos.entradilla,
+    alternates: { canonical: `${SITIO}/festival/${seccion}` },
+    /* siteName y locale se repiten aqui: un openGraph propio reemplaza el
+       del layout raiz entero, no lo completa campo a campo. */
+    openGraph: {
+      siteName: "ITCA",
+      locale: "es_MX",
+      title: `${datos.titulo} | ${FESTIVAL.siglas} ${FESTIVAL.anio}`,
+      description: datos.entradilla,
+      url: `${SITIO}/festival/${seccion}`,
+      type: "website",
+      images: [`${SITIO}/opengraph-image.png`],
+    },
   };
 }
 

@@ -7,6 +7,7 @@ import EnlaceBarrido from "@/components/festival/EnlaceBarrido";
 import HorariosMunicipio from "@/components/festival/HorariosMunicipio";
 import { MUNICIPIOS, municipioPorId } from "@/data/municipios";
 import { FESTIVAL } from "@/data/festival";
+import { SITIO } from "@/data/sitio";
 
 export function generateStaticParams() {
   return MUNICIPIOS.map((m) => ({ municipio: m.id }));
@@ -20,9 +21,23 @@ export async function generateMetadata({
   const { municipio } = await params;
   const datos = municipioPorId(municipio);
   if (!datos) return {};
+  const titulo = `${datos.nombre} | Municipios | ${FESTIVAL.siglas} ${FESTIVAL.anio}`;
+  const descripcion = `Programacion de ${datos.nombre} en el ${FESTIVAL.nombre}.`;
   return {
-    title: `${datos.nombre} | Municipios | ${FESTIVAL.siglas} ${FESTIVAL.anio}`,
-    description: `Programacion de ${datos.nombre} en el ${FESTIVAL.nombre}.`,
+    title: titulo,
+    description: descripcion,
+    alternates: { canonical: `${SITIO}/festival/municipios/${municipio}` },
+    /* openGraph propio: reemplaza el del layout raiz entero, asi que
+       siteName y locale se repiten aqui en vez de heredarse campo a campo. */
+    openGraph: {
+      siteName: "ITCA",
+      locale: "es_MX",
+      title: titulo,
+      description: descripcion,
+      url: `${SITIO}/festival/municipios/${municipio}`,
+      type: "website",
+      images: [`${SITIO}/opengraph-image.png`],
+    },
   };
 }
 
