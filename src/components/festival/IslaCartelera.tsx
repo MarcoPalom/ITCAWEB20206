@@ -112,7 +112,7 @@ export default function IslaCartelera({
           </div>
         ) : (
           <p className="isla-vacio">
-            Ninguna compania coincide con la busqueda.
+            Ninguna compañía coincide con la búsqueda.
           </p>
         )}
       </div>
