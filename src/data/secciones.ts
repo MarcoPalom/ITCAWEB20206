@@ -60,7 +60,7 @@ export const SECCIONES: Seccion[] = [
     slug: "municipios",
     titulo: "Municipios",
     entradilla:
-      "La programacion que recorre los municipios del litoral. El cartel se publica en marzo de 2026.",
+      "La programacion que recorre los 43 municipios de Tamaulipas. El cartel se publica en marzo de 2026.",
     tinte: "var(--id-rosa)",
     sobre: "var(--id-tinta)",
     cabeceraClara: false,
