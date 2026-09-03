@@ -201,6 +201,24 @@ function sede(valor: string | null): string {
   return linea ? limpiar(linea) : "Por confirmar";
 }
 
+/* Una procedencia puede repetirse dentro del array del comite -"Tamaulipas /
+   Veracruz" y "Veracruz" a la vez, para Caña Dulce, Caña Brava- porque cada
+   entrada nombra a un integrante distinto de la agrupacion. Unido a lo bruto
+   salia "Tamaulipas / Veracruz / Veracruz". Se parte cada entrada por barras,
+   se quitan los duplicados sin tocar el orden y se vuelve a unir. */
+function procedenciaDe(procedencias: string[]): string {
+  const vistos = new Set<string>();
+  const partes: string[] = [];
+  for (const entrada of procedencias.flatMap((p) => limpiar(p).split("/"))) {
+    const parte = entrada.trim();
+    const clave = parte.toLowerCase();
+    if (!parte || vistos.has(clave)) continue;
+    vistos.add(clave);
+    partes.push(parte);
+  }
+  return partes.join(" / ");
+}
+
 function hora(valor: string | null): string {
   return valor ? `${valor} h` : "Por confirmar";
 }
@@ -493,7 +511,7 @@ function convertir(
     nombre: nombrePorClave(a.clave) ?? limpiar(a.artista),
     etiqueta: limpiar(a.disciplinas[0] ?? "Programación"),
     titulo: limpiar(a.titulos[0] ?? ""),
-    procedencia: a.procedencias.map(limpiar).join(" / "),
+    procedencia: procedenciaDe(a.procedencias),
     semblanza: resumir((semblanzas as Record<string, string>)[a.clave] ?? ""),
     banderas: seccion === "internacionales" ? banderasDe(a.procedencias) : [],
     presentaciones: funciones.map((p) => ({
