@@ -124,7 +124,7 @@ export default function EscenaDia() {
                 {panel.esTitular && (
                   <div className="mt-12 border-t border-white/20 pt-5">
                     <p className="meta text-white/60">
-                      Cerro del Bernal &middot; Gonzalez
+                      Cerro del Bernal &middot; González
                     </p>
                   </div>
                 )}
