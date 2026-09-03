@@ -15,7 +15,12 @@ import { useEffect, useState } from "react";
  * medir, y afirmar "no es ancha" pintaria el bloque de movil en el HTML para
  * luego cambiarlo, que es justo el parpadeo que se quiere evitar.
  */
-export function usarEsAncha(): boolean | null {
+/* Se llama useEsAncha y no usarEsAncha, que seria lo coherente con el resto del
+   codigo: el prefijo "use" no es una convencion de estilo sino el protocolo por
+   el que React y su regla de lint reconocen un hook. Con el nombre en espanol
+   dejaba de vigilarse que las llamadas no queden dentro de una condicion, que
+   es justo el error que esa regla existe para atrapar. */
+export function useEsAncha(): boolean | null {
   const [esAncha, setEsAncha] = useState<boolean | null>(null);
 
   useEffect(() => {

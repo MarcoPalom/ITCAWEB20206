@@ -7,7 +7,7 @@ import { imagenesDe } from "@/data/imagenes";
 import { enlaceMapa } from "@/data/mapas";
 import IslaCartelera, { Controles } from "./IslaCartelera";
 import MandosPlegables from "./MandosPlegables";
-import { usarEsAncha } from "./usarAnchura";
+import { useEsAncha } from "./usarAnchura";
 
 /**
  * Cartelera de artistas: fotografia a sangre a la izquierda y columna de
@@ -40,7 +40,7 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
   const [busqueda, setBusqueda] = useState("");
   /* Cual de los dos bloques de material se monta. Con CSS no basta: un video
      escondido con display:none se descarga igual y reserva decodificador. */
-  const esAncha = usarEsAncha();
+  const esAncha = useEsAncha();
 
   /* El clip no se monta en la ficha activa sino en la que lleva un momento
      activa. Al desplazarse deprisa por 109 fichas, seguir a 'activo' al

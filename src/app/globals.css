@@ -818,30 +818,35 @@ body {
    se ha ido del encuadre, de modo que aparecer y desaparecer ocurre fuera de
    pantalla y no hay parpadeo visible.
 
-   Se anima display, no solo visibility: justo detras del punto de vista la
-   perspectiva dispara la escala y esos paneles llegan a medir miles de pixeles.
-   Ocultos seguirian ocupando ese sitio y obligando al navegador a reservar
-   capas enormes; con display none desaparecen del layout. En los navegadores
-   que no animan display de forma discreta queda visibility, que es correcto
-   aunque cueste mas. */
+   Se oculta con visibility y no con display, aunque display parezca lo mas
+   contundente. El temor era que un panel escondido detras del punto de vista
+   siguiera costando lo que mide en pantalla, que ahi son miles de pixeles; no
+   es asi. El tamano que cuenta para el layout es el del panel sin transformar
+   -unos 133px en un telefono- y lo que la perspectiva agranda es el pintado,
+   que con visibility hidden no llega a ocurrir: no hay textura que rasterizar
+   ni capa que reservar.
+
+   Lo que si costaba era animar display, que es una propiedad discreta: cada
+   salto invalida el layout del contenedor 3D y obliga a rasterizar de cero un
+   panel que, en ese punto del arco, esta en su tamano mayor. Con dieciseis
+   paneles entrando y saliendo dos veces por vuelta son treinta y dos sacudidas
+   cada 72 segundos -una cada dos segundos largos-, que es el tiron intermitente
+   que se notaba en la portada. */
 @keyframes tunel-asomar {
   0%,
   36% {
     opacity: 1;
     visibility: visible;
-    display: block;
   }
   36.5%,
   63.5% {
     opacity: 0;
     visibility: hidden;
-    display: none;
   }
   64%,
   100% {
     opacity: 1;
     visibility: visible;
-    display: block;
   }
 }
 
@@ -902,6 +907,24 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0.85em;
+}
+
+/* La rotulacion se dimensiona sobre el ancho del panel, y con la banda a 34vw
+   eso deja el titulo en unos 7px y el sello en 3px: a ese tamano no hay nada
+   que leer, solo grano. Se retira en el telefono porque no sale gratis. Son
+   ocho fundas con ocho bloques de texto y un codigo de barras de gradiente
+   repetido cada una, y el navegador no rasteriza esos glifos al tamano al que
+   se ven, sino a la escala a la que la perspectiva agranda el panel: medido en
+   un telefono, la caja de 135px llega a proyectarse a 700, cinco veces mas. Las
+   caratulas conservan foto, velo y canto, que es lo que se distingue de lejos.
+
+   La media query va aqui, pegada a la regla que corrige, y no arriba con la que
+   fija --tunel-h: una consulta de medios no suma especificidad, asi que puesta
+   antes perdia contra el display flex de la linea de arriba y no aplicaba. */
+@media (max-width: 640px) {
+  .vinilo-texto {
+    display: none;
+  }
 }
 
 .vinilo-cab {
