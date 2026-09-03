@@ -1,6 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  Fragment,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import type { Artista } from "@/data/artistas";
 import { imagenesDe } from "@/data/imagenes";
@@ -54,7 +61,11 @@ import { useEsAncha } from "./usarAnchura";
  */
 const TANDA = 12;
 
-export default function CarteleraArtistas({ artistas }: { artistas: Artista[] }) {
+export default function CarteleraArtistas({
+  artistas,
+}: {
+  artistas: Artista[];
+}) {
   const [activo, setActivo] = useState(0);
   const [busqueda, setBusqueda] = useState("");
   /* Cual de los dos bloques de material se monta. Con CSS no basta: un video
@@ -90,7 +101,7 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
      pregunta: "los de teatro", "el de Tampico", "la obra tal". */
   const visibles = useMemo(() => {
     const texto = busqueda.trim().toLowerCase();
-    return artistas.filter((a) => {
+    const lista = artistas.filter((a) => {
       if (filtro && a.etiqueta !== filtro) return false;
       if (!texto) return true;
       const donde = [
@@ -103,7 +114,29 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
         .toLowerCase();
       return donde.includes(texto);
     });
+
+    /* Las que todavia no tienen fotografia van al final, en bloque.
+
+       Intercaladas, la seccion se leia como rota: en Tamaulipecos son 58 de 109
+       y al recorrerla aparecia un marcador de posicion cada dos fichas, como si
+       el sitio estuviera fallando. Agrupadas, lo que se ve primero son las 51
+       companias completas y despues un bloque que se explica a si mismo.
+
+       Ordenar aqui y no al pintar es lo que mantiene la coherencia: el indice
+       activo, el fondo y la isla trabajan todos sobre esta misma lista, asi que
+       basta con que salga ya ordenada para que los tres la sigan.
+
+       Es una regla general y no un apano para Tamaulipecos, aunque sea la unica
+       seccion donde hoy se nota: nacionales e internacionales tienen las 33
+       fotografias entregadas, asi que alli no cambia nada, y el bloque ira
+       encogiendo solo segun llegue el material. */
+    const con = lista.filter((a) => a.foto);
+    const sin = lista.filter((a) => !a.foto);
+    return [...con, ...sin];
   }, [artistas, busqueda, filtro]);
+
+  /* Donde empieza el bloque sin material, o -1 si estan todas completas. */
+  const primeraSinFoto = visibles.findIndex((a) => !a.foto);
 
   /* Al cambiar la busqueda o el filtro la lista es otra, asi que el indice
      anterior ya no apunta a nadie y hay que volver al principio.
@@ -173,10 +206,7 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
      es que la seccion se construya en dos tiempos; adelantar el resto en cuanto
      el navegador respira devolveria el mismo pico, solo que unos milisegundos
      mas tarde. */
-  const montadas = useMemo(
-    () => visibles.slice(0, techo),
-    [visibles, techo],
-  );
+  const montadas = useMemo(() => visibles.slice(0, techo), [visibles, techo]);
 
   useEffect(() => {
     const el = cola.current;
@@ -286,66 +316,92 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
             const asentada = i === activoAsentado;
 
             return (
-              <li
-                key={a.id}
-                data-indice={i}
-                ref={(el) => guardar(el, i)}
-                /* El primer relleno solo tiene que librar la cabecera fija; antes
+              <Fragment key={a.id}>
+                {/* Aviso que abre el bloque sin material. Va una sola vez, justo
+                    antes de la primera ficha sin fotografia, y explica de que
+                    son las que vienen detras: cada una repite el marcador en su
+                    hueco, pero el motivo se cuenta aqui.
+
+                    Cuando el aviso queda el primero de la lista -filtrando, si
+                    ninguna de las que coinciden tiene foto- carga el con el
+                    hueco de cabecera, porque el relleno de las fichas cuelga de
+                    :first-child y en ese caso ya no lo cobra ninguna. */}
+                {i === primeraSinFoto ? (
+                  <li
+                    className={i === 0 ? "pt-[16svh] pb-[6svh]" : "py-[6svh]"}
+                  >
+                    <div className="rounded-md border border-[#2a2929] p-5">
+                      <p className="font-mono text-[0.7rem] tracking-[0.05em] text-[#8b8686] uppercase">
+                        Material en proceso de carga
+                      </p>
+                      <p className="mt-3 text-[0.95rem] leading-relaxed text-[#a9a4a4]">
+                        Las {visibles.length - primeraSinFoto} companias que
+                        siguen forman parte del programa. Sus fotografias se
+                        estan subiendo conforme el ITCA las recibe.
+                      </p>
+                    </div>
+                  </li>
+                ) : null}
+
+                <li
+                  data-indice={i}
+                  ref={(el) => guardar(el, i)}
+                  /* El primer relleno solo tiene que librar la cabecera fija; antes
                    habia que salvar ademas la portadilla, que ya no esta. */
-                className="ficha py-[8svh] first:pt-[16svh] last:pb-[34svh]"
-                data-activa={activa ? "si" : "no"}
-                style={{ "--tinte": a.tinte } as React.CSSProperties}
-              >
-                <article className="ficha-cuerpo">
-                  <div className="ficha-marco">
-                    {/* Disciplina y procedencia, que es lo que situa a la
+                  className="ficha py-[8svh] first:pt-[16svh] last:pb-[34svh]"
+                  data-activa={activa ? "si" : "no"}
+                  style={{ "--tinte": a.tinte } as React.CSSProperties}
+                >
+                  <article className="ficha-cuerpo">
+                    <div className="ficha-marco">
+                      {/* Disciplina y procedencia, que es lo que situa a la
                         compania antes de nombrarla. La disciplina va solo en la
                         pastilla: antes se repetia arriba en texto, y en las 144
                         fichas decia exactamente lo mismo -ninguna tiene mas de
                         una disciplina-. */}
-                    <div className="flex items-baseline justify-between gap-4">
-                      <span className="ficha-pastilla">{a.etiqueta}</span>
-                      {a.procedencia ? (
-                        <span className="flex items-center gap-1.5 font-mono text-[0.7rem] tracking-[0.05em] text-[#8b8686] uppercase">
-                          {/* La bandera acompana al rotulo, no lo sustituye: el
+                      <div className="flex items-baseline justify-between gap-4">
+                        <span className="ficha-pastilla">{a.etiqueta}</span>
+                        {a.procedencia ? (
+                          <span className="flex items-center gap-1.5 font-mono text-[0.7rem] tracking-[0.05em] text-[#8b8686] uppercase">
+                            {/* La bandera acompana al rotulo, no lo sustituye: el
                               pais sigue escrito al lado, asi que el icono va
                               como decorativo y los lectores de pantalla no lo
                               nombran dos veces. */}
-                          {a.banderas.map((codigo) => (
-                            /* eslint-disable-next-line @next/next/no-img-element */
-                            <img
-                              key={codigo}
-                              src={`/img/banderas/${codigo}.svg`}
-                              alt=""
-                              width={16}
-                              height={16}
-                              loading="lazy"
-                              decoding="async"
-                              aria-hidden="true"
-                              className="h-4 w-4 flex-none"
-                            />
-                          ))}
-                          {a.procedencia}
-                        </span>
-                      ) : null}
-                    </div>
+                            {a.banderas.map((codigo) => (
+                              /* eslint-disable-next-line @next/next/no-img-element */
+                              <img
+                                key={codigo}
+                                src={`/img/banderas/${codigo}.svg`}
+                                alt=""
+                                width={16}
+                                height={16}
+                                loading="lazy"
+                                decoding="async"
+                                aria-hidden="true"
+                                className="h-4 w-4 flex-none"
+                              />
+                            ))}
+                            {a.procedencia}
+                          </span>
+                        ) : null}
+                      </div>
 
-                    {/* El nombre manda. Estaba fuera del marco y al tamano del
+                      {/* El nombre manda. Estaba fuera del marco y al tamano del
                         texto corrido, compitiendo con la disciplina en la misma
                         linea; ahora entra en la ficha y abre, en la serif de
                         titulares y con cuerpo propio. */}
-                    <h3 className="title-display mt-3 text-[clamp(1.3rem,2vw,1.65rem)] font-medium text-[#f5f3f3]">
-                      {a.nombre}
-                    </h3>
+                      <h3 className="title-display mt-3 text-[clamp(1.3rem,2vw,1.65rem)] font-medium text-[#f5f3f3]">
+                        {a.nombre}
+                      </h3>
 
-                    {a.titulo && a.titulo !== a.nombre ? (
-                      <p className="mt-1.5 text-[0.9rem] leading-snug text-[#a9a4a4]">
-                        {a.titulo}
-                      </p>
-                    ) : null}
+                      {a.titulo && a.titulo !== a.nombre ? (
+                        <p className="mt-1.5 text-[0.9rem] leading-snug text-[#a9a4a4]">
+                          {a.titulo}
+                        </p>
+                      ) : null}
 
-                    {a.foto ? (
-                      /* Tres capas, y cada una hace una sola cosa: ficha-fotos
+                      {a.foto ? (
+                        /* Tres capas, y cada una hace una sola cosa: ficha-fotos
                          es el encuadre que recorta, ficha-lente enfoca y
                          ficha-tira mueve. En pantalla ancha las dos de fuera se
                          vuelven transparentes -display: contents- y la reja de
@@ -356,55 +412,57 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
                          109: asi hay un unico video vivo en toda la pagina, que
                          es lo que permite reproducirlo en bucle sin que el
                          movil se ahogue. */
-                      <div className="mt-4">
-                        {/* Movil: el turno de siempre, intacto. Va envuelto en
+                        <div className="mt-4">
+                          {/* Movil: el turno de siempre, intacto. Va envuelto en
                             lg:hidden y no compartido con el mosaico porque el
                             turno se reparte con :nth-child, y un hermano de mas
                             -aunque estuviera oculto- correria los retardos y
                             descuadraria el paneo. */}
-                        <div
-                          className="ficha-fotos lg:hidden"
-                          data-turnos={a.clip && asentada && esAncha === false ? 3 : 2}
-                        >
-                          <div className="ficha-lente">
-                            <div className="ficha-tira grid grid-cols-2 gap-2">
-                              {imagenesDe(a.foto).cards.map((src, n) => (
-                                /* eslint-disable-next-line @next/next/no-img-element */
-                                <img
-                                  key={src}
-                                  src={src}
-                                  alt={`${a.nombre}, fotografia ${n + 1}`}
-                                  width={560}
-                                  height={600}
-                                  loading="lazy"
-                                  decoding="async"
-                                  className="h-full w-full rounded-md object-cover"
-                                />
-                              ))}
+                          <div
+                            className="ficha-fotos lg:hidden"
+                            data-turnos={
+                              a.clip && asentada && esAncha === false ? 3 : 2
+                            }
+                          >
+                            <div className="ficha-lente">
+                              <div className="ficha-tira grid grid-cols-2 gap-2">
+                                {imagenesDe(a.foto).cards.map((src, n) => (
+                                  /* eslint-disable-next-line @next/next/no-img-element */
+                                  <img
+                                    key={src}
+                                    src={src}
+                                    alt={`${a.nombre}, fotografia ${n + 1}`}
+                                    width={560}
+                                    height={600}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="h-full w-full rounded-md object-cover"
+                                  />
+                                ))}
 
-                              {a.clip && asentada && esAncha === false ? (
-                                <video
-                                  src={imagenesDe(a.foto).clip}
-                                  poster={imagenesDe(a.foto).poster}
-                                  width={560}
-                                  height={600}
-                                  autoPlay
-                                  muted
-                                  loop
-                                  playsInline
-                                  /* metadata y no auto: con auto el navegador
+                                {a.clip && asentada && esAncha === false ? (
+                                  <video
+                                    src={imagenesDe(a.foto).clip}
+                                    poster={imagenesDe(a.foto).poster}
+                                    width={560}
+                                    height={600}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    /* metadata y no auto: con auto el navegador
                                      se traga el archivo entero aunque la ficha
                                      no llegue a mirarse. Lo que hace falta para
                                      arrancar ya lo pide autoplay solo. */
-                                  preload="metadata"
-                                  aria-hidden="true"
-                                />
-                              ) : null}
+                                    preload="metadata"
+                                    aria-hidden="true"
+                                  />
+                                ) : null}
+                              </div>
                             </div>
                           </div>
-                        </div>
 
-                        {/* Escritorio: una linea de nodos por la que viaja la
+                          {/* Escritorio: una linea de nodos por la que viaja la
                             camara. No es un carrusel: el encuadre no salta de
                             tarjeta en tarjeta, se desplaza por una fila
                             continua y siempre deja una pieza centrada, con la
@@ -413,21 +471,21 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
                             El numero de nodos lo dice el atributo, y el CSS
                             elige el recorrido: sin video son tres paradas y con
                             video, cuatro. */}
-                        {/* La fila solo se monta en pantalla ancha, y no se
+                          {/* La fila solo se monta en pantalla ancha, y no se
                             oculta con CSS: son seis imagenes por ficha, y en
                             Tamaulipecos eso son mas de trescientos nodos que un
                             telefono sostiene sin llegar a ensenarlos nunca.
                             Perezosas no se descargan, pero ocupan memoria, y la
                             memoria es justo lo que hace que el navegador
                             descarte la pestana. */}
-                        {esAncha ? (
-                        <div
-                          className="ficha-linea"
-                          data-nodos={a.clip && asentada ? 4 : 3}
-                        >
-                          <div className="ficha-linea-lente">
-                            <div className="ficha-linea-tira">
-                              {/* La fila va dos veces. Es lo que hace que el
+                          {esAncha ? (
+                            <div
+                              className="ficha-linea"
+                              data-nodos={a.clip && asentada ? 4 : 3}
+                            >
+                              <div className="ficha-linea-lente">
+                                <div className="ficha-linea-tira">
+                                  {/* La fila va dos veces. Es lo que hace que el
                                   recorrido se sienta sin fin: al llegar al
                                   final, la camara esta encuadrando la copia de
                                   la primera pieza, asi que volver al principio
@@ -439,32 +497,39 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
                                   asi la copia de una pieza tiene exactamente la
                                   misma forma que la original, que es de lo que
                                   depende que el salto sea invisible. */}
-                              {[0, 1].map((vuelta) =>
-                                piezasDe(a, Boolean(a.clip && asentada)).map((pieza, n) => (
-                                  <Nodo
-                                    key={`${vuelta}-${n}`}
-                                    pieza={pieza}
-                                    /* Fuera de escritorio la fila conserva su
+                                  {[0, 1].map((vuelta) =>
+                                    piezasDe(
+                                      a,
+                                      Boolean(a.clip && asentada),
+                                    ).map((pieza, n) => (
+                                      <Nodo
+                                        key={`${vuelta}-${n}`}
+                                        pieza={pieza}
+                                        /* Fuera de escritorio la fila conserva su
                                        cuarta pieza -y con ella la geometria del
                                        recorrido- pero como fotograma fijo, sin
                                        montar un video que nadie va a ver. */
-                                    congelado={vuelta === 1 || esAncha !== true}
-                                    /* El video no toma la forma que le tocaria
+                                        congelado={
+                                          vuelta === 1 || esAncha !== true
+                                        }
+                                        /* El video no toma la forma que le tocaria
                                        por posicion: tiene la suya, con su misma
                                        proporcion, para que no salga recortado. */
-                                    forma={pieza.tipo === "video" ? "video" : n}
-                                    nombre={a.nombre}
-                                    copia={vuelta === 1}
-                                  />
-                                )),
-                              )}
+                                        forma={
+                                          pieza.tipo === "video" ? "video" : n
+                                        }
+                                        nombre={a.nombre}
+                                        copia={vuelta === 1}
+                                      />
+                                    )),
+                                  )}
+                                </div>
+                              </div>
                             </div>
-                          </div>
+                          ) : null}
                         </div>
-                        ) : null}
-                      </div>
-                    ) : (
-                      /* Marcador de posicion, no la foto de otra compania: la
+                      ) : (
+                        /* Marcador de posicion, no la foto de otra compania: la
                          ficha afirma que la fotografia es de quien la firma.
                          Borde de 1px y rotulo en monoespaciada diciendo que ira
                          ahi, como pide el sistema de diseno.
@@ -473,25 +538,25 @@ export default function CarteleraArtistas({ artistas }: { artistas: Artista[] })
                          fotografias: sin material son 58 de las 109 fichas de
                          Tamaulipecos, y a tamano completo la seccion se leeria
                          como rota en vez de como pendiente de entrega. */
-                      <div className="mt-4">
-                        <div className="flex h-28 items-center justify-center rounded-md border border-[#2a2929]">
-                          <p className="font-mono text-[0.7rem] tracking-[0.05em] text-[#6f6a6a] uppercase">
-                            Fotografia pendiente de entrega
-                          </p>
+                        <div className="mt-4">
+                          <div className="flex h-28 items-center justify-center rounded-md border border-[#2a2929]">
+                            <p className="font-mono text-[0.7rem] tracking-[0.05em] text-[#6f6a6a] uppercase">
+                              Fotografia pendiente de entrega
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    {/* En escritorio la programacion vive en la isla, que es
+                      {/* En escritorio la programacion vive en la isla, que es
                         donde el visitante la tiene siempre a mano. Repetirla
                         aqui seria el mismo carro dos veces en pantalla. */}
-                    <div className="lg:hidden">
-                      <Presentaciones artista={a} />
+                      <div className="lg:hidden">
+                        <Presentaciones artista={a} />
+                      </div>
                     </div>
-
-                  </div>
-                </article>
-              </li>
+                  </article>
+                </li>
+              </Fragment>
             );
           })}
 
@@ -546,7 +611,8 @@ function Presentaciones({ artista }: { artista: Artista }) {
       const el = carro.current;
       if (!el) return;
       const destino = Math.min(Math.max(indice + paso, 0), total - 1);
-      const suave = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const suave = !window.matchMedia("(prefers-reduced-motion: reduce)")
+        .matches;
       el.scrollTo({
         left: destino * el.clientWidth,
         behavior: suave ? "smooth" : "auto",
@@ -566,7 +632,11 @@ function Presentaciones({ artista }: { artista: Artista }) {
 
         {total > 1 ? (
           <div className="flex items-center gap-1">
-            <Flecha hacia="anterior" alPulsar={() => ir(-1)} inerte={indice === 0} />
+            <Flecha
+              hacia="anterior"
+              alPulsar={() => ir(-1)}
+              inerte={indice === 0}
+            />
             {/* La cifra, no unos puntos: un punto relleno entre puntos vacios
                 hay que descifrarlo, y una cifra no. */}
             <p
@@ -641,7 +711,9 @@ function Flecha({
       onClick={alPulsar}
       disabled={inerte}
       aria-label={
-        hacia === "anterior" ? "Presentacion anterior" : "Presentacion siguiente"
+        hacia === "anterior"
+          ? "Presentacion anterior"
+          : "Presentacion siguiente"
       }
       className="flex h-11 w-11 flex-none items-center justify-center rounded-md border border-[#2a2929] text-[#e6e4e4] transition-colors enabled:hover:border-[var(--tinte)] disabled:opacity-30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--tinte)]"
     >
@@ -656,7 +728,9 @@ function Flecha({
         strokeLinejoin="round"
         aria-hidden="true"
       >
-        <path d={hacia === "anterior" ? "M10 3 L5 8 L10 13" : "M6 3 L11 8 L6 13"} />
+        <path
+          d={hacia === "anterior" ? "M10 3 L5 8 L10 13" : "M6 3 L11 8 L6 13"}
+        />
       </svg>
     </button>
   );
@@ -720,7 +794,12 @@ function IrAlMapa({ sede, municipio }: { sede: string; municipio: string }) {
 }
 
 /** Las piezas de una compania, en el orden en que la camara las recorre. */
-type Pieza = { tipo: "imagen" | "video"; src: string; rotulo: string; poster?: string };
+type Pieza = {
+  tipo: "imagen" | "video";
+  src: string;
+  rotulo: string;
+  poster?: string;
+};
 
 function piezasDe(a: Artista, conClip: boolean): Pieza[] {
   if (!a.foto) return [];
