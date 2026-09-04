@@ -27,7 +27,7 @@ const NOMBRES = new Map<string, string>([
   ["cia. circo flotante", "Cía. Circo Flotante"],
   ["cia. ome", "Cía. Ome"],
   ["raul di blasio", "Raúl Di Blasio"],
-  ["meche ramirez y musicos tamaulipecos", "Meche Rodríguez"],
+  ["meche ramirez y musicos tamaulipecos", "Meche Ramírez"],
   /* "Puras del Norte" es el nombre del espectaculo, no de la compania: la
      agrupacion que lo presenta se llama Grupo Pendiente. */
   ["puras del norte", "Grupo Pendiente"],
