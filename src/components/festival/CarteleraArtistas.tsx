@@ -88,6 +88,113 @@ function plegar(texto: string): string {
     .toLowerCase();
 }
 
+/**
+ * El unico <video> de la pagina, creado una vez y mudado de ficha en ficha.
+ *
+ * Antes se montaba uno por ficha asentada y se destruia al pasar a la
+ * siguiente. Vivo habia uno solo, si, pero recorrer la cartelera creaba y tiraba
+ * decenas, y el navegador no devuelve el decodificador al desmontar: lo suelta
+ * cuando el recolector pasa. Pasado cierto punto los <video> nuevos ya no
+ * llegaban a cargar -sin error, sin aviso- y la ficha se quedaba en su poster
+ * para siempre. De ahi que mas abajo el clip pareciera una fotografia.
+ *
+ * Con un elemento unico ese agotamiento no puede ocurrir: es siempre el mismo
+ * nodo, un decodificador para toda la sesion, y cambiar de ficha solo le cambia
+ * el src y lo muda de sitio.
+ *
+ * Se crea a mano y fuera de React a proposito. Un <video> en el arbol es
+ * propiedad de React, y React lo destruye en cuanto la ficha que lo contiene
+ * deja de pintarlo; ese es justamente el ciclo que hay que romper.
+ */
+function usarClipUnico() {
+  const clip = useRef<HTMLVideoElement | null>(null);
+
+  if (clip.current === null && typeof document !== "undefined") {
+    const v = document.createElement("video");
+    v.muted = true;
+    v.loop = true;
+    v.playsInline = true;
+    /* metadata y no auto: con auto el navegador se traga el archivo entero
+       aunque la ficha no llegue a mirarse. */
+    v.preload = "metadata";
+    v.width = 560;
+    v.height = 600;
+    v.setAttribute("aria-hidden", "true");
+    clip.current = v;
+  }
+
+  return clip;
+}
+
+/**
+ * El hueco donde se aloja el clip mientras esa ficha es la asentada.
+ *
+ * No pinta ningun video: pinta un envoltorio y mete dentro el elemento
+ * compartido. Al cambiar de ficha, el envoltorio viejo lo suelta y el nuevo lo
+ * recoge en el mismo commit, de modo que el nodo nunca llega a quedarse fuera
+ * del documento el tiempo suficiente para que el navegador lo pause.
+ *
+ * El envoltorio se viste distinto segun donde caiga porque las dos maquetas
+ * colocan la pieza de otra manera: en escritorio manda el atributo del propio
+ * video -.ficha-nodo[data-forma="video"]- y el envoltorio se borra del layout
+ * con display:contents; en movil manda la posicion dentro de .ficha-tira, que
+ * estiliza a todos sus hijos por igual, asi que ahi el envoltorio es la pieza y
+ * el video se limita a llenarlo.
+ */
+function RanuraClip({
+  clip,
+  src,
+  poster,
+  ancha,
+}: {
+  clip: React.RefObject<HTMLVideoElement | null>;
+  src: string;
+  poster: string;
+  ancha: boolean;
+}) {
+  const hueco = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const v = clip.current;
+    const h = hueco.current;
+    if (!v || !h) return;
+
+    if (ancha) {
+      v.className = "ficha-nodo";
+      v.dataset.forma = "video";
+      v.removeAttribute("style");
+    } else {
+      v.className = "";
+      delete v.dataset.forma;
+      v.style.cssText =
+        "display:block;height:100%;width:100%;object-fit:cover";
+    }
+
+    h.appendChild(v);
+
+    /* Se compara el atributo y no la propiedad: v.src devuelve la url absoluta
+       y no coincidiria nunca con la relativa que llega por props, de modo que
+       la misma ficha se recargaria en cada pasada. */
+    if (v.getAttribute("src") !== src) {
+      v.setAttribute("src", src);
+      v.poster = poster;
+      v.load();
+    }
+
+    /* Un elemento reutilizado no arranca solo: el autoplay solo vale para el
+       primer archivo que se le pone, asi que a partir del segundo hay que
+       pedirselo. La promesa se rechaza cuando el navegador prohibe el autoplay
+       -iOS en Bajo Consumo- y ahi no hay nada que hacer, se queda el poster. */
+    void v.play().catch(() => {});
+
+    return () => {
+      if (v.parentElement === h) h.removeChild(v);
+    };
+  }, [clip, src, poster, ancha]);
+
+  return <div ref={hueco} className={ancha ? "contents" : "h-full w-full"} />;
+}
+
 export default function CarteleraArtistas({
   artistas,
 }: {
@@ -95,6 +202,8 @@ export default function CarteleraArtistas({
 }) {
   const [activo, setActivo] = useState(0);
   const [busqueda, setBusqueda] = useState("");
+  /* El clip que se van pasando las fichas. Ver usarClipUnico. */
+  const clip = usarClipUnico();
   /* Cual de los dos bloques de material se monta. Con CSS no basta: un video
      escondido con display:none se descarga igual y reserva decodificador. */
   const esAncha = useEsAncha();
@@ -506,6 +615,7 @@ export default function CarteleraArtistas({
                             artista={a}
                             asentada={asentada}
                             esAncha={esAncha}
+                            clip={clip}
                           />
 
                           {/* Escritorio: una linea de nodos por la que viaja la
@@ -551,6 +661,7 @@ export default function CarteleraArtistas({
                                       <Nodo
                                         key={`${vuelta}-${n}`}
                                         pieza={pieza}
+                                        clip={clip}
                                         /* Fuera de escritorio la fila conserva su
                                        cuarta pieza -y con ella la geometria del
                                        recorrido- pero como fotograma fijo, sin
@@ -661,11 +772,13 @@ function MedioMovil({
   artista,
   asentada,
   esAncha,
+  clip,
 }: {
   artista: Artista;
   asentada: boolean;
   /* null mientras no ha montado: en el servidor no hay ventana que medir. */
   esAncha: boolean | null;
+  clip: React.RefObject<HTMLVideoElement | null>;
 }) {
   const [leyendo, setLeyendo] = useState(false);
   const raiz = useRef<HTMLDivElement | null>(null);
@@ -782,20 +895,11 @@ function MedioMovil({
           ))}
 
           {artista.clip && asentada && esAncha === false ? (
-            <video
+            <RanuraClip
+              clip={clip}
               src={imagenesDe(foto).clip}
               poster={imagenesDe(foto).poster}
-              width={560}
-              height={600}
-              autoPlay
-              muted
-              loop
-              playsInline
-              /* metadata y no auto: con auto el navegador se traga el archivo
-                 entero aunque la ficha no llegue a mirarse. Lo que hace falta
-                 para arrancar ya lo pide autoplay solo. */
-              preload="metadata"
-              aria-hidden="true"
+              ancha={false}
             />
           ) : null}
         </div>
@@ -1128,12 +1232,14 @@ function piezasDe(a: Artista, conClip: boolean): Pieza[] {
  */
 function Nodo({
   pieza,
+  clip,
   forma,
   nombre,
   copia,
   congelado,
 }: {
   pieza: Pieza;
+  clip: React.RefObject<HTMLVideoElement | null>;
   forma: number | string;
   nombre: string;
   copia: boolean;
@@ -1163,19 +1269,11 @@ function Nodo({
 
   if (pieza.tipo === "video") {
     return (
-      <video
-        className="ficha-nodo"
-        data-forma={forma}
+      <RanuraClip
+        clip={clip}
         src={pieza.src}
-        poster={pieza.poster}
-        width={560}
-        height={600}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
+        poster={pieza.poster ?? ""}
+        ancha
       />
     );
   }
