@@ -176,6 +176,11 @@ export function Controles({
   total: number;
   id: string;
 }) {
+  /* Se mira la cadena entera y no la recortada: quien haya tecleado solo
+     espacios tiene igualmente algo que borrar. */
+  const hayBusqueda = busqueda !== "";
+  const hayFiltro = filtro !== null;
+
   return (
     <>
       <div className="isla-bloque">
@@ -185,14 +190,42 @@ export function Controles({
         >
           Buscar
         </label>
-        <input
-          id={`${id}-buscar`}
-          type="search"
-          value={busqueda}
-          onChange={(e) => alBuscar(e.target.value)}
-          placeholder="Compañía, obra o municipio"
-          className="isla-campo mt-2"
-        />
+        <div className="isla-campo-caja mt-2">
+          <input
+            id={`${id}-buscar`}
+            type="search"
+            value={busqueda}
+            onChange={(e) => alBuscar(e.target.value)}
+            placeholder="Compañía, obra o municipio"
+            className="isla-campo"
+          />
+          {/* El aspa solo existe cuando hay algo escrito: un boton de borrar
+              sobre un campo vacio no hace nada y ensucia el unico control que
+              tiene el bloque. */}
+          {hayBusqueda ? (
+            <button
+              type="button"
+              onClick={() => alBuscar("")}
+              aria-label="Borrar lo buscado"
+              className="isla-borrar"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                aria-hidden="true"
+                className="block"
+              >
+                <path d="M4.5 4.5 11.5 11.5" />
+                <path d="M11.5 4.5 4.5 11.5" />
+              </svg>
+            </button>
+          ) : null}
+        </div>
       </div>
 
       <div className="isla-bloque">
@@ -215,14 +248,30 @@ export function Controles({
             </Filtro>
           ))}
         </div>
-        <p
-          aria-live="polite"
-          className="mt-2 font-mono text-[0.7rem] tracking-[0.05em] text-[#6f6a6a]"
-        >
-          {totalVisible === total
-            ? `${total} compañías`
-            : `${totalVisible} de ${total} compañías`}
-        </p>
+        <div className="mt-2 flex items-baseline justify-between gap-3 font-mono text-[0.7rem] tracking-[0.05em]">
+          <p aria-live="polite" className="text-[#6f6a6a]">
+            {totalVisible === total
+              ? `${total} compañías`
+              : `${totalVisible} de ${total} compañías`}
+          </p>
+          {/* Devuelve la cartelera entera de un toque. Se solapa a proposito con
+              "Todas" -que sigue siendo la forma de moverse entre disciplinas- y
+              con el aspa del campo: lo que ninguno de los dos hace es deshacer
+              busqueda y filtro a la vez, que es justo el estado del que cuesta
+              salir. Aparece solo cuando hay algo que deshacer. */}
+          {hayBusqueda || hayFiltro ? (
+            <button
+              type="button"
+              onClick={() => {
+                alBuscar("");
+                alFiltrar(null);
+              }}
+              className="isla-limpiar shrink-0"
+            >
+              Limpiar todo
+            </button>
+          ) : null}
+        </div>
       </div>
     </>
   );

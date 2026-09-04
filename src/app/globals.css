@@ -1996,9 +1996,71 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
   border: 1px solid #2a2929;
   border-radius: 6px;
   background-color: rgba(10, 8, 8, 0.6);
-  padding: 0 0.75rem;
+  /* El hueco de la derecha esta reservado siempre, haya o no aspa: si se
+     anadiera solo al escribir, la primera letra correria el texto de sitio. */
+  padding: 0 2.5rem 0 0.75rem;
   color: #e6e4e4;
   font-size: 0.875rem;
+}
+
+/* El aspa se dibuja aqui y se le quita la nativa al campo. Chrome y Safari
+   ponen la suya en los type="search", pero es gris claro sobre un panel casi
+   negro -no se ve- y ademas no existe en Firefox, de modo que la mitad de los
+   visitantes no tendrian ninguna y la otra mitad, dos. */
+.isla-campo::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.isla-campo-caja {
+  position: relative;
+}
+
+.isla-borrar {
+  position: absolute;
+  top: 50%;
+  right: 0.25rem;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 32px de area de toque para un aspa de 14, que es el minimo comodo con el
+     pulgar sin que el boton se coma el filete del campo. */
+  height: 2rem;
+  width: 2rem;
+  border-radius: 4px;
+  color: #8b8686;
+  transition:
+    color 200ms ease-out,
+    background-color 200ms ease-out;
+}
+
+.isla-borrar:hover {
+  background-color: #232222;
+  color: #e6e4e4;
+}
+
+.isla-borrar:focus-visible {
+  outline: 2px solid var(--tinte);
+  outline-offset: 1px;
+}
+
+/* El reinicio no es un filtro mas: va en la linea del contador, que es donde se
+   lee el estado del que se quiere salir, y no entre las pastillas. */
+.isla-limpiar {
+  color: #8b8686;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 200ms ease-out;
+}
+
+.isla-limpiar:hover {
+  color: #e6e4e4;
+}
+
+.isla-limpiar:focus-visible {
+  outline: 2px solid var(--tinte);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* En pantallas tactiles el campo sube a 16px. No es un capricho tipografico:
