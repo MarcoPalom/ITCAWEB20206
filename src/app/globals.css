@@ -1838,6 +1838,36 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
   scroll-snap-align: start;
 }
 
+/* Llevarse la funcion al calendario. Alto de 44px, que es el area de toque
+   minima, y ancho completo: es la unica accion de la tarjeta y compite con un
+   carro que se arrastra de lado, de modo que un blanco pequeno se fallaria a
+   cada rato o se llevaria el gesto por delante. */
+.ficha-agenda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.75rem;
+  margin-top: 0.875rem;
+  border: 1px solid #2a2929;
+  border-radius: 6px;
+  color: #a9a4a4;
+  font-size: 0.8rem;
+  transition:
+    color 200ms ease-out,
+    border-color 200ms ease-out;
+}
+
+.ficha-agenda:hover {
+  color: #e6e4e4;
+  border-color: var(--tinte);
+}
+
+.ficha-agenda:focus-visible {
+  outline: 2px solid var(--tinte);
+  outline-offset: 2px;
+}
+
 /* --- Mandos de la cartelera en movil ------------------------------------
    Los mismos que la isla de escritorio, pero plegados. Cerrados ocupan una sola
    linea: la cartelera se recorre leyendo fichas, no filtrando, asi que el

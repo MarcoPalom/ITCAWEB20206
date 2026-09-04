@@ -12,7 +12,7 @@ import {
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-import type { Artista } from "@/data/artistas";
+import type { Artista, Presentacion } from "@/data/artistas";
 import { imagenesDe } from "@/data/imagenes";
 import { enlaceMapa } from "@/data/mapas";
 import IslaCartelera, { Controles } from "./IslaCartelera";
@@ -708,7 +708,7 @@ export default function CarteleraArtistas({
                         donde el visitante la tiene siempre a mano. Repetirla
                         aqui seria el mismo carro dos veces en pantalla. */}
                       <div className="lg:hidden">
-                        <Presentaciones artista={a} />
+                        <Presentaciones artista={a} agendable />
                       </div>
                     </div>
                   </article>
@@ -973,7 +973,43 @@ function MedioMovil({
  * Por lo mismo el indicador dice "1 de 3" y no unos puntos: un punto relleno
  * entre puntos vacios hay que descifrarlo, y una cifra no.
  */
-function Presentaciones({ artista }: { artista: Artista }) {
+/**
+ * La direccion que se lleva esa funcion al calendario del telefono.
+ *
+ * null cuando el programa todavia no ha fijado la fecha: 76 de las 413
+ * funciones estan asi, y un evento sin dia no se puede agendar.
+ */
+function enlaceAgenda(artista: Artista, p: Presentacion): string | null {
+  const desde = p.fechas[0];
+  if (!desde) return null;
+
+  const datos = new URLSearchParams({
+    /* La obra va en el titulo cuando la hay: en el calendario, dentro de tres
+       semanas, "Adicto5" solo dice mucho menos que "Adicto5 - Momento
+       Adictivo". */
+    titulo: artista.titulo
+      ? `${artista.nombre} - ${artista.titulo}`
+      : artista.nombre,
+    sede: p.sede === "Por confirmar" ? "" : p.sede,
+    municipio: p.municipio,
+    desde,
+    hasta: p.fechas[p.fechas.length - 1] ?? desde,
+    hora: p.horaCruda ?? "",
+  });
+
+  return `/festival/evento?${datos}`;
+}
+
+function Presentaciones({
+  artista,
+  agendable = false,
+}: {
+  artista: Artista;
+  /* Solo en movil. En escritorio el calendario del visitante no esta a mano
+     -es otro aparato-, asi que el enlace no lleva a ninguna parte util y
+     ademas la isla es donde menos sitio sobra. */
+  agendable?: boolean;
+}) {
   const [indice, setIndice] = useState(0);
   const carro = useRef<HTMLOListElement | null>(null);
   const total = artista.presentaciones.length;
@@ -1060,6 +1096,32 @@ function Presentaciones({ artista }: { artista: Artista }) {
                 </dd>
               </div>
             </dl>
+
+            {/* Enlace y no boton: es una descarga, y asi funciona tambien si el
+                javascript no llega a correr. El navegador ve un .ics y abre el
+                calendario del telefono con la funcion ya rellenada. */}
+            {agendable && enlaceAgenda(artista, p) ? (
+              <a
+                href={enlaceAgenda(artista, p) as string}
+                className="ficha-agenda"
+              >
+                <svg
+                  width="15"
+                  height="15"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="2.25" y="3.25" width="11.5" height="10.5" rx="1.5" />
+                  <path d="M2.25 6.25h11.5M5.5 2v2.5M10.5 2v2.5" />
+                </svg>
+                Agendar
+              </a>
+            ) : null}
           </li>
         ))}
       </ol>

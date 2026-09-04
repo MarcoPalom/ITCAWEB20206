@@ -491,6 +491,14 @@ export type Presentacion = {
   hora: string;
   sede: string;
   municipio: string;
+  /* Fecha y hora sin dar formato, que es lo que necesita quien tiene que
+     calcular y no pintar: hoy, el evento que se lleva al calendario del
+     telefono. "02 / 10 / 2026" y "19:45 h" son para leer, no para operar, y
+     volver a extraer los numeros de ahi seria deshacer lo ya hecho. */
+  /** Las fechas ISO del volcado. Varias cuando la funcion dura dias. */
+  fechas: string[];
+  /** "19:45", o null cuando el programa aun no la fija. */
+  horaCruda: string | null;
 };
 
 export type Artista = {
@@ -550,6 +558,8 @@ function convertir(
       hora: hora(p.hora),
       sede: sede(p.sede),
       municipio: limpiar(p.municipio),
+      fechas: p.fechas,
+      horaCruda: p.hora,
     })),
     foto: FOTOS.get(a.clave) ?? null,
     clip: CLIPS.has(FOTOS.get(a.clave) ?? ""),
