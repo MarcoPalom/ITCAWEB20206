@@ -2001,6 +2001,19 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
   font-size: 0.875rem;
 }
 
+/* En pantallas tactiles el campo sube a 16px. No es un capricho tipografico:
+   Safari de iOS hace zoom automatico al enfocar cualquier campo que baje de
+   16px, y de ese zoom no vuelve solo -la web se queda descuadrada, mas ancha
+   que la pantalla, hasta que el visitante la reduce a mano-. Se arregla aqui y
+   no con maximum-scale en el viewport porque aquello le quita el pellizco a
+   quien necesita ampliar. En raton se queda en 0.875rem, que es la medida que
+   pide el panel. */
+@media (pointer: coarse) {
+  .isla-campo {
+    font-size: 1rem;
+  }
+}
+
 .isla-campo::placeholder {
   color: #6f6a6a;
 }
