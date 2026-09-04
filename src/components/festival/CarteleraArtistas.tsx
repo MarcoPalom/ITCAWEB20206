@@ -66,6 +66,28 @@ gsap.registerPlugin(useGSAP);
  */
 const TANDA = 12;
 
+/**
+ * Deja un texto en la forma con la que se compara al buscar: sin acentos y en
+ * minusculas.
+ *
+ * El cartel esta escrito con la ortografia que le toca -"Compañía", "Érase una
+ * vez", "Música"- pero nadie busca asi. Se teclea de prisa, muchas veces desde
+ * un telefono con el teclado en ingles, y sin esto "compania" no encontraba a
+ * "Compañía" ni "erase" a "Érase": la ficha existia y el buscador decia que no
+ * habia nada.
+ *
+ * El plegado descompone cada letra en su base mas el acento y tira el acento,
+ * de modo que la ñ cae con ellos y "compania" vale por "compañía". Es lo que se
+ * quiere al buscar, y lo contrario de lo que se quiere al pintar: por eso esto
+ * vive aqui y no toca el nombre que se publica.
+ */
+function plegar(texto: string): string {
+  return texto
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase();
+}
+
 export default function CarteleraArtistas({
   artistas,
 }: {
@@ -102,22 +124,42 @@ export default function CarteleraArtistas({
     [artistas],
   );
 
+  /* El texto por el que se busca cada ficha, ya plegado. Se calcula una vez por
+     lista y no dentro del filtro: alli se rehacia entero en cada pulsacion, y
+     son 109 fichas con todas sus sedes. */
+  const textos = useMemo(
+    () =>
+      new Map(
+        artistas.map((a) => [
+          a,
+          plegar(
+            [
+              a.nombre,
+              a.titulo,
+              a.procedencia,
+              ...a.presentaciones.map((p) => p.municipio),
+            ].join(" "),
+          ),
+        ]),
+      ),
+    [artistas],
+  );
+
   /* La busqueda mira nombre, obra y municipios, que es por donde la gente
-     pregunta: "los de teatro", "el de Tampico", "la obra tal". */
+     pregunta: "los de teatro", "el de Tampico", "la obra tal".
+
+     Cada palabra se busca por separado y en cualquier orden, de modo que
+     "arjona meche" encuentra lo mismo que "meche arjona" y "cia ome" da con
+     "Cía. Ome" pese al punto de la abreviatura. Antes se comparaba la frase
+     entera de una pieza, y bastaba teclear los dos apellidos al reves para no
+     encontrar nada. */
   const visibles = useMemo(() => {
-    const texto = busqueda.trim().toLowerCase();
+    const terminos = plegar(busqueda).split(/\s+/).filter(Boolean);
     const lista = artistas.filter((a) => {
       if (filtro && a.etiqueta !== filtro) return false;
-      if (!texto) return true;
-      const donde = [
-        a.nombre,
-        a.titulo,
-        a.procedencia,
-        ...a.presentaciones.map((p) => p.municipio),
-      ]
-        .join(" ")
-        .toLowerCase();
-      return donde.includes(texto);
+      if (terminos.length === 0) return true;
+      const donde = textos.get(a) ?? "";
+      return terminos.every((termino) => donde.includes(termino));
     });
 
     /* Las que todavia no tienen fotografia van al final, en bloque.
@@ -138,7 +180,7 @@ export default function CarteleraArtistas({
     const con = lista.filter((a) => a.foto);
     const sin = lista.filter((a) => !a.foto);
     return [...con, ...sin];
-  }, [artistas, busqueda, filtro]);
+  }, [artistas, busqueda, filtro, textos]);
 
   /* Donde empieza el bloque sin material, o -1 si estan todas completas. */
   const primeraSinFoto = visibles.findIndex((a) => !a.foto);
@@ -932,6 +974,23 @@ function Flecha({
 }
 
 /**
+ * El enlace a la sede, apagado.
+ *
+ * Lo que se manda a Google Maps es una busqueda de texto -"Plaza Principal,
+ * Hidalgo, Tamaulipas"- y con los nombres del cartel eso no cae donde debe: la
+ * mitad de las sedes son genericos del tipo "Plaza Principal", "Casa de la
+ * Cultura" o "Foro al Aire Libre", que existen igual en los 43 municipios, y
+ * Maps resuelve la ambiguedad como quiere. Mandar a alguien al otro lado del
+ * estado es peor que no ofrecer el enlace.
+ *
+ * Se apaga con el interruptor y no borrando el componente porque el problema no
+ * es el icono ni el enlace, que estan bien resueltos: es que hace falta la
+ * coordenada de cada recinto. El dia que el comite las entregue, esto vuelve
+ * cambiando la busqueda por el par lat,lon y poniendo el interruptor en true.
+ */
+const MAPA_ACTIVO: boolean = false;
+
+/**
  * Icono para abrir la sede en Google Maps, al lado del nombre.
  *
  * Va detras del texto y no envolviendolo, y esa es toda la diferencia con el
@@ -957,6 +1016,8 @@ function Flecha({
  * centrada dentro del area de toque sin corregirla a ojo.
  */
 function IrAlMapa({ sede, municipio }: { sede: string; municipio: string }) {
+  if (!MAPA_ACTIVO) return null;
+
   const enlace = enlaceMapa(sede, municipio);
   if (!enlace) return null;
 
