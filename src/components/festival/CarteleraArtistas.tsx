@@ -357,6 +357,46 @@ export default function CarteleraArtistas({
         </div>
 
         <ol className="lg:col-span-7">
+          {/* Cuando no coincide nada, la columna se quedaba vacia: ni fichas ni
+              explicacion, solo el fondo. El contador de la isla decia "0 de
+              58", pero en movil los mandos van plegados y ese contador no se
+              ve, asi que la pantalla parecia rota.
+
+              Se cuenta ademas que la busqueda solo mira la seccion abierta,
+              que es el motivo mas probable de no encontrar nada teniendo el
+              nombre bien escrito: quien busque "Matute" desde Tamaulipecos no
+              lo va a encontrar por mucho que insista, porque es de Nacionales.
+
+              Va de <li> y dentro de la lista, como el aviso del material que
+              falta, para no meter una fila vacia mas en la rejilla. */}
+          {visibles.length === 0 ? (
+            <li className="pt-[16svh] pb-[20svh]">
+              <div className="rounded-md border border-[#2a2929] p-5">
+                <p className="font-mono text-[0.7rem] tracking-[0.05em] text-[#8b8686] uppercase">
+                  Sin coincidencias
+                </p>
+                <p className="mt-3 text-[0.95rem] leading-relaxed text-[#a9a4a4]">
+                  {filtro
+                    ? `Ninguna compañía de ${filtro} coincide con lo que buscas.`
+                    : "Ninguna compañía de esta sección coincide con lo que buscas."}{" "}
+                  El buscador solo mira la sección abierta, así que puede estar
+                  en otra.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    cambiarBusqueda("");
+                    cambiarFiltro(null);
+                  }}
+                  className="isla-filtro mt-4"
+                  data-activo="no"
+                >
+                  Ver las {artistas.length} compañías
+                </button>
+              </div>
+            </li>
+          ) : null}
+
           {montadas.map((a, i) => {
             const activa = i === activo;
             /* Activa de verdad para el video: lleva un momento en pantalla. */
