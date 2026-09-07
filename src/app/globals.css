@@ -2755,6 +2755,17 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
    una encima de otra y les da la perspectiva: sin ella el rotateX aplana la
    pieza en vez de voltearla, y el cambio se ve como un fundido y no como un
    giro. */
+/* Cada palabra del titular, cerrada a los cortes de linea.
+
+   Un inline-block -y el hueco de relevo lo es- abre una oportunidad de corte
+   donde antes no habia ninguna. En un telefono eso partia el ano por dentro:
+   "FICSM 2.2" en una linea y "6" en la siguiente, cortado justo por el hueco
+   del cero. Con la palabra cerrada, el titular solo puede partir por el espacio
+   -"FICSM" arriba, "2026" abajo-, que es como tiene que partir. */
+.titulo-palabra {
+  white-space: nowrap;
+}
+
 .titulo-hueco {
   position: relative;
   display: inline-block;

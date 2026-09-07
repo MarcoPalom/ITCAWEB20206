@@ -67,40 +67,59 @@ const VUELTA = 0.55;
 export default function TituloFestival({ texto }: { texto: string }) {
   const raiz = useRef<HTMLHeadingElement>(null);
 
-  /* El texto se parte en trozos y solo se envuelve en <span> el caracter que
-     tiene relevo. Envolver cada letra tambien habria valido, pero un <span> por
-     letra rompe el kerning entre pares en algunos motores, y en un titular de
-     doce rem eso se ve. */
-  const usados = new Set<string>();
-  const trozos: React.ReactNode[] = [];
-  let corrido = "";
+  /* El texto se parte en palabras, y dentro de cada una solo se envuelve en
+     <span> el caracter que tiene relevo. Envolver cada letra tambien habria
+     valido, pero un <span> por letra rompe el kerning entre pares en algunos
+     motores, y en un titular de doce rem eso se ve.
 
-  [...texto].forEach((c, i) => {
-    const relevo = usados.has(c) ? undefined : RELEVOS.find((r) => r.caracter === c);
-    if (!relevo) {
-      corrido += c;
-      return;
-    }
-    usados.add(c);
-    if (corrido) {
-      trozos.push(corrido);
-      corrido = "";
-    }
-    trozos.push(
-      <span key={i} className="titulo-hueco" data-relevo={relevo.caracter}>
-        <span className="titulo-letra">{c}</span>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          className="titulo-icono"
-          src={`/icons/${relevo.archivo}`}
-          alt=""
-          aria-hidden="true"
-          decoding="async"
-        />
-      </span>,
+     Cada palabra va en su propia caja sin cortes. Hace falta porque un
+     inline-block es una oportunidad de corte de linea: en un telefono el
+     titular partia por dentro del ano -"FICSM 2·2" arriba y "6" abajo- justo
+     por el hueco del cero. Con las palabras cerradas, el unico sitio por donde
+     puede partir es el espacio, que es donde debe. */
+  const usados = new Set<string>();
+
+  const palabra = (letras: string, clave: number) => {
+    const trozos: React.ReactNode[] = [];
+    let corrido = "";
+
+    [...letras].forEach((c, i) => {
+      const relevo = usados.has(c) ? undefined : RELEVOS.find((r) => r.caracter === c);
+      if (!relevo) {
+        corrido += c;
+        return;
+      }
+      usados.add(c);
+      if (corrido) {
+        trozos.push(corrido);
+        corrido = "";
+      }
+      trozos.push(
+        <span key={i} className="titulo-hueco" data-relevo={relevo.caracter}>
+          <span className="titulo-letra">{c}</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="titulo-icono"
+            src={`/icons/${relevo.archivo}`}
+            alt=""
+            aria-hidden="true"
+            decoding="async"
+          />
+        </span>,
+      );
+    });
+    if (corrido) trozos.push(corrido);
+
+    return (
+      <span key={clave} className="titulo-palabra">
+        {trozos}
+      </span>
     );
-  });
-  if (corrido) trozos.push(corrido);
+  };
+
+  const trozos = texto
+    .split(" ")
+    .flatMap((letras, i) => (i === 0 ? [palabra(letras, i)] : [" ", palabra(letras, i)]));
 
   useLayoutEffect(() => {
     const h = raiz.current;
