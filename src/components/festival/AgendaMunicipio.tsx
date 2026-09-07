@@ -28,6 +28,10 @@ export type ActoAgenda = {
   disciplina: string;
   procedencia: string;
   hora: string;
+  /** "19:45", o null cuando el programa aun no la fija. Para el calendario. */
+  horaCruda: string | null;
+  /** Las fechas ISO del volcado. Varias cuando la funcion dura dias. */
+  fechas: string[];
   sede: string;
   /** Las etiquetas del programa, p. ej. "Viernes 2". Una exposicion trae varias. */
   dias: string[];
@@ -52,7 +56,45 @@ export type DiaAgenda = {
   avisos: string[];
 };
 
-export default function AgendaMunicipio({ dias }: { dias: DiaAgenda[] }) {
+/**
+ * La direccion que se lleva ese acto al calendario del telefono.
+ *
+ * null cuando el programa todavia no ha fijado la fecha: un evento sin dia no
+ * se puede agendar. Es la misma ruta que usa la cartelera general, que sirve el
+ * .ics y no lo fabrica en el navegador -en el telefono, Safari trata un Blob
+ * como descarga anonima y no siempre ofrece anadirlo al calendario-.
+ */
+function enlaceAgenda(acto: ActoAgenda, municipio: string): string | null {
+  const desde = acto.fechas[0];
+  if (!desde) return null;
+
+  const datos = new URLSearchParams({
+    /* La obra va con la compania cuando hay las dos y son distintas: en el
+       calendario, dentro de tres semanas, "Cirko Alebrije" solo dice mucho
+       menos que "Cirko Alebrije - Entreverte". Pero el volcado a veces repite
+       el nombre en las dos columnas -"Son Kalunga y Ballet Folklorico de
+       Pachuca"- y ahi juntarlas deja el nombre escrito dos veces. */
+    titulo:
+      acto.artista && acto.titulo && acto.artista !== acto.titulo
+        ? `${acto.artista} - ${acto.titulo}`
+        : acto.artista || acto.titulo,
+    sede: acto.sede === "Por confirmar" ? "" : acto.sede,
+    municipio,
+    desde,
+    hasta: acto.fechas[acto.fechas.length - 1] ?? desde,
+    hora: acto.horaCruda ?? "",
+  });
+
+  return `/festival/evento?${datos}`;
+}
+
+export default function AgendaMunicipio({
+  dias,
+  municipio,
+}: {
+  dias: DiaAgenda[];
+  municipio: string;
+}) {
   const [acto, cambiarActo] = useState<ActoAgenda | null>(null);
   const panel = useRef<HTMLDialogElement | null>(null);
 
@@ -114,17 +156,32 @@ export default function AgendaMunicipio({ dias }: { dias: DiaAgenda[] }) {
           if (e.target === e.currentTarget) cambiarActo(null);
         }}
       >
-        {acto ? <Ficha acto={acto} alCerrar={() => cambiarActo(null)} /> : null}
+        {acto ? (
+          <Ficha
+            acto={acto}
+            municipio={municipio}
+            alCerrar={() => cambiarActo(null)}
+          />
+        ) : null}
       </dialog>
     </>
   );
 }
 
-function Ficha({ acto, alCerrar }: { acto: ActoAgenda; alCerrar: () => void }) {
+function Ficha({
+  acto,
+  municipio,
+  alCerrar,
+}: {
+  acto: ActoAgenda;
+  municipio: string;
+  alCerrar: () => void;
+}) {
   /* Cuando el programa no da titulo de obra, el titular es la compania: en ese
      caso no se repite debajo. */
   const titular = acto.titulo || acto.artista;
   const repiteNombre = acto.titulo !== "" && acto.artista !== "" && acto.artista !== acto.titulo;
+  const agenda = enlaceAgenda(acto, municipio);
 
   return (
     <article className="agenda-ficha">
@@ -181,6 +238,37 @@ function Ficha({ acto, alCerrar }: { acto: ActoAgenda; alCerrar: () => void }) {
           ))}
           {[acto.disciplina, acto.procedencia].filter(Boolean).join(" · ")}
         </p>
+
+        {/* Va arriba y no al pie: en una hoja que sube desde abajo, lo que se
+            quiere hacer con el acto tiene que verse sin desplazar, y la
+            semblanza puede ser larga.
+
+            Enlace y no boton: es una descarga, y asi funciona tambien si el
+            javascript no llega a correr. El navegador ve un .ics y abre el
+            calendario del telefono con la funcion ya rellenada.
+
+            sm:hidden por lo mismo que en la cartelera: en escritorio el
+            calendario del visitante esta en otro aparato, asi que el enlace no
+            lleva a ninguna parte util. */}
+        {agenda ? (
+          <a href={agenda} className="agenda-agendar sm:hidden">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="2.25" y="3.25" width="11.5" height="10.5" rx="1.5" />
+              <path d="M2.25 6.25h11.5M5.5 2v2.5M10.5 2v2.5" />
+            </svg>
+            Agendar en mi calendario
+          </a>
+        ) : null}
 
         {/* La sede va en su propia linea y con rotulo: es el dato por el que se
             abre esta ficha tantas veces como por la semblanza. */}

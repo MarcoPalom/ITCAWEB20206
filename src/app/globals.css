@@ -2638,3 +2638,33 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
   line-height: 1.5;
   color: var(--color-muted);
 }
+
+/* Llevarse el acto al calendario, desde la ficha de la agenda. Es la version
+   clara de .ficha-agenda, que vive sobre el panel oscuro de la cartelera.
+
+   Relleno solido y no filete como aquella: aqui es la unica accion de la hoja
+   -todo lo demas es texto- y un boton fantasma sobre blanco no se lee como
+   algo que se pueda pulsar. */
+.agenda-agendar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.75rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  background: var(--color-charcoal);
+  color: var(--color-bone);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: opacity 200ms ease-out;
+}
+
+.agenda-agendar:hover {
+  opacity: 0.85;
+}
+
+.agenda-agendar:focus-visible {
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: 2px;
+}

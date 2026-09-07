@@ -149,6 +149,10 @@ export type EventoMunicipio = {
   creditos: string[];
   /** "13:00 h", o "Por confirmar" si el comite aun no la fija. */
   hora: string;
+  /** "19:45", o null cuando el programa aun no la fija. Para el calendario. */
+  horaCruda: string | null;
+  /** Las fechas ISO del volcado. Varias cuando la funcion dura dias. */
+  fechas: string[];
   /** Recinto, o "Por confirmar" si el comite aun no lo fija. */
   sede: string;
   /** Etiquetas del programa tal cual, p. ej. "Viernes 2". Puede ser mas de
@@ -187,6 +191,8 @@ function convertirEvento(e: EventoBruto): EventoMunicipio {
     descripcion: e.descripcion ?? null,
     creditos: e.creditos ?? [],
     hora: e.hora ? `${e.hora} h` : "Por confirmar",
+    horaCruda: e.hora ?? null,
+    fechas: e.fechas ?? [],
     sede: sede(e.sede, e.inauguracion),
     dias: e.dias ?? [],
     tipo: e.tipo as TipoEvento,

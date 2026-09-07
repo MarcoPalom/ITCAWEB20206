@@ -67,6 +67,8 @@ export default function HorariosMunicipio({ municipio }: { municipio: Municipio 
         disciplina: e.disciplina,
         procedencia: e.procedencia,
         hora: e.hora,
+        horaCruda: e.horaCruda,
+        fechas: e.fechas,
         sede: e.sede,
         dias: e.dias,
         tipo: e.tipo,
@@ -97,7 +99,7 @@ export default function HorariosMunicipio({ municipio }: { municipio: Municipio 
           <p className="mt-3 text-center text-sm text-muted">
             Toca un espectáculo para ver quién lo presenta.
           </p>
-          <AgendaMunicipio dias={dias} />
+          <AgendaMunicipio dias={dias} municipio={municipio.nombre} />
         </>
       )}
 
