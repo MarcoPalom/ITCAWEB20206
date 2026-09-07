@@ -247,11 +247,13 @@ function Ficha({
             javascript no llega a correr. El navegador ve un .ics y abre el
             calendario del telefono con la funcion ya rellenada.
 
-            sm:hidden por lo mismo que en la cartelera: en escritorio el
+            Solo en movil, por lo mismo que en la cartelera: en escritorio el
             calendario del visitante esta en otro aparato, asi que el enlace no
-            lleva a ninguna parte util. */}
+            lleva a ninguna parte util. Eso lo esconde .agenda-agendar en
+            globals.css con su propia consulta de medios, no con la utilidad
+            sm:hidden de Tailwind -ver alli por que aquella no ganaba-. */}
         {agenda ? (
-          <a href={agenda} className="agenda-agendar sm:hidden">
+          <a href={agenda} className="agenda-agendar">
             <svg
               width="15"
               height="15"

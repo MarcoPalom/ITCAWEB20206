@@ -61,7 +61,12 @@ export default function MunicipiosPage() {
             demas secciones tienen fondo explicito propio (el tinte de la
             portadilla, o el oscuro de la cartelera); esta, al ser la unica
             clara que no lo tenia, era la unica donde el hueco se notaba. */}
-        <section className="border-b border-line bg-bone py-24 sm:py-32">
+        {/* El aire de arriba es menor que el de abajo, y a proposito. Esta
+            seccion empieza con los mandos, que son una barra pegajosa: todo lo
+            que se ponga encima es aire que solo se ve una vez, se va con el
+            primer scroll y no vuelve. Antes eran 96px en movil y 128 en
+            escritorio, que dejaban la pagina abriendose casi en blanco. */}
+        <section className="border-b border-line bg-bone pt-10 pb-24 sm:pt-14 sm:pb-32">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <RejillaMunicipios fichas={FICHAS} />
           </div>

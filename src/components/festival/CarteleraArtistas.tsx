@@ -641,19 +641,26 @@ export default function CarteleraArtistas({
                             >
                               <div className="ficha-linea-lente">
                                 <div className="ficha-linea-tira">
-                                  {/* La fila va dos veces. Es lo que hace que el
-                                  recorrido se sienta sin fin: al llegar al
-                                  final, la camara esta encuadrando la copia de
-                                  la primera pieza, asi que volver al principio
-                                  no cambia nada de lo que se ve y la costura no
-                                  existe. Con una sola fila habria que retroceder
-                                  a la vista, y eso delata el bucle.
+                                  {/* La fila va tres veces, y la camara recorre
+                                  la de en medio. Iba dos, y con dos el bucle se
+                                  notaba: el recorrido acababa encuadrando la
+                                  copia de la primera pieza -que a su izquierda
+                                  tenia la fila entera- y al volver al principio
+                                  encuadraba la original, que a su izquierda no
+                                  tenia nada. La pieza del centro era la misma,
+                                  pero el vecindario cambiaba de golpe, y eso es
+                                  lo que delataba la vuelta.
+
+                                  Con tres filas, tanto el fotograma inicial como
+                                  el final tienen una fila completa a cada lado,
+                                  asi que el salto no cambia absolutamente nada
+                                  de lo que se ve.
 
                                   La forma la marca data-forma y no la posicion:
                                   asi la copia de una pieza tiene exactamente la
                                   misma forma que la original, que es de lo que
                                   depende que el salto sea invisible. */}
-                                  {[0, 1].map((vuelta) =>
+                                  {[0, 1, 2].map((vuelta) =>
                                     piezasDe(
                                       a,
                                       Boolean(a.clip && asentada),
@@ -665,9 +672,14 @@ export default function CarteleraArtistas({
                                         /* Fuera de escritorio la fila conserva su
                                        cuarta pieza -y con ella la geometria del
                                        recorrido- pero como fotograma fijo, sin
-                                       montar un video que nadie va a ver. */
+                                       montar un video que nadie va a ver.
+
+                                       El video de verdad solo lo monta la fila
+                                       del medio, que es la que se recorre; las
+                                       otras dos son vecindario y se quedan en su
+                                       fotograma. */
                                         congelado={
-                                          vuelta === 1 || esAncha !== true
+                                          vuelta !== 1 || esAncha !== true
                                         }
                                         /* El video no toma la forma que le tocaria
                                        por posicion: tiene la suya, con su misma
@@ -676,7 +688,7 @@ export default function CarteleraArtistas({
                                           pieza.tipo === "video" ? "video" : n
                                         }
                                         nombre={a.nombre}
-                                        copia={vuelta === 1}
+                                        copia={vuelta !== 1}
                                       />
                                     )),
                                   )}

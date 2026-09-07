@@ -1704,7 +1704,15 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
      no como los fotogramas de una tira. */
   gap: 6%;
   height: 100%;
-  transform: translate3d(33%, 17%, 0);
+  /* En reposo se encuadra la primera pieza de la fila del medio, no la de
+     primera fila: asi hay vecindario a los dos lados desde el primer
+     fotograma, este la ficha activa o no. El desplazamiento es el de una
+     fila entera, que vale 120% con tres piezas y 160% con cuatro. */
+  transform: translate3d(-87%, 17%, 0);
+}
+
+.ficha-linea[data-nodos="4"] .ficha-linea-tira {
+  transform: translate3d(-127%, 17%, 0);
 }
 
 .ficha-nodo {
@@ -1771,42 +1779,42 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
 /* Tres piezas: cuatro paradas, y la ultima es la copia de la primera. */
 @keyframes ficha-linea-3 {
   0%, 21.5% {
-    transform: translate3d(33%, 17%, 0);
+    transform: translate3d(-87%, 17%, 0);
     animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
   }
   25%, 46.5% {
-    transform: translate3d(-4%, -4%, 0);
+    transform: translate3d(-124%, -4%, 0);
     animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
   }
   50%, 71.5% {
-    transform: translate3d(-44%, 21%, 0);
+    transform: translate3d(-164%, 21%, 0);
     animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
   }
   75%, 100% {
-    transform: translate3d(-87%, 17%, 0);
+    transform: translate3d(-207%, 17%, 0);
   }
 }
 
 /* Cuatro piezas: cinco paradas, la ultima es la copia de la primera. */
 @keyframes ficha-linea-4 {
   0%, 17% {
-    transform: translate3d(33%, 17%, 0);
+    transform: translate3d(-127%, 17%, 0);
     animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
   }
   20%, 37% {
-    transform: translate3d(-4%, -4%, 0);
+    transform: translate3d(-164%, -4%, 0);
     animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
   }
   40%, 57% {
-    transform: translate3d(-46%, 0%, 0);
+    transform: translate3d(-206%, 0%, 0);
     animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
   }
   60%, 77% {
-    transform: translate3d(-89%, -10%, 0);
+    transform: translate3d(-249%, -10%, 0);
     animation-timing-function: cubic-bezier(0.62, 0, 0.2, 1);
   }
   80%, 100% {
-    transform: translate3d(-127%, 17%, 0);
+    transform: translate3d(-287%, 17%, 0);
   }
 }
 
@@ -2711,6 +2719,18 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
 .agenda-agendar:focus-visible {
   outline: 2px solid var(--color-charcoal);
   outline-offset: 2px;
+}
+
+/* Solo en telefono. La consulta va aqui y no con la utilidad sm:hidden de
+   Tailwind, y no es una preferencia: Tailwind v4 emite sus utilidades dentro de
+   @layer utilities, y el CSS sin capa -como todo este archivo- gana siempre a
+   una capa, tenga la especificidad que tenga. Con sm:hidden el boton seguia
+   saliendo en escritorio a pesar de la clase, porque este display: flex la
+   pisaba. */
+@media (min-width: 40rem) {
+  .agenda-agendar {
+    display: none;
+  }
 }
 
 /* Apertura de la isla: se recorta desde el centro hacia los dos lados y va
