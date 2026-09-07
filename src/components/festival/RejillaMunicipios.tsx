@@ -7,15 +7,14 @@ import MarcoImagen from "@/components/MarcoImagen";
 import EnlaceBarrido from "./EnlaceBarrido";
 
 /**
- * El bento de municipios con sus mandos: buscar por nombre, filtrar por
- * disciplina y reordenar.
+ * El bento de municipios con sus mandos: buscar por nombre y reordenar.
  *
  * Es cliente porque los mandos cambian lo que se ve sin recargar, pero no
- * recibe la programacion entera: la pagina le pasa una ficha de cinco campos
- * por municipio -nombre, numero, cuantos espectaculos, que disciplinas y el
- * credito de la foto-. El volcado completo, con sus cuatrocientos y pico
- * eventos y sus notas, se queda en el servidor; mandarlo aqui seria bajar
- * cientos de kB al telefono para pintar 43 rectangulos.
+ * recibe la programacion entera: la pagina le pasa una ficha de cuatro campos
+ * por municipio -nombre, numero, cuantos espectaculos y el credito de la
+ * foto-. El volcado completo, con sus cuatrocientos y pico eventos y sus
+ * notas, se queda en el servidor; mandarlo aqui seria bajar cientos de kB al
+ * telefono para pintar 43 rectangulos.
  */
 export type FichaMunicipio = {
   id: string;
@@ -23,8 +22,6 @@ export type FichaMunicipio = {
   /** Numero de la lista oficial del comite (1 a 43). */
   numero: number;
   totalEspectaculos: number;
-  /** Las disciplinas distintas que se programan ahi, sin repetir. */
-  disciplinas: string[];
   /** Autoria de la foto de Commons, o null donde no se encontro ninguna. */
   foto: { autor: string; licencia: string } | null;
 };
@@ -78,22 +75,8 @@ function plegar(texto: string): string {
 
 export default function RejillaMunicipios({ fichas }: { fichas: FichaMunicipio[] }) {
   const [busqueda, cambiarBusqueda] = useState("");
-  const [disciplina, cambiarDisciplina] = useState<string | null>(null);
   const [orden, cambiarOrden] = useState<Orden>("oficial");
   const id = useId();
-
-  /* Las disciplinas se sacan de los datos y no de una lista escrita a mano:
-     asi, si el comite anade una en el proximo volcado, la pastilla aparece
-     sola. Van con su cuenta al lado porque sin ella el filtro enganaria -en
-     este cartel Musica esta en 42 de los 43 municipios y Artes Visuales en 5,
-     y el rotulo pelado hace pensar que las dos reparten por igual-. */
-  const disciplinas = useMemo(() => {
-    const cuenta = new Map<string, number>();
-    for (const f of fichas) {
-      for (const d of f.disciplinas) cuenta.set(d, (cuenta.get(d) ?? 0) + 1);
-    }
-    return [...cuenta.entries()].sort((a, b) => b[1] - a[1]);
-  }, [fichas]);
 
   /* El texto sobre el que busca cada ficha, plegado una sola vez. Incluye el
      numero oficial -con y sin cero delante- porque es lo que se ve impreso en
@@ -115,12 +98,13 @@ export default function RejillaMunicipios({ fichas }: { fichas: FichaMunicipio[]
        nada. */
     const terminos = plegar(busqueda).split(/\s+/).filter(Boolean);
 
-    const filtradas = fichas.filter((f) => {
-      if (disciplina && !f.disciplinas.includes(disciplina)) return false;
-      if (terminos.length === 0) return true;
-      const donde = textos.get(f) ?? "";
-      return terminos.every((termino) => donde.includes(termino));
-    });
+    const filtradas =
+      terminos.length === 0
+        ? fichas
+        : fichas.filter((f) => {
+            const donde = textos.get(f) ?? "";
+            return terminos.every((termino) => donde.includes(termino));
+          });
 
     /* Copia antes de ordenar: sort muta, y fichas es la prop. */
     const ordenadas = [...filtradas];
@@ -140,10 +124,9 @@ export default function RejillaMunicipios({ fichas }: { fichas: FichaMunicipio[]
       ordenadas.sort((a, b) => a.numero - b.numero);
     }
     return ordenadas;
-  }, [busqueda, disciplina, fichas, orden, textos]);
+  }, [busqueda, fichas, orden, textos]);
 
   const hayBusqueda = busqueda !== "";
-  const hayFiltro = disciplina !== null;
   const hayOrden = orden !== "oficial";
 
   return (
@@ -217,31 +200,6 @@ export default function RejillaMunicipios({ fichas }: { fichas: FichaMunicipio[]
           </div>
         </div>
 
-        <div className="mt-3">
-          <p className="font-mono text-[0.65rem] tracking-[0.05em] text-muted uppercase">
-            Disciplina
-          </p>
-          <div className="mt-1.5 flex flex-wrap gap-1.5">
-            {/* "Todas" es una pastilla mas y no un boton de borrar: asi el
-                grupo se lee como una sola eleccion y siempre hay una puesta. */}
-            <Pastilla
-              activo={disciplina === null}
-              alPulsar={() => cambiarDisciplina(null)}
-            >
-              Todas
-            </Pastilla>
-            {disciplinas.map(([d, cuantos]) => (
-              <Pastilla
-                key={d}
-                activo={disciplina === d}
-                alPulsar={() => cambiarDisciplina(disciplina === d ? null : d)}
-              >
-                {d} <span className="mando-cuenta">{cuantos}</span>
-              </Pastilla>
-            ))}
-          </div>
-        </div>
-
         <div className="mt-3 flex items-baseline justify-between gap-3 font-mono text-[0.65rem] tracking-[0.05em] text-muted">
           <p aria-live="polite">
             {visibles.length === fichas.length
@@ -249,15 +207,14 @@ export default function RejillaMunicipios({ fichas }: { fichas: FichaMunicipio[]
               : `${visibles.length} de ${fichas.length} municipios`}
           </p>
           {/* Devuelve el bento a como estaba de un toque. Aparece solo cuando
-              hay algo que deshacer, y deshace las tres cosas a la vez: es el
-              estado combinado -buscando, filtrado y reordenado- del que cuesta
-              salir a mano. */}
-          {hayBusqueda || hayFiltro || hayOrden ? (
+              hay algo que deshacer, y deshace las dos cosas a la vez: es el
+              estado combinado -buscando y reordenado- del que cuesta salir a
+              mano. */}
+          {hayBusqueda || hayOrden ? (
             <button
               type="button"
               onClick={() => {
                 cambiarBusqueda("");
-                cambiarDisciplina(null);
                 cambiarOrden("oficial");
               }}
               className="mando-limpiar shrink-0"
@@ -272,19 +229,11 @@ export default function RejillaMunicipios({ fichas }: { fichas: FichaMunicipio[]
         <div className="mando-vacio">
           <p className="title-display text-xl font-light">Sin coincidencias</p>
           <p className="mt-2 max-w-prose text-sm text-muted">
-            {/* El mensaje nombra la causa concreta. Con un filtro de disciplina
-                puesto, lo mas probable no es que el municipio no exista sino
-                que no programe eso, y decirlo ahorra volver a buscar. */}
-            {hayFiltro && disciplina
-              ? `Ningún municipio que coincida con “${busqueda.trim()}” programa ${disciplina.toLowerCase()}.`
-              : `Ningún municipio se llama “${busqueda.trim()}”.`}
+            {`Ningún municipio se llama “${busqueda.trim()}”.`}
           </p>
           <button
             type="button"
-            onClick={() => {
-              cambiarBusqueda("");
-              cambiarDisciplina(null);
-            }}
+            onClick={() => cambiarBusqueda("")}
             className="mando-limpiar mt-3 text-sm"
           >
             Ver los {fichas.length} municipios

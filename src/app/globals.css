@@ -2421,14 +2421,6 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
   outline-offset: 2px;
 }
 
-/* Cuantos municipios trae esa disciplina. Va dentro de la pastilla y en tono
-   menor: es un dato de apoyo, no parte del rotulo. */
-.mando-cuenta {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  opacity: 0.6;
-}
-
 /* El reinicio no es una pastilla mas: va en la linea del contador, que es
    donde se lee el estado del que se quiere salir. */
 .mando-limpiar {

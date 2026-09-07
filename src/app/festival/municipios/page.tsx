@@ -29,15 +29,13 @@ export const metadata: Metadata = {
 };
 
 /**
- * Lo unico que cruza al cliente: cinco campos por municipio.
+ * Lo unico que cruza al cliente: cuatro campos por municipio.
  *
  * Se arma aqui, en el servidor y una sola vez al construir, porque los mandos
- * del bento -buscar, filtrar por disciplina, reordenar- necesitan la lista en
- * el navegador. Lo que no necesitan es la programacion: cada municipio arrastra
- * sus eventos con titulo, sede, notas y dias, y mandar eso entero para pintar
- * 43 rectangulos serian cientos de kB de mas en el telefono. Las disciplinas
- * se resumen aqui a la lista de las distintas, que es lo unico que el filtro
- * pregunta.
+ * del bento -buscar y reordenar- necesitan la lista en el navegador. Lo que no
+ * necesitan es la programacion: cada municipio arrastra sus eventos con
+ * titulo, sede, notas y dias, y mandar eso entero para pintar 43 rectangulos
+ * serian cientos de kB de mas en el telefono.
  */
 const FICHAS: FichaMunicipio[] = MUNICIPIOS.map((m) => {
   const foto = MUNICIPIOS_FOTOS[m.id];
@@ -46,16 +44,6 @@ const FICHAS: FichaMunicipio[] = MUNICIPIOS.map((m) => {
     nombre: m.nombre,
     numero: m.numero,
     totalEspectaculos: m.totalEspectaculos,
-    /* Las "notas" del Excel no son espectaculos y no cuentan como disciplina
-       programada, igual que no cuentan en totalEspectaculos. */
-    disciplinas: [
-      ...new Set(
-        m.eventos
-          .filter((e) => e.tipo !== "nota")
-          .map((e) => e.disciplina)
-          .filter(Boolean),
-      ),
-    ],
     foto: foto ? { autor: foto.autor, licencia: foto.licencia } : null,
   };
 });
