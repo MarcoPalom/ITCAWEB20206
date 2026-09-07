@@ -38,4 +38,4 @@ ficha) y **un video** cualquiera, del que se recorta un clip de dos segundos.
 | Sistema Tamaulipeco de Agrupaciones Musicales Comunitarias | **foto y video** | Música | Tamaulipas | 1 |
 | Teatro en Blanco y Negro | **video** | Teatro | Tamaulipas | 4 |
 | Tempus | **video** | Música | Tamaulipas | 3 |
-| Zurcidores de Cuentos Tamaulipas | **video** | Teatro | Tamaulipas | 6 |
+| Zurcidores de Cuentos Tamaulipas | **video** | Teatro | Tamaulipas | 5 |

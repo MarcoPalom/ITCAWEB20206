@@ -1,7 +1,7 @@
 {
   "festival": "Festival Internacional en la Costa del Seno Mexicano 2026",
-  "archivo_origen": "2_de_septiembre__por_la_tarde_.xlsx",
-  "hoja": "2 de septiembre (por la tarde)",
+  "archivo_origen": "7_de_septiembre.xlsx",
+  "hoja": "7 de septiembre",
   "mes": "Octubre",
   "anio": 2026,
   "dias": [
@@ -86,6 +86,7 @@
       "fecha": "2026-10-11"
     }
   ],
+  "programacion_local": "excluida",
   "columnas_de_apoyo": {
     "contadores_int_nac_tam_local": false,
     "artes_visuales": false,
@@ -93,7 +94,7 @@
     "requerimientos_tecnicos": false,
     "observaciones": false
   },
-  "total_artistas": 184,
+  "total_artistas": 104,
   "artistas": [
     {
       "artista": "Adicto5",
@@ -161,152 +162,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Explanda de la Presidencia Municipal",
           "titulo": "Momento Adictivo",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
           "celda": "M89"
-        }
-      ]
-    },
-    {
-      "artista": "Agrupación Musical",
-      "clave": "agrupacion musical",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Agrupación Musical",
-        "Dueto Blanco y Negro",
-        "Grupo Amartes",
-        "Space Cowboys"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 4,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Lunes 5"
-          ],
-          "fechas": [
-            "2026-10-05"
-          ],
-          "hora": "18:30",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Space Cowboys",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "G78"
-        },
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Martes 6"
-          ],
-          "fechas": [
-            "2026-10-06"
-          ],
-          "hora": "19:00",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Agrupación Musical",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [
-            "Grupo Pendiente"
-          ],
-          "celda": "H79"
-        },
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Miércoles 7"
-          ],
-          "fechas": [
-            "2026-10-07"
-          ],
-          "hora": "19:15",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Dueto Blanco y Negro",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "I79"
-        },
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Sábado 10"
-          ],
-          "fechas": [
-            "2026-10-10"
-          ],
-          "hora": "19:40",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Grupo Amartes",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "L78"
-        }
-      ]
-    },
-    {
-      "artista": "Aldebarán Acústico",
-      "clave": "aldebaran acustico",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Las Guitarras Mágicas de Aldebarán"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Tampico"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Tampico",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "19:00",
-          "sede": "Plaza Hijas de Tampico",
-          "titulo": "Las Guitarras Mágicas de Aldebarán",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E128"
         }
       ]
     },
@@ -429,7 +292,7 @@
             "2026-10-10"
           ],
           "hora": "19:20",
-          "sede": null,
+          "sede": "Foro al Aire Libre de la Plaza Principal",
           "titulo": "Acordes de Nuestra Tierra",
           "tipo": "presentación",
           "inauguracion": null,
@@ -534,88 +397,6 @@
       ]
     },
     {
-      "artista": "Aralé  Norimaki",
-      "clave": "arale norimaki",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Aralé  Norimaki"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "18:00",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Aralé  Norimaki",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E76"
-        }
-      ]
-    },
-    {
-      "artista": "Arte Bajo el Cielo",
-      "clave": "arte bajo el cielo",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Arte Bajo el Cielo"
-      ],
-      "sin_autor_nombrado": true,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Domingo 4"
-          ],
-          "fechas": [
-            "2026-10-04"
-          ],
-          "hora": "17:00",
-          "sede": "Plaza Principal \"Treviño Zapata\"",
-          "titulo": "Arte Bajo el Cielo",
-          "tipo": "exposición",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "F22"
-        }
-      ]
-    },
-    {
       "artista": "Asociación Cultural RODAS A.C.",
       "clave": "asociacion cultural rodas a.c.",
       "disciplinas": [
@@ -648,7 +429,7 @@
             "2026-10-05"
           ],
           "hora": "09:00",
-          "sede": "Escuela Secundaria Técnica #38 \"Gral. y Lic. Aarón Sáenz Garza",
+          "sede": "Escuela Secundaria Técnica #38 \"Gral. y Lic. Aarón Sáenz Garza!",
           "titulo": "La otra historia de Rosa",
           "tipo": "presentación",
           "inauguracion": null,
@@ -838,47 +619,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "M101"
-        }
-      ]
-    },
-    {
-      "artista": "Ballet de Jalisco",
-      "clave": "ballet de jalisco",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Carmina Burana. Una Gala con el Lago de los Cisnes y Don Quijote"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "20:00",
-          "sede": "Teatro de la Reforma",
-          "titulo": "Carmina Burana. Una Gala con el Lago de los Cisnes y Don Quijote",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E37"
         }
       ]
     },
@@ -1083,47 +823,6 @@
       ]
     },
     {
-      "artista": "Ballets Folklóricos del IRCA",
-      "clave": "ballets folkloricos del irca",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Ballets Folklóricos del IRCA"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "18:00",
-          "sede": "Plaza Principal \"Miguel Hidalgo\"",
-          "titulo": "Ballets Folklóricos del IRCA",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E22"
-        }
-      ]
-    },
-    {
       "artista": "Banda de Música de Gobierno del Estado de Tamaulipas",
       "clave": "banda de musica de gobierno del estado de tamaulipas",
       "disciplinas": [
@@ -1238,88 +937,6 @@
       ]
     },
     {
-      "artista": "Banda de Música Municipal de H. Matamoros y Banda Sinfónica del Colegio San Juan",
-      "clave": "banda de musica municipal de h. matamoros y banda sinfonica del colegio san juan",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "México Sinfónico"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Viernes 9"
-          ],
-          "fechas": [
-            "2026-10-09"
-          ],
-          "hora": "18:00",
-          "sede": "Plaza Principal \"Miguel Hidalgo\"",
-          "titulo": "México Sinfónico",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "K40"
-        }
-      ]
-    },
-    {
-      "artista": "Banda Sinfónica Municipal \"Elías Valenzuela\"",
-      "clave": "banda sinfonica municipal elias valenzuela",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Banda Sinfónica Municipal \"Elías Valenzuela\""
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Sábado 10"
-          ],
-          "fechas": [
-            "2026-10-10"
-          ],
-          "hora": "17:00",
-          "sede": "Explanada del Centro de Arte y Cultura del Parque Cultural Reynosa",
-          "titulo": "Banda Sinfónica Municipal \"Elías Valenzuela\"",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "L22"
-        }
-      ]
-    },
-    {
       "artista": "Brassas Mexican Beat",
       "clave": "brassas mexican beat",
       "disciplinas": [
@@ -1368,8 +985,8 @@
           "fechas": [
             "2026-10-03"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Plaza \"Isauro Alfaro\"",
           "titulo": "Música de banda del planeta tierra",
           "tipo": "presentación",
           "inauguracion": null,
@@ -1477,8 +1094,8 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Plaza \"Isauro Alfaro\"",
           "titulo": "Soneras de Mar y Río",
           "tipo": "presentación",
           "inauguracion": null,
@@ -1540,47 +1157,6 @@
       ]
     },
     {
-      "artista": "Carrera de \"Gateo\" Motivacional y el Tesoro Escondido",
-      "clave": "carrera de gateo motivacional y el tesoro escondido",
-      "disciplinas": [
-        "Multidisciplinario"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Carrera de \"Gateo\" Motivacional y el Tesoro Escondido"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Aldama"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Aldama",
-          "dias": [
-            "Jueves 8"
-          ],
-          "fechas": [
-            "2026-10-08"
-          ],
-          "hora": "09:00",
-          "sede": "Jardín de Niños \"Estefanía Castañeda\" de la Colonia Constitución",
-          "titulo": "Carrera de \"Gateo\" Motivacional y el Tesoro Escondido",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "J118"
-        }
-      ]
-    },
-    {
       "artista": "Cartel Gráfico Mundialista y Tiro al Ángulo: Exposición de Cartel y Fotografía",
       "clave": "cartel grafico mundialista y tiro al angulo: exposicion de cartel y fotografia",
       "disciplinas": [
@@ -1636,47 +1212,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "D67"
-        }
-      ]
-    },
-    {
-      "artista": "Categoría Infantil",
-      "clave": "categoria infantil",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Danza Folklórica"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Valle Hermoso"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Valle Hermoso",
-          "dias": [
-            "Viernes 2"
-          ],
-          "fechas": [
-            "2026-10-02"
-          ],
-          "hora": "19:30",
-          "sede": "Foro al Aire Libre de la Plaza Principal",
-          "titulo": "Danza Folklórica",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "D34"
         }
       ]
     },
@@ -1771,8 +1306,8 @@
           "fechas": [
             "2026-10-05"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "10:00",
+          "sede": "Primaria Constitución\nEjido la Libertad, Municipio de Llera",
           "titulo": "Cuentocirco",
           "tipo": "presentación",
           "inauguracion": null,
@@ -1822,8 +1357,8 @@
           "fechas": [
             "2026-10-07"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "09:00",
+          "sede": "Auditorio Municipal",
           "titulo": "Cuentocirco",
           "tipo": "presentación",
           "inauguracion": null,
@@ -1969,8 +1504,8 @@
           "fechas": [
             "2026-10-09"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "10:00",
+          "sede": "Escuela Primaria \"Amado Nervo\" del Ejido Ignacio Zaragoza, Municipio de Llera",
           "titulo": "Embrulho",
           "tipo": "presentación",
           "inauguracion": null,
@@ -2314,7 +1849,7 @@
             "2026-10-05"
           ],
           "hora": "11:00",
-          "sede": "Jardín de Niños \"Gabriela Mistral\" en la Cabecera Municipal",
+          "sede": "Jardin de Niños \"Gabriela Mistral\" en la Cabecera Municipal",
           "titulo": "Las Maravillas del Cielo",
           "tipo": "presentación",
           "inauguracion": null,
@@ -2661,105 +2196,6 @@
       ]
     },
     {
-      "artista": "Compañía de Música",
-      "clave": "compania de musica",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Vivace"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 2,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Jueves 8"
-          ],
-          "fechas": [
-            "2026-10-08"
-          ],
-          "hora": "18:00",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Vivace",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "J76"
-        },
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Jueves 8"
-          ],
-          "fechas": [
-            "2026-10-08"
-          ],
-          "hora": "18:40",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Vivace",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "J78"
-        }
-      ]
-    },
-    {
-      "artista": "Compañía de Teatro Comunitario  del IRCA",
-      "clave": "compania de teatro comunitario del irca",
-      "disciplinas": [
-        "Teatro"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Compañía de Teatro Comunitario  del IRCA"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Miércoles 7"
-          ],
-          "fechas": [
-            "2026-10-07"
-          ],
-          "hora": "18:00",
-          "sede": "IRCA Jarachina",
-          "titulo": "Compañía de Teatro Comunitario  del IRCA",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "I23"
-        }
-      ]
-    },
-    {
       "artista": "Compañía Matamorense de Producciones Operísticas",
       "clave": "compania matamorense de producciones operisticas",
       "disciplinas": [
@@ -2801,45 +2237,6 @@
       ]
     },
     {
-      "artista": "Concierto de Clausura",
-      "clave": "concierto de clausura",
-      "disciplinas": [],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Concierto de Clausura"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-11"
-          ],
-          "hora": "21:00",
-          "sede": "Plaza Principal \"Miguel Hidalgo\"",
-          "titulo": "Concierto de Clausura",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "M37"
-        }
-      ]
-    },
-    {
       "artista": "Concierto Orquesta Sinfónica Juvenil de México",
       "clave": "concierto orquesta sinfonica juvenil de mexico",
       "disciplinas": [
@@ -2877,88 +2274,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "M22"
-        }
-      ]
-    },
-    {
-      "artista": "Concurso de Caracterización Infantil",
-      "clave": "concurso de caracterizacion infantil",
-      "disciplinas": [
-        "Multidisciplinario"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Concurso de Caracterización Infantil"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Aldama"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Aldama",
-          "dias": [
-            "Miércoles 7"
-          ],
-          "fechas": [
-            "2026-10-07"
-          ],
-          "hora": "17:30",
-          "sede": "Canchas de Fut-Bol 11\nColonia Paraíso",
-          "titulo": "Concurso de Caracterización Infantil",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "I118"
-        }
-      ]
-    },
-    {
-      "artista": "Conjunto Folklórico",
-      "clave": "conjunto folklorico",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Herencia de mi Tierra"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Martes 6"
-          ],
-          "fechas": [
-            "2026-10-06"
-          ],
-          "hora": "18:30",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Herencia de mi Tierra",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "H78"
         }
       ]
     },
@@ -3012,8 +2327,8 @@
           "fechas": [
             "2026-10-09"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Plaza \"Isauro Alfaro\"",
           "titulo": "Norteño Fest",
           "tipo": "presentación",
           "inauguracion": null,
@@ -3209,15 +2524,13 @@
           "fechas": [
             "2026-10-09"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:30",
+          "sede": "Iglesia San Antonio de Padua",
           "titulo": "Las pasiones del alma. Voces reveladas",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "Se sugiere programar en iglesia o espacio con buena acústica"
-          ],
+          "notas": [],
           "celda": "K99"
         },
         {
@@ -3229,14 +2542,12 @@
             "2026-10-10"
           ],
           "hora": "17:30",
-          "sede": null,
+          "sede": "Catedral de Ciudad Victoria “Sagrado Corazón de Jesús”",
           "titulo": "Las pasiones del alma. Voces reveladas",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "Se sugiere programar en iglesia o espacio con buena acústica"
-          ],
+          "notas": [],
           "celda": "L81"
         },
         {
@@ -3247,262 +2558,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "21:00",
+          "sede": "Parroquia de la Inmaculada Concepción",
           "titulo": "Las pasiones del alma. Voces reveladas",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "Se sugiere programar en iglesia o espacio con buena acústica"
-          ],
+          "notas": [],
           "celda": "M11"
-        }
-      ]
-    },
-    {
-      "artista": "Danza Clásica y Moderna del IRCA",
-      "clave": "danza clasica y moderna del irca",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Danza Clásica y Moderna del IRCA"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Martes 6"
-          ],
-          "fechas": [
-            "2026-10-06"
-          ],
-          "hora": "18:00",
-          "sede": "IRCA Jarachina",
-          "titulo": "Danza Clásica y Moderna del IRCA",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "H22"
-        }
-      ]
-    },
-    {
-      "artista": "Danza Folklórica de Casa de la Cultura de Miguel Alemán",
-      "clave": "danza folklorica de casa de la cultura de miguel aleman",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Grupo de Danza \"Mitotl\""
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Miguel Alemán"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Miguel Alemán",
-          "dias": [
-            "Domingo 4"
-          ],
-          "fechas": [
-            "2026-10-04"
-          ],
-          "hora": "19:00",
-          "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
-          "titulo": "Grupo de Danza \"Mitotl\"",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "F14"
-        }
-      ]
-    },
-    {
-      "artista": "Danza González",
-      "clave": "danza gonzalez",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Danza González"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "González"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "González",
-          "dias": [
-            "Viernes 2"
-          ],
-          "fechas": [
-            "2026-10-02"
-          ],
-          "hora": "18:00",
-          "sede": "Plaza Principal de González",
-          "titulo": "Danza González",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "D115"
-        }
-      ]
-    },
-    {
-      "artista": "Danza Manuel",
-      "clave": "danza manuel",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Danza Manuel"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "González"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "González",
-          "dias": [
-            "Miércoles 7"
-          ],
-          "fechas": [
-            "2026-10-07"
-          ],
-          "hora": "18:00",
-          "sede": "Plaza Principal de Estación Manuel, Municipio de González",
-          "titulo": "Danza Manuel",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "I115"
-        }
-      ]
-    },
-    {
-      "artista": "Danza Moderna de la Casa de la Cultura de Miguel Alemán",
-      "clave": "danza moderna de la casa de la cultura de miguel aleman",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Proyecto X"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Miguel Alemán"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Miguel Alemán",
-          "dias": [
-            "Viernes 2"
-          ],
-          "fechas": [
-            "2026-10-02"
-          ],
-          "hora": "18:45",
-          "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
-          "titulo": "Proyecto X",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "D13"
-        }
-      ]
-    },
-    {
-      "artista": "David Onassis Guevara Cruz",
-      "clave": "david onassis guevara cruz",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "David Onassis Guevara Cruz"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Aldama"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Aldama",
-          "dias": [
-            "Lunes 5"
-          ],
-          "fechas": [
-            "2026-10-05"
-          ],
-          "hora": "17:30",
-          "sede": "Canchas Nuevas de Fut-Bol de la Colonia Jesús Vega",
-          "titulo": "David Onassis Guevara Cruz",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "G119"
         }
       ]
     },
@@ -3573,8 +2636,8 @@
           "fechas": [
             "2026-10-10"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Explanda de la Presidencia Municipal",
           "titulo": "Por quien suenan los tambores",
           "tipo": "presentación",
           "inauguracion": null,
@@ -3598,65 +2661,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "M91"
-        }
-      ]
-    },
-    {
-      "artista": "Departamento de Cultura de Valle Hermoso",
-      "clave": "departamento de cultura de valle hermoso",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Danza Juvenil",
-        "Grupo de Danza Infantil"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 2,
-      "total_municipios": 1,
-      "municipios": [
-        "Valle Hermoso"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Valle Hermoso",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "19:00",
-          "sede": "Foro al Aire Libre de la Plaza Principal",
-          "titulo": "Danza Juvenil",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E34"
-        },
-        {
-          "municipio": "Valle Hermoso",
-          "dias": [
-            "Sábado 10"
-          ],
-          "fechas": [
-            "2026-10-10"
-          ],
-          "hora": "19:00",
-          "sede": "Foro al Aire Libre de la Plaza Principal",
-          "titulo": "Grupo de Danza Infantil",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "L34"
         }
       ]
     },
@@ -3710,8 +2714,8 @@
           "fechas": [
             "2026-10-03"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Techumbre Ejidal del Ejido \"Las Crucitas\" Municipio de Güémez",
           "titulo": "Distrito Cero",
           "tipo": "presentación",
           "inauguracion": null,
@@ -3752,88 +2756,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "M44"
-        }
-      ]
-    },
-    {
-      "artista": "Domingo de Danzón",
-      "clave": "domingo de danzon",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Domingo de Danzón"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Domingo 4"
-          ],
-          "fechas": [
-            "2026-10-04"
-          ],
-          "hora": "19:00",
-          "sede": "Plaza Principal \"Treviño Zapata\"",
-          "titulo": "Domingo de Danzón",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "F23"
-        }
-      ]
-    },
-    {
-      "artista": "Dueto \"La Joya\"",
-      "clave": "dueto la joya",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Dueto \"La Joya\""
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Río Bravo"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Río Bravo",
-          "dias": [
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-11"
-          ],
-          "hora": "19:00",
-          "sede": "Plaza \"Benito Juárez\"",
-          "titulo": "Dueto \"La Joya\"",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "M30"
         }
       ]
     },
@@ -4105,88 +3027,6 @@
       ]
     },
     {
-      "artista": "ENIK Tango",
-      "clave": "enik tango",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "ENIK Tango"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Sábado 10"
-          ],
-          "fechas": [
-            "2026-10-10"
-          ],
-          "hora": "18:00",
-          "sede": "Plaza Principal \"Miguel Hidalgo\"",
-          "titulo": "ENIK Tango",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "L39"
-        }
-      ]
-    },
-    {
-      "artista": "Ensamble de Guitarras de la Casa de la Cultura de Aldama",
-      "clave": "ensamble de guitarras de la casa de la cultura de aldama",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Ensamble de Guitarras de la Casa de la Cultura de Aldama"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Aldama"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Aldama",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "18:15",
-          "sede": "Foro de la Plaza de la Colonia Constitución",
-          "titulo": "Ensamble de Guitarras de la Casa de la Cultura de Aldama",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E119"
-        }
-      ]
-    },
-    {
       "artista": "Entre viento y marea",
       "clave": "entre viento y marea",
       "disciplinas": [
@@ -4359,165 +3199,6 @@
       ]
     },
     {
-      "artista": "Escuela de Baile",
-      "clave": "escuela de baile",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Actitud Ballet",
-        "Mfox: La Puerta del Talento",
-        "Mirshadance Estudio"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 3,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Lunes 5"
-          ],
-          "fechas": [
-            "2026-10-05"
-          ],
-          "hora": "18:00",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Mirshadance Estudio",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "G76"
-        },
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Jueves 8"
-          ],
-          "fechas": [
-            "2026-10-08"
-          ],
-          "hora": "19:00",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Actitud Ballet",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "J79"
-        },
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Sábado 10"
-          ],
-          "fechas": [
-            "2026-10-10"
-          ],
-          "hora": "19:00",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Mfox: La Puerta del Talento",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "L76"
-        }
-      ]
-    },
-    {
-      "artista": "Escuela de Danza Tahitiana",
-      "clave": "escuela de danza tahitiana",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Nai O Tera"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Domingo 4"
-          ],
-          "fechas": [
-            "2026-10-04"
-          ],
-          "hora": "18:00",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Nai O Tera",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "F76"
-        }
-      ]
-    },
-    {
-      "artista": "Escuela de Música",
-      "clave": "escuela de musica",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "MV Academy"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "18:45",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "MV Academy",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E79"
-        }
-      ]
-    },
-    {
       "artista": "Espuma de Mar",
       "clave": "espuma de mar",
       "disciplinas": [
@@ -4549,8 +3230,8 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Escuela Normal Rural de Tamaulipas \"Maestro Lauro Aguirre\"",
           "titulo": "De Conchas y Corales, Música Costeña de aquí y de allá",
           "tipo": "presentación",
           "inauguracion": null,
@@ -4583,59 +3264,14 @@
           "fechas": [
             "2026-10-04"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:00",
+          "sede": "Explanda de la Iglesia \"Nuestra Señora del Rosario\"",
           "titulo": "De Conchas y Corales, Música Costeña de aquí y de allá",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
           "celda": "F89"
-        }
-      ]
-    },
-    {
-      "artista": "Estancias Creativas I y II",
-      "clave": "estancias creativas i y ii",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Estancias Creativas I y II"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": "17:00",
-          "sede": "Museo Histórico Reynosa",
-          "titulo": "Estancias Creativas I y II",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración 9 de octubre 17:00 hrs. | Museo Histórico Reynosa",
-          "permanencia": null,
-          "notas": [],
-          "celda": "K25"
         }
       ]
     },
@@ -4830,47 +3466,6 @@
       ]
     },
     {
-      "artista": "Fernando Candelario Gallegos",
-      "clave": "fernando candelario gallegos",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Fernando Candelario Gallegos"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Aldama"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Aldama",
-          "dias": [
-            "Viernes 2"
-          ],
-          "fechas": [
-            "2026-10-02"
-          ],
-          "hora": "19:30",
-          "sede": "Explanada de la Presidencia Municipal",
-          "titulo": "Fernando Candelario Gallegos",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "D119"
-        }
-      ]
-    },
-    {
       "artista": "Foco Teatro",
       "clave": "foco teatro",
       "disciplinas": [
@@ -4972,8 +3567,8 @@
           "fechas": [
             "2026-10-08"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "09:00",
+          "sede": "Escuela Primaria \"Prof. Juan B. Tijerina",
           "titulo": "El horizonte como libro abierto",
           "tipo": "presentación",
           "inauguracion": null,
@@ -5083,65 +3678,6 @@
       ]
     },
     {
-      "artista": "Grupo de Baile",
-      "clave": "grupo de baile",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Eclipse",
-        "Icon Dance"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 2,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "18:30",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Eclipse",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E78"
-        },
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Jueves 8"
-          ],
-          "fechas": [
-            "2026-10-08"
-          ],
-          "hora": "18:25",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Icon Dance",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "J77"
-        }
-      ]
-    },
-    {
       "artista": "Grupo de Baile \"Club Chicos Malos\"",
       "clave": "grupo de baile club chicos malos",
       "disciplinas": [
@@ -5179,316 +3715,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "F7"
-        }
-      ]
-    },
-    {
-      "artista": "Grupo de Danza Folklórica",
-      "clave": "grupo de danza folklorica",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Anacahuita del Corazón",
-        "Xitzahuil",
-        "Época de Oro"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 3,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Miércoles 7"
-          ],
-          "fechas": [
-            "2026-10-07"
-          ],
-          "hora": "18:00",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Anacahuita del Corazón",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "I76"
-        },
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Miércoles 7"
-          ],
-          "fechas": [
-            "2026-10-07"
-          ],
-          "hora": "18:45",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Época de Oro",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "I78"
-        },
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Viernes 9"
-          ],
-          "fechas": [
-            "2026-10-09"
-          ],
-          "hora": "18:20",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Xitzahuil",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "K77"
-        }
-      ]
-    },
-    {
-      "artista": "Grupo de Danza Folklórica de Jóvenes",
-      "clave": "grupo de danza folklorica de jovenes",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Grupo de Danza Folklórica de Jóvenes"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Miguel Alemán"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Miguel Alemán",
-          "dias": [
-            "Domingo 4"
-          ],
-          "fechas": [
-            "2026-10-04"
-          ],
-          "hora": "18:45",
-          "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
-          "titulo": "Grupo de Danza Folklórica de Jóvenes",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "F13"
-        }
-      ]
-    },
-    {
-      "artista": "Grupo de Danza Folklórica Mextli de Nuevo Laredo, Grupo de Danza AIDIN Infantil de Casa de la Cultura Viveros, Grupo Folklórico \"Cuatlicue\", Grupo Folklórico de Danza \"Tradiciones de mi Tierra\" de Casa de la Cultura Viveros, Grupo de Danza AIDIN, Grupo Folklórico Cuatlicue Kids, Grupo de Danza Macehuani y Grupo de Danza de la Facultad de Enfermería Nuevo Laredo",
-      "clave": "grupo de danza folklorica mextli de nuevo laredo, grupo de danza aidin infantil de casa de la cultura viveros, grupo folklorico cuatlicue, grupo folklorico de danza tradiciones de mi tierra de casa de la cultura viveros, grupo de danza aidin, grupo folklorico cuatlicue kids, grupo de danza macehuani y grupo de danza de la facultad de enfermeria nuevo laredo",
-      "disciplinas": [],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "México en la Frontera"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Nuevo Laredo"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Nuevo Laredo",
-          "dias": [
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-11"
-          ],
-          "hora": "19:00",
-          "sede": "Foro Externo\n\"Parque Viveros\"",
-          "titulo": "México en la Frontera",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "M7"
-        }
-      ]
-    },
-    {
-      "artista": "Grupo de Danza \"Villa de Croix\"de la Casa de la Cultura",
-      "clave": "grupo de danza villa de croixde la casa de la cultura",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Grupo de Danza \"Villa de Croix\"de la Casa de la Cultura"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 3,
-      "total_municipios": 1,
-      "municipios": [
-        "Casas"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Casas",
-          "dias": [
-            "Viernes 2"
-          ],
-          "fechas": [
-            "2026-10-02"
-          ],
-          "hora": "17:30",
-          "sede": "Plaza Principal",
-          "titulo": "Grupo de Danza \"Villa de Croix\"de la Casa de la Cultura",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "D73"
-        },
-        {
-          "municipio": "Casas",
-          "dias": [
-            "Martes 6"
-          ],
-          "fechas": [
-            "2026-10-06"
-          ],
-          "hora": "17:00",
-          "sede": "Plaza Principal del Ejido Lázaro Cárdenas, Municipio de Casas",
-          "titulo": "Grupo de Danza \"Villa de Croix\"de la Casa de la Cultura",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "H73"
-        },
-        {
-          "municipio": "Casas",
-          "dias": [
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-11"
-          ],
-          "hora": "16:00",
-          "sede": "Plaza Principal del Ejido La Lajilla, Municipio de Casas",
-          "titulo": "Grupo de Danza \"Villa de Croix\"de la Casa de la Cultura",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "M73"
-        }
-      ]
-    },
-    {
-      "artista": "Grupo de Folklór del COBAT 101",
-      "clave": "grupo de folklor del cobat 101",
-      "disciplinas": [],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Programa Unidos por la Cultura"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Nuevo Laredo"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Nuevo Laredo",
-          "dias": [
-            "Viernes 2"
-          ],
-          "fechas": [
-            "2026-10-02"
-          ],
-          "hora": "19:00",
-          "sede": "Foro Externo\n\"Parque Viveros\"",
-          "titulo": "Programa Unidos por la Cultura",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "D6"
-        }
-      ]
-    },
-    {
-      "artista": "Grupo de Folklór Mextli Juvenil",
-      "clave": "grupo de folklor mextli juvenil",
-      "disciplinas": [],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Boleros de la Frontera"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Nuevo Laredo"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Nuevo Laredo",
-          "dias": [
-            "Lunes 5"
-          ],
-          "fechas": [
-            "2026-10-05"
-          ],
-          "hora": "19:00",
-          "sede": "Foro Externo\n\"Parque Viveros\"",
-          "titulo": "Boleros de la Frontera",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "G6"
         }
       ]
     },
@@ -5733,8 +3959,8 @@
           "fechas": [
             "2026-10-05"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Plaza \"Isauro Alfaro\"",
           "titulo": "Grupo Musical \"Latido\"",
           "tipo": "presentación",
           "inauguracion": null,
@@ -5817,127 +4043,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "M56"
-        }
-      ]
-    },
-    {
-      "artista": "Grupo Vicio",
-      "clave": "grupo vicio",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Fiesta Norteña"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Tampico"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Tampico",
-          "dias": [
-            "Sábado 10"
-          ],
-          "fechas": [
-            "2026-10-10"
-          ],
-          "hora": "20:00",
-          "sede": "Plaza \"Hijas de Tampico\"",
-          "titulo": "Fiesta Norteña",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "L127"
-        }
-      ]
-    },
-    {
-      "artista": "Grupos de Danza Folklórica de Río Bravo",
-      "clave": "grupos de danza folklorica de rio bravo",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Grupos de Danza Folklórica de Río Bravo"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Río Bravo"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Río Bravo",
-          "dias": [
-            "Lunes 5"
-          ],
-          "fechas": [
-            "2026-10-05"
-          ],
-          "hora": "18:00",
-          "sede": "Ex Hacienda \"La Sauteña\"",
-          "titulo": "Grupos de Danza Folklórica de Río Bravo",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "G30"
-        }
-      ]
-    },
-    {
-      "artista": "Grupos de Danza Moderna, Acrodanza, Gym Dance y Contemporáneo",
-      "clave": "grupos de danza moderna, acrodanza, gym dance y contemporaneo",
-      "disciplinas": [],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Programa Entre Generaciones"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Nuevo Laredo"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Nuevo Laredo",
-          "dias": [
-            "Domingo 4"
-          ],
-          "fechas": [
-            "2026-10-04"
-          ],
-          "hora": "19:00",
-          "sede": "Foro Externo\n\"Parque Viveros\"",
-          "titulo": "Programa Entre Generaciones",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "F6"
         }
       ]
     },
@@ -6125,88 +4230,6 @@
       ]
     },
     {
-      "artista": "Herí Sobrevilla",
-      "clave": "heri sobrevilla",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Herí Sobrevilla y su Sabor"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Tampico"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Tampico",
-          "dias": [
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-11"
-          ],
-          "hora": "17:00",
-          "sede": "Plaza Hijas de Tampico",
-          "titulo": "Herí Sobrevilla y su Sabor",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "M128"
-        }
-      ]
-    },
-    {
-      "artista": "Homenaje Local aTessa de la Fuente",
-      "clave": "homenaje local atessa de la fuente",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Una Voz que vuelve a Casa"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Domingo 4"
-          ],
-          "fechas": [
-            "2026-10-04"
-          ],
-          "hora": "18:00",
-          "sede": "Teatro de la Reforma",
-          "titulo": "Una Voz que vuelve a Casa",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "F37"
-        }
-      ]
-    },
-    {
       "artista": "Internacional Orquesta Tampico de Claudio Rosas",
       "clave": "internacional orquesta tampico de claudio rosas",
       "disciplinas": [
@@ -6343,65 +4366,6 @@
       ]
     },
     {
-      "artista": "Irving Aguilar",
-      "clave": "irving aguilar",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Irving Aguilar"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 2,
-      "total_municipios": 2,
-      "municipios": [
-        "Río Bravo",
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Río Bravo",
-          "dias": [
-            "Viernes 2"
-          ],
-          "fechas": [
-            "2026-10-02"
-          ],
-          "hora": "19:00",
-          "sede": "Ex Hacienda \"La Sauteña\"",
-          "titulo": "Irving Aguilar",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "D30"
-        },
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Miércoles 7"
-          ],
-          "fechas": [
-            "2026-10-07"
-          ],
-          "hora": "18:20",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Irving Aguilar",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "I77"
-        }
-      ]
-    },
-    {
       "artista": "Jaiba Brava: Exposición Futbol",
       "clave": "jaiba brava: exposicion futbol",
       "disciplinas": [
@@ -6453,47 +4417,6 @@
           "permanencia": "Octubre a Noviembre de 2026",
           "notas": [],
           "celda": "D87"
-        }
-      ]
-    },
-    {
-      "artista": "Jesús Betancourt",
-      "clave": "jesus betancourt",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Jesús Betancourt"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Viernes 9"
-          ],
-          "fechas": [
-            "2026-10-09"
-          ],
-          "hora": "18:00",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Jesús Betancourt",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "K76"
         }
       ]
     },
@@ -6688,47 +4611,6 @@
       ]
     },
     {
-      "artista": "Josué Barraza",
-      "clave": "josue barraza",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Barraza Show"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Tampico"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Tampico",
-          "dias": [
-            "Lunes 5"
-          ],
-          "fechas": [
-            "2026-10-05"
-          ],
-          "hora": "19:00",
-          "sede": "Plaza Hijas de Tampico",
-          "titulo": "Barraza Show",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "G128"
-        }
-      ]
-    },
-    {
       "artista": "Juan Rivas Band",
       "clave": "juan rivas band",
       "disciplinas": [
@@ -6784,45 +4666,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "K22"
-        }
-      ]
-    },
-    {
-      "artista": "K-Pop Maquila Creativa, Danza Urbana Maquila, Hip-Hop Viveros y Maquila Creativa.",
-      "clave": "k-pop maquila creativa, danza urbana maquila, hip-hop viveros y maquila creativa.",
-      "disciplinas": [],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Frontera Urbana"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Nuevo Laredo"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Nuevo Laredo",
-          "dias": [
-            "Sábado 10"
-          ],
-          "fechas": [
-            "2026-10-10"
-          ],
-          "hora": "19:00",
-          "sede": "Foro Externo\n\"Parque Viveros\"",
-          "titulo": "Frontera Urbana",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "L6"
         }
       ]
     },
@@ -6922,47 +4765,6 @@
       ]
     },
     {
-      "artista": "Kena Yasbek Lara Zamora",
-      "clave": "kena yasbek lara zamora",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Kena Yasbek Lara Zamora"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Aldama"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Aldama",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "18:00",
-          "sede": "Foro de la Plaza de la Colonia Constitución",
-          "titulo": "Kena Yasbek Lara Zamora",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E118"
-        }
-      ]
-    },
-    {
       "artista": "La Historia de Todxs",
       "clave": "la historia de todxs",
       "disciplinas": [
@@ -7013,8 +4815,8 @@
           "fechas": [
             "2026-10-08"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:00",
+          "sede": "Parque Bicentenario",
           "titulo": "Atardecer Salvaje",
           "tipo": "presentación",
           "inauguracion": null,
@@ -7177,8 +4979,8 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Escuela Normal Rural de Tamaulipas \"Maestro Lauro Aguirre\"",
           "titulo": "Música para Campeones",
           "tipo": "presentación",
           "inauguracion": null,
@@ -7417,8 +5219,8 @@
           "fechas": [
             "2026-10-03"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Plaza Hidalgo",
           "titulo": "Herencia del Pueblo: Música del Norte",
           "tipo": "presentación",
           "inauguracion": null,
@@ -7513,8 +5315,8 @@
           "fechas": [
             "2026-10-06"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "09:00",
+          "sede": "Techumbre Ejidal del Ejido \"Las Crucitas\" Municipio de Güémez",
           "titulo": "Habia una vez un huapango",
           "tipo": "presentación",
           "inauguracion": null,
@@ -7733,47 +5535,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "M5"
-        }
-      ]
-    },
-    {
-      "artista": "Marimba \"La Familia\"",
-      "clave": "marimba la familia",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "¡Que suene la Marimba!"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Tampico"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Tampico",
-          "dias": [
-            "Martes 6"
-          ],
-          "fechas": [
-            "2026-10-06"
-          ],
-          "hora": "20:00",
-          "sede": "Plaza Hijas de Tampico",
-          "titulo": "¡Que suene la Marimba!",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "H128"
         }
       ]
     },
@@ -8003,47 +5764,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "M74"
-        }
-      ]
-    },
-    {
-      "artista": "Mía Chairez Enriquez",
-      "clave": "mia chairez enriquez",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Mía Chairez Enriquez"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Aldama"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Aldama",
-          "dias": [
-            "Lunes 5"
-          ],
-          "fechas": [
-            "2026-10-05"
-          ],
-          "hora": "17:00",
-          "sede": "Canchas Nuevas de Fut-Bol de la Colonia Jesús Vega",
-          "titulo": "Mía Chairez Enriquez",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "G118"
         }
       ]
     },
@@ -8291,64 +6011,6 @@
       ]
     },
     {
-      "artista": "Nono y su Teatrino",
-      "clave": "nono y su teatrino",
-      "disciplinas": [
-        "Teatro"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Nuestra Playa Bagdad"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 2,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "17:00",
-          "sede": "Parque \"El Laguito\"",
-          "titulo": "Nuestra Playa Bagdad",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E39"
-        },
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Sábado 10"
-          ],
-          "fechas": [
-            "2026-10-10"
-          ],
-          "hora": "17:00",
-          "sede": "Sala de Lectura de la Colonia Casa Blanca",
-          "titulo": "Nuestra Playa Bagdad",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "L38"
-        }
-      ]
-    },
-    {
       "artista": "Norteños de Río Bravo",
       "clave": "nortenos de rio bravo",
       "disciplinas": [
@@ -8422,47 +6084,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "L99"
-        }
-      ]
-    },
-    {
-      "artista": "Ofrenda a Dulce la Cantante",
-      "clave": "ofrenda a dulce la cantante",
-      "disciplinas": [
-        "Multidisciplinario"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Altar de Muertos"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "10:00",
-          "sede": "CEMAVI",
-          "titulo": "Altar de Muertos",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E38"
         }
       ]
     },
@@ -8733,8 +6354,8 @@
           "fechas": [
             "2026-10-10"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Plaza \"Isauro Alfaro\"",
           "titulo": "Nuevas Músicas de Oaxaca",
           "tipo": "presentación",
           "inauguracion": null,
@@ -8758,49 +6379,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "M120"
-        }
-      ]
-    },
-    {
-      "artista": "Paula Villaurrutia",
-      "clave": "paula villaurrutia",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Flores Blancas"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Martes 6"
-          ],
-          "fechas": [
-            "2026-10-06"
-          ],
-          "hora": "20:00",
-          "sede": "Teatro de la Reforma",
-          "titulo": "Flores Blancas",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [
-            "(Cuando llorar no se puede)"
-          ],
-          "celda": "H37"
         }
       ]
     },
@@ -8906,8 +6484,8 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "18:00",
+          "sede": "Plaza  Municipal",
           "titulo": "Contempo Di Folklore",
           "tipo": "presentación",
           "inauguracion": null,
@@ -9027,129 +6605,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "I99"
-        }
-      ]
-    },
-    {
-      "artista": "Pintura y Baile Moderno",
-      "clave": "pintura y baile moderno",
-      "disciplinas": [
-        "Multidisciplinario"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Pintura y Baile Moderno"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "González"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "González",
-          "dias": [
-            "Martes 6"
-          ],
-          "fechas": [
-            "2026-10-06"
-          ],
-          "hora": "18:00",
-          "sede": "Plaza Principal de Estación Manuel, Municipio de González",
-          "titulo": "Pintura y Baile Moderno",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "H115"
-        }
-      ]
-    },
-    {
-      "artista": "Presentación de Libro",
-      "clave": "presentacion de libro",
-      "disciplinas": [
-        "Literatura"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Bicentenario"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Martes 6"
-          ],
-          "fechas": [
-            "2026-10-06"
-          ],
-          "hora": "18:00",
-          "sede": "Museo Fuerte Casamata",
-          "titulo": "Bicentenario",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "H38"
-        }
-      ]
-    },
-    {
-      "artista": "Presentación del Grupo de \"Wushu\" de la Casa de la Cultura de Miguel Alemán",
-      "clave": "presentacion del grupo de wushu de la casa de la cultura de miguel aleman",
-      "disciplinas": [
-        "Multidisciplinario"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Presentación del Grupo de \"Wushu\" de la Casa de la Cultura de Miguel Alemán"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Miguel Alemán"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Miguel Alemán",
-          "dias": [
-            "Miércoles 7"
-          ],
-          "fechas": [
-            "2026-10-07"
-          ],
-          "hora": "19:30",
-          "sede": "Foro Eleazar García \"Chelelo\" de la Plaza Principal \"Miguel Hidalgo\"",
-          "titulo": "Presentación del Grupo de \"Wushu\" de la Casa de la Cultura de Miguel Alemán",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "I15"
         }
       ]
     },
@@ -9650,47 +7105,6 @@
       ]
     },
     {
-      "artista": "Raul Di Blasio",
-      "clave": "raul di blasio",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Homenaje de la edición 34"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Viernes 9"
-          ],
-          "fechas": [
-            "2026-10-09"
-          ],
-          "hora": "20:00",
-          "sede": "Teatro de la Reforma",
-          "titulo": "Homenaje de la edición 34",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "K37"
-        }
-      ]
-    },
-    {
       "artista": "Reales de Nuevo León",
       "clave": "reales de nuevo leon",
       "disciplinas": [
@@ -9774,108 +7188,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Plaza \"Isauro Alfaro\"",
           "titulo": "Reales de Nuevo León",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
           "celda": "M124"
-        }
-      ]
-    },
-    {
-      "artista": "Recuerdos del Son",
-      "clave": "recuerdos del son",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Raíces del Son"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Tampico"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Tampico",
-          "dias": [
-            "Viernes 9"
-          ],
-          "fechas": [
-            "2026-10-09"
-          ],
-          "hora": "20:00",
-          "sede": "Plaza \"Hijas de Tampico\"",
-          "titulo": "Raíces del Son",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "K127"
-        }
-      ]
-    },
-    {
-      "artista": "Reynosa el Encanto de lo Cotidiano II",
-      "clave": "reynosa el encanto de lo cotidiano ii",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Reynosa el Encanto de lo Cotidiano II"
-      ],
-      "sin_autor_nombrado": true,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Lunes 5",
-            "Martes 6",
-            "Miércoles 7",
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-05",
-            "2026-10-06",
-            "2026-10-07",
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": "16:00",
-          "sede": "Galería del Instituto Reynocense para la Cultura y las Artes (IRCA)",
-          "titulo": "Reynosa el Encanto de lo Cotidiano II",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración 5 de octubre 16:00 hrs. | Galería del Instituto Reynocense para la Cultura y las Artes (IRCA)",
-          "permanencia": null,
-          "notas": [],
-          "celda": "G24"
         }
       ]
     },
@@ -10041,7 +7361,7 @@
           "fechas": [
             "2026-10-08"
           ],
-          "hora": "19:30",
+          "hora": "20:00",
           "sede": "Plaza \"Hijas de Tampico\"",
           "titulo": "Ritual",
           "tipo": "presentación",
@@ -10066,47 +7386,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "K120"
-        }
-      ]
-    },
-    {
-      "artista": "Rondalla Juvenil de la Casa de la Cultura de Aldama",
-      "clave": "rondalla juvenil de la casa de la cultura de aldama",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Rondalla Juvenil de la Casa de la Cultura de Aldama"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Aldama"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Aldama",
-          "dias": [
-            "Viernes 2"
-          ],
-          "fechas": [
-            "2026-10-02"
-          ],
-          "hora": "19:00",
-          "sede": "Explanada de la Presidencia Municipal",
-          "titulo": "Rondalla Juvenil de la Casa de la Cultura de Aldama",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "D118"
         }
       ]
     },
@@ -10148,88 +7427,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "D91"
-        }
-      ]
-    },
-    {
-      "artista": "Rondalla Manuel y González",
-      "clave": "rondalla manuel y gonzalez",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Rondalla Manuel y González"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "González"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "González",
-          "dias": [
-            "Viernes 9"
-          ],
-          "fechas": [
-            "2026-10-09"
-          ],
-          "hora": "18:00",
-          "sede": "Plaza Principal de González",
-          "titulo": "Rondalla Manuel y González",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "K115"
-        }
-      ]
-    },
-    {
-      "artista": "Rondallas del IRCA, Secc. 36, Sabiesa y Universidad del Atlántico",
-      "clave": "rondallas del irca, secc. 36, sabiesa y universidad del atlantico",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Callejoneada con Rondallas"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Jueves 8"
-          ],
-          "fechas": [
-            "2026-10-08"
-          ],
-          "hora": "18:00",
-          "sede": "Del Kiosko de la Plaza Principal \"Miguel Hidalgo\" al Museo del Ferrocarril, Historia Arte y Maquila",
-          "titulo": "Callejoneada con Rondallas",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "J22"
         }
       ]
     },
@@ -10284,8 +7481,8 @@
           "fechas": [
             "2026-10-07"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Centro Cultural Bicentenario",
           "titulo": "Capture : Repensando el jazz y las fronteras musicales a través del Sampling!",
           "tipo": "presentación",
           "inauguracion": null,
@@ -10347,170 +7544,6 @@
       ]
     },
     {
-      "artista": "Sandunga",
-      "clave": "sandunga",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Corazón de Folklór"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Viernes 9"
-          ],
-          "fechas": [
-            "2026-10-09"
-          ],
-          "hora": "09:00",
-          "sede": "Concha Acústica del Parque Olímpico",
-          "titulo": "Corazón de Folklór",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "K38"
-        }
-      ]
-    },
-    {
-      "artista": "Saúl Gámez",
-      "clave": "saul gamez",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Saúl Gámez"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Domingo 4"
-          ],
-          "fechas": [
-            "2026-10-04"
-          ],
-          "hora": "18:30",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Saúl Gámez",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "F78"
-        }
-      ]
-    },
-    {
-      "artista": "Sekyr",
-      "clave": "sekyr",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Sekyr"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Río Bravo"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Río Bravo",
-          "dias": [
-            "Viernes 2"
-          ],
-          "fechas": [
-            "2026-10-02"
-          ],
-          "hora": "19:15",
-          "sede": "Ex Hacienda \"La Sauteña\"",
-          "titulo": "Sekyr",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "D31"
-        }
-      ]
-    },
-    {
-      "artista": "Sergio Torres",
-      "clave": "sergio torres",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "El Sentido de la Cumbia"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Tampico"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Tampico",
-          "dias": [
-            "Domingo 4"
-          ],
-          "fechas": [
-            "2026-10-04"
-          ],
-          "hora": "17:00",
-          "sede": "Plaza \"Hijas de Tampico\"",
-          "titulo": "El Sentido de la Cumbia",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "F127"
-        }
-      ]
-    },
-    {
       "artista": "Sistema Tamaulipeco de Agrupaciones Musicales Comunitarias",
       "clave": "sistema tamaulipeco de agrupaciones musicales comunitarias",
       "disciplinas": [
@@ -10550,88 +7583,6 @@
             "(por confirmar nombre)"
           ],
           "celda": "M80"
-        }
-      ]
-    },
-    {
-      "artista": "Skalon",
-      "clave": "skalon",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Skalon x Skalon"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Tampico"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Tampico",
-          "dias": [
-            "Miércoles 7"
-          ],
-          "fechas": [
-            "2026-10-07"
-          ],
-          "hora": "20:00",
-          "sede": "Plaza \"Hijas de Tampico\"",
-          "titulo": "Skalon x Skalon",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "I127"
-        }
-      ]
-    },
-    {
-      "artista": "Son de la Rosa",
-      "clave": "son de la rosa",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Noche de Salsa"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Tampico"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Tampico",
-          "dias": [
-            "Jueves 8"
-          ],
-          "fechas": [
-            "2026-10-08"
-          ],
-          "hora": "19:00",
-          "sede": "Plaza Hijas de Tampico",
-          "titulo": "Noche de Salsa",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "J128"
         }
       ]
     },
@@ -10921,252 +7872,6 @@
       ]
     },
     {
-      "artista": "Spotlight Teatro",
-      "clave": "spotlight teatro",
-      "disciplinas": [
-        "Multidisciplinario"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Mentiras el Musical"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Domingo 4"
-          ],
-          "fechas": [
-            "2026-10-04"
-          ],
-          "hora": "16:00",
-          "sede": "Parque Olímpico",
-          "titulo": "Mentiras el Musical",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "F39"
-        }
-      ]
-    },
-    {
-      "artista": "Talentos de Canto",
-      "clave": "talentos de canto",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Talentos de Canto"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Aldama"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Aldama",
-          "dias": [
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-11"
-          ],
-          "hora": "19:00",
-          "sede": "Explanada de la Presidencia Municipal",
-          "titulo": "Talentos de Canto",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "M118"
-        }
-      ]
-    },
-    {
-      "artista": "Talentos de Piano",
-      "clave": "talentos de piano",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Talentos de Piano"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Aldama"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Aldama",
-          "dias": [
-            "Viernes 9"
-          ],
-          "fechas": [
-            "2026-10-09"
-          ],
-          "hora": "18:00",
-          "sede": "Casa de la Cultura de Aldama",
-          "titulo": "Talentos de Piano",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "K118"
-        }
-      ]
-    },
-    {
-      "artista": "Talentos Juveniles",
-      "clave": "talentos juveniles",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Duelo de Acordeones"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Aldama"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Aldama",
-          "dias": [
-            "Sábado 10"
-          ],
-          "fechas": [
-            "2026-10-10"
-          ],
-          "hora": "19:00",
-          "sede": "Canchita de la Colonia Brownsville",
-          "titulo": "Duelo de Acordeones",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "L118"
-        }
-      ]
-    },
-    {
-      "artista": "Taller de Pintura de González",
-      "clave": "taller de pintura de gonzalez",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Taller de Pintura de González"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "González"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "González",
-          "dias": [
-            "Sábado 10"
-          ],
-          "fechas": [
-            "2026-10-10"
-          ],
-          "hora": "18:00",
-          "sede": "Plaza Principal de González",
-          "titulo": "Taller de Pintura de González",
-          "tipo": "exposición",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "L115"
-        }
-      ]
-    },
-    {
-      "artista": "Tamara Ortíz",
-      "clave": "tamara ortiz",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Tamara Ortíz"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Martes 6"
-          ],
-          "fechas": [
-            "2026-10-06"
-          ],
-          "hora": "18:00",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Tamara Ortíz",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "H76"
-        }
-      ]
-    },
-    {
       "artista": "Teatro en Blanco y Negro",
       "clave": "teatro en blanco y negro",
       "disciplinas": [
@@ -11258,47 +7963,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "M113"
-        }
-      ]
-    },
-    {
-      "artista": "Teatro ERA",
-      "clave": "teatro era",
-      "disciplinas": [
-        "Teatro"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Ricardín Apestosín"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Lunes 5"
-          ],
-          "fechas": [
-            "2026-10-05"
-          ],
-          "hora": "09:00",
-          "sede": "Secundaria #2",
-          "titulo": "Ricardín Apestosín",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "G38"
         }
       ]
     },
@@ -11534,47 +8198,6 @@
       ]
     },
     {
-      "artista": "Títeres Garabatos",
-      "clave": "titeres garabatos",
-      "disciplinas": [
-        "Teatro"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "El Lobo de los Cuentos"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Jueves 8"
-          ],
-          "fechas": [
-            "2026-10-08"
-          ],
-          "hora": "09:00",
-          "sede": "Primario \"Lázaro Cárdenas del Río\"",
-          "titulo": "El Lobo de los Cuentos",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "J38"
-        }
-      ]
-    },
-    {
       "artista": "Un Viaje por la Historia de los Teatros en Tamaulipas",
       "clave": "un viaje por la historia de los teatros en tamaulipas",
       "disciplinas": [
@@ -11626,45 +8249,6 @@
           "permanencia": "Octubre 2026 a Enero 2027",
           "notas": [],
           "celda": "D85"
-        }
-      ]
-    },
-    {
-      "artista": "Vibra Nuevo Laredo",
-      "clave": "vibra nuevo laredo",
-      "disciplinas": [],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Vibra Nuevo Laredo"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Nuevo Laredo"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Nuevo Laredo",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "19:00",
-          "sede": "Foro Externo\n\"Parque Viveros\"",
-          "titulo": "Vibra Nuevo Laredo",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E6"
         }
       ]
     },
@@ -11724,129 +8308,6 @@
           "permanencia": "Marzo 2027",
           "notas": [],
           "celda": "D84"
-        }
-      ]
-    },
-    {
-      "artista": "Videomapping",
-      "clave": "videomapping",
-      "disciplinas": [
-        "Multidisciplinario"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Luna Iluminada Monumental"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Viernes 2"
-          ],
-          "fechas": [
-            "2026-10-02"
-          ],
-          "hora": "19:30",
-          "sede": "Plaza \"Miguel Hidalgo\"",
-          "titulo": "Luna Iluminada Monumental",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "D37"
-        }
-      ]
-    },
-    {
-      "artista": "Zeferino Herrera",
-      "clave": "zeferino herrera",
-      "disciplinas": [
-        "Música"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Zeferino Herrera"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Viernes 9"
-          ],
-          "fechas": [
-            "2026-10-09"
-          ],
-          "hora": "19:00",
-          "sede": "Escenario \"Plaza Juárez\"",
-          "titulo": "Zeferino Herrera",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "K78"
-        }
-      ]
-    },
-    {
-      "artista": "Zurcidores de Cuentos",
-      "clave": "zurcidores de cuentos",
-      "disciplinas": [
-        "Teatro"
-      ],
-      "procedencias": [
-        "Programación Local"
-      ],
-      "origen": [
-        "Local"
-      ],
-      "titulos": [
-        "Pelusa al Vuelo"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Jueves 8"
-          ],
-          "fechas": [
-            "2026-10-08"
-          ],
-          "hora": "18:00",
-          "sede": "Canchas de la Colonia Mariano Matamoros",
-          "titulo": "Pelusa al Vuelo",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "J39"
         }
       ]
     },
