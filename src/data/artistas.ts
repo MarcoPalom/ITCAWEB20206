@@ -1,5 +1,6 @@
 import bruto from "./festival_por_artista.json";
 import { nombrePorClave } from "./nombres";
+import { RETIRADAS } from "./retiradas";
 import semblanzas from "./semblanzas.json";
 
 /**
@@ -109,32 +110,8 @@ const FUSIONES = new Map<string, string>([
   ["zurcidores de cuentos", "zurcidores de cuentos tamaulipas"],
 ]);
 
-/* --- Fichas retiradas de la cartelera ------------------------------------
-   Se sacan una a una y por decision del comite, no por una regla: cada una
-   tiene su motivo y no comparten ninguno.
-
-   La primera es una exposicion, y la cartelera es de companias que se
-   presentan: una exposicion no tiene funcion ni hora, sino permanencia. Ojo,
-   que en el programa hay 15 fichas de exposicion pura -todas de Artes Visuales,
-   y ninguna mezcla exposicion con funcion-, asi que el dia que se decida que
-   ninguna va en la cartelera esta lista sobra y basta filtrar por el campo tipo.
-
-   La segunda se cae del cartel, sin mas. */
-const RETIRADAS = new Set<string>([
-  "vicente rojo, manuel felguerez y sergio hernandez",
-  "concierto orquesta sinfonica juvenil de mexico",
-  "alejandro rosales lugo",
-  "calixto ramirez",
-  "cartel grafico mundialista y tiro al angulo: exposicion de cartel y fotografia",
-  "conversatorio a cargo de calixto ramirez",
-  "gustavo sanchez tudon",
-  "jaiba brava: exposicion futbol",
-  "leonora carrington",
-  "mario fuentes, rodolfo rios, efren yanez, esther gonzalez, entre otros.",
-  "mauricio saenz - canovas",
-  "nexos muestra de arte emergente",
-  "un viaje por la historia de los teatros en tamaulipas",
-]);
+/* Las fichas que el comite retiro del festival viven en retiradas.ts, que
+   comparten esta cartelera y la agenda de los municipios. */
 
 /* --- Convenciones de escritura ------------------------------------------
    El volcado del comite viene acentuado y ahora se respeta tal cual. Antes no:
@@ -626,9 +603,10 @@ for (const lista of Object.values(ARTISTAS)) {
 /**
  * La ficha de una compania por su id, o undefined si no la tiene.
  *
- * Que falte no es un fallo: las fichas que el comite retiro de la cartelera
- * -RETIRADAS- siguen programadas en sus municipios, y ahi no hay semblanza que
- * dar. Quien llame a esto tiene que saber pintar sin ella.
+ * Hoy la encuentran los 308 actos del programa, porque las dos vistas comparten
+ * la lista de retiradas. Aun asi puede faltar, y quien llame a esto tiene que
+ * saber pintar sin ella: basta que la proxima entrega del comite traiga un acto
+ * cuyo nombre no case con ninguna ficha para que vuelva a haber huecos.
  *
  * Solo servidor. Este modulo arrastra los 213KB del volcado por artista, asi
  * que llamarlo desde un componente de cliente se los baja enteros al telefono.

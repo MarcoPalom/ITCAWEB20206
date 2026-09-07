@@ -1,5 +1,6 @@
 import bruto from "./festival_por_municipio.json";
 import { claveDe, nombreArtista } from "./nombres";
+import { estaRetirada } from "./retiradas";
 
 /**
  * Programacion por municipio, derivada del volcado del comite
@@ -134,10 +135,11 @@ export type EventoMunicipio = {
    * companias que llevan correccion -"Puras del Norte" se publica como "Grupo
    * Pendiente", y ese nombre no es clave de nada-.
    *
-   * Cruza 308 de los 321 eventos. Los que no, son en su mayoria las fichas que
-   * el comite retiro de la cartelera (RETIRADAS en artistas.ts) y que aqui
-   * siguen programadas: para esas no hay semblanza que ensenar, y quien lea
-   * esto vera solo los datos del acto.
+   * Cruza los 308 actos, sin excepcion, desde que las dos vistas comparten la
+   * lista de retiradas: los trece que antes se quedaban sin ficha eran
+   * justamente los que el comite habia sacado del cartel y aqui seguian
+   * programados. Aun asi conviene tratarlo como opcional, porque un nombre que
+   * no case en la proxima entrega vuelve a dejar el hueco.
    */
   idArtista: string;
   disciplina: string;
@@ -206,8 +208,13 @@ function convertirMunicipio(m: MunicipioBruto): Municipio {
      grupos, no un acto que trae el festival. No se confunde con "Tamaulipas"
      -companias del estado que si forman parte del cartel central- ni con los
      "null" sin dato, que se quedan. */
+  /* Y fuera tambien lo que el comite retiro del festival. Hasta ahora esa lista
+     solo actuaba sobre la cartelera, de modo que las once exposiciones de Artes
+     Visuales que se sacaron del cartel seguian publicadas en la agenda de su
+     municipio: retiradas en una vista y en pie en la otra. */
   const eventos = m.eventos
     .filter((e) => e.origen !== "Local")
+    .filter((e) => !estaRetirada(claveDe(e.artista ?? ""), claveDe(e.titulo ?? "")))
     .map(convertirEvento);
   return {
     id: identificador(m.municipio),
