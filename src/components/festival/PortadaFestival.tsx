@@ -1,3 +1,4 @@
+import TituloFestival from "./TituloFestival";
 import TunelPaneles from "./TunelPaneles";
 import { FESTIVAL } from "@/data/festival";
 
@@ -12,7 +13,17 @@ import { FESTIVAL } from "@/data/festival";
  */
 export default function PortadaFestival() {
   return (
-    <section className="relative flex h-svh min-h-136 flex-col overflow-hidden bg-bone">
+    /* data-portada es como TunelPaneles encuentra el texto para hacerlo entrar
+       al aterrizar el anillo. Va aqui y no en el propio tunel porque el texto
+       es hermano suyo, no hijo.
+
+       El texto nace visible y solo se oculta si el JavaScript llega a montar la
+       intro. Al reves -nacer invisible y esperar a que algo lo encienda- una
+       portada sin JavaScript se quedaria muda. */
+    <section
+      data-portada
+      className="relative flex h-svh min-h-136 flex-col overflow-hidden bg-bone"
+    >
       <TunelPaneles />
 
       <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl flex-col items-center px-4 text-center sm:px-6 lg:px-8">
@@ -25,14 +36,12 @@ export default function PortadaFestival() {
               del imagotipo que aguanta como texto sobre el fondo claro: 6.2:1,
               contra el 3.9:1 del azul, que es el siguiente. Los demas se
               quedan por debajo de 3.2:1 y solo sirven de relleno. */}
-          <h1 className="title-display text-[clamp(4rem,10vw,12rem)] leading-[0.85] font-black tracking-[-0.045em] text-[var(--id-morado)]">
-            {FESTIVAL.siglas} {FESTIVAL.anio}
-          </h1>
+          <TituloFestival texto={`${FESTIVAL.siglas} ${FESTIVAL.anio}`} />
         </div>
 
         {/* Pie de portada. El relleno inferior deja libre la franja donde
             flota la isla, para que no se pisen. */}
-        <div className="mt-auto flex w-full flex-col items-center gap-4 pb-[17svh]">
+        <div className="portada-cuerpo mt-auto flex w-full flex-col items-center gap-4 pb-[17svh]">
           {/* Las fechas van en cartel: fondo propio y relleno generoso, que es
               lo que las separa del resto y las hace destacar. */}
           <p className="cartel-fechas">{FESTIVAL.fechasLargas}</p>
@@ -45,7 +54,7 @@ export default function PortadaFestival() {
 
       {/* En movil este renglon cae justo donde flota la isla, asi que solo se
           muestra a partir de tableta. */}
-      <p className="meta absolute bottom-4 left-4 z-10 hidden text-muted sm:left-6 sm:block lg:left-8">
+      <p className="portada-cuerpo meta absolute bottom-4 left-4 z-10 hidden text-muted sm:left-6 sm:block lg:left-8">
         Compañías participantes en la edición 2026
       </p>
     </section>

@@ -1,10 +1,12 @@
 "use client";
 
+import gsap from "gsap";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 
 import { SECCIONES } from "@/data/secciones";
+import { cuandoAterrice } from "./TunelPaneles";
 
 /**
  * Isla flotante: la navegacion del festival.
@@ -53,6 +55,33 @@ const BASE: Punto[] = [
 ];
 
 const CENTRO = 2;
+
+/* --- Apertura: la isla se abre desde el centro hacia los dos lados -------
+ *
+ * Mismo criterio que la entrada del tunel: una vez por carga de pagina. Al
+ * recargar, o al llegar de fuera, sale; moviendose por el sitio no.
+ *
+ * La bandera hace falta aunque la isla viva en el layout del festival y no se
+ * desmonte al cambiar de seccion: ir a la home y volver si desmonta el layout
+ * entero, y sin esto la isla se reabriria en ese viaje de ida y vuelta.
+ *
+ * Variable de modulo y no sessionStorage: el modulo vive lo que vive la pagina,
+ * que es exactamente la duracion que se quiere. Ademas asi no queda nada
+ * guardado en el navegador, y nada que falle en navegacion privada.
+ */
+let yaAbierta = false;
+
+/** Lo que tarda en abrirse del todo. */
+const APERTURA = 0.6;
+
+/**
+ * Espera cuando no hay nada a lo que ceder el paso: fuera de la portada, o con
+ * la entrada del tunel ya vista.
+ */
+const ESPERA = 0.35;
+
+/** Pausa entre el aterrizaje del anillo y la apertura, para que no se pisen. */
+const RESPIRO = 0.15;
 
 /**
  * Fija donde nace el circulo del barrido y cuanto tiene que crecer.
@@ -243,6 +272,80 @@ export default function IslaNav() {
     carro.scrollTo({ left: destino, behavior: suave ? "smooth" : "auto" });
     yaMontado.current = true;
   }, [ruta]);
+
+  /* La isla no aparece de golpe: se abre desde el centro hacia los dos lados,
+     como si se desplegara, y las pastillas van entrando detras del recorte
+     -primero la del medio, luego las de fuera-.
+
+     El desfase de cada pastilla no sale de su posicion en el DOM sino de lo
+     lejos que esta del centro medida en pantalla. En movil la isla es un dial
+     y el orden visual lo pone la propiedad order del flex, asi que el indice
+     del DOM no dice donde esta cada una; midiendo, esto funciona igual en las
+     dos disposiciones y con cualquier seccion activa.
+
+     useLayoutEffect y no useEffect: el estado de partida -recortada y con las
+     pastillas apagadas- tiene que quedar puesto antes de la primera pintura, o
+     asomaria un fotograma de la isla entera antes de cerrarse para abrirse. */
+  useLayoutEffect(() => {
+    const carro = carroRef.current;
+    if (!carro) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (yaAbierta) return;
+    yaAbierta = true;
+
+    const puntos = gsap.utils.toArray<HTMLElement>(".isla-punto", carro);
+    const caja = carro.getBoundingClientRect();
+    const centro = caja.left + caja.width / 2;
+    const distancias = puntos.map((p) => {
+      const suya = p.getBoundingClientRect();
+      return Math.abs(suya.left + suya.width / 2 - centro);
+    });
+    const masLejos = Math.max(...distancias, 1);
+
+    /* El estado de partida se pone ya, sin esperar a nada: si se dejara para
+       cuando aterrice el anillo, la isla se veria entera dos segundos y luego
+       se cerraria de golpe para abrirse. */
+    carro.dataset.abriendo = "si";
+    gsap.set(carro, { "--isla-abre": 50 });
+    gsap.set(puntos, { opacity: 0, scale: 0.9 });
+
+    const linea = gsap.timeline({ paused: true });
+
+    linea.to(carro, { "--isla-abre": 0, duration: APERTURA, ease: "power3.out" }, 0);
+
+    linea.to(
+      puntos,
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.4,
+        ease: "power2.out",
+        delay: (i: number) => (distancias[i] / masLejos) * 0.24,
+      },
+      0.1,
+    );
+
+    /* El recorte se quita al acabar. Dejado puesto, aunque sea al 0%, cortaria
+       para siempre la sombra exterior de la pastilla: un clip-path recorta por
+       la caja del borde y la sombra vive fuera de ella. */
+    linea.call(() => {
+      delete carro.dataset.abriendo;
+    });
+
+    /* Quien manda el turno es el tunel, cuando lo hay. */
+    const soltarEspera = cuandoAterrice(() => linea.play(), {
+      respiro: RESPIRO,
+      esperaSola: ESPERA,
+    });
+
+    return () => {
+      soltarEspera();
+      linea.kill();
+      delete carro.dataset.abriendo;
+      gsap.set(carro, { clearProps: "--isla-abre" });
+      gsap.set(puntos, { clearProps: "opacity,transform" });
+    };
+  }, []);
 
   /* Origen de reserva. Una navegacion puede empezar sin que se pulse ninguna
      pastilla -atras y adelante del navegador- y entonces no hay boton del que

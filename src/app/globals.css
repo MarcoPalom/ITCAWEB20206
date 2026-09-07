@@ -750,10 +750,52 @@ body {
 }
 
 
+/* Camara de la entrada. Envoltorio propio y no el anillo: aquel tiene el
+   transform tomado por la animacion del giro, y dos animaciones no pueden
+   compartir propiedad. Asi el giro sigue siendo CSS puro y esto solo mueve el
+   punto de vista.
+
+   El orden importa, y las tres funciones estan en el unico que sirve:
+   translateZ aleja el anillo, rotateX lo tumba despues sobre su propio centro
+   -ya lejos-, y rotateY gira al final sobre el eje que acaba de dejar la
+   inclinacion, que es el eje del cilindro. Puesto antes del rotateX, ese giro
+   seria sobre el eje vertical de la pantalla y volcaria el aro en vez de
+   hacerlo orbitar. Con las tres a 0 es la identidad, es decir, el encuadre de
+   siempre. */
+.tunel-camara {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  /* Las tres variables van sin unidad y la unidad se pone aqui, con calc. No es
+     mania: escritas con ella -"68deg"- basta que GSAP interpole un fotograma
+     como numero pelado para que salga rotateX(68), que es invalido, y una sola
+     funcion invalida tira la declaracion transform entera. Con el calc, el
+     valor que viaja es siempre un numero y no hay forma de romperla. */
+  transform: translateZ(calc(var(--tunel-r) * var(--intro-z, 0)))
+    rotateX(calc(var(--intro-tilt, 0) * 1deg))
+    rotateY(calc(var(--intro-giro, 0) * 1deg));
+}
+
 .tunel-anillo {
   position: absolute;
   inset: 0;
   transform-style: preserve-3d;
+}
+
+/* Mientras dura la entrada se ve el aro entero. tunel-asomar apaga cada panel
+   el 27% de su ciclo porque esta pensado para la vista desde dentro, y visto de
+   lejos eso abre un boquete justo cuando lo que se quiere ensenar es el aro
+   completo.
+
+   !important porque una animacion gana a una declaracion normal. La animacion
+   sigue corriendo por debajo -no se le reinicia el reloj-, de modo que al
+   soltar el override cada panel esta donde le toca segun su angulo, sin nada
+   que resincronizar. Se suelta antes del final, con la camara todavia fuera del
+   anillo, para que el descarte vuelva a mandar antes de que ningun panel cruce
+   el plano de la camara. */
+.tunel[data-intro="si"] .tunel-panel {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .tunel-panel {
@@ -771,11 +813,13 @@ body {
      cerca del lateral eso basta para que rocen el plano de la camara y el
      cuadrilatero degenere abriendo cunas de fondo en la banda.
 
-     --entrada va delante y no detras del rotateY: aplicado antes, desplaza el
-     panel en el eje X original -el de la pantalla, con el anillo aun quieto-
-     y solo despues lo rota a su sitio en el cilindro. Es lo que permite que
-     TunelPaneles.tsx lo anime en linea recta desde el lateral sin recalcular
-     el resto de la geometria; en 0 no hace nada. */
+     --entrada es un gancho para animar la llegada de un panel en linea recta
+     desde el lateral sin recalcular la geometria: va delante y no detras del
+     rotateY, de modo que desplaza el panel en el eje X de la pantalla -con el
+     anillo aun quieto- y solo despues lo rota a su sitio en el cilindro. Hoy
+     nadie lo mueve y en 0 no hace nada: la banda entra ya montada y girando.
+     Se deja porque el orden dentro del transform es la parte dificil de
+     acertar, y sin el habria que volver a razonarla desde cero. */
   transform: translateX(var(--entrada, 0px)) rotateY(var(--angulo))
     translateZ(calc(var(--dist) * -1));
 }
@@ -2667,4 +2711,84 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
 .agenda-agendar:focus-visible {
   outline: 2px solid var(--color-charcoal);
   outline-offset: 2px;
+}
+
+/* Apertura de la isla: se recorta desde el centro hacia los dos lados y va
+   soltando el recorte hasta descubrirse entera.
+
+   El recorte existe solo mientras dura la apertura, de ahi el atributo. Dejado
+   puesto, aunque fuera al 0%, cortaria para siempre la sombra de la pastilla:
+   un clip-path recorta por la caja del borde y la sombra vive fuera de ella.
+
+   La variable viaja sin unidad y el porcentaje se pone aqui con calc, por lo
+   mismo que en .tunel-camara: basta un fotograma interpolado como numero pelado
+   para invalidar la funcion entera, y con ella la declaracion.
+
+   round 999px mantiene los extremos redondeados durante todo el recorrido: sin
+   el, la isla se abriria como un rectangulo y solo al final recuperaria su
+   forma de pastilla. */
+.isla-carro[data-abriendo="si"] {
+  clip-path: inset(0 calc(var(--isla-abre, 0) * 1%) round 999px);
+}
+
+/* El titular de la portada se descubre de abajo hacia arriba: el borde superior
+   del recorte baja desde el 100% hasta 0 y va dejando ver la letra desde su
+   base, como si se fuera dibujando.
+
+   Los otros tres lados van en negativo a proposito. Con leading 0.85 la letra
+   sobresale de su propia caja, asi que un inset a 0 por los lados o por abajo
+   le comeria las puntas; con holgura, el recorte solo actua por arriba, que es
+   el unico borde que aqui se mueve.
+
+   Y existe solo mientras dura el revelado, de ahi el atributo: un clip-path
+   vigente dejaria esas puntas cortadas para siempre.
+
+   La variable viaja sin unidad y el porcentaje se pone con calc, por lo mismo
+   que en .tunel-camara y .isla-carro. */
+.portada-titulo[data-abriendo="si"] {
+  clip-path: inset(calc(var(--titulo-abre, 0) * 1%) -20% -20% -20%);
+}
+
+/* --- Relevo de letra por icono en el titular de la portada --------------- */
+
+/* El hueco de la letra que cede el sitio. Guarda las dos caras -letra e icono-
+   una encima de otra y les da la perspectiva: sin ella el rotateX aplana la
+   pieza en vez de voltearla, y el cambio se ve como un fundido y no como un
+   giro. */
+.titulo-hueco {
+  position: relative;
+  display: inline-block;
+  /* Las dos caras viven en el mismo espacio 3D que la ficha; sin esto se
+     aplastan sobre ella y el reverso deja de estar detras. */
+  transform-style: preserve-3d;
+}
+
+/* Cada cara se esconde cuando le da la espalda al lector. Es el navegador quien
+   decide cual se ve, no una opacidad que haya que sincronizar a mano: por eso
+   el hueco nunca queda vacio a media vuelta. */
+.titulo-letra {
+  display: inline-block;
+  backface-visibility: hidden;
+}
+
+/* El azulejo, centrado en el hueco de la letra.
+
+   Se centra con inset y margen automatico, no con un translate: GSAP le escribe
+   el transform para voltearlo, y un translate propio ahi se perderia en el
+   primer fotograma.
+
+   0.72em es la altura de mayuscula aproximada de este titular, de modo que el
+   azulejo ocupa lo mismo que la letra a la que sustituye y la linea no cambia
+   de altura. El radio es minimo: es una tesela, no un boton. */
+.titulo-icono {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0.72em;
+  height: 0.72em;
+  border-radius: 0.06em;
+  /* Nace media vuelta girado, o sea de espaldas: es el reverso de la ficha. Al
+     voltearse esta media vuelta se cancela y el azulejo queda derecho. */
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
 }
