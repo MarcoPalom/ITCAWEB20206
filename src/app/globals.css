@@ -2290,3 +2290,172 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
   letter-spacing: -0.01em;
   color: var(--color-charcoal);
 }
+
+/* --- Mandos del bento de municipios ------------------------------------ *
+ *
+ * Los mismos controles que la isla de la cartelera -campo, aspa, pastillas,
+ * "limpiar todo"- pero sobre fondo claro, que es donde vive esta seccion. No
+ * se reutilizan las clases .isla-*: aquellas estan escritas con colores fijos
+ * para un panel casi negro y aqui se leerian como texto gris sobre blanco.
+ */
+.mandos-municipios {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  /* El bento se pasa de largo de la pantalla con 43 fichas; unos mandos que se
+     fueran con el scroll obligarian a volver arriba para cambiar de orden. */
+  margin-bottom: 0.5rem;
+  padding: 1rem 0 0.875rem;
+  border-bottom: 1px solid var(--color-line);
+  /* Opaco y no translucido: por debajo pasan fotografias, y un desenfoque las
+     deja adivinarse detras del texto de los rotulos. */
+  background: var(--color-bone);
+}
+
+.mando-campo-caja {
+  position: relative;
+}
+
+.mando-campo {
+  display: block;
+  width: 100%;
+  height: 2.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  background: var(--color-surface);
+  /* El hueco de la derecha esta reservado siempre, haya o no aspa: si se
+     anadiera solo al escribir, la primera letra correria el texto de sitio. */
+  padding: 0 2.5rem 0 0.75rem;
+  color: var(--color-charcoal);
+  font-size: 0.875rem;
+}
+
+.mando-campo::placeholder {
+  color: var(--color-muted);
+}
+
+.mando-campo:focus-visible {
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: 2px;
+}
+
+/* Se quita el aspa nativa de los type="search" y se dibuja la propia. Chrome y
+   Safari ponen la suya, Firefox no: sin esto, la mitad de los visitantes
+   tendria dos aspas y la otra mitad una. */
+.mando-campo::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+/* En pantallas tactiles el campo sube a 16px. No es un capricho tipografico:
+   Safari de iOS hace zoom automatico al enfocar cualquier campo que baje de
+   16px, y de ese zoom no vuelve solo -la web se queda descuadrada, mas ancha
+   que la pantalla, hasta que el visitante la reduce a mano-. Es el mismo
+   arreglo que lleva .isla-campo, por el mismo motivo. */
+@media (pointer: coarse) {
+  .mando-campo {
+    font-size: 1rem;
+  }
+}
+
+.mando-borrar {
+  position: absolute;
+  top: 50%;
+  right: 0.25rem;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 32px de area de toque para un aspa de 14, que es el minimo comodo con el
+     pulgar sin que el boton se coma el filete del campo. */
+  height: 2rem;
+  width: 2rem;
+  border-radius: 4px;
+  color: var(--color-muted);
+  transition:
+    color 200ms ease-out,
+    background-color 200ms ease-out;
+}
+
+.mando-borrar:hover {
+  background: var(--color-bone);
+  color: var(--color-charcoal);
+}
+
+.mando-borrar:focus-visible {
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: 1px;
+}
+
+.mando-pastilla {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 2rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  transition:
+    color 200ms ease-out,
+    border-color 200ms ease-out,
+    background-color 200ms ease-out;
+}
+
+.mando-pastilla:hover {
+  border-color: color-mix(in srgb, var(--color-charcoal) 25%, var(--color-line));
+  color: var(--color-charcoal);
+}
+
+/* La puesta no se distingue solo por color: se invierte entera y ademas lleva
+   aria-pressed, de modo que un lector de pantalla la anuncia. */
+.mando-pastilla[data-activo="si"] {
+  background: var(--color-charcoal);
+  border-color: var(--color-charcoal);
+  color: var(--color-bone);
+}
+
+.mando-pastilla:focus-visible {
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: 2px;
+}
+
+/* Cuantos municipios trae esa disciplina. Va dentro de la pastilla y en tono
+   menor: es un dato de apoyo, no parte del rotulo. */
+.mando-cuenta {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+/* El reinicio no es una pastilla mas: va en la linea del contador, que es
+   donde se lee el estado del que se quiere salir. */
+.mando-limpiar {
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 200ms ease-out;
+}
+
+.mando-limpiar:hover {
+  color: var(--color-charcoal);
+}
+
+.mando-limpiar:focus-visible {
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Cuando no queda ningun municipio. Ocupa el sitio del bento en vez de dejar
+   la pagina en blanco, que es lo que hacia parecer que la seccion se habia
+   roto. */
+.mando-vacio {
+  margin-top: 3rem;
+  padding: 3rem 1.5rem;
+  border: 1px dashed var(--color-line);
+  border-radius: 8px;
+  text-align: center;
+}
+

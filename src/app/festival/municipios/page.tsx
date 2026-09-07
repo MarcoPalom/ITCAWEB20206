@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { ViewTransition } from "react";
 
-import EnlaceBarrido from "@/components/festival/EnlaceBarrido";
-import MarcoImagen from "@/components/MarcoImagen";
+import RejillaMunicipios, {
+  type FichaMunicipio,
+} from "@/components/festival/RejillaMunicipios";
 import { FESTIVAL } from "@/data/festival";
 import { MUNICIPIOS } from "@/data/municipios";
 import { MUNICIPIOS_FOTOS } from "@/data/municipios_fotos";
@@ -28,22 +29,36 @@ export const metadata: Metadata = {
 };
 
 /**
- * Tamano de la ficha segun cuantos espectaculos trae ese municipio -no segun
- * si tiene sede confirmada-: a mas programacion, mas espacio en la rejilla.
- * Solo se varia el ancho (col-span), nunca el alto: todas las fichas ocupan
- * una sola fila, igual que el bento de Sedes.tsx, y por eso no deja huecos
- * -un row-span distinto por ficha si los deja, porque el alto de cada fila
- * la fija el contenido y dos filas de alto distinto no encajan entre si-.
+ * Lo unico que cruza al cliente: cinco campos por municipio.
+ *
+ * Se arma aqui, en el servidor y una sola vez al construir, porque los mandos
+ * del bento -buscar, filtrar por disciplina, reordenar- necesitan la lista en
+ * el navegador. Lo que no necesitan es la programacion: cada municipio arrastra
+ * sus eventos con titulo, sede, notas y dias, y mandar eso entero para pintar
+ * 43 rectangulos serian cientos de kB de mas en el telefono. Las disciplinas
+ * se resumen aqui a la lista de las distintas, que es lo unico que el filtro
+ * pregunta.
  */
-function tamano(totalEspectaculos: number) {
-  if (totalEspectaculos >= 19) {
-    return { col: "col-span-2 sm:col-span-3", proporcion: "21 / 9", titulo: "text-2xl sm:text-3xl" };
-  }
-  if (totalEspectaculos >= 10) {
-    return { col: "col-span-2", proporcion: "16 / 9", titulo: "text-lg sm:text-xl" };
-  }
-  return { col: "", proporcion: "1 / 1", titulo: "text-sm sm:text-base" };
-}
+const FICHAS: FichaMunicipio[] = MUNICIPIOS.map((m) => {
+  const foto = MUNICIPIOS_FOTOS[m.id];
+  return {
+    id: m.id,
+    nombre: m.nombre,
+    numero: m.numero,
+    totalEspectaculos: m.totalEspectaculos,
+    /* Las "notas" del Excel no son espectaculos y no cuentan como disciplina
+       programada, igual que no cuentan en totalEspectaculos. */
+    disciplinas: [
+      ...new Set(
+        m.eventos
+          .filter((e) => e.tipo !== "nota")
+          .map((e) => e.disciplina)
+          .filter(Boolean),
+      ),
+    ],
+    foto: foto ? { autor: foto.autor, licencia: foto.licencia } : null,
+  };
+});
 
 export default function MunicipiosPage() {
   return (
@@ -60,55 +75,7 @@ export default function MunicipiosPage() {
             clara que no lo tenia, era la unica donde el hueco se notaba. */}
         <section className="border-b border-line bg-bone py-24 sm:py-32">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-flow-dense grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-              {MUNICIPIOS.map((m) => {
-                const { col, proporcion, titulo } = tamano(m.totalEspectaculos);
-                const foto = MUNICIPIOS_FOTOS[m.id];
-
-                return (
-                  <EnlaceBarrido
-                    key={m.id}
-                    href={`/festival/municipios/${m.id}`}
-                    className={`group flex [content-visibility:auto] [contain-intrinsic-size:auto_380px] ${col}`}
-                  >
-                    <div className="flex w-full flex-col overflow-hidden rounded-lg border border-line bg-surface transition-shadow hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
-                      {foto ? (
-                        <div className="overflow-hidden" style={{ aspectRatio: proporcion }}>
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={`/img/municipios/${m.id}.jpg`}
-                            alt={`Fotografía de ${m.nombre}. ${foto.autor ? `Autor: ${foto.autor}.` : ""} ${foto.licencia}, via Wikimedia Commons.`}
-                            width={1200}
-                            height={900}
-                            loading="lazy"
-                            decoding="async"
-                            className="h-full w-full object-cover transition-transform group-hover:scale-105"
-                          />
-                        </div>
-                      ) : (
-                        <MarcoImagen
-                          descripcion={`Fotografía de ${m.nombre}`}
-                          proporcion={proporcion}
-                          className="rounded-none border-0"
-                        />
-                      )}
-                      <div className="flex flex-1 flex-col justify-center p-3">
-                        <p className="font-mono text-xs text-muted">
-                          {String(m.numero).padStart(2, "0")}
-                        </p>
-                        <h2 className={`title-display mt-1 font-light ${titulo}`}>
-                          {m.nombre}
-                        </h2>
-                        <p className="mt-1 font-mono text-[0.65rem] text-muted">
-                          {m.totalEspectaculos}{" "}
-                          {m.totalEspectaculos === 1 ? "espectaculo" : "espectaculos"}
-                        </p>
-                      </div>
-                    </div>
-                  </EnlaceBarrido>
-                );
-              })}
-            </div>
+            <RejillaMunicipios fichas={FICHAS} />
           </div>
         </section>
       </main>
