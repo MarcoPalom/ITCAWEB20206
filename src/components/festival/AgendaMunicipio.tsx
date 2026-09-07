@@ -88,6 +88,30 @@ function enlaceAgenda(acto: ActoAgenda, municipio: string): string | null {
   return `/festival/evento?${datos}`;
 }
 
+/** La fotografia que abre la ficha de un acto. */
+const fotoDe = (foto: string) => `/img/artistas/${foto}/fondo.webp`;
+
+/**
+ * Pide la fotografia antes de que haga falta.
+ *
+ * La ficha no existe en el DOM hasta que se toca -el dialogo solo pinta el acto
+ * elegido-, asi que sin esto la descarga empieza justo en el momento en que la
+ * hoja ya se esta abriendo y la imagen entra tarde. Se lanza al pasar el raton
+ * por encima y al apoyar el dedo, que ocurre antes del toque: no es mucho, pero
+ * es la diferencia entre que la foto ya este puesta al abrir o llegue despues.
+ *
+ * Se lleva cuenta de las pedidas para no encargar la misma dos veces al recorrer
+ * la agenda con el raton.
+ */
+const pedidas = new Set<string>();
+
+function calentar(foto: string | null) {
+  if (!foto || pedidas.has(foto)) return;
+  pedidas.add(foto);
+  const img = new Image();
+  img.src = fotoDe(foto);
+}
+
 export default function AgendaMunicipio({
   dias,
   municipio,
@@ -127,6 +151,8 @@ export default function AgendaMunicipio({
                 key={a.id}
                 type="button"
                 onClick={() => cambiarActo(a)}
+                onPointerEnter={() => calentar(a.foto)}
+                onPointerDown={() => calentar(a.foto)}
                 className="agenda-acto"
                 style={{ borderLeft: `3px solid var(--id-${tono})` }}
               >
@@ -188,9 +214,13 @@ function Ficha({
       {acto.foto ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={`/img/artistas/${acto.foto}/fondo.webp`}
+          src={fotoDe(acto.foto)}
           alt={`Fotografía de ${acto.artista || titular}`}
-          loading="lazy"
+          /* Ni perezosa ni de baja prioridad: esta imagen solo se crea cuando
+             ya se ha tocado el acto, o sea cuando ya hace falta. Marcarla como
+             perezosa no ahorraba nada -no llega a existir antes- y en cambio la
+             dejaba a la cola de lo que el navegador tuviera pendiente. */
+          fetchPriority="high"
           decoding="async"
           className="agenda-foto"
         />
