@@ -129,7 +129,14 @@ export function GET(peticion: Request) {
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     "BEGIN:VEVENT",
-    `UID:${identidad}@itcadigital.mx`,
+    /* Tambien plegado. El identificador sale del titulo y llega a 120
+       caracteres, asi que esta linea se pasaba de los 75 octetos en dos de
+       cada tres eventos -"Compania Bestias Creativas - Kopalli: el espiritu
+       astral" da 100-, y hay calendarios que descartan el evento entero al
+       encontrar una linea mas larga. El valor no cambia: plegar es solo como
+       se escribe, y quien lo lee vuelve a juntar las lineas, de modo que un
+       evento ya guardado sigue reconociendose como el mismo. */
+    plegar(`UID:${identidad}@itcadigital.mx`),
     `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").slice(0, 15)}Z`,
     ...cuando,
     plegar(`SUMMARY:${escapar(titulo)}`),
