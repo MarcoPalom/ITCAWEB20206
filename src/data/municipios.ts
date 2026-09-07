@@ -1,5 +1,5 @@
 import bruto from "./festival_por_municipio.json";
-import { nombreArtista } from "./nombres";
+import { claveDe, nombreArtista } from "./nombres";
 
 /**
  * Programacion por municipio, derivada del volcado del comite
@@ -44,6 +44,19 @@ const CALENDARIO =
 
 function limpiar(texto: string): string {
   return texto.replace(/\s+/g, " ").trim();
+}
+
+/**
+ * Las notas del programa sin repetir.
+ *
+ * El volcado a veces trae la misma nota dos veces, una de ellas ampliada: en
+ * Miguel Aleman la segunda contiene la primera entera y le anade una linea.
+ * Publicar las dos es ensenar el mismo parrafo dos veces seguidas, asi que se
+ * queda la larga, que es la que lo dice todo.
+ */
+function notasUtiles(notas: string[]): string[] {
+  const limpias = [...new Set(notas.map(limpiar).filter(Boolean))];
+  return limpias.filter((n) => !limpias.some((otra) => otra !== n && otra.includes(n)));
 }
 
 /**
@@ -110,9 +123,30 @@ function nivelDe(procedencia: string): Nivel {
 export type EventoMunicipio = {
   titulo: string;
   artista: string;
+  /**
+   * El id de esa compania en la cartelera general (src/data/artistas.ts), para
+   * poder cruzar los dos volcados y recuperar lo que solo vive alli -la
+   * semblanza, la fotografia-.
+   *
+   * Sale del nombre bruto y no del corregido: claveDe() reproduce la clave del
+   * volcado por artista, y sobre ella se aplica el mismo identificador() que
+   * usa artistas.ts. Cruzar por el nombre ya corregido fallaria justo en las
+   * companias que llevan correccion -"Puras del Norte" se publica como "Grupo
+   * Pendiente", y ese nombre no es clave de nada-.
+   *
+   * Cruza 308 de los 321 eventos. Los que no, son en su mayoria las fichas que
+   * el comite retiro de la cartelera (RETIRADAS en artistas.ts) y que aqui
+   * siguen programadas: para esas no hay semblanza que ensenar, y quien lea
+   * esto vera solo los datos del acto.
+   */
+  idArtista: string;
   disciplina: string;
   procedencia: string;
   nivel: Nivel;
+  /** Sinopsis del acto cuando el programa la trae. Solo en 6 de 321. */
+  descripcion: string | null;
+  /** Reparto, direccion o autoria, tal como los declara el programa. */
+  creditos: string[];
   /** "13:00 h", o "Por confirmar" si el comite aun no la fija. */
   hora: string;
   /** Recinto, o "Por confirmar" si el comite aun no lo fija. */
@@ -146,15 +180,18 @@ function convertirEvento(e: EventoBruto): EventoMunicipio {
     /* Pasa por nombres.ts: el volcado por municipio trae "CIA. Circo Flotante"
        y "Raul Di Blasio" tal cual los tecleo el comite. */
     artista: nombreArtista(e.artista ?? ""),
+    idArtista: identificador(claveDe(e.artista ?? "")),
     disciplina: e.disciplina ?? "",
     procedencia: e.procedencia ?? "",
     nivel: nivelDe(e.procedencia ?? ""),
+    descripcion: e.descripcion ?? null,
+    creditos: e.creditos ?? [],
     hora: e.hora ? `${e.hora} h` : "Por confirmar",
     sede: sede(e.sede, e.inauguracion),
     dias: e.dias ?? [],
     tipo: e.tipo as TipoEvento,
     inauguracion: e.inauguracion ?? null,
-    notas: e.notas ?? [],
+    notas: notasUtiles(e.notas ?? []),
   };
 }
 

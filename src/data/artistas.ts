@@ -611,3 +611,29 @@ export const ARTISTAS: Record<string, Artista[]> = agrupar();
 /* Municipios no lleva cartelera: no es una seccion de artistas sino el
    recorrido por el territorio, y sus datos viven en festival_por_municipio. */
 
+/* Indice por id, para cruzar los dos volcados. Lo necesita la agenda de un
+   municipio: el volcado por municipio dice que se presenta y a que hora, pero
+   la semblanza y la fotografia de la compania solo existen aqui.
+
+   Se monta una vez al cargar el modulo y no en cada consulta: la agenda de
+   Reynosa pregunta 43 veces seguidas, y recorrer las tres secciones cada vez
+   seria repetir el mismo barrido 43 veces para nada. */
+const POR_ID = new Map<string, Artista>();
+for (const lista of Object.values(ARTISTAS)) {
+  for (const a of lista) POR_ID.set(a.id, a);
+}
+
+/**
+ * La ficha de una compania por su id, o undefined si no la tiene.
+ *
+ * Que falte no es un fallo: las fichas que el comite retiro de la cartelera
+ * -RETIRADAS- siguen programadas en sus municipios, y ahi no hay semblanza que
+ * dar. Quien llame a esto tiene que saber pintar sin ella.
+ *
+ * Solo servidor. Este modulo arrastra los 213KB del volcado por artista, asi
+ * que llamarlo desde un componente de cliente se los baja enteros al telefono.
+ */
+export function artistaPorId(id: string): Artista | undefined {
+  return POR_ID.get(id);
+}
+

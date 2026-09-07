@@ -2459,3 +2459,190 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
   text-align: center;
 }
 
+/* --- Agenda de un municipio: fila tocable y ficha del espectaculo ------- */
+
+/* La fila. Era un div y ahora es un boton, asi que hay que devolverle el
+   aspecto de fila -ancho completo, texto a la izquierda- que el navegador le
+   quita a todo boton. */
+.agenda-acto {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  border-top: 1px solid var(--color-line);
+  padding: 0.75rem 0.875rem 0.75rem 0.75rem;
+  text-align: left;
+  transition: background-color 160ms ease-out;
+}
+
+.agenda-acto:hover {
+  background: color-mix(in srgb, var(--color-charcoal) 4%, transparent);
+}
+
+.agenda-acto:focus-visible {
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: -2px;
+}
+
+.agenda-acto-titulo {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-charcoal);
+}
+
+.agenda-acto-hora {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-muted);
+}
+
+/* La ficha. En movil sube desde abajo como una hoja -el pulgar llega al borde
+   inferior, no al centro-; en pantalla ancha se centra como tarjeta.
+
+   display se declara solo con [open]: la hoja de estilo del navegador oculta
+   los <dialog> cerrados con display:none, y un display propio sin condicion
+   los dejaria a la vista siempre. */
+.agenda-panel {
+  position: fixed;
+  inset: auto 0 0 0;
+  width: 100%;
+  max-width: none;
+  max-height: 88svh;
+  margin: 0;
+  border: 0;
+  border-radius: 14px 14px 0 0;
+  /* Sin relleno propio a proposito: el click del fondo se distingue mirando si
+     el destino es el propio dialogo, y su relleno contaria como fondo. */
+  padding: 0;
+  background: var(--color-surface);
+  color: var(--color-charcoal);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.agenda-panel[open] {
+  display: flex;
+  flex-direction: column;
+  animation: agenda-subir 260ms cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.agenda-panel::backdrop {
+  background: rgba(17, 17, 17, 0.45);
+  animation: agenda-velo 260ms ease-out;
+}
+
+@keyframes agenda-subir {
+  from {
+    transform: translateY(14%);
+    opacity: 0;
+  }
+}
+
+@keyframes agenda-velo {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .agenda-panel[open],
+  .agenda-panel::backdrop {
+    animation: none;
+  }
+}
+
+@media (min-width: 40rem) {
+  .agenda-panel {
+    inset: 0;
+    margin: auto;
+    width: min(34rem, calc(100vw - 3rem));
+    max-height: 85svh;
+    border: 1px solid var(--color-line);
+    border-radius: 12px;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.agenda-ficha {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  position: relative;
+}
+
+.agenda-foto {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  flex: none;
+}
+
+/* Lo unico que se desplaza. min-height:0 porque, sin el, un hijo de flex no
+   baja de su contenido: se estiraria y la ficha larga desbordaria el panel en
+   vez de desplazarse dentro. */
+.agenda-cuerpo {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  /* Que el gesto muera aqui: sin esto, al llegar al final de la semblanza el
+     desplazamiento lo recoge la pagina de detras y la agenda se mueve bajo la
+     hoja mientras se intenta leerla. */
+  overscroll-behavior: contain;
+  padding: 1.25rem 1.25rem 1.75rem;
+}
+
+/* Sobre la fotografia o sobre el blanco, segun tenga foto o no: de ahi el
+   fondo propio con desenfoque en vez de fiarlo al color del texto. */
+.agenda-cerrar {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 40px de area de toque, que es lo comodo con el pulgar. */
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-line);
+  background: color-mix(in srgb, var(--color-surface) 85%, transparent);
+  color: var(--color-charcoal);
+  backdrop-filter: blur(8px);
+  transition: background-color 160ms ease-out;
+}
+
+.agenda-cerrar:hover {
+  background: var(--color-surface);
+}
+
+.agenda-cerrar:focus-visible {
+  outline: 2px solid var(--color-charcoal);
+  outline-offset: 2px;
+}
+
+/* Las notas del programa -"cupo limitado", "cambio de sede"- son avisos, no
+   texto corrido: van marcadas para que no se confundan con la semblanza. */
+.agenda-notas {
+  margin-top: 1rem;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+/* Aviso del municipio dentro de una columna de la agenda. No es un acto: ni se
+   toca ni abre ficha, de ahi que se distinga del resto de filas por el fondo y
+   la letra en cursiva en vez de por el peso. */
+.agenda-aviso {
+  border-top: 1px solid var(--color-line);
+  background: var(--color-bone);
+  padding: 0.75rem;
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
