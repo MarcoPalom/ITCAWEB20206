@@ -20,8 +20,8 @@ const ORDEN: { nivel: Nivel; clase: string }[] = [
   { nivel: "local", clase: "text-[clamp(0.85rem,1.9vw,1.2rem)]" },
 ];
 
-/* Los 8 iconos del imagotipo, uno por tono de la paleta. Se repiten hasta
-   cubrir cualquier ancho de pantalla, como la cenefa de un cartel impreso. */
+/* Los 8 iconos del imagotipo, uno por tono de la paleta, repetidos como la
+   cenefa de un cartel impreso. */
 const ICONOS = [
   "Recurso 2.png",
   "Recurso 3.png",
@@ -32,11 +32,20 @@ const ICONOS = [
   "Recurso 9.png",
   "Recurso 10.png",
 ];
-const BANDA = [...ICONOS, ...ICONOS, ...ICONOS, ...ICONOS];
+/* Dos vueltas y no cuatro. Cada icono mide el 6.25% del ancho -1/16-, asi que
+   16 llenan la franja sea cual sea la pantalla: la repeticion la resuelve el
+   porcentaje, no la cantidad. Con 32 la banda medía el 200% del ancho y, al
+   ser flex-none, ninguno encogia: sobraba una pantalla entera por la derecha y
+   la pagina se podia arrastrar de lado. En un movil eso no es solo una barra
+   fea -descuadra el ancho de todo el cartel y deja el contenido a medio ver-. */
+const BANDA = [...ICONOS, ...ICONOS];
 
 function BandaIconos() {
   return (
-    <div aria-hidden="true" className="flex w-full">
+    /* overflow-hidden aunque la cuenta ya cuadre: 16 anchos del 6.25% se
+       redondean a subpixeles y basta un pelo de mas para que el arrastre
+       lateral vuelva. */
+    <div aria-hidden="true" className="flex w-full overflow-hidden">
       {BANDA.map((archivo, i) => (
         // eslint-disable-next-line @next/next/no-img-element
         <img
