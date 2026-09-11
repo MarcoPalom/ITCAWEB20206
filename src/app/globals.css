@@ -2511,13 +2511,83 @@ html[data-barrido="corto"]::view-transition-new(.revelar) {
 .agenda-acto {
   display: flex;
   width: 100%;
-  flex-direction: column;
+  /* En fila y no en columna: el glifo de procedencia va a la derecha, alineado
+     con el titulo, y el texto ocupa lo que sobra. */
   align-items: flex-start;
-  gap: 0.25rem;
+  justify-content: space-between;
+  gap: 0.5rem;
   border-top: 1px solid var(--color-line);
-  padding: 0.75rem 0.875rem 0.75rem 0.75rem;
+  padding: 0.75rem 0.75rem 0.75rem 0.75rem;
   text-align: left;
   transition: background-color 160ms ease-out;
+}
+
+.agenda-acto-texto {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* El recuadro de donde viene el acto. Cuadrado y de color macizo, del mismo
+   formato que los azulejos del imagotipo que ya recorren el sitio.
+
+   No encoge -flex: none- porque en una columna de 13rem un titulo largo se lo
+   comeria; y baja un pelo para asentarse en la linea del titulo en vez de
+   flotar sobre ella. */
+.agenda-nivel {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.1rem;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Cada nivel con el color de su seccion en el cartel, y con la tinta que esa
+   pareja ya tiene medida en secciones.ts: turquesa 5.0:1, amarillo 8.7:1 y
+   morado 6.5:1. El color va de relleno y la letra de tinta, que es al reves de
+   como fallaria: de los ocho tonos solo el morado aguanta como texto sobre el
+   hueso. */
+.agenda-nivel[data-nivel="tamaulipeco"],
+.agenda-nivel[data-nivel="local"] {
+  background: var(--id-turquesa);
+  color: var(--sobre-turquesa);
+}
+
+.agenda-nivel[data-nivel="nacional"] {
+  background: var(--id-amarillo);
+  color: var(--sobre-amarillo);
+}
+
+.agenda-nivel[data-nivel="internacional"] {
+  background: var(--id-morado);
+  color: var(--sobre-morado);
+}
+
+/* La leyenda de los tres glifos. En monoespaciada y en tono menor: es una nota
+   al pie de la rejilla, no una fila mas. */
+.agenda-leyenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+  margin: 1.5rem auto 0;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-muted);
+}
+
+.agenda-leyenda li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
 }
 
 .agenda-acto:hover {

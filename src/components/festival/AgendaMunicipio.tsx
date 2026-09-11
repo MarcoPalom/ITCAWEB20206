@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-import type { TipoEvento } from "@/data/municipios";
+import type { Nivel, TipoEvento } from "@/data/municipios";
 
 /**
  * La agenda de un municipio: una columna por dia y, al tocar un acto, la ficha
@@ -27,6 +27,8 @@ export type ActoAgenda = {
   artista: string;
   disciplina: string;
   procedencia: string;
+  /** De donde viene: de casa, del resto del pais o de fuera. */
+  nivel: Nivel;
   hora: string;
   /** "19:45", o null cuando el programa aun no la fija. Para el calendario. */
   horaCruda: string | null;
@@ -90,6 +92,47 @@ function enlaceAgenda(acto: ActoAgenda, municipio: string): string | null {
 
 /** La fotografia que abre la ficha de un acto. */
 const fotoDe = (foto: string) => `/img/artistas/${foto}/fondo.webp`;
+
+/**
+ * De donde viene el acto: un recuadro con su inicial, del mismo formato que los
+ * azulejos del imagotipo que ya recorren el sitio -el tunel de la portada, el
+ * relevo del titular-, que son cuadrados de color macizo.
+ *
+ * El color es el de su seccion en el cartel, asi que un acto internacional
+ * lleva aqui el mismo morado con el que se pinta esa seccion entera, y el
+ * visitante que haya pasado por alli lo reconoce sin leer nada.
+ *
+ * Y el color va de relleno, nunca de tinta, que es como la paleta manda usarlo:
+ * de los ocho tonos solo el morado aguanta como texto sobre el hueso -el
+ * amarillo de Nacionales da 1.27:1 y desaparece-, mientras que de relleno los
+ * tres funcionan con la tinta que ya tienen medida: 5.0:1 el turquesa, 8.7:1 el
+ * amarillo y 6.5:1 el morado.
+ */
+const NIVELES: Record<Nivel, { inicial: string; rotulo: string }> = {
+  tamaulipeco: { inicial: "T", rotulo: "De Tamaulipas" },
+  /* La programacion local ya no llega hasta aqui -el comite la excluye del
+     volcado-, pero si volviera es de casa como las demas. */
+  local: { inicial: "T", rotulo: "De Tamaulipas" },
+  nacional: { inicial: "N", rotulo: "Del resto del país" },
+  internacional: { inicial: "I", rotulo: "De fuera de México" },
+};
+
+function Nivel({ nivel, mudo = false }: { nivel: Nivel; mudo?: boolean }) {
+  const { inicial, rotulo } = NIVELES[nivel];
+  return (
+    <span className="agenda-nivel" data-nivel={nivel} title={mudo ? undefined : rotulo}>
+      <span aria-hidden="true">{inicial}</span>
+      {/* Una letra suelta no dice nada dicha en voz alta, asi que el rotulo
+          entero viaja para quien no ve el recuadro. title solo no basta: los
+          lectores de pantalla no lo anuncian de manera fiable en un elemento
+          sin rol.
+
+          En la leyenda sobra -alli el rotulo ya esta escrito al lado-, y de ahi
+          el modo mudo: sin el, el texto quedaba puesto dos veces seguidas. */}
+      {mudo ? null : <span className="sr-only">{rotulo}</span>}
+    </span>
+  );
+}
 
 /**
  * Pide la fotografia antes de que haga falta.
@@ -156,8 +199,11 @@ export default function AgendaMunicipio({
                 className="agenda-acto"
                 style={{ borderLeft: `3px solid var(--id-${tono})` }}
               >
-                <span className="agenda-acto-titulo">{a.titulo || a.artista}</span>
-                <span className="agenda-acto-hora">{a.hora}</span>
+                <span className="agenda-acto-texto">
+                  <span className="agenda-acto-titulo">{a.titulo || a.artista}</span>
+                  <span className="agenda-acto-hora">{a.hora}</span>
+                </span>
+                <Nivel nivel={a.nivel} />
               </button>
             ))}
             {avisos.map((aviso) => (
@@ -168,6 +214,21 @@ export default function AgendaMunicipio({
           </div>
         ))}
       </div>
+
+      {/* El glosario, aqui mismo. Una inicial suelta no se descifra sola -la T
+          podria ser cualquier cosa- asi que las tres van explicadas al pie de la
+          rejilla, donde no estorban a quien ya lo ha entendido.
+
+          aria-hidden porque cada acto ya lleva su rotulo escrito para el lector
+          de pantalla y repetirlo aqui seria decirlo dos veces. */}
+      <ul className="agenda-leyenda" aria-hidden="true">
+        {(["tamaulipeco", "nacional", "internacional"] as const).map((n) => (
+          <li key={n}>
+            <Nivel nivel={n} mudo />
+            {NIVELES[n].rotulo}
+          </li>
+        ))}
+      </ul>
 
       <dialog
         ref={panel}

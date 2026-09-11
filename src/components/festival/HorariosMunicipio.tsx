@@ -66,6 +66,7 @@ export default function HorariosMunicipio({ municipio }: { municipio: Municipio 
         artista: e.artista,
         disciplina: e.disciplina,
         procedencia: e.procedencia,
+        nivel: e.nivel,
         hora: e.hora,
         horaCruda: e.horaCruda,
         fechas: e.fechas,
