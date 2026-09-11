@@ -167,6 +167,28 @@ function resumir(texto: string): string {
   return (salida.trim() || limpio.slice(0, LARGO_ISLA).trim() + "...").trim();
 }
 
+/* Semblanzas que se publican enteras, sin pasar por el recorte.
+
+   El recorte existe por los documentos del comite, que son textos en bruto de
+   hasta ocho mil caracteres. Estas no lo son: estan redactadas ya para el sitio,
+   con la extension que se quiere ensenar, y recortarlas es tirar justo lo que se
+   escribio para el visitante. La de PROTEAC perdia todo menos la primera frase
+   -de donde viene la compania- y se quedaba sin la obra, el reparto y la
+   direccion, que es lo que ayuda a decidir si ir.
+
+   Caben en los tres sitios donde se leen sin romper nada: en la isla van
+   plegadas tras "Ver semblanza" y el panel se desplaza, en el telefono la cara
+   de la semblanza crece con el texto -no tiene alto fijo- y la ficha de la
+   agenda de un municipio tambien se desplaza.
+
+   Claves del volcado por artista, como las demas listas. */
+const COMPLETAS = new Set<string>(["proteac"]);
+
+function semblanzaDe(clave: string): string {
+  const texto = (semblanzas as Record<string, string>)[clave] ?? "";
+  return COMPLETAS.has(clave) ? limpiar(texto) : resumir(texto);
+}
+
 /* --- Fechas y sedes ------------------------------------------------------ */
 
 /** "2026-10-02" sueltas o un tramo seguido; las exposiciones duran varios dias. */
@@ -528,7 +550,7 @@ function convertir(
     etiqueta: limpiar(a.disciplinas[0] ?? "Programación"),
     titulo: limpiar(a.titulos[0] ?? ""),
     procedencia: procedenciaDe(a.procedencias),
-    semblanza: resumir((semblanzas as Record<string, string>)[a.clave] ?? ""),
+    semblanza: semblanzaDe(a.clave),
     banderas: seccion === "internacionales" ? banderasDe(a.procedencias) : [],
     presentaciones: funciones.map((p) => ({
       fecha: fecha(p.fechas),
