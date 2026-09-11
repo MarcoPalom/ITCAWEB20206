@@ -42,6 +42,24 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* La cartelera es oscura, y la raiz tambien tiene que serlo mientras se ve.
+
+   Su fondo no lo pinta el body sino una capa fixed a pantalla completa, y en
+   Safari de iOS 26 esa capa no llega hasta arriba del todo: el contenido se
+   desplaza por debajo de la barra de estado, pero lo fixed se maqueta a partir
+   de ella. En esa franja asomaba el hueso claro del body -las dos esquinas
+   blancas por encima de la ficha- y el reloj quedaba sobre claro con la ficha
+   oscura pasando por debajo. Pintando la raiz del mismo oscuro que la capa, la
+   franja queda del color de la pagina, que es ademas el que Safari toma para
+   tenir la barra de estado.
+
+   Con :has() y no con una clase puesta desde JavaScript: asi vale desde el
+   primer pintado, sin esperar a que hidrate nada. */
+html:has(.cartelera),
+html:has(.cartelera) body {
+  background: #1a1616;
+}
+
 /* Titulares editoriales: serif, tracking cerrado, sin mayusculas forzadas */
 .title-display {
   font-family: var(--font-display);
