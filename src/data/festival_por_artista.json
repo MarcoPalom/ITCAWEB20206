@@ -1,7 +1,7 @@
 {
   "festival": "Festival Internacional en la Costa del Seno Mexicano 2026",
-  "archivo_origen": "7_de_septiembre.xlsx",
-  "hoja": "7 de septiembre",
+  "archivo_origen": "14_de_septiembre.xlsx",
+  "hoja": "Programación",
   "mes": "Octubre",
   "anio": 2026,
   "dias": [
@@ -87,6 +87,7 @@
     }
   ],
   "programacion_local": "excluida",
+  "artes_visuales": "excluidas",
   "columnas_de_apoyo": {
     "contadores_int_nac_tam_local": false,
     "artes_visuales": false,
@@ -94,7 +95,7 @@
     "requerimientos_tecnicos": false,
     "observaciones": false
   },
-  "total_artistas": 104,
+  "total_artistas": 93,
   "artistas": [
     {
       "artista": "Adicto5",
@@ -135,7 +136,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D35"
+          "celda": "D37"
         },
         {
           "municipio": "San Fernando",
@@ -152,7 +153,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E46"
+          "celda": "E48"
         },
         {
           "municipio": "Llera",
@@ -169,58 +170,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M89"
-        }
-      ]
-    },
-    {
-      "artista": "Alejandro Rosales Lugo",
-      "clave": "alejandro rosales lugo",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Tamaulipas"
-      ],
-      "origen": [
-        "Tamaulipas"
-      ],
-      "titulos": [
-        "Poética del Espacio"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Martes 6",
-            "Miércoles 7",
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-06",
-            "2026-10-07",
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": "17:00",
-          "sede": "Galería \"Artemio Guerra\" del Centro de Arte y Cultura del Parque Cultural Reynosa",
-          "titulo": "Poética del Espacio",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración 6 de octubre 17:00 hrs. | Galería \"Artemio Guerra\" del Centro de Arte y Cultura del Parque Cultural Reynosa",
-          "permanencia": "Octubre 2026 a Enero 2027",
-          "notas": [],
-          "celda": "H27"
+          "celda": "M92"
         }
       ]
     },
@@ -264,7 +214,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D11"
+          "celda": "D12"
         },
         {
           "municipio": "Miguel Alemán",
@@ -281,7 +231,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E13"
+          "celda": "E15"
         },
         {
           "municipio": "Valle Hermoso",
@@ -298,7 +248,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L35"
+          "celda": "L37"
         },
         {
           "municipio": "Gustavo Díaz Ordaz",
@@ -315,7 +265,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M19"
+          "celda": "M21"
         }
       ]
     },
@@ -358,7 +308,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G52"
+          "celda": "G54"
         },
         {
           "municipio": "Cruillas",
@@ -368,14 +318,14 @@
           "fechas": [
             "2026-10-06"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "10:30",
+          "sede": "Primaria Josefa Ortíz de Domínguez",
           "titulo": "El Sur Viaja en Tren",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H50"
+          "celda": "H52"
         },
         {
           "municipio": "Méndez",
@@ -385,14 +335,14 @@
           "fechas": [
             "2026-10-07"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Escuela Primaria \"Benemérito de las Américas\"",
           "titulo": "El Sur Viaja en Tren",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I44"
+          "celda": "I46"
         }
       ]
     },
@@ -435,7 +385,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G103"
+          "celda": "G106"
         },
         {
           "municipio": "Gómez Farías",
@@ -452,7 +402,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H105"
+          "celda": "H108"
         },
         {
           "municipio": "Jaumave",
@@ -469,7 +419,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I91"
+          "celda": "I94"
         }
       ]
     },
@@ -509,14 +459,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Plaza Principal",
           "titulo": "Mundo Fantástico",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D113"
+          "celda": "D116"
         },
         {
           "municipio": "Nuevo Morelos",
@@ -533,7 +483,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D111"
+          "celda": "D114"
         },
         {
           "municipio": "Camargo",
@@ -543,14 +493,14 @@
           "fechas": [
             "2026-10-06"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Jardín de Niños \"Gabilondo Soler\"",
           "titulo": "Mundo Fantástico",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H17"
+          "celda": "H19"
         },
         {
           "municipio": "Gustavo Díaz Ordaz",
@@ -567,7 +517,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I19"
+          "celda": "I21"
         },
         {
           "municipio": "Valle Hermoso",
@@ -584,7 +534,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J34"
+          "celda": "J36"
         },
         {
           "municipio": "Gómez Farías",
@@ -601,7 +551,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M105"
+          "celda": "M108"
         },
         {
           "municipio": "Ocampo",
@@ -611,14 +561,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Plaza Principal",
           "titulo": "Mundo Fantástico",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M101"
+          "celda": "M104"
         }
       ]
     },
@@ -659,7 +609,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E126"
+          "celda": "E129"
         }
       ]
     },
@@ -700,7 +650,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D21"
+          "celda": "D23"
         }
       ]
     },
@@ -742,7 +692,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L103"
+          "celda": "L106"
         },
         {
           "municipio": "Reynosa",
@@ -759,7 +709,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M21"
+          "celda": "M23"
         }
       ]
     },
@@ -801,7 +751,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D107"
+          "celda": "D110"
         },
         {
           "municipio": "Padilla",
@@ -818,7 +768,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M69"
+          "celda": "M71"
         }
       ]
     },
@@ -864,7 +814,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D64"
+          "celda": "D66"
         },
         {
           "municipio": "Soto la Marina",
@@ -881,7 +831,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F66"
+          "celda": "F68"
         },
         {
           "municipio": "San Carlos",
@@ -898,7 +848,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J54"
+          "celda": "J56"
         },
         {
           "municipio": "Victoria",
@@ -915,7 +865,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K83"
+          "celda": "K85"
         },
         {
           "municipio": "Río Bravo",
@@ -932,7 +882,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M32"
+          "celda": "M34"
         }
       ]
     },
@@ -975,7 +925,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D99"
+          "celda": "D102"
         },
         {
           "municipio": "Madero",
@@ -992,7 +942,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E124"
+          "celda": "E127"
         },
         {
           "municipio": "Altamira",
@@ -1009,54 +959,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F122"
-        }
-      ]
-    },
-    {
-      "artista": "Calixto Ramírez",
-      "clave": "calixto ramirez",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Tamaulipas"
-      ],
-      "origen": [
-        "Tamaulipas"
-      ],
-      "titulos": [
-        "Lo que el viento me dejó"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": "18:00",
-          "sede": "Museo de Arte Contemporáneo de Tamaulipas (MACT)",
-          "titulo": "Lo que el viento me dejó",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración 8 de octubre 18:00 hrs. | Museo de Arte Contemporáneo de Tamaulipas (MACT)",
-          "permanencia": "Octubre 2026 a Enero 2027",
-          "notas": [],
-          "celda": "J42"
+          "celda": "F125"
         }
       ]
     },
@@ -1101,7 +1004,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D124"
+          "celda": "D127"
         },
         {
           "municipio": "Mante",
@@ -1118,7 +1021,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E107"
+          "celda": "E110"
         },
         {
           "municipio": "Tula",
@@ -1135,7 +1038,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F99"
+          "celda": "F102"
         },
         {
           "municipio": "Aldama",
@@ -1152,66 +1055,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G120"
-        }
-      ]
-    },
-    {
-      "artista": "Cartel Gráfico Mundialista y Tiro al Ángulo: Exposición de Cartel y Fotografía",
-      "clave": "cartel grafico mundialista y tiro al angulo: exposicion de cartel y fotografia",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Tamaulipas"
-      ],
-      "origen": [
-        "Tamaulipas"
-      ],
-      "titulos": [
-        "Cartel Gráfico Mundialista y Tiro al Ángulo: Exposición de Cartel y Fotografía"
-      ],
-      "sin_autor_nombrado": true,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Soto la Marina"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Soto la Marina",
-          "dias": [
-            "Viernes 2",
-            "Sábado 3",
-            "Domingo 4",
-            "Lunes 5",
-            "Martes 6",
-            "Miércoles 7",
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-02",
-            "2026-10-03",
-            "2026-10-04",
-            "2026-10-05",
-            "2026-10-06",
-            "2026-10-07",
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": null,
-          "sede": "Casa de la Cultura de Soto la Marina",
-          "titulo": "Cartel Gráfico Mundialista y Tiro al Ángulo: Exposición de Cartel y Fotografía",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración | Casa de la Cultura de Soto la Marina",
-          "permanencia": null,
-          "notas": [],
-          "celda": "D67"
+          "celda": "G123"
         }
       ]
     },
@@ -1231,8 +1075,8 @@
         "Cuentocirco"
       ],
       "sin_autor_nombrado": false,
-      "total_presentaciones": 11,
-      "total_municipios": 11,
+      "total_presentaciones": 10,
+      "total_municipios": 10,
       "municipios": [
         "Bustamante",
         "Casas",
@@ -1242,7 +1086,6 @@
         "Llera",
         "Mainero",
         "Miquihuana",
-        "Ocampo",
         "Padilla",
         "San Carlos"
       ],
@@ -1262,7 +1105,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D95"
+          "celda": "D98"
         },
         {
           "municipio": "Bustamante",
@@ -1279,7 +1122,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E93"
+          "celda": "E96"
         },
         {
           "municipio": "Jaumave",
@@ -1296,7 +1139,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F91"
+          "celda": "F94"
         },
         {
           "municipio": "Llera",
@@ -1313,24 +1156,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G89"
-        },
-        {
-          "municipio": "Ocampo",
-          "dias": [
-            "Lunes 5"
-          ],
-          "fechas": [
-            "2026-10-05"
-          ],
-          "hora": null,
-          "sede": null,
-          "titulo": "Cuentocirco",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "G101"
+          "celda": "G92"
         },
         {
           "municipio": "Casas",
@@ -1347,7 +1173,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H74"
+          "celda": "H76"
         },
         {
           "municipio": "Güémez",
@@ -1364,7 +1190,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I71"
+          "celda": "I73"
         },
         {
           "municipio": "Padilla",
@@ -1381,7 +1207,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J69"
+          "celda": "J71"
         },
         {
           "municipio": "Hidalgo",
@@ -1391,14 +1217,14 @@
           "fechas": [
             "2026-10-09"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Escuela Primaria \"Pedro J. Méndez\"",
           "titulo": "Cuentocirco",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K60"
+          "celda": "K62"
         },
         {
           "municipio": "Mainero",
@@ -1408,14 +1234,14 @@
           "fechas": [
             "2026-10-10"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "17:30",
+          "sede": "Salón Praxedis Balboa, Anexo a Presidencia Municipal",
           "titulo": "Cuentocirco",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L56"
+          "celda": "L58"
         },
         {
           "municipio": "San Carlos",
@@ -1432,7 +1258,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M54"
+          "celda": "M56"
         }
       ]
     },
@@ -1477,7 +1303,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J66"
+          "celda": "J68"
         },
         {
           "municipio": "Victoria",
@@ -1494,7 +1320,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J81"
+          "celda": "J83"
         },
         {
           "municipio": "Llera",
@@ -1511,7 +1337,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K89"
+          "celda": "K92"
         },
         {
           "municipio": "Abasolo",
@@ -1528,7 +1354,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L64"
+          "celda": "L66"
         },
         {
           "municipio": "San Nicolás",
@@ -1545,7 +1371,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M52"
+          "celda": "M54"
         }
       ]
     },
@@ -1590,7 +1416,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I122"
+          "celda": "I125"
         },
         {
           "municipio": "Aldama",
@@ -1607,7 +1433,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J120"
+          "celda": "J123"
         },
         {
           "municipio": "Jiménez",
@@ -1624,7 +1450,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K62"
+          "celda": "K64"
         },
         {
           "municipio": "Cruillas",
@@ -1634,16 +1460,14 @@
           "fechas": [
             "2026-10-10"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Centro Cívico Municipal",
           "titulo": "De camino a casa",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "(Programar de preferencia en Auditorio)"
-          ],
-          "celda": "L50"
+          "notas": [],
+          "celda": "L52"
         },
         {
           "municipio": "Valle Hermoso",
@@ -1653,16 +1477,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Jardín de Niños \"Estefanía Castañeda\"",
           "titulo": "De camino a casa",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "(Programar de preferencia en Auditorio)"
-          ],
-          "celda": "M34"
+          "notas": [],
+          "celda": "M36"
         }
       ]
     },
@@ -1706,7 +1528,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D76"
+          "celda": "D78"
         },
         {
           "municipio": "Gómez Farías",
@@ -1723,7 +1545,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E105"
+          "celda": "E108"
         },
         {
           "municipio": "González",
@@ -1740,7 +1562,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F115"
+          "celda": "F118"
         },
         {
           "municipio": "Abasolo",
@@ -1757,7 +1579,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G64"
+          "celda": "G66"
         }
       ]
     },
@@ -1804,7 +1626,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D105"
+          "celda": "D108"
         },
         {
           "municipio": "Xicoténcatl",
@@ -1821,7 +1643,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E103"
+          "celda": "E106"
         },
         {
           "municipio": "Ocampo",
@@ -1831,14 +1653,14 @@
           "fechas": [
             "2026-10-04"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "17:00",
+          "sede": "Plaza Principal",
           "titulo": "Las Maravillas del Cielo",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F101"
+          "celda": "F104"
         },
         {
           "municipio": "Nuevo Morelos",
@@ -1855,7 +1677,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G111"
+          "celda": "G114"
         },
         {
           "municipio": "Antiguo Morelos",
@@ -1865,14 +1687,14 @@
           "fechas": [
             "2026-10-06"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "17:00",
+          "sede": "Plaza Principal",
           "titulo": "Las Maravillas del Cielo",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H113"
+          "celda": "H116"
         },
         {
           "municipio": "Bustamante",
@@ -1889,7 +1711,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M93"
+          "celda": "M96"
         },
         {
           "municipio": "Miquihuana",
@@ -1906,7 +1728,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M95"
+          "celda": "M98"
         }
       ]
     },
@@ -1944,14 +1766,14 @@
           "fechas": [
             "2026-10-05"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Escuela Primaria \"Ruperto Treviño\"",
           "titulo": "Titiricuento: Caperuza Celeste",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G44"
+          "celda": "G46"
         },
         {
           "municipio": "Burgos",
@@ -1968,7 +1790,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H48"
+          "celda": "H50"
         },
         {
           "municipio": "Cruillas",
@@ -1978,14 +1800,14 @@
           "fechas": [
             "2026-10-07"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Jardín de Niños \"Consuelo Vela Medina\"",
           "titulo": "Titiricuento: Caperuza Celeste",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I50"
+          "celda": "I52"
         },
         {
           "municipio": "San Nicolás",
@@ -2002,7 +1824,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J52"
+          "celda": "J54"
         },
         {
           "municipio": "Camargo",
@@ -2012,14 +1834,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:30",
+          "sede": "Foro de la Plaza Principal",
           "titulo": "Titiricuento: Caperuza Celeste",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M17"
+          "celda": "M19"
         }
       ]
     },
@@ -2061,7 +1883,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G127"
+          "celda": "G130"
         },
         {
           "municipio": "Reynosa",
@@ -2078,7 +1900,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I22"
+          "celda": "I24"
         }
       ]
     },
@@ -2140,7 +1962,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F21"
+          "celda": "F23"
         },
         {
           "municipio": "Matamoros",
@@ -2157,7 +1979,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G39"
+          "celda": "G41"
         },
         {
           "municipio": "Victoria",
@@ -2174,7 +1996,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I83"
+          "celda": "I85"
         },
         {
           "municipio": "Tampico",
@@ -2191,7 +2013,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K126"
+          "celda": "K129"
         }
       ]
     },
@@ -2232,7 +2054,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J21"
+          "celda": "J23"
         }
       ]
     },
@@ -2273,7 +2095,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M22"
+          "celda": "M24"
         }
       ]
     },
@@ -2317,7 +2139,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D69"
+          "celda": "D71"
         },
         {
           "municipio": "Madero",
@@ -2334,7 +2156,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K124"
+          "celda": "K127"
         },
         {
           "municipio": "Gómez Farías",
@@ -2351,7 +2173,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L105"
+          "celda": "L108"
         },
         {
           "municipio": "Xicoténcatl",
@@ -2368,7 +2190,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M103"
+          "celda": "M106"
         }
       ]
     },
@@ -2411,7 +2233,7 @@
           "notas": [
             "(MACT)"
           ],
-          "celda": "K39"
+          "celda": "K41"
         }
       ]
     },
@@ -2454,7 +2276,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K103"
+          "celda": "K106"
         },
         {
           "municipio": "Bustamante",
@@ -2471,7 +2293,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L93"
+          "celda": "L96"
         },
         {
           "municipio": "Palmillas",
@@ -2488,7 +2310,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M97"
+          "celda": "M100"
         }
       ]
     },
@@ -2531,7 +2353,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K99"
+          "celda": "K102"
         },
         {
           "municipio": "Victoria",
@@ -2548,7 +2370,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L81"
+          "celda": "L83"
         },
         {
           "municipio": "Mier",
@@ -2565,7 +2387,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M11"
+          "celda": "M12"
         }
       ]
     },
@@ -2602,14 +2424,14 @@
           "fechas": [
             "2026-10-08"
           ],
-          "hora": "09:00",
+          "hora": "12:30",
           "sede": "Telesecundaria \"Miguel Hidalgo\"",
           "titulo": "Por quien suenan los tambores",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J97"
+          "celda": "J100"
         },
         {
           "municipio": "Bustamante",
@@ -2626,7 +2448,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K93"
+          "celda": "K96"
         },
         {
           "municipio": "Llera",
@@ -2643,7 +2465,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L89"
+          "celda": "L92"
         },
         {
           "municipio": "Jaumave",
@@ -2660,7 +2482,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M91"
+          "celda": "M94"
         }
       ]
     },
@@ -2704,7 +2526,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D116"
+          "celda": "D119"
         },
         {
           "municipio": "Güémez",
@@ -2721,7 +2543,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E71"
+          "celda": "E73"
         },
         {
           "municipio": "Hidalgo",
@@ -2731,14 +2553,14 @@
           "fechas": [
             "2026-10-10"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:30",
+          "sede": "Ejido \"Emiliano Zapaata\", Región de Santa Engracia, Municipio de Hidalgo",
           "titulo": "Distrito Cero",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L60"
+          "celda": "L62"
         },
         {
           "municipio": "Méndez",
@@ -2748,14 +2570,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Plaza Pedro J. Méndez",
           "titulo": "Distrito Cero",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M44"
+          "celda": "M46"
         }
       ]
     },
@@ -2798,7 +2620,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D14"
+          "celda": "D16"
         },
         {
           "municipio": "Mante",
@@ -2815,7 +2637,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L107"
+          "celda": "L110"
         },
         {
           "municipio": "Tula",
@@ -2832,7 +2654,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M99"
+          "celda": "M102"
         }
       ]
     },
@@ -2870,14 +2692,14 @@
           "fechas": [
             "2026-10-05"
           ],
-          "hora": null,
-          "sede": "Programar en escuelas o auditorios, con invitación a escuelas",
+          "hora": "17:00",
+          "sede": "Plaza Principal",
           "titulo": "El éxodo de los pequeños zapatos",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G113"
+          "celda": "G116"
         },
         {
           "municipio": "Nuevo Morelos",
@@ -2894,7 +2716,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H111"
+          "celda": "H114"
         },
         {
           "municipio": "González",
@@ -2911,7 +2733,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I116"
+          "celda": "I119"
         },
         {
           "municipio": "Xicoténcatl",
@@ -2928,7 +2750,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J103"
+          "celda": "J106"
         },
         {
           "municipio": "Gómez Farías",
@@ -2945,7 +2767,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K105"
+          "celda": "K108"
         }
       ]
     },
@@ -2981,14 +2803,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Foro de la Plaza Principal",
           "titulo": "El Zar de Monterrey",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D17"
+          "celda": "D19"
         },
         {
           "municipio": "Guerrero",
@@ -3005,7 +2827,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E9"
+          "celda": "E10"
         },
         {
           "municipio": "Cruillas",
@@ -3015,14 +2837,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Plaza Principal de Cruillas",
           "titulo": "El Zar de Monterrey",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M50"
+          "celda": "M52"
         }
       ]
     },
@@ -3084,7 +2906,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I21"
+          "celda": "I23"
         },
         {
           "municipio": "Matamoros",
@@ -3101,7 +2923,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J37"
+          "celda": "J39"
         },
         {
           "municipio": "Victoria",
@@ -3118,7 +2940,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L80"
+          "celda": "L82"
         },
         {
           "municipio": "Tampico",
@@ -3135,7 +2957,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M126"
+          "celda": "M129"
         }
       ]
     },
@@ -3177,7 +2999,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H32"
+          "celda": "H34"
         },
         {
           "municipio": "Matamoros",
@@ -3194,7 +3016,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I38"
+          "celda": "I40"
         }
       ]
     },
@@ -3237,7 +3059,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D71"
+          "celda": "D73"
         },
         {
           "municipio": "Padilla",
@@ -3254,7 +3076,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E69"
+          "celda": "E71"
         },
         {
           "municipio": "Llera",
@@ -3271,7 +3093,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F89"
+          "celda": "F92"
         }
       ]
     },
@@ -3314,7 +3136,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E11"
+          "celda": "E12"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -3348,7 +3170,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K9"
+          "celda": "K10"
         }
       ]
     },
@@ -3410,7 +3232,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J19"
+          "celda": "J21"
         },
         {
           "municipio": "Camargo",
@@ -3420,14 +3242,14 @@
           "fechas": [
             "2026-10-09"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Foro de la Plaza Principal",
           "titulo": "México con Voz de Mujer",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K17"
+          "celda": "K19"
         },
         {
           "municipio": "Mier",
@@ -3444,7 +3266,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L11"
+          "celda": "L12"
         },
         {
           "municipio": "Guerrero",
@@ -3461,7 +3283,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M9"
+          "celda": "M10"
         }
       ]
     },
@@ -3499,14 +3321,14 @@
           "fechas": [
             "2026-10-04"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "17:30",
+          "sede": "Salón Praxedis Balboa, Anexo a Presidencia Municipal",
           "titulo": "El horizonte como libro abierto",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F56"
+          "celda": "F58"
         },
         {
           "municipio": "Villagrán",
@@ -3516,14 +3338,14 @@
           "fechas": [
             "2026-10-05"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Escuela Primaria \"Silverio de J. Zamudio\"",
           "titulo": "El horizonte como libro abierto",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G58"
+          "celda": "G60"
         },
         {
           "municipio": "Hidalgo",
@@ -3533,14 +3355,14 @@
           "fechas": [
             "2026-10-06"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Escuela Primaria \"Baldomero Sánchez\"",
           "titulo": "El horizonte como libro abierto",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H60"
+          "celda": "H62"
         },
         {
           "municipio": "Padilla",
@@ -3557,7 +3379,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I69"
+          "celda": "I71"
         },
         {
           "municipio": "Güémez",
@@ -3574,7 +3396,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J71"
+          "celda": "J73"
         }
       ]
     },
@@ -3611,16 +3433,14 @@
           "fechas": [
             "2026-10-05"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "10:30",
+          "sede": "Secundaria General \"Juan José de la Garza\"",
           "titulo": "Sherly H.",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "(Teatro para adolescentes, programar en Auditorio para secundarias)"
-          ],
-          "celda": "G50"
+          "notas": [],
+          "celda": "G52"
         },
         {
           "municipio": "San Nicolás",
@@ -3637,7 +3457,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H52"
+          "celda": "H54"
         },
         {
           "municipio": "San Fernando",
@@ -3654,7 +3474,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I46"
+          "celda": "I48"
         },
         {
           "municipio": "Méndez",
@@ -3664,16 +3484,14 @@
           "fechas": [
             "2026-10-08"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Escuela Secundaria \"Juana de Asbaje\"",
           "titulo": "Sherly H.",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "(Teatro para adolescentes, programar en Auditorio para secundarias)"
-          ],
-          "celda": "J44"
+          "notas": [],
+          "celda": "J46"
         }
       ]
     },
@@ -3759,7 +3577,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D97"
+          "celda": "D100"
         },
         {
           "municipio": "Ocampo",
@@ -3769,14 +3587,14 @@
           "fechas": [
             "2026-10-03"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "17:00",
+          "sede": "Plaza Principal",
           "titulo": "Fiestas",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E101"
+          "celda": "E104"
         },
         {
           "municipio": "Bustamante",
@@ -3793,7 +3611,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F93"
+          "celda": "F96"
         },
         {
           "municipio": "Jaumave",
@@ -3810,7 +3628,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G91"
+          "celda": "G94"
         },
         {
           "municipio": "Miquihuana",
@@ -3829,7 +3647,7 @@
           "notas": [
             "(Patio Cívico)"
           ],
-          "celda": "H95"
+          "celda": "H98"
         }
       ]
     },
@@ -3872,7 +3690,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D54"
+          "celda": "D56"
         },
         {
           "municipio": "Valle Hermoso",
@@ -3889,7 +3707,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E35"
+          "celda": "E37"
         },
         {
           "municipio": "San Fernando",
@@ -3906,7 +3724,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F46"
+          "celda": "F48"
         }
       ]
     },
@@ -3949,7 +3767,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D19"
+          "celda": "D21"
         },
         {
           "municipio": "Madero",
@@ -3966,7 +3784,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G124"
+          "celda": "G127"
         },
         {
           "municipio": "Mante",
@@ -3983,7 +3801,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K107"
+          "celda": "K110"
         }
       ]
     },
@@ -4025,7 +3843,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D9"
+          "celda": "D10"
         },
         {
           "municipio": "Mainero",
@@ -4035,61 +3853,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "17:30",
+          "sede": "Salón Praxedis Balboa, Anexo a Presidencia Municipal",
           "titulo": "Tamaulipas también es Norte",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M56"
-        }
-      ]
-    },
-    {
-      "artista": "Gustavo Sánchez Tudón",
-      "clave": "gustavo sanchez tudon",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Tamaulipas"
-      ],
-      "origen": [
-        "Tamaulipas"
-      ],
-      "titulos": [
-        "Dos Miradas al Paisaje"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Mante"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Mante",
-          "dias": [
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": "18:00",
-          "sede": "Galería de Arte \"Ramón Cano Manilla\"",
-          "titulo": "Dos Miradas al Paisaje",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración 8 de octubre 18:00 hrs. | Galería de Arte \"Ramón Cano Manilla\"",
-          "permanencia": "Octubre-Diciembre",
-          "notas": [],
-          "celda": "J109"
+          "celda": "M58"
         }
       ]
     },
@@ -4131,7 +3902,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G107"
+          "celda": "G110"
         },
         {
           "municipio": "Victoria",
@@ -4148,7 +3919,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H80"
+          "celda": "H82"
         }
       ]
     },
@@ -4184,14 +3955,14 @@
           "fechas": [
             "2026-10-09"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "17:30",
+          "sede": "Salón Praxedis Balboa, Anexo a Presidencia Municipal",
           "titulo": "Orgullo Tamaulipeco",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K56"
+          "celda": "K58"
         },
         {
           "municipio": "San Nicolás",
@@ -4208,7 +3979,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L52"
+          "celda": "L54"
         },
         {
           "municipio": "Burgos",
@@ -4225,7 +3996,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M48"
+          "celda": "M50"
         }
       ]
     },
@@ -4266,7 +4037,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D120"
+          "celda": "D123"
         }
       ]
     },
@@ -4310,7 +4081,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D80"
+          "celda": "D82"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -4344,7 +4115,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G21"
+          "celda": "G23"
         },
         {
           "municipio": "Tampico",
@@ -4361,62 +4132,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I126"
-        }
-      ]
-    },
-    {
-      "artista": "Jaiba Brava: Exposición Futbol",
-      "clave": "jaiba brava: exposicion futbol",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [],
-      "origen": [],
-      "titulos": [
-        "Jaiba Brava: Exposición Futbol"
-      ],
-      "sin_autor_nombrado": true,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Viernes 2",
-            "Sábado 3",
-            "Domingo 4",
-            "Lunes 5",
-            "Martes 6",
-            "Miércoles 7",
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-02",
-            "2026-10-03",
-            "2026-10-04",
-            "2026-10-05",
-            "2026-10-06",
-            "2026-10-07",
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": null,
-          "sede": "Galería Pedro Banda del Centro Cultural Tamaulipas",
-          "titulo": "Jaiba Brava: Exposición Futbol",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración | Galería Pedro Banda del Centro Cultural Tamaulipas",
-          "permanencia": "Octubre a Noviembre de 2026",
-          "notas": [],
-          "celda": "D87"
+          "celda": "I129"
         }
       ]
     },
@@ -4462,7 +4178,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D32"
+          "celda": "D34"
         },
         {
           "municipio": "Gustavo Díaz Ordaz",
@@ -4479,7 +4195,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E19"
+          "celda": "E21"
         },
         {
           "municipio": "Matamoros",
@@ -4496,7 +4212,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F40"
+          "celda": "F42"
         },
         {
           "municipio": "Reynosa",
@@ -4513,7 +4229,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J23"
+          "celda": "J25"
         },
         {
           "municipio": "San Fernando",
@@ -4530,7 +4246,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K46"
+          "celda": "K48"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -4589,7 +4305,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E99"
+          "celda": "E102"
         },
         {
           "municipio": "Soto la Marina",
@@ -4606,7 +4322,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L66"
+          "celda": "L68"
         }
       ]
     },
@@ -4648,7 +4364,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F81"
+          "celda": "F83"
         },
         {
           "municipio": "Reynosa",
@@ -4659,13 +4375,13 @@
             "2026-10-09"
           ],
           "hora": "18:30",
-          "sede": "Museo Histórico Reynosa",
+          "sede": "Plaza Niños Héroes",
           "titulo": "Cuerdas eléctricas: Rock Latino y Fusiones",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K22"
+          "celda": "K24"
         }
       ]
     },
@@ -4709,7 +4425,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D103"
+          "celda": "D106"
         },
         {
           "municipio": "Aldama",
@@ -4726,7 +4442,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E120"
+          "celda": "E123"
         },
         {
           "municipio": "Jaumave",
@@ -4743,7 +4459,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L91"
+          "celda": "L94"
         },
         {
           "municipio": "González",
@@ -4760,7 +4476,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M115"
+          "celda": "M118"
         }
       ]
     },
@@ -4805,7 +4521,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I120"
+          "celda": "I123"
         },
         {
           "municipio": "Madero",
@@ -4822,7 +4538,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J124"
+          "celda": "J127"
         },
         {
           "municipio": "González",
@@ -4839,7 +4555,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K116"
+          "celda": "K119"
         },
         {
           "municipio": "Altamira",
@@ -4856,7 +4572,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L122"
+          "celda": "L125"
         },
         {
           "municipio": "Victoria",
@@ -4873,7 +4589,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M81"
+          "celda": "M83"
         }
       ]
     },
@@ -4911,14 +4627,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Plaza Principal",
           "titulo": "Música para Campeones",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D101"
+          "celda": "D104"
         },
         {
           "municipio": "González",
@@ -4935,7 +4651,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E115"
+          "celda": "E118"
         },
         {
           "municipio": "Soto la Marina",
@@ -4952,7 +4668,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K66"
+          "celda": "K68"
         },
         {
           "municipio": "Jiménez",
@@ -4969,7 +4685,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L62"
+          "celda": "L64"
         },
         {
           "municipio": "Güémez",
@@ -4986,7 +4702,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M71"
+          "celda": "M73"
         }
       ]
     },
@@ -5030,7 +4746,7 @@
           "notas": [
             "(IRBAM)"
           ],
-          "celda": "F38"
+          "celda": "F40"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -5048,65 +4764,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "M6"
-        }
-      ]
-    },
-    {
-      "artista": "Leonora Carrington",
-      "clave": "leonora carrington",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Internacional-Programación Local"
-      ],
-      "origen": [
-        "Internacional"
-      ],
-      "titulos": [
-        "Un Viaje Sagrado"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Viernes 2",
-            "Sábado 3",
-            "Domingo 4",
-            "Lunes 5",
-            "Martes 6",
-            "Miércoles 7",
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-02",
-            "2026-10-03",
-            "2026-10-04",
-            "2026-10-05",
-            "2026-10-06",
-            "2026-10-07",
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": null,
-          "sede": "Museo del Ferrocarril, Arte y Maquila",
-          "titulo": "Un Viaje Sagrado",
-          "tipo": "exposición",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "D26"
         }
       ]
     },
@@ -5148,7 +4805,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D122"
+          "celda": "D125"
         },
         {
           "municipio": "San Fernando",
@@ -5165,7 +4822,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M46"
+          "celda": "M48"
         }
       ]
     },
@@ -5209,7 +4866,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D93"
+          "celda": "D96"
         },
         {
           "municipio": "Jaumave",
@@ -5226,7 +4883,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E91"
+          "celda": "E94"
         },
         {
           "municipio": "Palmillas",
@@ -5243,7 +4900,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F97"
+          "celda": "F100"
         },
         {
           "municipio": "Hidalgo",
@@ -5253,16 +4910,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:30",
+          "sede": "Plaza Principal de Hidalgo",
           "titulo": "Herencia del Pueblo: Música del Norte",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "(viajan con sus instrumentos, incluída batería)"
-          ],
-          "celda": "M60"
+          "notas": [],
+          "celda": "M62"
         }
       ]
     },
@@ -5305,7 +4960,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D48"
+          "celda": "D50"
         },
         {
           "municipio": "Güémez",
@@ -5322,7 +4977,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H71"
+          "celda": "H73"
         },
         {
           "municipio": "Casas",
@@ -5339,7 +4994,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I73"
+          "celda": "I75"
         }
       ]
     },
@@ -5398,7 +5053,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L46"
+          "celda": "L48"
         }
       ]
     },
@@ -5439,7 +5094,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E81"
+          "celda": "E83"
         }
       ]
     },
@@ -5483,7 +5138,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J80"
+          "celda": "J82"
         },
         {
           "municipio": "Reynosa",
@@ -5500,7 +5155,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K21"
+          "celda": "K23"
         },
         {
           "municipio": "Matamoros",
@@ -5517,7 +5172,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L37"
+          "celda": "L39"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -5535,47 +5190,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "M5"
-        }
-      ]
-    },
-    {
-      "artista": "Mario Fuentes, Rodolfo Ríos, Efrén Yañez, Esther González, entre otros.",
-      "clave": "mario fuentes, rodolfo rios, efren yanez, esther gonzalez, entre otros.",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [],
-      "origen": [],
-      "titulos": [
-        "Casa Filizola: Una Puerta al Arte y la Historia"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": "18:00",
-          "sede": "Pinacoteca de Tamaulipas",
-          "titulo": "Casa Filizola: Una Puerta al Arte y la Historia",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración 9 de octubre 18:00 hrs. | Pinacoteca de Tamaulipas",
-          "permanencia": "Octubre de 2026 a Enero de 2027",
-          "notas": [],
-          "celda": "K86"
         }
       ]
     },
@@ -5616,54 +5230,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M76"
-        }
-      ]
-    },
-    {
-      "artista": "Mauricio Sáenz - Cánovas",
-      "clave": "mauricio saenz - canovas",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Tamaulipas"
-      ],
-      "origen": [
-        "Tamaulipas"
-      ],
-      "titulos": [
-        "El lugar (Bagdad) donde los suspiros se desintegran"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Matamoros"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Matamoros",
-          "dias": [
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": "18:00",
-          "sede": "Museo de Arte Contemporáneo de Tamaulipas (MACT)",
-          "titulo": "El lugar (Bagdad) donde los suspiros se desintegran",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración 8 de octubre 18:00 hrs. | Museo de Arte Contemporáneo de Tamaulipas (MACT)",
-          "permanencia": "Octubre 2026 a Enero 2027",
-          "notas": [],
-          "celda": "J41"
+          "celda": "M78"
         }
       ]
     },
@@ -5704,7 +5271,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J83"
+          "celda": "J85"
         }
       ]
     },
@@ -5746,7 +5313,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K91"
+          "celda": "K94"
         },
         {
           "municipio": "Casas",
@@ -5763,7 +5330,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M74"
+          "celda": "M76"
         }
       ]
     },
@@ -5807,7 +5374,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G80"
+          "celda": "G82"
         },
         {
           "municipio": "Reynosa",
@@ -5824,7 +5391,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H21"
+          "celda": "H23"
         },
         {
           "municipio": "Matamoros",
@@ -5841,7 +5408,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I37"
+          "celda": "I39"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -5902,7 +5469,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E80"
+          "celda": "E82"
         },
         {
           "municipio": "Tampico",
@@ -5919,7 +5486,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F126"
+          "celda": "F129"
         },
         {
           "municipio": "Matamoros",
@@ -5936,7 +5503,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G37"
+          "celda": "G39"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -5954,59 +5521,6 @@
           "permanencia": null,
           "notas": [],
           "celda": "H5"
-        }
-      ]
-    },
-    {
-      "artista": "NEXOS Muestra de Arte Emergente",
-      "clave": "nexos muestra de arte emergente",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Tamaulipas"
-      ],
-      "origen": [
-        "Tamaulipas"
-      ],
-      "titulos": [
-        "NEXOS Muestra de Arte Emergente"
-      ],
-      "sin_autor_nombrado": true,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Reynosa"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Reynosa",
-          "dias": [
-            "Martes 6",
-            "Miércoles 7",
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-06",
-            "2026-10-07",
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": "17:00",
-          "sede": "Galería \"Artemio Guerra\" del Centro de Arte y Cultura del Parque Cultural Reynosa",
-          "titulo": "NEXOS Muestra de Arte Emergente",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración 6 de octubre 17:00 hrs. | Galería \"Artemio Guerra\" del Centro de Arte y Cultura del Parque Cultural Reynosa",
-          "permanencia": "Octubre 2026 a Enero 2027",
-          "notas": [
-            "(Primera Edición)"
-          ],
-          "celda": "H28"
         }
       ]
     },
@@ -6049,7 +5563,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D66"
+          "celda": "D68"
         },
         {
           "municipio": "Victoria",
@@ -6066,7 +5580,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K81"
+          "celda": "K83"
         },
         {
           "municipio": "Tula",
@@ -6083,7 +5597,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L99"
+          "celda": "L102"
         }
       ]
     },
@@ -6125,7 +5639,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H127"
+          "celda": "H130"
         },
         {
           "municipio": "Casas",
@@ -6142,7 +5656,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J73"
+          "celda": "J75"
         }
       ]
     },
@@ -6183,7 +5697,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M122"
+          "celda": "M125"
         }
       ]
     },
@@ -6224,7 +5738,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F108"
+          "celda": "F111"
         }
       ]
     },
@@ -6267,7 +5781,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E66"
+          "celda": "E68"
         },
         {
           "municipio": "Padilla",
@@ -6284,7 +5798,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F69"
+          "celda": "F71"
         },
         {
           "municipio": "Casas",
@@ -6301,7 +5815,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G73"
+          "celda": "G75"
         }
       ]
     },
@@ -6344,7 +5858,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K80"
+          "celda": "K82"
         },
         {
           "municipio": "Madero",
@@ -6361,7 +5875,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L124"
+          "celda": "L127"
         },
         {
           "municipio": "Aldama",
@@ -6378,7 +5892,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M120"
+          "celda": "M123"
         }
       ]
     },
@@ -6416,14 +5930,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Plaza Principal Méndez",
           "titulo": "Contempo Di Folklore",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D44"
+          "celda": "D46"
         },
         {
           "municipio": "San Carlos",
@@ -6440,7 +5954,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E54"
+          "celda": "E56"
         },
         {
           "municipio": "Hidalgo",
@@ -6450,14 +5964,14 @@
           "fechas": [
             "2026-10-04"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:30",
+          "sede": "Ejido \"Guillermo Zúñiga\", Region de Santa Engracia, Municipio de Hidalgo",
           "titulo": "Contempo Di Folklore",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F60"
+          "celda": "F62"
         },
         {
           "municipio": "Antiguo Morelos",
@@ -6467,14 +5981,14 @@
           "fechas": [
             "2026-10-10"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "17:00",
+          "sede": "Plaza Principal",
           "titulo": "Contempo Di Folklore",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L113"
+          "celda": "L116"
         },
         {
           "municipio": "Nuevo Morelos",
@@ -6491,7 +6005,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M111"
+          "celda": "M114"
         }
       ]
     },
@@ -6536,7 +6050,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E129"
+          "celda": "E132"
         },
         {
           "municipio": "Mante",
@@ -6553,7 +6067,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F107"
+          "celda": "F110"
         },
         {
           "municipio": "Gómez Farías",
@@ -6570,7 +6084,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G105"
+          "celda": "G108"
         },
         {
           "municipio": "Xicoténcatl",
@@ -6587,7 +6101,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H103"
+          "celda": "H106"
         },
         {
           "municipio": "Tula",
@@ -6604,7 +6118,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I99"
+          "celda": "I102"
         }
       ]
     },
@@ -6663,7 +6177,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L21"
+          "celda": "L23"
         }
       ]
     },
@@ -6701,8 +6215,8 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:30",
+          "sede": "Plaza Principal del Municipio de Hidalgo",
           "titulo": "Puras del Norte",
           "tipo": "presentación",
           "inauguracion": null,
@@ -6710,7 +6224,7 @@
           "notas": [
             "Grupo Pendiente"
           ],
-          "celda": "D60"
+          "celda": "D62"
         },
         {
           "municipio": "Jiménez",
@@ -6729,7 +6243,7 @@
           "notas": [
             "Grupo Pendiente"
           ],
-          "celda": "E62"
+          "celda": "E64"
         },
         {
           "municipio": "Abasolo",
@@ -6748,7 +6262,7 @@
           "notas": [
             "Grupo Pendiente"
           ],
-          "celda": "K64"
+          "celda": "K66"
         },
         {
           "municipio": "San Carlos",
@@ -6767,7 +6281,7 @@
           "notas": [
             "Grupo Pendiente"
           ],
-          "celda": "L54"
+          "celda": "L56"
         },
         {
           "municipio": "Villagrán",
@@ -6777,8 +6291,8 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Plaza \"Benito Juárez\"",
           "titulo": "Puras del Norte",
           "tipo": "presentación",
           "inauguracion": null,
@@ -6786,7 +6300,7 @@
           "notas": [
             "Grupo Pendiente"
           ],
-          "celda": "M58"
+          "celda": "M60"
         }
       ]
     },
@@ -6829,7 +6343,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J115"
+          "celda": "J118"
         },
         {
           "municipio": "Altamira",
@@ -6846,7 +6360,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K122"
+          "celda": "K125"
         },
         {
           "municipio": "Tampico",
@@ -6863,7 +6377,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L126"
+          "celda": "L129"
         }
       ]
     },
@@ -6904,7 +6418,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E127"
+          "celda": "E130"
         }
       ]
     },
@@ -6947,7 +6461,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J46"
+          "celda": "J48"
         },
         {
           "municipio": "Mier",
@@ -6964,7 +6478,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K11"
+          "celda": "K12"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -7026,7 +6540,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D52"
+          "celda": "D54"
         },
         {
           "municipio": "Cruillas",
@@ -7036,16 +6550,14 @@
           "fechas": [
             "2026-10-03"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Centro Cívico Municipal",
           "titulo": "Sin Pies ni Cabeza",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "Requieren Auditorio o Espacio Cerrado"
-          ],
-          "celda": "E50"
+          "notas": [],
+          "celda": "E52"
         },
         {
           "municipio": "Méndez",
@@ -7055,16 +6567,14 @@
           "fechas": [
             "2026-10-04"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "16:00",
+          "sede": "Auditorio \"Rodolfo Torre Cantú\"",
           "titulo": "Sin Pies ni Cabeza",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "Requieren Auditorio o Espacio Cerrado"
-          ],
-          "celda": "F44"
+          "notas": [],
+          "celda": "F46"
         },
         {
           "municipio": "Soto la Marina",
@@ -7081,7 +6591,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G66"
+          "celda": "G68"
         },
         {
           "municipio": "Jiménez",
@@ -7100,7 +6610,7 @@
           "notas": [
             "Requieren Auditorio o Espacio Cerrado"
           ],
-          "celda": "H62"
+          "celda": "H64"
         }
       ]
     },
@@ -7144,7 +6654,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D74"
+          "celda": "D76"
         },
         {
           "municipio": "Miguel Alemán",
@@ -7161,7 +6671,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F15"
+          "celda": "F17"
         },
         {
           "municipio": "Aldama",
@@ -7178,7 +6688,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L120"
+          "celda": "L123"
         },
         {
           "municipio": "Madero",
@@ -7195,7 +6705,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M124"
+          "celda": "M127"
         }
       ]
     },
@@ -7232,14 +6742,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "19:00",
+          "sede": "Plaza Principal de Cruillas",
           "titulo": "Folclor Tamaulipeco",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D50"
+          "celda": "D52"
         },
         {
           "municipio": "Altamira",
@@ -7256,7 +6766,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E122"
+          "celda": "E125"
         },
         {
           "municipio": "González",
@@ -7273,7 +6783,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L116"
+          "celda": "L119"
         },
         {
           "municipio": "Jiménez",
@@ -7290,7 +6800,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M62"
+          "celda": "M64"
         }
       ]
     },
@@ -7334,7 +6844,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H99"
+          "celda": "H102"
         },
         {
           "municipio": "Mante",
@@ -7351,7 +6861,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I107"
+          "celda": "I110"
         },
         {
           "municipio": "Tampico",
@@ -7368,7 +6878,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J127"
+          "celda": "J130"
         },
         {
           "municipio": "Aldama",
@@ -7385,7 +6895,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K120"
+          "celda": "K123"
         }
       ]
     },
@@ -7426,7 +6936,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D91"
+          "celda": "D94"
         }
       ]
     },
@@ -7471,7 +6981,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H122"
+          "celda": "H125"
         },
         {
           "municipio": "Madero",
@@ -7488,7 +6998,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I124"
+          "celda": "I127"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -7522,7 +7032,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "L23"
+          "celda": "L25"
         },
         {
           "municipio": "Soto la Marina",
@@ -7539,7 +7049,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M66"
+          "celda": "M68"
         }
       ]
     },
@@ -7582,7 +7092,7 @@
           "notas": [
             "(por confirmar nombre)"
           ],
-          "celda": "M80"
+          "celda": "M82"
         }
       ]
     },
@@ -7626,7 +7136,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D81"
+          "celda": "D83"
         },
         {
           "municipio": "Nuevo Laredo",
@@ -7660,7 +7170,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G32"
+          "celda": "G34"
         },
         {
           "municipio": "González",
@@ -7677,7 +7187,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H116"
+          "celda": "H119"
         }
       ]
     },
@@ -7721,7 +7231,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D38"
+          "celda": "D40"
         },
         {
           "municipio": "Reynosa",
@@ -7738,7 +7248,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E21"
+          "celda": "E23"
         },
         {
           "municipio": "Victoria",
@@ -7755,7 +7265,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F80"
+          "celda": "F82"
         },
         {
           "municipio": "Tampico",
@@ -7772,7 +7282,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H126"
+          "celda": "H129"
         }
       ]
     },
@@ -7792,11 +7302,10 @@
         "Tradiciones Vivas de la Huasteca"
       ],
       "sin_autor_nombrado": false,
-      "total_presentaciones": 4,
-      "total_municipios": 4,
+      "total_presentaciones": 3,
+      "total_municipios": 3,
       "municipios": [
         "Abasolo",
-        "Güémez",
         "Jiménez",
         "Padilla"
       ],
@@ -7816,7 +7325,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D62"
+          "celda": "D64"
         },
         {
           "municipio": "Padilla",
@@ -7833,24 +7342,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K69"
-        },
-        {
-          "municipio": "Güémez",
-          "dias": [
-            "Sábado 10"
-          ],
-          "fechas": [
-            "2026-10-10"
-          ],
-          "hora": null,
-          "sede": null,
-          "titulo": "Tradiciones Vivas de la Huasteca",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "L71"
+          "celda": "K71"
         },
         {
           "municipio": "Abasolo",
@@ -7867,7 +7359,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M64"
+          "celda": "M66"
         }
       ]
     },
@@ -7904,14 +7396,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "12:00",
+          "sede": "Escuela Secundaria Técnica #36",
           "titulo": "BYN…Conoce Tamaulipas",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D58"
+          "celda": "D60"
         },
         {
           "municipio": "Abasolo",
@@ -7928,7 +7420,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E64"
+          "celda": "E66"
         },
         {
           "municipio": "Jiménez",
@@ -7945,7 +7437,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F62"
+          "celda": "F64"
         },
         {
           "municipio": "Antiguo Morelos",
@@ -7955,14 +7447,14 @@
           "fechas": [
             "2026-10-11"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "17:00",
+          "sede": "Plaza Principal",
           "titulo": "BYN…Conoce Tamaulipas",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M113"
+          "celda": "M116"
         }
       ]
     },
@@ -8007,7 +7499,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G9"
+          "celda": "G10"
         },
         {
           "municipio": "Mier",
@@ -8024,7 +7516,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H11"
+          "celda": "H12"
         },
         {
           "municipio": "Miguel Alemán",
@@ -8041,7 +7533,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "I13"
+          "celda": "I15"
         },
         {
           "municipio": "Camargo",
@@ -8051,14 +7543,14 @@
           "fechas": [
             "2026-10-08"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "11:00",
+          "sede": "Escuela Primaria \"Miguel Hidalgo\"",
           "titulo": "Los Cuentos de Don Esopo y Más",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "J17"
+          "celda": "J19"
         },
         {
           "municipio": "Gustavo Díaz Ordaz",
@@ -8075,7 +7567,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "K19"
+          "celda": "K21"
         }
       ]
     },
@@ -8110,13 +7602,13 @@
             "2026-10-02"
           ],
           "hora": "14:30",
-          "sede": "Paso Santa Cruz",
+          "sede": "Paseo Santa Cruz",
           "titulo": "Las Despicadoras del Oro Rojo",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D126"
+          "celda": "D129"
         }
       ]
     },
@@ -8159,7 +7651,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D46"
+          "celda": "D48"
         },
         {
           "municipio": "Gustavo Díaz Ordaz",
@@ -8176,7 +7668,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F19"
+          "celda": "F21"
         },
         {
           "municipio": "Mante",
@@ -8193,121 +7685,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "M107"
-        }
-      ]
-    },
-    {
-      "artista": "Un Viaje por la Historia de los Teatros en Tamaulipas",
-      "clave": "un viaje por la historia de los teatros en tamaulipas",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [],
-      "origen": [],
-      "titulos": [
-        "Un Viaje por la Historia de los Teatros en Tamaulipas"
-      ],
-      "sin_autor_nombrado": true,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Viernes 2",
-            "Sábado 3",
-            "Domingo 4",
-            "Lunes 5",
-            "Martes 6",
-            "Miércoles 7",
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-02",
-            "2026-10-03",
-            "2026-10-04",
-            "2026-10-05",
-            "2026-10-06",
-            "2026-10-07",
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": null,
-          "sede": "Palacio de Gobierno",
-          "titulo": "Un Viaje por la Historia de los Teatros en Tamaulipas",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración 2 de octubre (Horario por definir) | Palacio de Gobierno",
-          "permanencia": "Octubre 2026 a Enero 2027",
-          "notas": [],
-          "celda": "D85"
-        }
-      ]
-    },
-    {
-      "artista": "Vicente Rojo, Manuel Felguérez y Sergio Hernández",
-      "clave": "vicente rojo, manuel felguerez y sergio hernandez",
-      "disciplinas": [
-        "Artes Visuales"
-      ],
-      "procedencias": [
-        "Nacional"
-      ],
-      "origen": [
-        "Nacional"
-      ],
-      "titulos": [
-        "CaminArte Escultura Monumental"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Victoria"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Victoria",
-          "dias": [
-            "Viernes 2",
-            "Sábado 3",
-            "Domingo 4",
-            "Lunes 5",
-            "Martes 6",
-            "Miércoles 7",
-            "Jueves 8",
-            "Viernes 9",
-            "Sábado 10",
-            "Domingo 11"
-          ],
-          "fechas": [
-            "2026-10-02",
-            "2026-10-03",
-            "2026-10-04",
-            "2026-10-05",
-            "2026-10-06",
-            "2026-10-07",
-            "2026-10-08",
-            "2026-10-09",
-            "2026-10-10",
-            "2026-10-11"
-          ],
-          "hora": null,
-          "sede": "Explanada del Centro Cultural Tamaulipas",
-          "titulo": "CaminArte Escultura Monumental",
-          "tipo": "exposición",
-          "inauguracion": "Inauguración 21 de septiembre | Explanada del Centro Cultural Tamaulipas",
-          "permanencia": "Marzo 2027",
-          "notas": [],
-          "celda": "D84"
+          "celda": "M110"
         }
       ]
     },
@@ -8345,14 +7723,14 @@
           "fechas": [
             "2026-10-02"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "17:30",
+          "sede": "Salón Praxedis Balboa, Anexo a Presidencia Municipal",
           "titulo": "Pelusa al vuelo",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D56"
+          "celda": "D58"
         },
         {
           "municipio": "Villagrán",
@@ -8362,14 +7740,14 @@
           "fechas": [
             "2026-10-03"
           ],
-          "hora": null,
-          "sede": null,
+          "hora": "20:00",
+          "sede": "Plaza \"Benito Juárez\"",
           "titulo": "Pelusa al vuelo",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "E58"
+          "celda": "E60"
         },
         {
           "municipio": "San Carlos",
@@ -8386,7 +7764,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "F54"
+          "celda": "F56"
         },
         {
           "municipio": "Burgos",
@@ -8403,7 +7781,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "G48"
+          "celda": "G50"
         },
         {
           "municipio": "San Fernando",
@@ -8420,7 +7798,7 @@
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "H46"
+          "celda": "H48"
         }
       ]
     }

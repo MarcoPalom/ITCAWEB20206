@@ -64,7 +64,12 @@ export default function HorariosMunicipio({ municipio }: { municipio: Municipio 
         id: `${dia}-${j}`,
         titulo: e.titulo,
         artista: e.artista,
-        disciplina: e.disciplina,
+        /* Si la celda del municipio se salto la disciplina, se toma la de la
+           ficha. Pasa en la entrega del 15 de septiembre con Femenil Mariachi
+           Puebla en Camargo y Cana Dulce, Cana Brava en Aldama -donde el Excel
+           trae "Tamaulipas" en el hueco de la disciplina-, mientras que la
+           ficha de las dos dice Musica, igual que el resto de sus funciones. */
+        disciplina: e.disciplina || ficha?.etiqueta || "",
         procedencia: e.procedencia,
         nivel: e.nivel,
         hora: e.hora,

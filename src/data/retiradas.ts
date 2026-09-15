@@ -7,6 +7,12 @@
  * sino permanencia-, una es un conversatorio y otra un concierto que se cayo
  * del cartel.
  *
+ * Desde la entrega del 15 de septiembre el comite ya saca las exposiciones del
+ * propio volcado -lo declara con artes_visuales: "excluidas"-, de modo que las
+ * once no llegan y solo el conversatorio y el concierto siguen haciendo falta
+ * aqui. Las once se quedan igualmente: el volcado se sustituye entero en cada
+ * entrega, y si la proxima vuelve a traerlas no deben reaparecer.
+ *
  * Vive en su propio modulo, y no dentro de artistas.ts, por el mismo motivo que
  * nombres.ts: hacen falta los dos volcados. Sacarlas solo de la cartelera las
  * dejaba publicadas en la agenda de su municipio -las once exposiciones seguian
