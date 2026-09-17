@@ -349,6 +349,7 @@ const FOTOS = new Map<string, string>([
 const CLIPS = new Set<string>([
   "adicto5",
   "amenaza-nortena",
+  "apapacho-arte-y-diversidad",
   "balcon-de-montezuma-tamaholipam",
   "ballet-folklorico-de-mexico-de-amalia-hernandez",
   "ballet-folklorico-guardia-nacional",
@@ -388,8 +389,10 @@ const CLIPS = new Set<string>([
   "jhonivan",
   "joe-nieto",
   "juan-rivas-band",
+  "karina-pimentel",
   "la-historia-de-todxs",
   "la-nota-alegre",
+  "la-obra",
   "latido",
   "los-10-tenores-tamaulipecos",
   "los-del-pueblo",
@@ -398,6 +401,7 @@ const CLIPS = new Set<string>([
   "majumaje",
   "manoella-torres",
   "meche-ramirez",
+  "mfox-la-puerta-del-talento-hip-hop-interactivo",
   "momi-maiga",
   "nahuel-penissi",
   "nortenos-de-rio-bravo",
@@ -421,7 +425,9 @@ const CLIPS = new Set<string>([
   "soraima-y-sus-huastecos",
   "teatro-guarapo",
   "teatro-testigo-de-la-vida",
+  "tempus",
   "yacatecutli",
+  "zurcidores-de-cuentos-tamaulipas",
 ]);
 
 
