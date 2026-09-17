@@ -55,9 +55,18 @@ body {
 
    Con :has() y no con una clase puesta desde JavaScript: asi vale desde el
    primer pintado, sin esperar a que hidrate nada. */
-html:has(.cartelera),
-html:has(.cartelera) body {
+html:has(.cartelera) {
   background: #1a1616;
+}
+
+/* Y el body se queda sin fondo propio, que es lo contrario de lo que parece
+   hacer falta. Mientras la raiz no tenia fondo, el del body se propagaba al
+   lienzo y el body no pintaba nada; en cuanto la raiz tomo el suyo, el del body
+   volvio a ser el de una caja normal -se pinta despues de los descendientes de
+   z-index negativo- y tapaba entera la capa de la fotografia, que va a -z-10.
+   La cartelera se veia en oscuro liso, sin foto, en las tres secciones. */
+html:has(.cartelera) body {
+  background: transparent;
 }
 
 /* Titulares editoriales: serif, tracking cerrado, sin mayusculas forzadas */
