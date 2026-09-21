@@ -573,47 +573,6 @@
       ]
     },
     {
-      "artista": "Ballet Folklórico de la Guardia Nacional",
-      "clave": "ballet folklorico de la guardia nacional",
-      "disciplinas": [
-        "Danza"
-      ],
-      "procedencias": [
-        "CDMX"
-      ],
-      "origen": [
-        "Nacional"
-      ],
-      "titulos": [
-        "Ballet Folklórico de la Guardia Nacional"
-      ],
-      "sin_autor_nombrado": false,
-      "total_presentaciones": 1,
-      "total_municipios": 1,
-      "municipios": [
-        "Tampico"
-      ],
-      "presentaciones": [
-        {
-          "municipio": "Tampico",
-          "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "hora": "19:30",
-          "sede": "Teatro Principal del Espacio Cultural Metropolitano",
-          "titulo": "Ballet Folklórico de la Guardia Nacional",
-          "tipo": "presentación",
-          "inauguracion": null,
-          "permanencia": null,
-          "notas": [],
-          "celda": "E129"
-        }
-      ]
-    },
-    {
       "artista": "Ballet Folklórico de México de Amalia Hernández",
       "clave": "ballet folklorico de mexico de amalia hernandez",
       "disciplinas": [

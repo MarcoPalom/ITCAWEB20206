@@ -251,7 +251,6 @@ function hora(valor: string | null): string {
    El mapa va por la clave del volcado y no por el nombre, que lleva comillas y
    acentos y cambiaria al minimo retoque de la hoja. */
 const FOTOS = new Map<string, string>([
-  ["ballet folklorico de la guardia nacional", "ballet-folklorico-guardia-nacional"],
   ["grupo de baile club chicos malos", "chicos-malos"],
   ["los 10 tenores tamaulipecos", "los-10-tenores-tamaulipecos"],
   ["meche ramirez y musicos tamaulipecos", "meche-ramirez"],

@@ -10343,37 +10343,6 @@
           "municipio": "Tampico",
           "municipio_num": 43,
           "dias": [
-            "Sábado 3"
-          ],
-          "fechas": [
-            "2026-10-03"
-          ],
-          "celda": "E129",
-          "titulo": "Ballet Folklórico de la Guardia Nacional",
-          "artista": "Ballet Folklórico de la Guardia Nacional",
-          "descripcion": null,
-          "creditos": [],
-          "disciplina": "Danza",
-          "procedencia": "CDMX",
-          "programa": null,
-          "hora": "19:30",
-          "sede": "Teatro Principal del Espacio Cultural Metropolitano",
-          "tentativo": false,
-          "inauguracion": null,
-          "fecha_inauguracion": null,
-          "permanencia": null,
-          "horario_visita": null,
-          "fecha_alterna": null,
-          "notas": [],
-          "tipo": "presentación",
-          "requiere_revision": false,
-          "texto_original": "Ballet Folklórico de la Guardia Nacional\n\nDanza\nCDMX\n\n19:30 hrs.\nTeatro Principal del Espacio Cultural Metropolitano",
-          "origen": "Nacional"
-        },
-        {
-          "municipio": "Tampico",
-          "municipio_num": 43,
-          "dias": [
             "Domingo 4"
           ],
           "fechas": [
