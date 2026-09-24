@@ -6204,6 +6204,37 @@
           "texto_original": "\"Liebre de Mar\"\n\nHabitando Historias Teatro y DOSCE la Compañía\n\nTeatro\nJalisco/Tamaulipas\n\n19:00 hrs.\nTeatro Amalia González Caballero de Castillo Ledón del Centro Cultural Tamaulipas",
           "origen": "Nacional"
         },
+          {
+          "municipio": "Victoria",
+          "municipio_num": 26,
+          "dias": [
+            "Martes 6"
+          ],
+          "fechas": [
+            "2026-10-06"
+          ],
+          "celda": "",
+          "titulo": "Rafa anaya y K9",
+          "artista": "Rafa anaya y K9",
+          "descripcion": null,
+          "creditos": [],
+          "disciplina": "Musica",
+          "procedencia": "Tmaulipas",
+          "programa": null,
+          "hora": "20:30",
+          "sede": "Plaza Juárez, Zona Centro",
+          "tentativo": false,
+          "inauguracion": null,
+          "fecha_inauguracion": null,
+          "permanencia": null,
+          "horario_visita": null,
+          "fecha_alterna": null,
+          "notas": [],
+          "tipo": "presentación",
+          "requiere_revision": false,
+          "texto_original": "",
+          "origen": "Tamaulipas"
+        },
         {
           "municipio": "Victoria",
           "municipio_num": 26,
