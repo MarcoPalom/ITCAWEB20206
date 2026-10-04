@@ -255,7 +255,7 @@ export default function RejillaMunicipios({ fichas }: { fichas: FichaMunicipio[]
                     <div className="overflow-hidden" style={{ aspectRatio: proporcion }}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
-                        src={`/img/municipios/${m.id}.jpg`}
+                        src={`/img/municipios/${m.id}.webp`}
                         alt={`Fotografía de ${m.nombre}. ${m.foto.autor ? `Autor: ${m.foto.autor}.` : ""} ${m.foto.licencia}, via Wikimedia Commons.`}
                         width={1200}
                         height={900}

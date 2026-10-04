@@ -256,8 +256,8 @@ for (const [i, m] of MUNICIPIOS.entries()) {
     const cruda = await descargar(elegida.info.url);
     await sharp(cruda)
       .resize({ width: 1200, withoutEnlargement: true })
-      .jpeg({ quality: 74, mozjpeg: true })
-      .toFile(path.join(DESTINO, `${m.id}.jpg`));
+      .webp({ quality: 80 })
+      .toFile(path.join(DESTINO, `${m.id}.webp`));
 
     manifiesto[m.id] = {
       titulo: elegida.pagina.title,

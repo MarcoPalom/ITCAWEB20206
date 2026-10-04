@@ -147,7 +147,7 @@
             "2026-10-03"
           ],
           "hora": "20:00",
-          "sede": "Plaza Principal",
+          "sede": "Centro de Convenciones \"Manuel Cavazos Lerma\"",
           "titulo": "Momento Adictivo",
           "tipo": "presentación",
           "inauguracion": null,
@@ -307,7 +307,9 @@
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [],
+          "notas": [
+            "Cancelado por lluvia"
+          ],
           "celda": "G54"
         },
         {
@@ -912,7 +914,7 @@
             "2026-10-04"
           ],
           "hora": "19:00",
-          "sede": "Plaza de la Constitución",
+          "sede": "Auditorio \"Juan Macías Castillo\"",
           "titulo": "Música de banda del planeta tierra",
           "tipo": "presentación",
           "inauguracion": null,
@@ -1520,7 +1522,9 @@
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [],
+          "notas": [
+            "Cancelado por lluvia"
+          ],
           "celda": "F118"
         },
         {
@@ -1613,7 +1617,7 @@
             "2026-10-04"
           ],
           "hora": "17:00",
-          "sede": "Plaza Principal",
+          "sede": "Foro dentro de la Presidencia Municipal",
           "titulo": "Las Maravillas del Cielo",
           "tipo": "presentación",
           "inauguracion": null,
@@ -3547,7 +3551,7 @@
             "2026-10-03"
           ],
           "hora": "17:00",
-          "sede": "Plaza Principal",
+          "sede": "Poblado \"Adolfo López Mateos\", Municipio de Ocampo",
           "titulo": "Fiestas",
           "tipo": "presentación",
           "inauguracion": null,
@@ -3677,7 +3681,7 @@
             "2026-10-04"
           ],
           "hora": "20:00",
-          "sede": "Plaza Principal",
+          "sede": "Centro de Convenciones \"Manuel Cavazos Lerma\"",
           "titulo": "Sonidos del Orgullo Tamaulipeco",
           "tipo": "presentación",
           "inauguracion": null,
@@ -4170,7 +4174,9 @@
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [],
+          "notas": [
+            "Cancelado por lluvia"
+          ],
           "celda": "F42"
         },
         {
@@ -4752,19 +4758,19 @@
         {
           "municipio": "Altamira",
           "dias": [
-            "Viernes 2"
+            "Lunes 5"
           ],
           "fechas": [
-            "2026-10-02"
+            "2026-10-05"
           ],
-          "hora": "19:00",
-          "sede": "Plaza de la Constitución",
+          "hora": "18:00",
+          "sede": "Salón Sutra",
           "titulo": "De Tamaulipas para el Mundo con los 10 Tenores",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
           "notas": [],
-          "celda": "D125"
+          "celda": "G125"
         },
         {
           "municipio": "San Fernando",
@@ -4853,7 +4859,7 @@
             "2026-10-04"
           ],
           "hora": "19:00",
-          "sede": "Parque de Bienestar \"Plazuela\"",
+          "sede": "Plaza Principal",
           "titulo": "Herencia del Pueblo: Música del Norte",
           "tipo": "presentación",
           "inauguracion": null,
@@ -5923,8 +5929,8 @@
           "fechas": [
             "2026-10-04"
           ],
-          "hora": "19:30",
-          "sede": "Auditorio Municipal de Hidalgo",
+          "hora": "18:30",
+          "sede": "Cabecera Municipal, Santa Engracia",
           "titulo": "Contempo Di Folklore",
           "tipo": "presentación",
           "inauguracion": null,
@@ -6719,7 +6725,7 @@
             "2026-10-03"
           ],
           "hora": "19:00",
-          "sede": "Plaza de la Constitución",
+          "sede": "Auditorio \"Juan Macías Castillo\"",
           "titulo": "Folclor Tamaulipeco",
           "tipo": "presentación",
           "inauguracion": null,
