@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { AUTORES, COLECCIONES, LIBROS } from "@/data/biblioteca";
 import { MUNICIPIOS } from "@/data/municipios";
 import { SECCIONES } from "@/data/secciones";
 import { SITIO } from "@/data/sitio";
@@ -44,5 +45,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     ...municipios,
+    {
+      url: `${SITIO}/bibliotecavirtual`,
+      lastModified: ahora,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITIO}/bibliotecavirtual/autores`,
+      lastModified: ahora,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    ...COLECCIONES.map((c) => ({
+      url: `${SITIO}/bibliotecavirtual/coleccion/${c.slug}`,
+      lastModified: ahora,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...LIBROS.map((l) => ({
+      url: `${SITIO}/bibliotecavirtual/libro/${l.slug}`,
+      lastModified: ahora,
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    })),
+    ...AUTORES.map((a) => ({
+      url: `${SITIO}/bibliotecavirtual/autores/${a.slug}`,
+      lastModified: ahora,
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
+    })),
   ];
 }

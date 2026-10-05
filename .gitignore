@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# recursos de PDF.js, copiados desde node_modules (scripts/copiar-pdfjs.mjs)
+/public/pdfjs/

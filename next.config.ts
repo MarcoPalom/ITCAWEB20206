@@ -35,6 +35,29 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        /* Portadas, fotos y PDF de la Biblioteca Virtual. Mismo criterio que
+           las fotos del festival: se pueden sustituir conservando el nombre
+           cuando Publicaciones mande una edicion corregida. */
+        source: "/biblioteca/:ruta*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=604800",
+          },
+        ],
+      },
+      {
+        /* Worker, fuentes y wasm del lector de PDF. Cambian solo al
+           actualizar pdfjs-dist, y entonces cambian todos a la vez. */
+        source: "/pdfjs/:ruta*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+        ],
+      },
+      {
         /* Los iconos del imagotipo y las banderas si son estables: se
            escribieron una vez y no se tocan. */
         source: "/icons/:ruta*",

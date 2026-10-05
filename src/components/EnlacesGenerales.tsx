@@ -60,8 +60,8 @@ export default function EnlacesGenerales() {
             <Enlace
               id="biblioteca"
               titulo="Biblioteca Virtual"
-              desc="Acervo digital de consulta libre: obra publicada por el Instituto y fondos documentales del Estado."
-              href="#"
+              desc="Los libros del Fondo Editorial Tamaulipas: poesía, narrativa, ensayo y dramaturgia, de lectura y descarga libre."
+              href="/bibliotecavirtual"
               className="h-full"
             />
           </Reveal>

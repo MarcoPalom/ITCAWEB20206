@@ -34,8 +34,8 @@ export const NAV_ITEMS: NavItem[] = [
   },
   {
     label: "Biblioteca Virtual",
-    href: "#biblioteca",
-    desc: "Acervo digital de consulta libre del Estado de Tamaulipas.",
+    href: "/bibliotecavirtual",
+    desc: "Libros del Fondo Editorial Tamaulipas, de lectura y descarga libre.",
   },
   {
     label: "Comunicados",
