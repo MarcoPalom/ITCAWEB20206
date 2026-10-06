@@ -3702,10 +3702,10 @@
           "municipio": "San Nicolás",
           "municipio_num": 15,
           "dias": [
-            "Lunes 5"
+            "Viernes 9"
           ],
           "fechas": [
-            "2026-10-05"
+            "2026-10-09"
           ],
           "celda": "G54",
           "titulo": "El Sur Viaja en Tren",
@@ -3716,16 +3716,14 @@
           "procedencia": "Tamaulipas",
           "programa": null,
           "hora": "11:00",
-          "sede": "Auditorio Casa Club del Ejido \"El Palmar\", Municipio de San Nicolás",
+          "sede": "Auditorio Municipal ubicado en la Cabecera Municipal",
           "tentativo": false,
           "inauguracion": null,
           "fecha_inauguracion": null,
           "permanencia": null,
           "horario_visita": null,
           "fecha_alterna": null,
-          "notas": [
-            "Cancelado por lluvia"
-          ],
+          "notas": [],
           "tipo": "presentación",
           "requiere_revision": false,
           "texto_original": "\"El Sur Viaja en Tren\"\nApapacho Arte y Diversidad\n\nTeatro\nTamaulipas\n\n11:00 hrs.\nAuditorio Casa Club del Ejido \"El Palmar\", Municipio de San Nicolás",
@@ -9105,7 +9103,7 @@
           "procedencia": "Tamaulipas",
           "programa": null,
           "hora": "17:00",
-          "sede": "Plaza Principal",
+          "sede": "Foro de la Presidencia Municipal",
           "tentativo": false,
           "inauguracion": null,
           "fecha_inauguracion": null,

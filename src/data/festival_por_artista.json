@@ -296,20 +296,18 @@
         {
           "municipio": "San Nicolás",
           "dias": [
-            "Lunes 5"
+            "Viernes 9"
           ],
           "fechas": [
-            "2026-10-05"
+            "2026-10-09"
           ],
           "hora": "11:00",
-          "sede": "Auditorio Casa Club del Ejido \"El Palmar\", Municipio de San Nicolás",
+          "sede": "Auditorio Municipal ubicado en la Cabecera Municipal",
           "titulo": "El Sur Viaja en Tren",
           "tipo": "presentación",
           "inauguracion": null,
           "permanencia": null,
-          "notas": [
-            "Cancelado por lluvia"
-          ],
+          "notas": [],
           "celda": "G54"
         },
         {
@@ -1651,7 +1649,7 @@
             "2026-10-06"
           ],
           "hora": "17:00",
-          "sede": "Plaza Principal",
+          "sede": "Foro de la Presidencia Municipal",
           "titulo": "Las Maravillas del Cielo",
           "tipo": "presentación",
           "inauguracion": null,
