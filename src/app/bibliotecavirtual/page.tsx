@@ -54,11 +54,16 @@ export default function BibliotecaPage() {
   return (
     <>
       {/* --- Cabecera ---------------------------------------------------- */}
+      {/* En pantalla grande la cabecera mide justo lo visible bajo la barra
+          del sitio (5rem, el pt-20 del layout) y su propio borde inferior: se
+          ve entera en cualquier monitor y el estante se estira o encoge para
+          llenarla. svh y no vh para que en tabletas la barra del navegador no
+          la recorte. */}
       <section className="border-b border-line">
-        <div className="mx-auto grid max-w-7xl gap-14 px-4 pt-16 pb-20 sm:px-6 sm:pt-24 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-end lg:gap-10 lg:px-8 lg:pb-28">
+        <div className="mx-auto grid max-w-7xl gap-14 px-4 pt-16 pb-20 sm:px-6 sm:pt-24 lg:h-[calc(100svh-5rem-1px)] lg:min-h-[22rem] lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-center lg:gap-10 lg:px-8 lg:py-10">
           <Reveal>
             <p className="meta text-accent">ITCA Digital · Fondo Editorial Tamaulipas</p>
-            <h1 className="title-display mt-5 text-[clamp(2.75rem,6vw,4.5rem)] font-light">
+            <h1 className="title-display mt-5 text-[clamp(2.75rem,min(6vw,9svh),4.5rem)] font-light">
               Biblioteca Virtual
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -67,22 +72,6 @@ export default function BibliotecaPage() {
               escritos desde Tamaulipas, organizados en las mismas colecciones
               en que se imprimen.
             </p>
-
-            <dl className="mt-10 grid max-w-lg grid-cols-3 border-y border-line">
-              {[
-                [LIBROS.length, "títulos"],
-                [COLECCIONES.length, "colecciones"],
-                [AUTORES.length, "autores"],
-              ].map(([n, etiqueta], i) => (
-                <div
-                  key={etiqueta}
-                  className={`py-5 ${i > 0 ? "border-l border-line pl-5" : ""}`}
-                >
-                  <dt className="meta text-muted">{etiqueta}</dt>
-                  <dd className="title-display mt-1 text-4xl">{n}</dd>
-                </div>
-              ))}
-            </dl>
 
             <div className="mt-10 flex flex-wrap gap-3">
               <a
@@ -103,7 +92,7 @@ export default function BibliotecaPage() {
           {/* Estante: seis portadas en tres columnas que se mueven en
               sentidos opuestos. Es decorativo -los mismos libros estan en el
               catalogo, con su enlace-; ver EstanteAnimado. */}
-          <Reveal delay={120} className="hidden lg:block">
+          <Reveal delay={120} className="hidden min-h-0 lg:block lg:self-stretch">
             <EstanteAnimado
               portadas={estante.map(({ slug, altoPortada }) => ({ slug, altoPortada }))}
             />

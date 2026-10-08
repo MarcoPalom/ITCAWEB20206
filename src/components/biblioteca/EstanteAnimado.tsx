@@ -17,10 +17,11 @@ const DURACIONES = [46, 54, 50];
     alineadas. Tambien es la posicion que se ve sin JavaScript. */
 const ARRANQUES = [0, 0.42, 0.21];
 
-/** Veces que se repiten los libros en cada tira. Con dos, una vuelta (dos
-    portadas) mide menos que el estante y al final asomaba un hueco; con tres
-    siempre hay portadas de sobra por debajo. */
-const COPIAS = 3;
+/** Veces que se repiten los libros en cada tira. El estante mide lo que deje
+    la pantalla, y en un monitor alto llega a ser mas alto que una vuelta (dos
+    portadas): la tira tiene que cubrir siempre el estante mas una vuelta, y
+    con cuatro copias sobra hasta en pantallas de 1440 px de alto. */
+const COPIAS = 4;
 const VUELTA = 100 / COPIAS;
 
 /** Desplazamiento vertical, en % del alto de la tira, en un punto de la vuelta. */
@@ -32,7 +33,7 @@ const posicion = (sentido: number, progreso: number) =>
  * las de los lados subiendo y la del centro bajando, como un expositor
  * giratorio de libreria.
  *
- * Cada columna es una tira con sus libros repetidos tres veces; la tira se
+ * Cada columna es una tira con sus libros repetidos cuatro veces; la tira se
  * desplaza exactamente una de esas repeticiones y vuelve a empezar, de modo
  * que el salto no se ve. Solo se anima transform.
  *
@@ -116,7 +117,7 @@ export default function EstanteAnimado({ portadas }: { portadas: Portada[] }) {
   };
 
   return (
-    <div ref={raiz}>
+    <div ref={raiz} className="flex h-full flex-col">
       <div
         aria-hidden="true"
         onPointerEnter={(e) => {
@@ -129,7 +130,7 @@ export default function EstanteAnimado({ portadas }: { portadas: Portada[] }) {
           encimaRef.current = false;
           if (!pausadoRef.current) velocidad.current(1);
         }}
-        className="grid h-[34rem] grid-cols-3 gap-4 overflow-hidden"
+        className="grid min-h-0 flex-1 grid-cols-3 gap-4 overflow-hidden"
       >
         {columnas.map((libros, c) => (
           <div key={c} className="min-w-0">
@@ -165,7 +166,7 @@ export default function EstanteAnimado({ portadas }: { portadas: Portada[] }) {
         type="button"
         onClick={alternar}
         aria-pressed={pausado}
-        className="meta mt-4 ml-auto flex min-h-11 items-center gap-2 text-muted transition-colors hover:text-charcoal motion-reduce:hidden"
+        className="meta mt-3 ml-auto flex min-h-11 shrink-0 items-center gap-2 text-muted transition-colors hover:text-charcoal motion-reduce:hidden"
       >
         <span aria-hidden="true" className="flex h-3 w-3 items-center justify-center">
           {pausado ? (
