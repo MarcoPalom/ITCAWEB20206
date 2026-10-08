@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Catalogo from "@/components/biblioteca/Catalogo";
+import EstanteAnimado from "@/components/biblioteca/EstanteAnimado";
 import Reveal from "@/components/Reveal";
 import {
   AUTORES,
@@ -99,30 +100,13 @@ export default function BibliotecaPage() {
             </div>
           </Reveal>
 
-          {/* Estante: seis portadas en mosaico, con la columna central
-              desplazada como libros de canto en una repisa. Es decorativo
-              -los mismos libros estan en el catalogo, con su enlace-, de ahi
-              el alt vacio y el aria-hidden. El alto fijo recorta la segunda
-              fila: se insinua que hay mas de lo que se ve. */}
+          {/* Estante: seis portadas en tres columnas que se mueven en
+              sentidos opuestos. Es decorativo -los mismos libros estan en el
+              catalogo, con su enlace-; ver EstanteAnimado. */}
           <Reveal delay={120} className="hidden lg:block">
-            <div
-              aria-hidden="true"
-              className="grid h-[34rem] grid-cols-3 gap-4 overflow-hidden"
-            >
-              {estante.map((l, i) => (
-                <Image
-                  key={l.slug}
-                  src={rutaPortada(l)}
-                  alt=""
-                  width={720}
-                  height={l.altoPortada}
-                  sizes="180px"
-                  priority
-                  className="h-auto w-full rounded-[3px] border border-line"
-                  style={{ transform: `translateY(${[0, 3, 1.5][i % 3]}rem)` }}
-                />
-              ))}
-            </div>
+            <EstanteAnimado
+              portadas={estante.map(({ slug, altoPortada }) => ({ slug, altoPortada }))}
+            />
           </Reveal>
         </div>
       </section>
