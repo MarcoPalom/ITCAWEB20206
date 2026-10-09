@@ -562,7 +562,7 @@
             "2026-10-11"
           ],
           "hora": "11:00",
-          "sede": "Plaza Principal",
+          "sede": "Foro de la Presidencia Municipal",
           "titulo": "Mundo Fantástico",
           "tipo": "presentación",
           "inauguracion": null,
@@ -4338,7 +4338,7 @@
             "2026-10-09"
           ],
           "hora": "18:30",
-          "sede": "Auditorio de la Universidad Tecnológica de Tamaulipas Norte (UTTN)",
+          "sede": "Concha Acústica de la Plaza Principal \"Treviño Zapata\"",
           "titulo": "Cuerdas eléctricas: Rock Latino y Fusiones",
           "tipo": "presentación",
           "inauguracion": null,
@@ -5269,7 +5269,7 @@
           "fechas": [
             "2026-10-09"
           ],
-          "hora": "20:00",
+          "hora": "19:00",
           "sede": "\"Teatro del Pueblo\" ubicado en Presidencia Municipal",
           "titulo": "Aprende, Juega y Baila",
           "tipo": "presentación",
