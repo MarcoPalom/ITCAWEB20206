@@ -1,87 +1,83 @@
+import {
+  ENLACES_INSTITUCIONALES,
+  ENLACES_TRANSPARENCIA,
+  INSTITUTO,
+} from "@/data/itca";
 import Reveal from "./Reveal";
 
-const INSTITUCIONAL = [
-  "Acerca del ITCA",
-  "Directorio",
-  "Renta de espacios",
-  "Trabaja con nosotros",
-];
-
-const AYUDA = ["Preguntas frecuentes", "Contacto", "Transparencia", "Aviso de privacidad"];
-
-const REDES = [
-  { nombre: "Facebook", href: "#" },
-  { nombre: "Instagram", href: "#" },
-  { nombre: "YouTube", href: "#" },
-  { nombre: "Spotify", href: "#" },
-];
+const Columna = ({
+  titulo,
+  enlaces,
+}: {
+  titulo: string;
+  enlaces: { etiqueta: string; href: string }[];
+}) => (
+  <div>
+    <p className="meta text-muted">{titulo}</p>
+    <ul className="mt-5 space-y-1">
+      {enlaces.map((e) => (
+        <li key={e.href}>
+          <a
+            href={e.href}
+            target="_blank"
+            rel="noopener"
+            className="inline-flex min-h-9 items-center text-sm text-charcoal transition-colors hover:text-accent"
+          >
+            {e.etiqueta}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 export default function Footer() {
   return (
-    <footer id="redes" className="mt-auto bg-bone">
+    <footer id="contacto" className="mt-auto scroll-mt-20 bg-bone">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <Reveal>
-          <div className="grid grid-cols-1 gap-12 border-b border-line pb-14 lg:grid-cols-4">
-            <div className="lg:col-span-2">
-              <p className="title-display text-2xl">ITCA</p>
-              <p className="mt-4 max-w-xs leading-relaxed text-muted">
-                Instituto Tamaulipeco para la Cultura y las Artes
-              </p>
+          <div className="grid grid-cols-1 gap-12 border-b border-line pb-14 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="sm:col-span-2">
+              <p className="title-display text-2xl">{INSTITUTO.siglas}</p>
+              <p className="mt-4 max-w-xs leading-relaxed text-muted">{INSTITUTO.nombre}</p>
               <address className="mt-6 not-italic text-sm leading-relaxed text-muted">
-                Calzada General Luis Caballero 297
-                <br />
-                Ciudad Victoria, Tamaulipas
-                <br />
+                {INSTITUTO.direccion.map((linea) => (
+                  <span key={linea} className="block">
+                    {linea}
+                  </span>
+                ))}
                 <a
-                  href="mailto:contacto@itca.gob.mx"
-                  className="text-accent transition-opacity hover:opacity-70"
+                  href={INSTITUTO.telefonoHref}
+                  className="mt-3 inline-flex min-h-9 items-center text-charcoal transition-colors hover:text-accent"
                 >
-                  contacto@itca.gob.mx
+                  {INSTITUTO.telefono}
                 </a>
               </address>
+              <a
+                href={INSTITUTO.contacto}
+                target="_blank"
+                rel="noopener"
+                className="meta mt-4 inline-flex min-h-11 items-center text-accent transition-opacity hover:opacity-70"
+              >
+                Escríbenos
+                <span className="sr-only"> (formulario en el sitio oficial, se abre en otra pestaña)</span>
+              </a>
             </div>
 
-            <div>
-              <p className="meta text-muted">Institucional</p>
-              <ul className="mt-5 space-y-3">
-                {INSTITUCIONAL.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-charcoal transition-colors hover:text-accent"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <p className="meta text-muted">Ayuda</p>
-              <ul className="mt-5 space-y-3">
-                {AYUDA.map((link) => (
-                  <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-charcoal transition-colors hover:text-accent"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <Columna titulo="Institucional" enlaces={ENLACES_INSTITUCIONALES} />
+            <Columna titulo="Transparencia" enlaces={ENLACES_TRANSPARENCIA} />
           </div>
         </Reveal>
 
         <div className="flex flex-col gap-6 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <ul className="flex flex-wrap gap-6">
-            {REDES.map((red) => (
+          <ul className="flex flex-wrap gap-x-6">
+            {INSTITUTO.redes.map((red) => (
               <li key={red.nombre}>
                 <a
                   href={red.href}
-                  className="meta text-muted transition-colors hover:text-charcoal"
+                  target="_blank"
+                  rel="noopener"
+                  className="meta inline-flex min-h-11 items-center text-muted transition-colors hover:text-charcoal"
                 >
                   {red.nombre}
                 </a>
@@ -89,7 +85,7 @@ export default function Footer() {
             ))}
           </ul>
           <p className="meta text-muted">
-            &copy; {new Date().getFullYear()} Gobierno de Tamaulipas
+            &copy; {new Date().getFullYear()} Gobierno del Estado de Tamaulipas
           </p>
         </div>
       </div>

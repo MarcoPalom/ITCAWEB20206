@@ -2,9 +2,8 @@ import SiteHeader, { type NavItem } from "@/components/SiteHeader";
 import Footer from "@/components/Footer";
 import { COLECCIONES, librosDeColeccion } from "@/data/biblioteca";
 
-/* El menu de la biblioteca lleva a sus propias secciones: las anclas del menu
-   general (#itca-digital, #convocatorias...) viven en la portada y desde aqui
-   no llevarian a ninguna parte. */
+/* El menu de la biblioteca lleva a sus propias secciones y, al final, al
+   resto del sitio. */
 const ITEMS: NavItem[] = [
   {
     label: "Biblioteca Virtual",
@@ -23,6 +22,11 @@ const ITEMS: NavItem[] = [
     label: "Autores",
     href: "/bibliotecavirtual/autores",
     desc: "Índice de autoras y autores, con semblanza y obra.",
+  },
+  {
+    label: "Sitio del ITCA",
+    href: "/",
+    desc: "Comunicados, unidades culturales y convocatorias del Instituto.",
   },
   {
     label: "Festival del Seno Mexicano",

@@ -23,29 +23,36 @@ export const NAV_ITEMS: NavItem[] = [
     desc: `Programación y sedes de la ${FESTIVAL.edicion.toLowerCase()}, del ${FESTIVAL.fechas}.`,
   },
   {
-    label: "ITCA Digital",
-    href: "#itca-digital",
-    desc: "Podcast, revista digital, repositorio cultural y charlas.",
-  },
-  {
-    label: "Convocatorias",
-    href: "#convocatorias",
-    desc: "Premios, becas y estímulos abiertos para creadores tamaulipecos.",
-  },
-  {
     label: "Biblioteca Virtual",
     href: "/bibliotecavirtual",
     desc: "Libros del Fondo Editorial Tamaulipas, de lectura y descarga libre.",
   },
+  /* Las secciones de la portada van con "/" delante: asi el mismo menu sirve
+     tambien desde cualquier otra pagina del sitio. */
   {
     label: "Comunicados",
-    href: "#comunicados",
-    desc: "Blog institucional organizado por eje de acción.",
+    href: "/#comunicados",
+    desc: "Boletines de la sala de prensa del Instituto.",
   },
   {
-    label: "Redes sociales",
-    href: "#redes",
-    desc: "Actividad diaria del Instituto en sus canales.",
+    label: "El Instituto",
+    href: "/#instituto",
+    desc: "Quiénes somos, misión, visión y ejes de acción.",
+  },
+  {
+    label: "Unidades culturales",
+    href: "/#unidades",
+    desc: "Teatros, museos, biblioteca y escuelas de arte del ITCA.",
+  },
+  {
+    label: "Convocatorias",
+    href: "/#convocatorias",
+    desc: "Estímulos, formación y registros abiertos.",
+  },
+  {
+    label: "Contacto",
+    href: "/#contacto",
+    desc: "Dirección, teléfono y redes del Instituto.",
   },
 ];
 

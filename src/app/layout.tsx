@@ -45,7 +45,7 @@ export const metadata: Metadata = {
      plantilla aqui se lo pegaria una segunda vez. */
   title: "ITCA | Instituto Tamaulipeco para la Cultura y las Artes",
   description:
-    "Sitio del ITCA: podcast, revista digital, repositorio cultural, charlas, convocatorias y biblioteca virtual de Tamaulipas.",
+    "Instituto Tamaulipeco para la Cultura y las Artes: comunicados, unidades culturales, convocatorias, Biblioteca Virtual y el Festival Internacional en la Costa del Seno Mexicano.",
   /* La imagen se referencia a mano y no por convencion de archivo: un
      opengraph-image.png solo vale para su propio segmento de ruta, no se
      hereda a /festival ni al resto -a diferencia de layout.tsx, que si se

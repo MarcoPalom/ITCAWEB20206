@@ -18,29 +18,29 @@ import cerroDelBernal from "../../public/img/cerro-del-bernal.jpg";
 
 const PANELES = [
   {
-    meta: "Tamaulipas",
+    meta: "Instituto Tamaulipeco para la Cultura y las Artes",
     titulo: "Todo el arte de Tamaulipas, en un solo lugar",
     texto:
-      "El trabajo del ITCA reunido y ordenado: contenidos, programas y convocatorias, aunque vivan en sitios externos.",
+      "Programas, recintos, convocatorias y publicaciones del ITCA, reunidos y ordenados para que cualquiera los encuentre.",
     esTitular: true,
   },
   {
     meta: "Cuarenta y tres municipios",
     titulo: "De la sierra a la costa, una sola conversación",
     texto:
-      "Talleres en la Huasteca, orquestas juveniles en la frontera, salas de lectura en los pueblos pesqueros. El Instituto trabaja en todo el territorio.",
+      "El Festival Internacional en la Costa del Seno Mexicano llevó en 2026 a más de 1,200 artistas a los 43 municipios del Estado, de las cabeceras a los ejidos, con entrada gratuita.",
   },
   {
-    meta: "Archivo vivo",
-    titulo: "Lo que se crea aquí merece quedar registrado",
+    meta: "Ocho recintos",
+    titulo: "Casas abiertas para la cultura",
     texto:
-      "Fotografía, video y publicaciones que documentan la vida cultural del Estado y quedan disponibles para consulta libre.",
+      "Teatros, museos, una pinacoteca, una biblioteca y escuelas de arte en Ciudad Victoria, Tampico, Matamoros y Reynosa.",
   },
   {
     meta: "Sigue bajando",
     titulo: "Todo lo del Instituto, a partir de aquí",
     texto:
-      "Publicaciones, convocatorias, biblioteca y comunicados, organizados para que encuentres lo que buscas.",
+      "Comunicados, programas, recintos y convocatorias, organizados para que encuentres lo que buscas.",
   },
 ];
 

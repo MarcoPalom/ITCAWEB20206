@@ -6,10 +6,8 @@ import { SECCIONES } from "@/data/secciones";
 import { SITIO } from "@/data/sitio";
 
 /**
- * "/" no aparece: es la cortinilla del sitio institucional (ver app/page.tsx)
- * y ya lleva noindex, asi que no tiene sentido ofrecersela al rastreador como
- * si fuera contenido. /festival es la portada real del festival y por eso
- * lleva la prioridad mas alta.
+ * La portada del sitio institucional y la del festival llevan la prioridad
+ * mas alta; el resto, segun cuanto cambian.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const ahora = new Date();
@@ -31,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   return [
+    {
+      url: SITIO,
+      lastModified: ahora,
+      changeFrequency: "weekly",
+      priority: 1,
+    },
     {
       url: `${SITIO}/festival`,
       lastModified: ahora,
