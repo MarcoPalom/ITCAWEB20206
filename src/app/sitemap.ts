@@ -36,12 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${SITIO}/beneficiarios`,
-      lastModified: ahora,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
       url: `${SITIO}/festival`,
       lastModified: ahora,
       changeFrequency: "weekly",

@@ -5,6 +5,17 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        /* Padron de beneficiarios (app/p/[clave]): fuera de buscadores, sin
+           referer y sin cache compartida. La cabecera X-Robots-Tag cubre
+           tambien a los rastreadores que no leen el HTML. */
+        source: "/p/:ruta*",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow, noarchive, nosnippet" },
+          { key: "Referrer-Policy", value: "no-referrer" },
+          { key: "Cache-Control", value: "private, no-store" },
+        ],
+      },
+      {
         /**
          * Las fotografias y los clips, en cache de verdad.
          *

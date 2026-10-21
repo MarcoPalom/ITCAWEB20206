@@ -1,3 +1,4 @@
+import { timingSafeEqual } from "node:crypto";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { DatabaseSync } from "node:sqlite";
@@ -67,6 +68,29 @@ function comparar(a: string[], b: string[]): Coincidencia["tipo"] | null {
     resto.splice(i, 1);
   }
   return "similar";
+}
+
+/**
+ * Comprueba la clave del enlace secreto contra la guardada en la base. La
+ * comparacion es de tiempo constante para no dar pistas, caracter a
+ * caracter, de cuanto se acerca un intento.
+ */
+export function claveValida(clave: string): boolean {
+  if (!existsSync(RUTA) || !/^[A-Za-z0-9_-]{16,64}$/.test(clave)) return false;
+  const db = new DatabaseSync(RUTA, { readOnly: true });
+  try {
+    const fila = db
+      .prepare("SELECT valor FROM ajustes WHERE clave = 'clave_padron'")
+      .get() as { valor: string } | undefined;
+    if (!fila) return false;
+    const a = Buffer.from(clave);
+    const b = Buffer.from(fila.valor);
+    return a.length === b.length && timingSafeEqual(a, b);
+  } catch {
+    return false;
+  } finally {
+    db.close();
+  }
 }
 
 export function leerPadron(): Padron {

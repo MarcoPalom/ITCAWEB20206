@@ -14,11 +14,19 @@
  *   node scripts/beneficiarios.mjs importar lote.json
  *   node scripts/beneficiarios.mjs listar
  *   node scripts/beneficiarios.mjs quitar-convocatoria <id>
+ *   node scripts/beneficiarios.mjs enlace          (muestra el enlace secreto)
+ *   node scripts/beneficiarios.mjs enlace-nuevo    (lo cambia; el anterior deja de servir)
+ *
+ * El padron no tiene ruta publica: se consulta en /p/<clave>, con una clave
+ * aleatoria de 128 bits que se guarda aqui, en la base, y no en el codigo. El
+ * repositorio es publico, asi que una clave escrita en el codigo seria una
+ * clave publicada.
  *
  * lote.json lo genera scripts/excel-beneficiarios.py a partir del Excel.
  * Importar es idempotente: volver a cargar el mismo lote no duplica nada, y
  * cargar un concentrado ampliado solo agrega los nombres nuevos.
  */
+import { randomBytes } from "node:crypto";
 import { mkdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { DatabaseSync } from "node:sqlite";
@@ -45,6 +53,10 @@ function abrir() {
       -- mas de una es un doble apoyo dentro de la misma convocatoria.
       apoyos         INTEGER NOT NULL DEFAULT 1,
       UNIQUE (convocatoria_id, nombre)
+    );
+    CREATE TABLE IF NOT EXISTS ajustes (
+      clave TEXT PRIMARY KEY,
+      valor TEXT NOT NULL
     );
   `);
   return db;
@@ -105,11 +117,31 @@ function quitarConvocatoria(id) {
   console.log(r.changes ? `Convocatoria ${id} eliminada con sus beneficiarios.` : `No existe la convocatoria ${id}.`);
 }
 
+const SITIO = "https://itcadigital.mx";
+
+function enlace(nuevo) {
+  const db = abrir();
+  let fila = db.prepare("SELECT valor FROM ajustes WHERE clave = 'clave_padron'").get();
+  if (!fila || nuevo) {
+    const valor = randomBytes(16).toString("base64url");
+    db.prepare(
+      "INSERT INTO ajustes (clave, valor) VALUES ('clave_padron', ?) ON CONFLICT (clave) DO UPDATE SET valor = excluded.valor",
+    ).run(valor);
+    fila = { valor };
+    if (nuevo) console.log("Enlace nuevo. El anterior ya no funciona.");
+  }
+  console.log(`${SITIO}/p/${fila.valor}`);
+}
+
 const [orden, arg] = process.argv.slice(2);
 if (orden === "importar" && arg) importar(arg);
+else if (orden === "enlace") enlace(false);
+else if (orden === "enlace-nuevo") enlace(true);
 else if (orden === "listar") listar();
 else if (orden === "quitar-convocatoria" && arg) quitarConvocatoria(arg);
 else {
-  console.log("Uso: node scripts/beneficiarios.mjs importar lote.json | listar | quitar-convocatoria <id>");
+  console.log(
+    "Uso: node scripts/beneficiarios.mjs importar lote.json | listar | quitar-convocatoria <id> | enlace | enlace-nuevo",
+  );
   process.exit(1);
 }
