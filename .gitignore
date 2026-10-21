@@ -42,3 +42,6 @@ next-env.d.ts
 
 # recursos de PDF.js, copiados desde node_modules (scripts/copiar-pdfjs.mjs)
 /public/pdfjs/
+
+# base de datos del padron de beneficiarios (scripts/beneficiarios.mjs)
+/datos/
